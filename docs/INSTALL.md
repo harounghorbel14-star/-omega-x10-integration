@@ -24,6 +24,22 @@ claude plugin marketplace add /path/to/OMEGA-ENGINEERING-X10
 /plugin marketplace add /path/to/OMEGA-ENGINEERING-X10
 ```
 
+### Upload the router to claude.ai (single skill)
+
+The claude.ai Skills uploader takes one skill folder per ZIP and rejects symbolic links, so do not
+upload a ZIP of this repository (GitHub's "Download ZIP" stores `plugins/mattpocock-skills/AGENTS.md`
+as a link). Build the router-only ZIP instead:
+
+```bash
+python3 tools/package_skill.py                  # writes and verifies dist/omega-engineering-x10.zip
+python3 tools/package_skill.py --verify any.zip # check another skill ZIP before uploading
+```
+
+Then in claude.ai: Settings → Capabilities → Skills → Upload skill, and choose
+`dist/omega-engineering-x10.zip` (code execution must be enabled). On claude.ai the router can only
+route: the specialist plugins are Claude Code plugins, so it names the right one and uses the
+route's fallback. Use the marketplace above for the full system.
+
 ## 2. Install plugins
 
 Recommended core set (about 3.2k always-on tokens):
@@ -226,3 +242,4 @@ uv tool uninstall graphifyy; npm rm -g agent-browser   # runtimes, if installed
 | `claude plugin update` says "already at the latest version" after a change | Plugins update by version number; maintainers must bump `version` in the changed plugin's `plugin.json` |
 | Session feels slow / context full | ECC adds ~47.6k tokens always-on. Uninstall it or disable plugins you are not using (`claude plugin disable`) |
 | `claude plugin validate` warns "CLAUDE.md at the plugin root is not loaded" (ecc, mattpocock-skills) | Upstream layout; harmless |
+| Skills uploader: `Zip file contains a symbolic link` | The ZIP was made from the repository. Upload the ZIP built by `python3 tools/package_skill.py` (see "Upload the router to claude.ai") |

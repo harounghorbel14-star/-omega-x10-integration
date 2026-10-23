@@ -168,6 +168,66 @@ class SubreaperTests(unittest.TestCase):
         self.assertEqual(r.returncode, 0, "orphan stayed a zombie: subreaper did not reap it")
 
 
+class SkillZipTests(unittest.TestCase):
+    """tools/package_skill.py: the claude.ai uploader rejects ZIPs containing symbolic links
+    (regression: a ZIP of the repository carried plugins/mattpocock-skills/AGENTS.md as a link)."""
+
+    def setUp(self):
+        import tempfile
+        sys.path.insert(0, str(ROOT / "tools"))
+        import package_skill
+        self.pkg = package_skill
+        self.tmp = Path(tempfile.mkdtemp())
+
+    def tearDown(self):
+        import shutil
+        shutil.rmtree(self.tmp)
+
+    def test_built_zip_passes_and_router_runs_from_it(self):
+        import zipfile
+        r = subprocess.run([sys.executable, str(ROOT / "tools/package_skill.py"), "--out", str(self.tmp)],
+                           capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        zpath = self.tmp / "omega-engineering-x10.zip"
+        with zipfile.ZipFile(zpath) as z:
+            z.extractall(self.tmp / "x")
+        skill = self.tmp / "x" / "omega-engineering-x10"
+        self.assertEqual([], [p for p in skill.rglob("*") if p.is_symlink()])
+        self.assertNotIn("../../", (skill / "SKILL.md").read_text())
+        self.assertEqual((skill / "registry/skills.json").read_bytes(), (CORE / "registry/skills.json").read_bytes())
+        out = subprocess.run([sys.executable, str(skill / "scripts/omega.py"), "check-routes"], capture_output=True)
+        self.assertEqual(out.returncode, 0, out.stdout)
+
+    def test_symlink_entry_is_rejected(self):
+        import stat
+        import zipfile
+        zpath = self.tmp / "bad.zip"
+        with zipfile.ZipFile(zpath, "w") as z:
+            z.writestr("s/SKILL.md", "---\nname: s\ndescription: d\n---\n")
+            link = zipfile.ZipInfo("s/AGENTS.md")
+            link.create_system = 3
+            link.external_attr = (stat.S_IFLNK | 0o777) << 16
+            z.writestr(link, "SKILL.md")
+        self.assertEqual(self.pkg.verify(zpath), ["symbolic link: s/AGENTS.md"])
+
+    def test_repository_layout_is_rejected(self):
+        import zipfile
+        zpath = self.tmp / "repo.zip"
+        with zipfile.ZipFile(zpath, "w") as z:
+            z.writestr("README.md", "x")
+            z.writestr("plugins/omega-core/skills/omega-engineering-x10/SKILL.md", "x")
+        self.assertIn("expected one skill folder", self.pkg.verify(zpath)[0])
+
+    def test_bad_frontmatter_is_rejected(self):
+        import zipfile
+        zpath = self.tmp / "fm.zip"
+        with zipfile.ZipFile(zpath, "w") as z:
+            z.writestr("Bad_Name/SKILL.md", "---\nname: Bad_Name\n---\nbody\n")
+        problems = self.pkg.verify(zpath)
+        self.assertTrue(any("name 'Bad_Name'" in p for p in problems), problems)
+        self.assertTrue(any("description is 0" in p for p in problems), problems)
+
+
 class RegistryTests(unittest.TestCase):
     def test_core_registry_matches_root_registry(self):
         for n in ("skills.json", "capabilities.json", "routing-rules.json"):
