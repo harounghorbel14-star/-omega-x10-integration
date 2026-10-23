@@ -4,3 +4,4 @@ __pycache__/
 graphify-out/
 audit/baseline-logs/
 audit/corrected/baseline-logs/
+dist/

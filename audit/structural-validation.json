@@ -73,7 +73,7 @@
  {
   "check": "docs",
   "status": "PASS",
-  "detail": "60 path/plugin references checked in README.md and docs/INSTALL.md",
+  "detail": "64 path/plugin references checked in README.md and docs/INSTALL.md",
   "examples": []
  },
  {
