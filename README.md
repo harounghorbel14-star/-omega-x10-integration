@@ -19,7 +19,7 @@ router (`omega-core`), a complete capability registry and a full provenance audi
 ## Quick start
 
 ```bash
-claude plugin marketplace add /path/to/OMEGA-ENGINEERING-X10
+claude plugin marketplace add harounghorbel14-star/-omega-x10-integration   # or a local checkout path
 claude plugin install omega-core@omega-engineering-x10
 claude plugin install superpowers@omega-engineering-x10
 claude plugin install mattpocock-skills@omega-engineering-x10

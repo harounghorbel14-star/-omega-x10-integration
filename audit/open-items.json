@@ -98,8 +98,8 @@
  "not_verified": [
   {
    "id": "N1",
-   "item": "Install from a real GitHub-hosted copy of the OMEGA marketplace on another machine",
-   "reason": "Git-hosted install was verified end to end through a local smart-HTTP git server in a fresh HOME and config (plugins in cache, update 1.0.0 -> 1.1.0, doctor fix, live hooks). Pushing to GitHub was not authorized, so the github.com path and a second machine remain unverified"
+   "item": "Install on a second physical machine",
+   "reason": "Verified on this machine from the real GitHub repo (harounghorbel14-star/-omega-x10-integration @ 72e07ab) in a fresh HOME and config; a different machine/OS was not used (see E10)"
   },
   {
    "id": "N2",

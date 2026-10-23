@@ -35,7 +35,7 @@ None.
 
 ### Not verified (capability present, not exercised end to end): 6
 
-- **N1** Install from a real GitHub-hosted copy of the OMEGA marketplace on another machine. Git-hosted install was verified end to end through a local smart-HTTP git server in a fresh HOME and config (plugins in cache, update 1.0.0 -> 1.1.0, doctor fix, live hooks). Pushing to GitHub was not authorized, so the github.com path and a second machine remain unverified
+- **N1** Install on a second physical machine. Verified on this machine from the real GitHub repo (harounghorbel14-star/-omega-x10-integration @ 72e07ab) in a fresh HOME and config; a different machine/OS was not used (see E10)
 - **N2** ECC: 307 of 311 skills, 95 of 97 commands and 70 of 71 agents not individually exercised. Exercised live: ecc:tdd-workflow, ecc:security-review, ecc:docker-patterns, ecc:api-design, /ecc:python-review, /ecc:build-fix, agent ecc:security-reviewer, the pre-bash hook path and all 8 Stop hooks. All components are counted as loaded by `claude plugin details`
 - **N3** claude-mem Chroma vector search specifically. Search returned correct results, but whether the hybrid path used Chroma embeddings or FTS5 alone was not isolated
 - **N4** agent-browser derive-client and webmcp-gen. Not run; core browser actions and the dogfood QA workflow were verified

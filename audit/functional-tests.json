@@ -298,5 +298,11 @@
   "command": "curl https://skills.sh/api/search?q=react; npx -y skills@1.7.4 find react; omega.py doctor; proxy /__agentproxy/status",
   "result": "BLOCKED (environment)",
   "evidence": "still CONNECT 403; proxy recentRelayFailures: {kind: connect_rejected, host: skills.sh:443, detail: gateway answered 403 to CONNECT (policy denial or upstream failure)} at 2026-10-23T19:41:21Z; CLI prints 'No skills found'; doctor [MISS] skills.sh reachable"
+ },
+ {
+  "test": "Install from the real GitHub marketplace (fresh HOME + CLAUDE_CONFIG_DIR)",
+  "command": "claude plugin marketplace add harounghorbel14-star/-omega-x10-integration; install omega-core, superpowers, vibesec, ecc; omega.py route/check-routes/doctor; doctor's ECC fix; live session",
+  "result": "PASS",
+  "evidence": "all four installed into ~/.claude/plugins/cache/omega-engineering-x10/<plugin>/<version> at gitCommitSha 72e07ab; route -> security+tdd; check-routes 0 problems; doctor fix installed ECC deps (check OK); live session: ECC PreToolUse blocked --no-verify, commit count unchanged, 0 module crashes"
  }
 ]

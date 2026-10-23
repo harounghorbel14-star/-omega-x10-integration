@@ -92,6 +92,7 @@ Throwaway `CLAUDE_CONFIG_DIR`, scratch npm/uv prefixes and a scratch `HOME` for 
 | UI UX Pro Max /design-review | PASS | design-review subagent, 24 Playwright MCP calls, screenshots at 375/768/1440/1920 px; found both planted bugs plus missing live region and viewport meta |
 | Replica recon + architect | PASS | recon.md, features.csv, 4 state screenshots; architecture.md and schema.sql derived from the recon |
 | find-skills search (retest after reported network settings change) | BLOCKED (environment) | still CONNECT 403; proxy recentRelayFailures: {kind: connect_rejected, host: skills.sh:443, detail: gateway answered 403 to CONNECT (policy denial or upstream failure)} at 2026-10-23T19:41:21Z; CLI prints 'No skills found'; doctor [MISS] skills.sh reachable |
+| Install from the real GitHub marketplace (fresh HOME + CLAUDE_CONFIG_DIR) | PASS | all four installed into ~/.claude/plugins/cache/omega-engineering-x10/<plugin>/<version> at gitCommitSha 72e07ab; route -> security+tdd; check-routes 0 problems; doctor fix installed ECC deps (check OK); live session: ECC PreToolUse blocked --no-verify, commit count unchanged, 0 module crashes |
 
 ## 4. Loaded components (from `claude plugin details`)
 
@@ -135,7 +136,7 @@ test_killed_orphan_is_reaped (test_omega.SubreaperTests.test_killed_orphan_is_re
 test_returns_command_status_without_waiting_for_daemons (test_omega.SubreaperTests.test_returns_command_status_without_waiting_for_daemons) ... ok
 
 ----------------------------------------------------------------------
-Ran 17 tests in 8.726s
+Ran 17 tests in 9.492s
 
 OK
 ```
@@ -224,7 +225,7 @@ Rendered from `audit/open-items.json`; the same list is in `audit/unresolved-ite
 - U7: mattpocock `claude plugin validate . --strict`
 
 **Not verified (6)**
-- N1: Install from a real GitHub-hosted copy of the OMEGA marketplace on another machine
+- N1: Install on a second physical machine
 - N2: ECC: 307 of 311 skills, 95 of 97 commands and 70 of 71 agents not individually exercised
 - N3: claude-mem Chroma vector search specifically
 - N4: agent-browser derive-client and webmcp-gen

@@ -10,6 +10,12 @@ except where a step says so.
 
 ## 1. Add the marketplace
 
+From GitHub (verified):
+
+```bash
+claude plugin marketplace add harounghorbel14-star/-omega-x10-integration
+```
+
 From a local checkout:
 
 ```bash
