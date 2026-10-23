@@ -13,7 +13,7 @@
       "name": "omega-core",
       "source": "./plugins/omega-core",
       "description": "OMEGA-ENGINEERING X10 master router: maps any engineering task to the right specialist skill across all ten integrated sources, with a searchable registry and doctor checks.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "category": "engineering",
       "strict": true
     },

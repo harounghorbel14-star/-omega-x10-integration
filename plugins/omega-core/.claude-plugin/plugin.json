@@ -1,6 +1,6 @@
 {
   "name": "omega-core",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "OMEGA-ENGINEERING X10 master router: maps engineering tasks to specialist skills across ten integrated sources, with a searchable registry and environment doctor.",
   "author": {"name": "OMEGA-ENGINEERING X10 integrators"},
   "license": "MIT",
