@@ -91,6 +91,7 @@ Throwaway `CLAUDE_CONFIG_DIR`, scratch npm/uv prefixes and a scratch `HOME` for 
 | More ECC components | PASS | command injection (shell=True) critical, secret in ENV, unpinned base image, root user, API design issues; files unmodified |
 | UI UX Pro Max /design-review | PASS | design-review subagent, 24 Playwright MCP calls, screenshots at 375/768/1440/1920 px; found both planted bugs plus missing live region and viewport meta |
 | Replica recon + architect | PASS | recon.md, features.csv, 4 state screenshots; architecture.md and schema.sql derived from the recon |
+| find-skills search (retest after reported network settings change) | BLOCKED (environment) | still CONNECT 403; proxy recentRelayFailures: {kind: connect_rejected, host: skills.sh:443, detail: gateway answered 403 to CONNECT (policy denial or upstream failure)} at 2026-10-23T19:41:21Z; CLI prints 'No skills found'; doctor [MISS] skills.sh reachable |
 
 ## 4. Loaded components (from `claude plugin details`)
 
@@ -134,7 +135,7 @@ test_killed_orphan_is_reaped (test_omega.SubreaperTests.test_killed_orphan_is_re
 test_returns_command_status_without_waiting_for_daemons (test_omega.SubreaperTests.test_returns_command_status_without_waiting_for_daemons) ... ok
 
 ----------------------------------------------------------------------
-Ran 17 tests in 8.517s
+Ran 17 tests in 8.726s
 
 OK
 ```

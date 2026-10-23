@@ -5,8 +5,8 @@
   {
    "id": "E1",
    "item": "find-skills search (`npx skills find`)",
-   "evidence": "https://skills.sh CONNECT 403 from this environment's proxy (curl + omega.py doctor)",
-   "requirement": "Network policy allowing https://skills.sh; re-run `npx skills@1.7.4 find react` and `omega.py doctor`"
+   "evidence": "https://skills.sh CONNECT 403 (proxy log: connect_rejected, policy denial) on the initial test and again on the 2026-10-23T19:41Z retest after a reported network settings change; `npx skills find` prints 'No skills found'",
+   "requirement": "Network policy allowing https://skills.sh in the session that runs the test (start a session after changing the environment's network access); re-run `npx skills@1.7.4 find react` and `omega.py doctor`"
   },
   {
    "id": "E2",

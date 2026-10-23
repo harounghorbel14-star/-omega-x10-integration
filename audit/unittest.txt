@@ -17,6 +17,6 @@ test_killed_orphan_is_reaped (test_omega.SubreaperTests.test_killed_orphan_is_re
 test_returns_command_status_without_waiting_for_daemons (test_omega.SubreaperTests.test_returns_command_status_without_waiting_for_daemons) ... ok
 
 ----------------------------------------------------------------------
-Ran 17 tests in 8.517s
+Ran 17 tests in 8.726s
 
 OK

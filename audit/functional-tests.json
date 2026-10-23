@@ -292,5 +292,11 @@
   "command": "claude -p running replica-skill:replica-recon then replica-skill:replica-architect on the local app",
   "result": "PASS",
   "evidence": "recon.md, features.csv, 4 state screenshots; architecture.md and schema.sql derived from the recon"
+ },
+ {
+  "test": "find-skills search (retest after reported network settings change)",
+  "command": "curl https://skills.sh/api/search?q=react; npx -y skills@1.7.4 find react; omega.py doctor; proxy /__agentproxy/status",
+  "result": "BLOCKED (environment)",
+  "evidence": "still CONNECT 403; proxy recentRelayFailures: {kind: connect_rejected, host: skills.sh:443, detail: gateway answered 403 to CONNECT (policy denial or upstream failure)} at 2026-10-23T19:41:21Z; CLI prints 'No skills found'; doctor [MISS] skills.sh reachable"
  }
 ]

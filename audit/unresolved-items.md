@@ -14,7 +14,7 @@ None.
 
 ### Environment-restricted (cannot be verified in this sandbox; requirement given): 8
 
-- **E1** find-skills search (`npx skills find`). Evidence: https://skills.sh CONNECT 403 from this environment's proxy (curl + omega.py doctor). Network policy allowing https://skills.sh; re-run `npx skills@1.7.4 find react` and `omega.py doctor`
+- **E1** find-skills search (`npx skills find`). Evidence: https://skills.sh CONNECT 403 (proxy log: connect_rejected, policy denial) on the initial test and again on the 2026-10-23T19:41Z retest after a reported network settings change; `npx skills find` prints 'No skills found'. Network policy allowing https://skills.sh in the session that runs the test (start a session after changing the environment's network access); re-run `npx skills@1.7.4 find react` and `omega.py doctor`
 - **E2** Graphify upstream tests/test_security.py (7 tests). Evidence: ValueError: DNS resolution failed for 'example.com'. DNS + HTTP egress to example.com
 - **E5** Graphify audio/video transcription. Evidence: With graphifyy[video] installed, transcribe('standup.wav') starts ('transcribing ... model=base') and fails downloading the Whisper model: ProxyError 403 (huggingface.co blocked). Network access to huggingface.co
 - **E6** claude-mem cloud sync and the claude-mem-cowork plugin. Evidence: https://cmem.ai unreachable (proxy 403); also needs a cmem.ai account. cmem.ai access and an account; opt-in by design
