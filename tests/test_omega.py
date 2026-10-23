@@ -104,6 +104,10 @@ class DoctorRegressionTests(unittest.TestCase):
                 self.assertIn(key, checks)
                 self.assertFalse(checks[key]["ok"])
                 self.assertIn("install-plugin-deps.sh", checks[key]["fix"])
+                # regression (clean git install): the suggested helper must exist next to omega.py, since
+                # an installed omega-core has no repository scripts/ directory
+                helper = checks[key]["fix"].split()[0]
+                self.assertTrue(Path(helper).is_file(), helper)
                 (plugin / "node_modules" / "js-yaml").mkdir(parents=True)
                 self.assertTrue({c["check"]: c for c in omega.doctor()}[key]["ok"])
             finally:

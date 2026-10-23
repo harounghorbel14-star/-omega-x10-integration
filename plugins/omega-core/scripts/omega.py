@@ -106,7 +106,7 @@ def doctor():
         have = (ecc / "node_modules" / "js-yaml").is_dir()
         add(f"ecc runtime deps ({ecc})", have, "node_modules present" if have else "node_modules missing: ECC "
             "SessionStart hook fails with Cannot find module 'js-yaml'",
-            None if have else f"{HERE.parent.parent.parent / 'scripts' / 'install-plugin-deps.sh'} {ecc}", "ecc hooks")
+            None if have else f"{HERE / 'install-plugin-deps.sh'} {ecc}", "ecc hooks")
     return checks
 
 

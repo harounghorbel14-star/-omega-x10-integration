@@ -58,10 +58,15 @@ the installed plugin directory with the OMEGA helper, which runs `npm ci` from E
 `yarn.lock`) stay unchanged:
 
 ```bash
-scripts/install-plugin-deps.sh ~/.claude/plugins/cache/omega-engineering-x10/ecc/2.2.3
+# the helper ships in omega-core, so it is available without a checkout:
+~/.claude/plugins/cache/omega-engineering-x10/omega-core/1.0.0/scripts/install-plugin-deps.sh \
+    ~/.claude/plugins/cache/omega-engineering-x10/ecc/2.2.3
+# from a checkout (wrapper): scripts/install-plugin-deps.sh <installed ecc dir>
 # when the marketplace was added from a local directory, plugins run in place:
 scripts/install-plugin-deps.sh plugins/ecc
 ```
+
+`omega.py doctor` prints the exact command for each installed ECC copy that lacks the dependencies.
 
 `omega.py doctor` reports every installed ECC copy that is missing these dependencies.
 
