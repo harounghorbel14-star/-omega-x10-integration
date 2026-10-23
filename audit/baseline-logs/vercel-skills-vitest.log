@@ -1,0 +1,145 @@
+
+ RUN  v4.1.10 /home/user/omega-x10/baseline/vercel-labs__skills
+
+[38;5;102mChecking skills from source: owner/repo[0m[K
+[K[38;5;102mChecking skills from source: owner/repo[0m[K
+[K[38;5;102mChecking skills from source: owner/repo[0m[K
+[K[38;5;102mChecking skills from source: owner/repo[0m[K
+[K[38;5;102mChecking skills from source: owner/repo[0m[K
+[38;5;102mChecking skills from source: owner/repo[0m[K
+[K[38;5;102mChecking skills from source: owner/private-repo[0m[K
+[K[38;5;102mChecking skills from source: owner/private-repo[0m[K
+[K[38;5;102mChecking skills from source: git@gitea.example.com:owner/repo.git[0m[K
+[K[38;5;102mChecking skills from source: ssh://git@github.com/owner/repo[0m[K
+[K[38;5;102mChecking skills from source: acme/skills[0m[K
+[K[38;5;102mChecking skills from source: owner/repo[0m[K
+[K[38;5;102mChecking skills from source: https://github.example.com/acme/skills.git[0m[K
+[K[38;5;102mChecking skills from source: owner/repo[0m[K
+[K ❯ src/add.test.ts (66 tests | 1 failed) 27747ms
+     × special-cases notion and requires the ntn CLI 732ms
+[?25l|
+o  Found 1 Notion pack in workspace Acme HQ
+[?25h|
+o  Selected 1 Notion pack -+
+|                          |
+|  Company-wide            |
+|                          |
++--------------------------+
+[?25l|
+o  Prepared 1 Notion pack with 1 skill
+[?25h[?25l|
+o  Downloaded skill from Notion in workspace Acme HQ
+[?25h[?25l|
+o  Failed to prepare Notion skill
+[?25h[?25l|
+o  Downloaded skill from Notion
+[?25h|
+•   claude-code_2-1-309_agent  Agent detected — removing non-interactively
+[?25l|
+o  Found 1 unique installed skill(s)
+[?25h[?25l|
+o  Removal process complete
+[?25h|
+*  Successfully removed 1 skill(s)
+|
+—  Done!
+
+|
+•   claude-code_2-1-309_agent  Agent detected — removing non-interactively
+[?25l|
+o  Found 1 unique installed skill(s)
+[?25h[?25l|
+o  Removal process complete
+[?25h|
+*  Successfully removed 1 skill(s)
+|
+—  Done!
+
+ ❯ src/detect-agent.test.ts (3 tests | 3 failed) 56ms
+     × does not treat Cursor integrated terminal (CURSOR_TRACE_ID only) as agent 37ms
+     × treats Cursor agent execution (CURSOR_AGENT) as agent 9ms
+     × treats Cursor agent execution (agent-exec role) as agent 7ms
+|
+•  Restoring 1 skill from skills-lock.json into .agents/skills/
+|
+*  Restored skill-a
+|
+x  Cannot restore skill-a: skills-lock.json is missing sourceUrl for this generic Git source
+|
+•  Restoring 1 skill from skills-lock.json into .agents/skills/
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/add.test.ts > add command > special-cases notion and requires the ntn CLI
+AssertionError: expected '|  https://developers.notion.com/cli/…' to be 'https://developers.notion.com/cli/get…' // Object.is equality
+
+Expected: "https://developers.notion.com/cli/get-started/overview"
+Received: "|  https://developers.notion.com/cli/get-started/overview"
+
+ ❯ src/add.test.ts:78:48
+     76|       .split('\n')
+     77|       .find((line) => line.includes('https://developers.notion.com/cli…
+     78|     expect(docsLine?.replace(/^\s*│?\s*/, '')).toBe(
+       |                                                ^
+     79|       'https://developers.notion.com/cli/get-started/overview'
+     80|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/detect-agent.test.ts > detectAgent > does not treat Cursor integrated terminal (CURSOR_TRACE_ID only) as agent
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/detect-agent.test.ts:21:28
+     19|     const result = await detectAgent();
+     20|
+     21|     expect(result.isAgent).toBe(false);
+       |                            ^
+     22|   });
+     23|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/detect-agent.test.ts > detectAgent > treats Cursor agent execution (CURSOR_AGENT) as agent
+AssertionError: expected 'claude-code_2-1-309_agent' to be 'cursor-cli' // Object.is equality
+
+Expected: "cursor-cli"
+Received: "claude-code_2-1-309_agent"
+
+ ❯ src/detect-agent.test.ts:32:32
+     30|
+     31|     expect(result.isAgent).toBe(true);
+     32|     expect(result.agent?.name).toBe('cursor-cli');
+       |                                ^
+     33|   });
+     34|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  src/detect-agent.test.ts > detectAgent > treats Cursor agent execution (agent-exec role) as agent
+AssertionError: expected 'claude-code_2-1-309_agent' to be 'cursor-cli' // Object.is equality
+
+Expected: "cursor-cli"
+Received: "claude-code_2-1-309_agent"
+
+ ❯ src/detect-agent.test.ts:43:32
+     41|
+     42|     expect(result.isAgent).toBe(true);
+     43|     expect(result.agent?.name).toBe('cursor-cli');
+       |                                ^
+     44|   });
+     45| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  2 failed | 68 passed (70)
+      Tests  4 failed | 974 passed (978)
+   Start at  13:56:57
+   Duration  86.75s (transform 5.45s, setup 0ms, import 15.54s, tests 204.47s, environment 12ms)
+

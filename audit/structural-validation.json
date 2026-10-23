@@ -1,0 +1,71 @@
+[
+ {
+  "check": "sources",
+  "status": "PASS",
+  "detail": "10/10 repositories inspected with commit recorded",
+  "examples": []
+ },
+ {
+  "check": "classified",
+  "status": "PASS",
+  "detail": "10094 files, 0 unclassified; 3337 components, 0 with invalid disposition",
+  "examples": []
+ },
+ {
+  "check": "destinations",
+  "status": "PASS",
+  "detail": "3829 copied files, 0 missing at destination",
+  "examples": []
+ },
+ {
+  "check": "integrity",
+  "status": "PASS",
+  "detail": "3828 byte-compared, 0 differ; 1 recorded transform(s) excluded",
+  "examples": []
+ },
+ {
+  "check": "manifests",
+  "status": "PASS",
+  "detail": "12 marketplace plugins; 14 plugin dirs",
+  "examples": []
+ },
+ {
+  "check": "skills",
+  "status": "PASS",
+  "detail": "416 loaded skills have frontmatter; 2 keep a non-identifier upstream name (unchanged, indexed by directory)",
+  "examples": [
+   "claude-mem-cowork:agent-cost-report: upstream name 'Agent Cost Report'",
+   "claude-mem:agent-cost-report: upstream name 'Agent Cost Report'"
+  ]
+ },
+ {
+  "check": "references",
+  "status": "PASS",
+  "detail": "0 references broken by integration; 27 already unresolved in the source (reported in audit/validation-report.md)",
+  "examples": []
+ },
+ {
+  "check": "json",
+  "status": "PASS",
+  "detail": "0 unparsable .json files, 0 identical to an unparsable upstream file (e.g. JSONC/templates)",
+  "examples": []
+ },
+ {
+  "check": "routes",
+  "status": "PASS",
+  "detail": "0 problem(s)",
+  "examples": []
+ },
+ {
+  "check": "licenses",
+  "status": "PASS",
+  "detail": "plugins without LICENSE: 0",
+  "examples": []
+ },
+ {
+  "check": "reconcile",
+  "status": "PASS",
+  "detail": "3337 components across 10 repositories",
+  "examples": []
+ }
+]

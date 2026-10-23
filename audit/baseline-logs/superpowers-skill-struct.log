@@ -1,0 +1,49 @@
+diagnosing-superpowers structure
+  [PASS] SKILL.md exists
+  [PASS] frontmatter name is diagnosing-superpowers
+  [PASS] description starts with 'Use when'
+  [PASS] description under 1024 characters
+  [PASS] description avoids workflow word 'dispatch'
+  [PASS] description avoids workflow word 'then'
+  [PASS] description avoids workflow word 'step'
+  [PASS] SKILL.md body within 1000 words (992)
+  [PASS] SKILL.md has section '## Hard rules'
+  [PASS] SKILL.md has section '## Red Flags'
+  [PASS] referenced file exists: prompts/analyst-common.md
+  [PASS] referenced file exists: prompts/scrub-audit.md
+  [PASS] referenced file exists: prompts/scrub.md
+  [PASS] referenced file exists: prompts/similar-session.md
+  [PASS] referenced file exists: references/context-safety.md
+  [PASS] referenced file exists: references/github-issues.md
+  [PASS] referenced file exists: references/session-discovery.md
+  [PASS] referenced file exists: templates/bundle-README.md
+  [PASS] referenced file exists: templates/case.md
+  [PASS] referenced file exists: templates/issue.md
+  [PASS] referenced file exists: templates/report.md
+  [PASS] expected file present: references/redaction-policy.md
+  [PASS] expected file present: references/session-discovery.md
+  [PASS] expected file present: references/context-safety.md
+  [PASS] expected file present: references/github-issues.md
+  [PASS] expected file present: prompts/analyst-common.md
+  [PASS] expected file present: prompts/skill-timeline.md
+  [PASS] expected file present: prompts/plan-adherence.md
+  [PASS] expected file present: prompts/repeated-work.md
+  [PASS] expected file present: prompts/stumbles.md
+  [PASS] expected file present: prompts/quality-evidence.md
+  [PASS] expected file present: prompts/request-conflicts.md
+  [PASS] expected file present: prompts/cost-and-time.md
+  [PASS] expected file present: prompts/scrub.md
+  [PASS] expected file present: prompts/scrub-audit.md
+  [PASS] expected file present: prompts/similar-session.md
+  [PASS] expected file present: templates/case.md
+  [PASS] expected file present: templates/report.md
+  [PASS] expected file present: templates/bundle-README.md
+  [PASS] expected file present: templates/issue.md
+  [PASS] removed reference absent: references/claude-code-sessions.md
+  [PASS] removed reference absent: references/codex-sessions.md
+  [PASS] removed reference absent: references/other-harnesses.md
+  [PASS] active skill prose has no references to removed harness recipes
+  [PASS] no machine-specific paths or names in shipped files (skills + tests)
+  [PASS] skill files say 'your human partner', not 'the user'
+
+Passed: 46  Failed: 0

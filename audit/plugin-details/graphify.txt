@@ -1,0 +1,20 @@
+graphify 0.9.94
+  Description: Graphify: turn code, docs, papers, images or video into a queryable knowledge graph (/graphify, query, path, explain, MCP, exports). Requires `uv tool install graphifyy`.
+  Source: graphify@omega-engineering-x10
+
+Component inventory
+  Skills (1)  graphify
+  Agents (0)
+  Hooks (0)
+  MCP servers (0)
+  LSP servers (0)
+
+Projected token cost
+  Always-on:   ~118 tok   added to every session
+
+Per-component (rounded)
+  component  always-on  on-invoke
+  graphify        ~120     ~18.9k
+
+  On-invoke cost is paid each time a skill or agent fires.
+  Token counts are estimates and may differ from actual usage.

@@ -1,0 +1,12 @@
+[
+  {
+    "source": "thedotmack__claude-mem/.claude/commands/anti-pattern-czar.md",
+    "dest": "plugins/anti-pattern-czar/commands/anti-pattern-czar.md",
+    "why": "Upstream runs the detector from the claude-mem repo root (`bun run scripts/anti-pattern-test/...`). Relocated into its own plugin, the script path now uses ${CLAUDE_PLUGIN_ROOT}; it still scans ./src of the current project as upstream does. No other change."
+  },
+  {
+    "source": "BehiSecc__VibeSec-Skill/SKILL.md",
+    "dest": "plugins/vibesec/skills/vibesec/SKILL.md",
+    "why": "Frontmatter name `VibeSec-Skill` contains uppercase letters, which the Agent Skills name rule (lowercase, digits, hyphens; must match the directory) rejects. Renamed to `vibesec`. Body unchanged."
+  }
+]

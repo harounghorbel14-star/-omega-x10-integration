@@ -1,0 +1,20 @@
+anti-pattern-czar 15.0.1
+  Description: Anti-Pattern Czar (from claude-mem's own dev tooling): /anti-pattern-czar runs a TypeScript error-handling anti-pattern detector over ./src and walks you through fixing each finding. Needs Bun.
+  Source: anti-pattern-czar@omega-engineering-x10
+
+Component inventory
+  Skills (1)  anti-pattern-czar
+  Agents (0)
+  Hooks (0)
+  MCP servers (0)
+  LSP servers (0)
+
+Projected token cost
+  Always-on:   ~38 tok   added to every session
+
+Per-component (rounded)
+  component          always-on  on-invoke
+  anti-pattern-czar        ~40      ~1.5k
+
+  On-invoke cost is paid each time a skill or agent fires.
+  Token counts are estimates and may differ from actual usage.

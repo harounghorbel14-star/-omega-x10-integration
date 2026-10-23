@@ -1,0 +1,122 @@
+[
+  {
+    "repo": "vercel-labs/agent-browser",
+    "dir": "vercel-labs__agent-browser",
+    "remote": "https://github.com/vercel-labs/agent-browser.git",
+    "default_branch": "main",
+    "commit": "50c34e78c98dbe8add0b3ff36b4bcd7a47f1022b",
+    "commit_date": "2026-10-22T13:21:46-05:00",
+    "tag": "v0.39.2",
+    "tracked_files": 482,
+    "role": "Browser automation CLI and skills",
+    "status": "inspected"
+  },
+  {
+    "repo": "mattpocock/skills",
+    "dir": "mattpocock__skills",
+    "remote": "https://github.com/mattpocock/skills.git",
+    "default_branch": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "commit_date": "2026-10-19T16:51:40+01:00",
+    "tag": null,
+    "tracked_files": 191,
+    "role": "Grill Me and Matt Pocock's engineering skills",
+    "status": "inspected"
+  },
+  {
+    "repo": "Jakeschincariol/replica-skill",
+    "dir": "Jakeschincariol__replica-skill",
+    "remote": "https://github.com/Jakeschincariol/replica-skill.git",
+    "default_branch": "main",
+    "commit": "77c9436fb3d18c3d58169efb8caf4fe906b0dc51",
+    "commit_date": "2026-10-03T08:07:14-04:00",
+    "tag": null,
+    "tracked_files": 39,
+    "role": "App clean-room replication pipeline",
+    "status": "inspected"
+  },
+  {
+    "repo": "affaan-m/ECC",
+    "dir": "affaan-m__ECC",
+    "remote": "https://github.com/affaan-m/ECC.git",
+    "default_branch": "main",
+    "commit": "90606c8315ee09cafc303515c5f33024db6b9882",
+    "commit_date": "2026-10-20T17:28:23-04:00",
+    "tag": null,
+    "tracked_files": 4627,
+    "role": "Everything Claude Code: skills, agents, commands, hooks, rules",
+    "status": "inspected"
+  },
+  {
+    "repo": "vercel-labs/skills",
+    "dir": "vercel-labs__skills",
+    "remote": "https://github.com/vercel-labs/skills.git",
+    "default_branch": "main",
+    "commit": "a80e4c9d12d607631249d4d7d059f835d4b2f13a",
+    "commit_date": "2026-10-19T20:34:19+00:00",
+    "tag": "v1.7.4",
+    "tracked_files": 143,
+    "role": "Skills CLI and find-skills discovery skill",
+    "status": "inspected"
+  },
+  {
+    "repo": "thedotmack/claude-mem",
+    "dir": "thedotmack__claude-mem",
+    "remote": "https://github.com/thedotmack/claude-mem.git",
+    "default_branch": "main",
+    "commit": "dcb28a768c6be4b8e451843210558275caa8ec44",
+    "commit_date": "2026-10-22T22:17:33-07:00",
+    "tag": null,
+    "tracked_files": 2587,
+    "role": "Persistent memory plugin (hooks, worker, MCP)",
+    "status": "inspected"
+  },
+  {
+    "repo": "BehiSecc/VibeSec-Skill",
+    "dir": "BehiSecc__VibeSec-Skill",
+    "remote": "https://github.com/BehiSecc/VibeSec-Skill.git",
+    "default_branch": "main",
+    "commit": "0590993b35ad51961f65a4d01cf1196dfead05bb",
+    "commit_date": "2026-02-17T17:33:16+03:30",
+    "tag": null,
+    "tracked_files": 3,
+    "role": "Secure coding guide for web applications",
+    "status": "inspected"
+  },
+  {
+    "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "dir": "nextlevelbuilder__ui-ux-pro-max-skill",
+    "remote": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
+    "default_branch": "main",
+    "commit": "d14efff8ed1faa4187f004f79926f428c8074ec7",
+    "commit_date": "2026-10-23T17:06:30+07:00",
+    "tag": null,
+    "tracked_files": 697,
+    "role": "UI/UX design intelligence and design data",
+    "status": "inspected"
+  },
+  {
+    "repo": "obra/superpowers",
+    "dir": "obra__superpowers",
+    "remote": "https://github.com/obra/superpowers.git",
+    "default_branch": "main",
+    "commit": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+    "commit_date": "2026-10-21T14:00:49-07:00",
+    "tag": "v7.0.1",
+    "tracked_files": 231,
+    "role": "Structured development workflow skills",
+    "status": "inspected"
+  },
+  {
+    "repo": "Graphify-Labs/graphify",
+    "dir": "Graphify-Labs__graphify",
+    "remote": "https://github.com/Graphify-Labs/graphify.git",
+    "default_branch": "v8",
+    "commit": "c588b72d936927790a87ad009955078ed40562a3",
+    "commit_date": "2026-10-22T17:06:40+01:00",
+    "tag": "v0.9.94",
+    "tracked_files": 1090,
+    "role": "Knowledge-graph builder for code and documents",
+    "status": "inspected"
+  }
+]

@@ -1,0 +1,30 @@
+replica-skill 1.0.0
+  Description: Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT.
+  Source: replica-skill@omega-engineering-x10
+
+Component inventory
+  Skills (11)  replica-architect, replica-backend, replica-brand, replica-build, replica-deploy, replica-design, replica-diff, replica-entrepreneur, replica-launch, replica-recon, replica-test
+  Agents (0)
+  Hooks (0)
+  MCP servers (0)
+  LSP servers (0)
+
+Projected token cost
+  Always-on:   ~1,806 tok   added to every session
+
+Per-component (rounded)
+  component             always-on  on-invoke
+  replica-architect          ~170      ~1.5k
+  replica-design             ~170      ~1.3k
+  replica-backend            ~150      ~1.3k
+  replica-recon              ~170      ~1.8k
+  replica-test               ~160        ~1k
+  replica-deploy             ~170      ~1.4k
+  replica-launch             ~150      ~1.3k
+  replica-diff               ~160      ~1.3k
+  replica-brand              ~170      ~1.4k
+  replica-entrepreneur       ~200      ~1.5k
+  replica-build              ~150      ~1.2k
+
+  On-invoke cost is paid each time a skill or agent fires.
+  Token counts are estimates and may differ from actual usage.

@@ -1,0 +1,26 @@
+ui-ux-pro-max 2.15.0
+  Description: UI/UX design intelligence. Searchable local database with 79 styles, 192 palettes, 74 font pairings, 25 charts, and 22 stacks (React, Next.js, Vue, Nuxt.js, Nuxt UI, Svelte, Astro, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, Jetpack Compose, Angular, Laravel, JavaFX, WPF, WinUI, Avalonia, Uno Platform, UWP, Three.js). Use when designing, building, or reviewing UI: pages, components, color schemes, typography, layout, accessibility, animation, or data visualization.
+  Source: ui-ux-pro-max@omega-engineering-x10
+
+Component inventory
+  Skills (7)  banner-design, brand, design, design-system, slides, ui-styling, ui-ux-pro-max
+  Agents (0)
+  Hooks (0)
+  MCP servers (0)
+  LSP servers (0)
+
+Projected token cost
+  Always-on:   ~1,067 tok   added to every session
+
+Per-component (rounded)
+  component      always-on  on-invoke
+  banner-design       ~180      ~2.5k
+  design-system       ~110      ~2.8k
+  brand                ~80      ~1.4k
+  design              ~250      ~5.3k
+  slides               ~60       ~580
+  ui-ux-pro-max       ~200      ~6.1k
+  ui-styling          ~190      ~4.1k
+
+  On-invoke cost is paid each time a skill or agent fires.
+  Token counts are estimates and may differ from actual usage.

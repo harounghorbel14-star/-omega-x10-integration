@@ -1,0 +1,15 @@
+SessionStart hook output tests
+  [PASS] hooks.json registers SessionStart with shell:bash dispatch
+  [PASS] Claude Code emits nested SessionStart additionalContext
+  [PASS] run-hook.cmd wrapper dispatches to the named session-start script
+  [PASS] Cursor emits top-level additional_context only
+  [PASS] Copilot CLI emits top-level additionalContext only
+  [PASS] SessionStart omits obsolete legacy custom-skill warning
+  [PASS] session-start with empty PATH still emits nested additionalContext
+  [PASS] run-hook.cmd with empty PATH still dispatches session-start
+  [PASS] session-start run by bare filename from hooks/ still emits nested additionalContext
+  [PASS] run-hook.cmd run by bare filename from hooks/ still dispatches session-start
+  [PASS] session-start reached through a backslash path still reads the skill
+  [PASS] session-start with cat on PATH emits nested additionalContext
+  [PASS] session-start pipes its JSON through cat when cat is on PATH
+STATUS: PASSED

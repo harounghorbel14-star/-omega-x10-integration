@@ -1,0 +1,110 @@
+[
+ {
+  "test": "Marketplace add (isolated CLAUDE_CONFIG_DIR)",
+  "command": "claude plugin marketplace add <repo>",
+  "result": "PASS",
+  "evidence": "Successfully added marketplace: omega-engineering-x10"
+ },
+ {
+  "test": "Install all 12 listed plugins",
+  "command": "claude plugin install <p>@omega-engineering-x10 -y (x12)",
+  "result": "PASS",
+  "evidence": "12/12 'Successfully installed plugin'; ecc reports 2 userConfig options"
+ },
+ {
+  "test": "Loaded component inventory",
+  "command": "claude plugin details <p>@omega-engineering-x10",
+  "result": "PASS",
+  "evidence": "audit/plugin-details/*.txt; counts equal registry (tests/test_omega.py::test_loaded_skill_counts_match_claude_plugin_details)"
+ },
+ {
+  "test": "ECC with hooks disabled",
+  "command": "claude plugin install ecc@omega-engineering-x10 --config hooks_enabled=false --config hook_profile=minimal",
+  "result": "PASS",
+  "evidence": "settings.json stores hooks_enabled=false; ECC scripts/lib/hook-flags.js reads CLAUDE_PLUGIN_OPTION_HOOKS_ENABLED. Hook short-circuit at runtime not separately observed."
+ },
+ {
+  "test": "Skills visible in a live session",
+  "command": "claude -p 'list skills starting omega-core:/vibesec:/graphify:'",
+  "result": "PASS",
+  "evidence": "omega-core:omega-engineering-x10, vibesec:vibesec, graphify:graphify"
+ },
+ {
+  "test": "Router used end-to-end by the model",
+  "command": "claude -p 'Use omega-core:omega-engineering-x10 to route ... password reset ... browser'",
+  "result": "PASS (gap found and fixed)",
+  "evidence": "Model ran omega.py route + doctor, picked superpowers TDD, agent-browser, ui-ux-pro-max, reported agent-browser CLI missing with fix and fallback. Gap: security route not matched for 'password reset'; triggers added + regression test."
+ },
+ {
+  "test": "Requirements discovery avoids unnecessary questioning",
+  "command": "claude -p 'Use omega-core router for: rename parse_date -> parse_iso_date in src/utils.py, 3 call sites, run pytest'",
+  "result": "PASS",
+  "evidence": "Model declined grill-me/brainstorming ('task is fully specified'), chose TDD + verification-before-completion, asked the user nothing"
+ },
+ {
+  "test": "agent-browser real browser session",
+  "command": "agent-browser open/snapshot -i/fill/click/get text/screenshot/close (npm --prefix install, AGENT_BROWSER_EXECUTABLE_PATH=/opt/pw-browsers/chromium, local http server)",
+  "result": "PASS",
+  "evidence": "snapshot refs e1-e3; fill+click produced 'Sent to dev@example.com'; 14,550-byte PNG saved; browser closed"
+ },
+ {
+  "test": "agent-browser CLI-served skills",
+  "command": "agent-browser skills list; skills get core",
+  "result": "PASS",
+  "evidence": "CLI lists exactly the 9 skill-data skills recorded in the registry"
+ },
+ {
+  "test": "graphify code graph",
+  "command": "graphify update . ; graphify explain classify_and_copy ; graphify path main match_rule (uv tool install graphifyy==0.9.94 into scratch)",
+  "result": "PASS",
+  "evidence": "60 nodes, 142 edges, 5 communities; graph.json/graph.html/GRAPH_REPORT.md; explain returned callers/callees. path reported an ambiguous 'main' (3 matches) as designed"
+ },
+ {
+  "test": "graphify semantic extraction (docs/papers/images via subagents)",
+  "command": "/graphify in a session",
+  "result": "NOT RUN",
+  "evidence": "Requires an interactive session dispatching extraction subagents; untested"
+ },
+ {
+  "test": "claude-mem worker from integrated copy",
+  "command": "bun plugins/claude-mem/scripts/worker-service.cjs start/status/stop (isolated HOME and CLAUDE_MEM_DATA_DIR, port 37791)",
+  "result": "PASS",
+  "evidence": "/api/health {status: ok, version: 15.0.1, initialized: true, mcpReady: true}; omega doctor detected it; worker stopped"
+ },
+ {
+  "test": "claude-mem capture + search through hooks",
+  "command": "full session with upstream plugin install",
+  "result": "NOT RUN",
+  "evidence": "Requires installing claude-mem hooks into a session; search endpoint returned an empty body on an empty database, so search behaviour is unverified"
+ },
+ {
+  "test": "find-skills search",
+  "command": "npx -y skills@1.7.4 find react",
+  "result": "BLOCKED (environment)",
+  "evidence": "skills.sh denied by this environment's network proxy (CONNECT 403). The CLI prints 'No skills found' instead of a network error"
+ },
+ {
+  "test": "UI UX Pro Max search from plugin copy",
+  "command": "search.py 'fintech dashboard trustworthy' --domain color; search.py 'saas analytics dashboard' --design-system -p Acme",
+  "result": "PASS",
+  "evidence": "3 palette results; full design-system recommendation printed"
+ },
+ {
+  "test": "ECC rules installer",
+  "command": "scripts/install-ecc-rules.sh common python (temp CLAUDE_CONFIG_DIR), then again",
+  "result": "PASS",
+  "evidence": "installed both; second run skipped existing pack without --force"
+ },
+ {
+  "test": "Reproducible build",
+  "command": "scripts/fetch-sources.sh <fresh dir>; tools/validate.py --sources <fresh dir>",
+  "result": "PASS",
+  "evidence": "10 repos checked out at pinned commits; 3,828 copied files byte-identical"
+ },
+ {
+  "test": "anti-pattern-czar command (relocated from claude-mem .claude/commands)",
+  "command": "claude -p '/anti-pattern-czar:anti-pattern-czar' in a scratch TS project; then bun run on upstream and plugin copies",
+  "result": "PASS",
+  "evidence": "${CLAUDE_PLUGIN_ROOT} resolved to the plugin path in the live session; detector flagged src/b.ts:4 NO_LOGGING_IN_CATCH and exited 1; upstream and plugin copies print identical results"
+ }
+]

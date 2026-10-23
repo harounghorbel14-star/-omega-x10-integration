@@ -1,0 +1,20 @@
+Shell lint script tests
+  [PASS] lint-shell check mode exits successfully with stub tools
+  [PASS] reports changed shell file count
+  [PASS] does not run shfmt in lint mode
+  [PASS] runs ShellCheck
+  [PASS] uses warning severity as the baseline
+  [PASS] allows ShellCheck to follow sourced files
+  [PASS] resolves ShellCheck sources relative to each script
+  [PASS] includes changed extensionless shell shebang file
+  [PASS] includes changed tracked .sh file
+  [PASS] includes untracked shell files by default
+  [PASS] ignores Markdown with shell snippets
+  [PASS] lint-shell --format exits successfully with stub tools
+  [PASS] uses shfmt write mode with --format
+  [PASS] runs ShellCheck after --format
+  [PASS] keeps warning severity after --format
+  [PASS] --all includes tracked extensionless shell shebang file
+  [PASS] --all includes tracked .sh file
+  [PASS] --all ignores untracked shell files
+All shell lint script tests passed

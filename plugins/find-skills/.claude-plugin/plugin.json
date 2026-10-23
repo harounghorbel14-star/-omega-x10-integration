@@ -1,0 +1,19 @@
+{
+  "name": "find-skills",
+  "version": "1.7.4",
+  "description": "Vercel find-skills: discover and install skills from the open agent skills ecosystem via the `npx skills` CLI.",
+  "author": {
+    "name": "Vercel",
+    "url": "https://github.com/vercel-labs/skills"
+  },
+  "homepage": "https://github.com/vercel-labs/skills",
+  "repository": "https://github.com/vercel-labs/skills",
+  "license": "MIT",
+  "keywords": [
+    "omega-engineering-x10",
+    "find-skills"
+  ],
+  "skills": [
+    "./skills/find-skills"
+  ]
+}

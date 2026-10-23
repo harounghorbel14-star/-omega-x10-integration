@@ -1,0 +1,19 @@
+{
+  "name": "graphify",
+  "version": "0.9.94",
+  "description": "Graphify: turn code, docs, papers, images or video into a queryable knowledge graph (/graphify, query, path, explain, MCP, exports). Requires `uv tool install graphifyy`.",
+  "author": {
+    "name": "Safi Shamsi and the Graphify contributors",
+    "url": "https://graphify.com"
+  },
+  "homepage": "https://github.com/Graphify-Labs/graphify",
+  "repository": "https://github.com/Graphify-Labs/graphify",
+  "license": "Apache-2.0",
+  "keywords": [
+    "omega-engineering-x10",
+    "graphify"
+  ],
+  "skills": [
+    "./skills/graphify"
+  ]
+}

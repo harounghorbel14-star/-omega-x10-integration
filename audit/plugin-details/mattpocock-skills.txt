@@ -1,0 +1,46 @@
+mattpocock-skills 1.3.1
+  Description: Matt Pocock's agent skills for real engineering: grilling, spec/ticket flows, TDD, code review, domain modelling and more. Plug-and-play, not vibe coding.
+  Source: mattpocock-skills@omega-engineering-x10
+
+Component inventory
+  Skills (27)  ask-matt, code-review, codebase-design, diagnosing-bugs, domain-modeling, grill-me, grill-with-docs, grilling, handoff, implement, implement-spec, improve-codebase-architecture, pr, prototype, research, retro, setup-matt-pocock-skills, tdd, teach, to-questionnaire, to-spec, to-tickets, triage, wait-what, wayfinder, wizard, writing-for-agents
+  Agents (0)
+  Hooks (0)
+  MCP servers (0)
+  LSP servers (0)
+
+Projected token cost
+  Always-on:   ~1,651 tok   added to every session
+
+Per-component (rounded)
+  component                      always-on  on-invoke
+  ask-matt                             ~40      ~4.2k
+  diagnosing-bugs                      ~70      ~2.9k
+  grill-with-docs                      ~50        ~20
+  triage                               ~60      ~2.2k
+  improve-codebase-architecture        ~60        ~2k
+  setup-matt-pocock-skills             ~80      ~2.3k
+  tdd                                  ~60      ~1.2k
+  to-spec                              ~60       ~960
+  to-tickets                          ~100      ~1.9k
+  wayfinder                            ~80      ~4.1k
+  implement                            ~30       ~170
+  implement-spec                       ~30       ~900
+  prototype                            ~70       ~920
+  research                             ~90       ~180
+  domain-modeling                      ~70        ~1k
+  codebase-design                     ~110        ~2k
+  code-review                         ~160      ~2.1k
+  pr                                  < 20      ~1.3k
+  retro                                ~20      ~1.5k
+  wizard                              ~120      ~1.3k
+  grill-me                             ~30       < 20
+  grilling                             ~60       ~630
+  handoff                              ~40       ~250
+  teach                                ~30      ~3.2k
+  to-questionnaire                     ~40       ~930
+  wait-what                            ~30        ~90
+  writing-for-agents                   ~50      ~3.6k
+
+  On-invoke cost is paid each time a skill or agent fires.
+  Token counts are estimates and may differ from actual usage.

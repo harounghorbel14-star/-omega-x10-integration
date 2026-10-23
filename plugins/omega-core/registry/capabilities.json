@@ -1,0 +1,1865 @@
+{
+ "topics": {
+  "agents-orchestration": [
+   "claude-mem:do",
+   "claude-mem:weekly-digests",
+   "ecc:agentic-os",
+   "ecc:autonomous-agent-harness",
+   "ecc:autonomous-loops",
+   "ecc:blueprint",
+   "ecc:claude-devfleet",
+   "ecc:council",
+   "ecc:council-multi-model",
+   "ecc:dmux-workflows",
+   "ecc:docker-patterns",
+   "ecc:hexagonal-architecture",
+   "ecc:iterative-retrieval",
+   "ecc:marketing-campaign",
+   "ecc:orch-add-feature",
+   "ecc:orch-build-mvp",
+   "ecc:orch-change-feature",
+   "ecc:orch-fix-defect",
+   "ecc:orch-pipeline",
+   "ecc:orch-refine-code",
+   "ecc:plan-orchestrate",
+   "ecc:ralphinho-rfc-pipeline",
+   "ecc:santa-method",
+   "ecc:skill-stocktake",
+   "ecc:team-agent-orchestration",
+   "ecc:team-builder",
+   "ecc:tinystruct-patterns",
+   "mattpocock-skills-extras:chief-of-staff",
+   "superpowers:dispatching-parallel-agents",
+   "superpowers:executing-plans",
+   "superpowers:subagent-driven-development"
+  ],
+  "app-replication": [
+   "agent-browser skills get derive-client",
+   "ecc:mysql-patterns",
+   "replica-skill:replica-architect",
+   "replica-skill:replica-backend",
+   "replica-skill:replica-brand",
+   "replica-skill:replica-build",
+   "replica-skill:replica-deploy",
+   "replica-skill:replica-design",
+   "replica-skill:replica-diff",
+   "replica-skill:replica-entrepreneur",
+   "replica-skill:replica-launch",
+   "replica-skill:replica-recon",
+   "replica-skill:replica-test"
+  ],
+  "architecture-repo-analysis": [
+   "claude-mem:learn-codebase",
+   "claude-mem:oh-my-issues",
+   "claude-mem:pathfinder",
+   "claude-mem:smart-explore",
+   "ecc:agent-architecture-audit",
+   "ecc:agentic-os",
+   "ecc:ai-first-engineering",
+   "ecc:android-clean-architecture",
+   "ecc:angular-developer",
+   "ecc:api-connector-builder",
+   "ecc:architecture-decision-records",
+   "ecc:autonomous-loops",
+   "ecc:backend-patterns",
+   "ecc:brownfield-retrospective",
+   "ecc:code-tour",
+   "ecc:codebase-onboarding",
+   "ecc:context-and-decisions",
+   "ecc:dart-flutter-patterns",
+   "ecc:design-system",
+   "ecc:dev-team",
+   "ecc:django-patterns",
+   "ecc:flutter-dart-code-review",
+   "ecc:hexagonal-architecture",
+   "ecc:inherit-legacy-style",
+   "ecc:laravel-patterns",
+   "ecc:ml-adoption-playbook",
+   "ecc:nestjs-patterns",
+   "ecc:pytorch-patterns",
+   "ecc:quarkus-patterns",
+   "ecc:recsys-pipeline-architect",
+   "ecc:springboot-patterns",
+   "ecc:swiftui-patterns",
+   "ecc:tinystruct-patterns",
+   "ecc:vue-patterns",
+   "graphify:graphify",
+   "mattpocock-skills-extras:setup-ts-deep-modules",
+   "mattpocock-skills:codebase-design",
+   "mattpocock-skills:domain-modeling",
+   "mattpocock-skills:improve-codebase-architecture",
+   "replica-skill:replica-architect",
+   "replica-skill:replica-brand",
+   "replica-skill:replica-design",
+   "ui-ux-pro-max:design-system"
+  ],
+  "browser-automation": [
+   "agent-browser skills get agentcore",
+   "agent-browser skills get core",
+   "agent-browser skills get derive-client",
+   "agent-browser skills get dogfood",
+   "agent-browser skills get electron",
+   "agent-browser skills get protected-vercel-deployments",
+   "agent-browser skills get slack",
+   "agent-browser skills get vercel-sandbox",
+   "agent-browser:agent-browser",
+   "ecc:benchmark",
+   "ecc:blender-motion-state-inspection",
+   "ecc:browser-qa",
+   "ecc:data-scraper-agent",
+   "ecc:e2e-testing",
+   "ecc:esign-field-placement",
+   "ecc:healthcare-phi-compliance",
+   "ecc:plan-canvas",
+   "ecc:react-testing",
+   "ecc:ui-demo",
+   "ecc:ui-to-vue",
+   "replica-skill:replica-diff",
+   "replica-skill:replica-launch",
+   "replica-skill:replica-recon",
+   "replica-skill:replica-test",
+   "ui-ux-pro-max:design"
+  ],
+  "code-review": [
+   "ecc:codehealth-mcp",
+   "ecc:coding-standards",
+   "ecc:design-system",
+   "ecc:dev-team",
+   "ecc:flutter-dart-code-review",
+   "ecc:frontend-a11y",
+   "ecc:growth-log",
+   "ecc:intent-driven-development",
+   "ecc:prediction-market-risk-review",
+   "mattpocock-skills:code-review",
+   "superpowers:receiving-code-review",
+   "superpowers:requesting-code-review"
+  ],
+  "debugging": [
+   "agent-browser skills get core",
+   "agent-browser skills get dogfood",
+   "agent-browser:agent-browser",
+   "claude-mem:oh-my-issues",
+   "ecc:agent-architecture-audit",
+   "ecc:agent-introspection-debugging",
+   "ecc:click-path-audit",
+   "ecc:cpp-testing",
+   "ecc:data-throughput-accelerator",
+   "ecc:deepseek-harness-setup",
+   "ecc:finance-billing-ops",
+   "ecc:growth-log",
+   "ecc:homelab-pihole-dns",
+   "ecc:hookify-rules",
+   "ecc:intent-driven-development",
+   "ecc:kotlin-coroutines-flows",
+   "ecc:kubernetes-patterns",
+   "ecc:mailtrap-email-integration",
+   "ecc:mcp-server-patterns",
+   "ecc:network-bgp-diagnostics",
+   "ecc:network-interface-health",
+   "ecc:nextjs-turbopack",
+   "ecc:nuxt4-patterns",
+   "ecc:prisma-patterns",
+   "ecc:product-lens",
+   "ecc:prompt-optimizer",
+   "ecc:quality-nonconformance",
+   "ecc:terminal-opener",
+   "ecc:terminal-ops",
+   "mattpocock-skills:diagnosing-bugs",
+   "superpowers:diagnosing-superpowers",
+   "superpowers:systematic-debugging"
+  ],
+  "deployment-release": [
+   "agent-browser skills get protected-vercel-deployments",
+   "agent-browser skills get vercel-sandbox",
+   "claude-mem:build-and-release",
+   "claude-mem:childhood",
+   "claude-mem:release",
+   "claude-mem:version-bump",
+   "ecc:agent-security-hardening",
+   "ecc:benchmark",
+   "ecc:brand-voice",
+   "ecc:browser-qa",
+   "ecc:canary-watch",
+   "ecc:change-impact",
+   "ecc:database-migrations",
+   "ecc:deployment-patterns",
+   "ecc:django-security",
+   "ecc:django-verification",
+   "ecc:docker-patterns",
+   "ecc:e2e-testing",
+   "ecc:enterprise-agent-ops",
+   "ecc:github-ops",
+   "ecc:healthcare-eval-harness",
+   "ecc:hermes-imports",
+   "ecc:kubernetes-patterns",
+   "ecc:laravel-security",
+   "ecc:laravel-verification",
+   "ecc:marketing-campaign",
+   "ecc:mle-workflow",
+   "ecc:network-config-validation",
+   "ecc:opensource-pipeline",
+   "ecc:product-lens",
+   "ecc:production-audit",
+   "ecc:quarkus-verification",
+   "ecc:recursive-decision-ledger",
+   "ecc:safety-guard",
+   "ecc:santa-method",
+   "ecc:search-first",
+   "ecc:springboot-verification",
+   "ecc:terminal-opener",
+   "ecc:tinystruct-patterns",
+   "ecc:uncloud",
+   "replica-skill:replica-brand",
+   "replica-skill:replica-deploy",
+   "replica-skill:replica-launch",
+   "superpowers:writing-skills"
+  ],
+  "documentation-writing": [
+   "claude-mem:make-plan",
+   "ecc:architecture-decision-records",
+   "ecc:article-writing",
+   "ecc:brand-voice",
+   "ecc:change-impact",
+   "ecc:cisco-ios-patterns",
+   "ecc:clickhouse-io",
+   "ecc:competitive-report-structure",
+   "ecc:cpp-coding-standards",
+   "ecc:cpp-testing",
+   "ecc:csharp-testing",
+   "ecc:customs-trade-compliance",
+   "ecc:dart-flutter-patterns",
+   "ecc:database-migrations",
+   "ecc:defi-amm-security",
+   "ecc:django-tdd",
+   "ecc:docs-governance",
+   "ecc:documentation-lookup",
+   "ecc:dotnet-patterns",
+   "ecc:e2e-testing",
+   "ecc:ecc-guide",
+   "ecc:ecc-recipes",
+   "ecc:fsharp-testing",
+   "ecc:git-workflow",
+   "ecc:golang-patterns",
+   "ecc:golang-testing",
+   "ecc:google-workspace-ops",
+   "ecc:hookify-rules",
+   "ecc:inherit-legacy-style",
+   "ecc:java-coding-standards",
+   "ecc:kotlin-coroutines-flows",
+   "ecc:kotlin-patterns",
+   "ecc:kotlin-testing",
+   "ecc:kubernetes-patterns",
+   "ecc:laravel-tdd",
+   "ecc:living-docs-governance",
+   "ecc:loop-design-check",
+   "ecc:mcp-server-patterns",
+   "ecc:perl-patterns",
+   "ecc:perl-testing",
+   "ecc:prisma-patterns",
+   "ecc:python-patterns",
+   "ecc:python-testing",
+   "ecc:pytorch-patterns",
+   "ecc:react-patterns",
+   "ecc:react-performance",
+   "ecc:react-testing",
+   "ecc:rust-patterns",
+   "ecc:rust-testing",
+   "ecc:scientific-thinking-scholar-evaluation",
+   "ecc:search-first",
+   "ecc:tdd-workflow",
+   "ecc:token-card",
+   "ecc:visa-doc-translate",
+   "ecc:windows-desktop-e2e",
+   "graphify:graphify",
+   "mattpocock-skills-extras:writing-beats",
+   "mattpocock-skills-extras:writing-fragments",
+   "mattpocock-skills-extras:writing-shape",
+   "mattpocock-skills:domain-modeling",
+   "mattpocock-skills:grill-with-docs",
+   "mattpocock-skills:pr",
+   "mattpocock-skills:research",
+   "mattpocock-skills:setup-matt-pocock-skills",
+   "mattpocock-skills:writing-for-agents",
+   "replica-skill:replica-recon",
+   "superpowers:test-driven-development",
+   "superpowers:writing-plans",
+   "superpowers:writing-skills",
+   "ui-ux-pro-max:slides"
+  ],
+  "git-workflow": [
+   "claude-mem:babysit",
+   "claude-mem:childhood",
+   "claude-mem:standup",
+   "claude-mem:version-bump",
+   "ecc:benchmark",
+   "ecc:blueprint",
+   "ecc:browser-qa",
+   "ecc:claude-devfleet",
+   "ecc:code-tour",
+   "ecc:codehealth-mcp",
+   "ecc:conventional-commit-review",
+   "ecc:design-system",
+   "ecc:django-verification",
+   "ecc:ecc-tools-cost-audit",
+   "ecc:git-workflow",
+   "ecc:github-ops",
+   "ecc:knowledge-ops",
+   "ecc:nanoclaw-repl",
+   "ecc:orch-add-feature",
+   "ecc:orch-build-mvp",
+   "ecc:orch-change-feature",
+   "ecc:orch-fix-defect",
+   "ecc:orch-pipeline",
+   "ecc:orch-refine-code",
+   "ecc:parallel-execution-optimizer",
+   "ecc:project-flow-ops",
+   "ecc:quarkus-verification",
+   "ecc:ralphinho-rfc-pipeline",
+   "ecc:repo-scan",
+   "ecc:safety-guard",
+   "ecc:skill-host-compat",
+   "ecc:springboot-verification",
+   "ecc:team-agent-orchestration",
+   "ecc:token-card",
+   "ecc:verification-loop",
+   "mattpocock-skills-extras:git-guardrails-claude-code",
+   "mattpocock-skills-extras:setup-pre-commit",
+   "mattpocock-skills:code-review",
+   "mattpocock-skills:pr",
+   "superpowers:finishing-a-development-branch",
+   "superpowers:using-git-worktrees",
+   "superpowers:verification-before-completion"
+  ],
+  "performance": [
+   "claude-mem:smart-explore",
+   "ecc:agent-harness-construction",
+   "ecc:backend-patterns",
+   "ecc:benchmark",
+   "ecc:benchmark-methodology",
+   "ecc:benchmark-optimization-loop",
+   "ecc:brand-voice",
+   "ecc:browser-qa",
+   "ecc:canary-watch",
+   "ecc:carrier-relationship-management",
+   "ecc:clickhouse-io",
+   "ecc:competitive-platform-analysis",
+   "ecc:competitive-report-structure",
+   "ecc:compose-multiplatform-patterns",
+   "ecc:configure-ecc",
+   "ecc:connections-optimizer",
+   "ecc:cost-aware-llm-pipeline",
+   "ecc:customs-trade-compliance",
+   "ecc:data-throughput-accelerator",
+   "ecc:deepseek-harness-setup",
+   "ecc:ecc-guide",
+   "ecc:ecc-recipes",
+   "ecc:energy-procurement",
+   "ecc:eval-harness",
+   "ecc:flutter-dart-code-review",
+   "ecc:frontend-patterns",
+   "ecc:golang-testing",
+   "ecc:inventory-demand-planning",
+   "ecc:jpa-patterns",
+   "ecc:latency-critical-systems",
+   "ecc:motion-foundations",
+   "ecc:mybatis-patterns",
+   "ecc:nuxt4-patterns",
+   "ecc:parallel-execution-optimizer",
+   "ecc:postgres-patterns",
+   "ecc:prisma-patterns",
+   "ecc:production-scheduling",
+   "ecc:prompt-caching-strategy",
+   "ecc:prompt-optimizer",
+   "ecc:react-performance",
+   "ecc:recursive-decision-ledger",
+   "ecc:regex-vs-llm-structured-text",
+   "ecc:seo",
+   "ecc:swiftui-patterns",
+   "ecc:vite-patterns",
+   "mattpocock-skills:diagnosing-bugs",
+   "ui-ux-pro-max:ui-ux-pro-max"
+  ],
+  "planning": [
+   "claude-mem:build",
+   "claude-mem:design-is",
+   "claude-mem:do",
+   "claude-mem:make-plan",
+   "claude-mem:oh-my-issues",
+   "claude-mem:pathfinder",
+   "claude-mem:standup",
+   "ecc:agent-sort",
+   "ecc:agentic-engineering",
+   "ecc:blueprint",
+   "ecc:brownfield-retrospective",
+   "ecc:cisco-ios-patterns",
+   "ecc:claude-devfleet",
+   "ecc:customer-billing-ops",
+   "ecc:database-migrations",
+   "ecc:deep-research",
+   "ecc:docker-patterns",
+   "ecc:google-workspace-ops",
+   "ecc:homelab-network-readiness",
+   "ecc:homelab-network-setup",
+   "ecc:inventory-demand-planning",
+   "ecc:investor-materials",
+   "ecc:ito-baskets",
+   "ecc:loop-design-check",
+   "ecc:marketing-campaign",
+   "ecc:master-agreement-generator",
+   "ecc:orch-add-feature",
+   "ecc:orch-build-mvp",
+   "ecc:orch-change-feature",
+   "ecc:orch-pipeline",
+   "ecc:plan-canvas",
+   "ecc:plan-orchestrate",
+   "ecc:prediction-market-risk-review",
+   "ecc:product-capability",
+   "ecc:ralphinho-rfc-pipeline",
+   "ecc:scientific-thinking-literature-review",
+   "ecc:seo",
+   "ecc:taste-application",
+   "ecc:taste-distillation",
+   "ecc:tasteforge-video",
+   "ecc:terminal-opener",
+   "mattpocock-skills:code-review",
+   "mattpocock-skills:grill-me",
+   "mattpocock-skills:grill-with-docs",
+   "mattpocock-skills:grilling",
+   "mattpocock-skills:implement",
+   "mattpocock-skills:implement-spec",
+   "mattpocock-skills:to-spec",
+   "mattpocock-skills:to-tickets",
+   "mattpocock-skills:wayfinder",
+   "replica-skill:replica-architect",
+   "replica-skill:replica-entrepreneur",
+   "replica-skill:replica-launch",
+   "replica-skill:replica-test",
+   "superpowers:brainstorming",
+   "superpowers:diagnosing-superpowers",
+   "superpowers:executing-plans",
+   "superpowers:subagent-driven-development",
+   "superpowers:using-git-worktrees",
+   "superpowers:writing-plans"
+  ],
+  "requirements-discovery": [
+   "ecc:brand-discovery",
+   "ecc:hipaa-compliance",
+   "ecc:intent-driven-development",
+   "ecc:jira-integration",
+   "ecc:python-testing",
+   "ecc:tasteforge-video",
+   "ecc:test-collaboration",
+   "mattpocock-skills-extras:loop-me",
+   "mattpocock-skills:grill-me",
+   "mattpocock-skills:grill-with-docs",
+   "mattpocock-skills:grilling",
+   "mattpocock-skills:improve-codebase-architecture",
+   "mattpocock-skills:to-questionnaire",
+   "mattpocock-skills:to-spec",
+   "mattpocock-skills:triage",
+   "mattpocock-skills:wait-what",
+   "superpowers:brainstorming",
+   "superpowers:requesting-code-review",
+   "superpowers:using-superpowers",
+   "superpowers:writing-plans"
+  ],
+  "security": [
+   "agent-browser skills get protected-vercel-deployments",
+   "claude-mem:how-it-works",
+   "ecc:agent-security-hardening",
+   "ecc:angular-developer",
+   "ecc:defi-amm-security",
+   "ecc:django-security",
+   "ecc:django-verification",
+   "ecc:docker-patterns",
+   "ecc:dotnet-patterns",
+   "ecc:fastapi-patterns",
+   "ecc:flutter-dart-code-review",
+   "ecc:github-ops",
+   "ecc:hipaa-compliance",
+   "ecc:intent-driven-development",
+   "ecc:kubernetes-patterns",
+   "ecc:laravel-security",
+   "ecc:laravel-verification",
+   "ecc:llm-trading-agent-security",
+   "ecc:nasiko-control-plane",
+   "ecc:network-config-validation",
+   "ecc:opensource-pipeline",
+   "ecc:perl-security",
+   "ecc:postgres-patterns",
+   "ecc:quarkus-security",
+   "ecc:quarkus-verification",
+   "ecc:react-native-patterns",
+   "ecc:security-bounty-hunter",
+   "ecc:security-review",
+   "ecc:security-scan",
+   "ecc:springboot-security",
+   "ecc:springboot-verification",
+   "ecc:swift-protocol-di-testing",
+   "ecc:verification-loop",
+   "mattpocock-skills:wizard",
+   "replica-skill:replica-backend",
+   "vibesec:vibesec"
+  ],
+  "session-memory-handoff": [
+   "agent-browser skills get agentcore",
+   "agent-browser skills get core",
+   "agent-browser skills get vercel-sandbox",
+   "claude-mem-cowork:mem-search",
+   "claude-mem:ccs-align",
+   "claude-mem:cloud-sync",
+   "claude-mem:handoff",
+   "claude-mem:how-it-works",
+   "claude-mem:mem-search",
+   "claude-mem:timeline-report",
+   "claude-mem:weekly-digests",
+   "ecc:agent-architecture-audit",
+   "ecc:agent-security-hardening",
+   "ecc:agentic-os",
+   "ecc:autonomous-agent-harness",
+   "ecc:blueprint",
+   "ecc:brand-discovery",
+   "ecc:ck",
+   "ecc:config-gc",
+   "ecc:continuous-learning",
+   "ecc:continuous-learning-v2",
+   "ecc:cost-tracking",
+   "ecc:deepseek-harness-setup",
+   "ecc:dev-team",
+   "ecc:dmux-workflows",
+   "ecc:ecc-guide",
+   "ecc:esign-field-placement",
+   "ecc:eval-harness",
+   "ecc:growth-log",
+   "ecc:knowledge-ops",
+   "ecc:living-docs-governance",
+   "ecc:nanoclaw-repl",
+   "ecc:skill-comply",
+   "ecc:strategic-compact",
+   "ecc:swift-actor-persistence",
+   "ecc:terminal-opener",
+   "ecc:token-budget-advisor",
+   "ecc:token-card",
+   "ecc:unified-memory",
+   "ecc:verification-loop",
+   "ecc:videodb",
+   "ecc:x-api",
+   "mattpocock-skills-extras:chief-of-staff",
+   "mattpocock-skills-extras:claude-handoff",
+   "mattpocock-skills:handoff",
+   "mattpocock-skills:retro",
+   "mattpocock-skills:wayfinder",
+   "superpowers:diagnosing-superpowers",
+   "superpowers:executing-plans",
+   "superpowers:subagent-driven-development"
+  ],
+  "skill-authoring-discovery": [
+   "claude-mem:mode-creator",
+   "find-skills:find-skills",
+   "omega-core:omega-engineering-x10",
+   "superpowers:writing-skills"
+  ],
+  "tdd-testing": [
+   "agent-browser:agent-browser",
+   "ecc:agent-security-hardening",
+   "ecc:ai-regression-testing",
+   "ecc:angular-developer",
+   "ecc:brownfield-retrospective",
+   "ecc:browser-qa",
+   "ecc:cpp-testing",
+   "ecc:csharp-testing",
+   "ecc:dart-flutter-patterns",
+   "ecc:django-celery",
+   "ecc:django-tdd",
+   "ecc:docker-patterns",
+   "ecc:e2e-testing",
+   "ecc:fastapi-patterns",
+   "ecc:fsharp-testing",
+   "ecc:golang-testing",
+   "ecc:kotlin-coroutines-flows",
+   "ecc:kotlin-ktor-patterns",
+   "ecc:kotlin-testing",
+   "ecc:laravel-tdd",
+   "ecc:mailtrap-email-integration",
+   "ecc:orch-add-feature",
+   "ecc:orch-pipeline",
+   "ecc:osint-investigation",
+   "ecc:perl-testing",
+   "ecc:product-lens",
+   "ecc:python-testing",
+   "ecc:quarkus-tdd",
+   "ecc:react-testing",
+   "ecc:rust-testing",
+   "ecc:springboot-tdd",
+   "ecc:swift-protocol-di-testing",
+   "ecc:tdd-workflow",
+   "ecc:test-collaboration",
+   "ecc:tinystruct-patterns",
+   "ecc:verification-loop",
+   "ecc:windows-desktop-e2e",
+   "mattpocock-skills-extras:setup-pre-commit",
+   "mattpocock-skills:tdd",
+   "replica-skill:replica-diff",
+   "replica-skill:replica-test",
+   "superpowers:test-driven-development"
+  ],
+  "ui-ux-design": [
+   "agent-browser skills get dogfood",
+   "agent-browser skills get webmcp-gen",
+   "claude-mem:design-is",
+   "claude-mem:wowerpoint",
+   "ecc:accessibility",
+   "ecc:angular-developer",
+   "ecc:article-writing",
+   "ecc:brand-discovery",
+   "ecc:brand-voice",
+   "ecc:browser-qa",
+   "ecc:click-path-audit",
+   "ecc:coding-standards",
+   "ecc:compose-multiplatform-patterns",
+   "ecc:contract-first",
+   "ecc:design-system",
+   "ecc:flutter-dart-code-review",
+   "ecc:frontend-a11y",
+   "ecc:frontend-design-direction",
+   "ecc:frontend-patterns",
+   "ecc:frontend-slides",
+   "ecc:google-workspace-ops",
+   "ecc:healthcare-emr-patterns",
+   "ecc:liquid-glass-design",
+   "ecc:make-interfaces-feel-better",
+   "ecc:motion-foundations",
+   "ecc:motion-patterns",
+   "ecc:orch-add-feature",
+   "ecc:react-native-patterns",
+   "ecc:react-patterns",
+   "ecc:react-testing",
+   "ecc:santa-method",
+   "ecc:swiftui-patterns",
+   "ecc:ui-demo",
+   "ecc:ui-to-vue",
+   "ecc:windows-desktop-e2e",
+   "mattpocock-skills:prototype",
+   "replica-skill:replica-brand",
+   "replica-skill:replica-deploy",
+   "replica-skill:replica-design",
+   "replica-skill:replica-diff",
+   "replica-skill:replica-launch",
+   "ui-ux-pro-max:banner-design",
+   "ui-ux-pro-max:brand",
+   "ui-ux-pro-max:design",
+   "ui-ux-pro-max:design-system",
+   "ui-ux-pro-max:slides",
+   "ui-ux-pro-max:ui-styling",
+   "ui-ux-pro-max:ui-ux-pro-max"
+  ]
+ },
+ "agents": [
+  {
+   "name": "a11y-architect",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/a11y-architect.md",
+   "description": "Accessibility Architect specializing in WCAG 2.2 compliance for Web and Native platforms. Use PROACTIVELY when designing UI components, establishing design systems, or auditing code for inclusive user experiences."
+  },
+  {
+   "name": "agent-evaluator",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/agent-evaluator.md",
+   "description": "Evaluates agent output against 5-axis quality rubric (accuracy, completeness, clarity, actionability, conciseness). Use after any non-trivial task when the user wants a quality assessment, or when the agent-self-evaluation skill is active. Produces structured scorecard with evidence and improvement suggestions."
+  },
+  {
+   "name": "architect",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/architect.md",
+   "description": "Software architecture specialist for system design, scalability, and technical decision-making. Use PROACTIVELY when planning new features, refactoring large systems, or making architectural decisions."
+  },
+  {
+   "name": "bengali-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/bengali-reviewer.md",
+   "description": "Reviews code handling Bengali (Bangla) text for Unicode correctness, proper normalization, script-aware processing, and internationalization best practices. Use when code processes, displays, or stores Bengali text."
+  },
+  {
+   "name": "build-error-resolver",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/build-error-resolver.md",
+   "description": "Build and TypeScript error resolution specialist. Use PROACTIVELY when build fails or type errors occur. Fixes build/type errors only with minimal diffs, no architectural edits. Focuses on getting the build green quickly."
+  },
+  {
+   "name": "chief-of-staff",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/chief-of-staff.md",
+   "description": "Personal communication chief of staff that triages email, Slack, LINE, and Messenger. Classifies messages into 4 tiers (skip/info_only/meeting_info/action_required), generates draft replies, and enforces post-send follow-through via hooks. Use when managing multi-channel communication workflows."
+  },
+  {
+   "name": "code-architect",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/code-architect.md",
+   "description": "Designs feature architectures by analyzing existing codebase patterns and conventions, then providing implementation blueprints with concrete files, interfaces, data flow, and build order."
+  },
+  {
+   "name": "code-explorer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/code-explorer.md",
+   "description": "Deeply analyzes existing codebase features by tracing execution paths, mapping architecture layers, and documenting dependencies to inform new development."
+  },
+  {
+   "name": "code-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/code-reviewer.md",
+   "description": "Expert code review specialist. Proactively reviews code for quality, security, and maintainability. Use immediately after writing or modifying code. MUST BE USED for all code changes."
+  },
+  {
+   "name": "code-simplifier",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/code-simplifier.md",
+   "description": "Simplifies and refines code for clarity, consistency, and maintainability while preserving behavior. Focus on recently modified code unless instructed otherwise."
+  },
+  {
+   "name": "comment-analyzer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/comment-analyzer.md",
+   "description": "Analyze code comments for accuracy, completeness, maintainability, and comment rot risk."
+  },
+  {
+   "name": "commit-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/commit-reviewer.md",
+   "description": "Reviews a staged diff and drafts a Conventional Commits-compliant message matching the repository's actual history norms. Use before committing, or when asked to write or check a commit message."
+  },
+  {
+   "name": "conversation-analyzer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/conversation-analyzer.md",
+   "description": "Use this agent when analyzing conversation transcripts to find behaviors worth preventing with hooks. Triggered by /hookify without arguments."
+  },
+  {
+   "name": "cpp-build-resolver",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/cpp-build-resolver.md",
+   "description": "C++ build, CMake, and compilation error resolution specialist. Fixes build errors, linker issues, and template errors with minimal changes. Use when C++ builds fail."
+  },
+  {
+   "name": "cpp-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/cpp-reviewer.md",
+   "description": "Expert C++ code reviewer specializing in memory safety, modern C++ idioms, concurrency, and performance. Use for all C++ code changes. MUST BE USED for C++ projects."
+  },
+  {
+   "name": "csharp-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/csharp-reviewer.md",
+   "description": "Expert C# code reviewer specializing in .NET conventions, async patterns, security, nullable reference types, and performance. Use for all C# code changes. MUST BE USED for C# projects."
+  },
+  {
+   "name": "dart-build-resolver",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/dart-build-resolver.md",
+   "description": "Dart/Flutter build, analysis, and dependency error resolution specialist. Fixes `dart analyze` errors, Flutter compilation failures, pub dependency conflicts, and build_runner issues with minimal, surgical changes. Use when Dart/Flutter builds fail."
+  },
+  {
+   "name": "database-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/database-reviewer.md",
+   "description": "PostgreSQL database specialist for query optimization, schema design, security, and performance. Use PROACTIVELY when writing SQL, creating migrations, designing schemas, or troubleshooting database performance. Incorporates Supabase best practices."
+  },
+  {
+   "name": "django-build-resolver",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/django-build-resolver.md",
+   "description": "Django/Python build, migration, and dependency error resolution specialist. Fixes pip/Poetry errors, migration conflicts, import errors, Django configuration issues, and collectstatic failures with minimal changes. Use when Django setup or startup fails."
+  },
+  {
+   "name": "django-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/django-reviewer.md",
+   "description": "Expert Django code reviewer specializing in ORM correctness, DRF patterns, migration safety, security misconfigurations, and production-grade Django practices. Use for all Django code changes. MUST BE USED for Django projects."
+  },
+  {
+   "name": "doc-updater",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/doc-updater.md",
+   "description": "Documentation and codemap specialist. Use PROACTIVELY for updating codemaps and documentation. Generates docs/CODEMAPS/*, updates READMEs and guides. Backs the /update-codemaps and /update-docs commands."
+  },
+  {
+   "name": "docs-lookup",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/docs-lookup.md",
+   "description": "When the user asks how to use a library, framework, or API or needs up-to-date code examples, use Context7 MCP to fetch current documentation and return answers with examples. Invoke for docs/API/setup questions."
+  },
+  {
+   "name": "e2e-runner",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/e2e-runner.md",
+   "description": "End-to-end testing specialist using Vercel Agent Browser (preferred) with Playwright fallback. Use PROACTIVELY for generating, maintaining, and running E2E tests. Manages test journeys, quarantines flaky tests, uploads artifacts (screenshots, videos, traces), and ensures critical user flows work."
+  },
+  {
+   "name": "fastapi-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/fastapi-reviewer.md",
+   "description": "Reviews FastAPI applications for async correctness, dependency injection, Pydantic schemas, security, OpenAPI quality, testing, and production readiness."
+  },
+  {
+   "name": "flutter-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/flutter-reviewer.md",
+   "description": "Flutter and Dart code reviewer. Reviews Flutter code for widget best practices, state management patterns, Dart idioms, performance pitfalls, accessibility, and clean architecture violations. Library-agnostic \u2014 works with any state management solution and tooling."
+  },
+  {
+   "name": "fsharp-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/fsharp-reviewer.md",
+   "description": "Expert F# code reviewer specializing in functional idioms, type safety, pattern matching, computation expressions, and performance. Use for all F# code changes. MUST BE USED for F# projects."
+  },
+  {
+   "name": "gan-evaluator",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/gan-evaluator.md",
+   "description": "GAN Harness \u2014 Evaluator agent. Tests the live running application via Playwright, scores against rubric, and provides actionable feedback to the Generator."
+  },
+  {
+   "name": "gan-generator",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/gan-generator.md",
+   "description": "GAN Harness \u2014 Generator agent. Implements features according to the spec, reads evaluator feedback, and iterates until quality threshold is met."
+  },
+  {
+   "name": "gan-planner",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/gan-planner.md",
+   "description": "GAN Harness \u2014 Planner agent. Expands a one-line prompt into a full product specification with features, sprints, evaluation criteria, and design direction."
+  },
+  {
+   "name": "go-build-resolver",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/go-build-resolver.md",
+   "description": "Go build, vet, and compilation error resolution specialist. Fixes build errors, go vet issues, and linter warnings with minimal changes. Use when Go builds fail."
+  },
+  {
+   "name": "go-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/go-reviewer.md",
+   "description": "Expert Go code reviewer specializing in idiomatic Go, concurrency patterns, error handling, and performance. Use for all Go code changes. MUST BE USED for Go projects."
+  },
+  {
+   "name": "harmonyos-app-resolver",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/harmonyos-app-resolver.md",
+   "description": "HarmonyOS application development expert specializing in ArkTS and ArkUI. Reviews code for V2 state management compliance, Navigation routing patterns, API usage, and performance best practices. Use for HarmonyOS/OpenHarmony projects."
+  },
+  {
+   "name": "harness-optimizer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/harness-optimizer.md",
+   "description": "Improve local agent-harness configuration reliability and cost using eval-driven grading (pass@k/pass^k) derived from the eval-harness skill."
+  },
+  {
+   "name": "healthcare-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/healthcare-reviewer.md",
+   "description": "Reviews healthcare application code for clinical safety, CDSS accuracy, PHI compliance, and medical data integrity. Specialized for EMR/EHR, clinical decision support, and health information systems."
+  },
+  {
+   "name": "homelab-architect",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/homelab-architect.md",
+   "description": "Designs home and small-lab network plans from hardware inventory, goals, and operator experience level, with safe staged changes and rollback guidance."
+  },
+  {
+   "name": "java-build-resolver",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/java-build-resolver.md",
+   "description": "Java/Maven/Gradle build, compilation, and dependency error resolution specialist. Automatically detects Spring Boot or Quarkus and applies framework-specific fixes. Fixes build errors, Java compiler errors, and Maven/Gradle issues with minimal changes. Use when Java builds fail."
+  },
+  {
+   "name": "java-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/java-reviewer.md",
+   "description": "Expert Java code reviewer for Spring Boot and Quarkus projects. Automatically detects the framework and applies the appropriate review rules. Covers layered architecture, JPA/Panache, MongoDB, security, and concurrency. MUST BE USED for all Java code changes."
+  },
+  {
+   "name": "kotlin-build-resolver",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/kotlin-build-resolver.md",
+   "description": "Kotlin/Gradle build, compilation, and dependency error resolution specialist. Fixes build errors, Kotlin compiler errors, and Gradle issues with minimal changes. Use when Kotlin builds fail."
+  },
+  {
+   "name": "kotlin-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/kotlin-reviewer.md",
+   "description": "Kotlin and Android/KMP code reviewer. Reviews Kotlin code for idiomatic patterns, coroutine safety, Compose best practices, clean architecture violations, and common Android pitfalls."
+  },
+  {
+   "name": "loop-operator",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/loop-operator.md",
+   "description": "Operate autonomous agent loops, monitor progress, and intervene safely when loops stall."
+  },
+  {
+   "name": "marketing-agent",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/marketing-agent.md",
+   "description": "Marketing strategist and copywriter for campaign planning, audience research, positioning, copy creation, and content review. Covers landing pages, email sequences, social posts, ad copy, short-form video scripts, and content calendars. Use when the user wants to plan or execute a product launch or marketing campaign."
+  },
+  {
+   "name": "mle-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/mle-reviewer.md",
+   "description": "Production machine-learning engineering reviewer for data contracts, feature pipelines, training reproducibility, offline/online evaluation, model serving, monitoring, and rollback. Use when ML, MLOps, model training, inference, feature store, or evaluation code changes."
+  },
+  {
+   "name": "network-architect",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/network-architect.md",
+   "description": "Designs enterprise or multi-site network architecture from requirements, using existing network skills for focused routing, validation, automation, and troubleshooting detail."
+  },
+  {
+   "name": "network-config-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/network-config-reviewer.md",
+   "description": "Reviews router and switch configurations for security, correctness, stale references, risky change-window commands, and missing operational guardrails."
+  },
+  {
+   "name": "network-troubleshooter",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/network-troubleshooter.md",
+   "description": "Diagnoses network connectivity, routing, DNS, interface, and policy symptoms with a read-only OSI-layer workflow and evidence-backed root cause summary."
+  },
+  {
+   "name": "opensource-forker",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/opensource-forker.md",
+   "description": "Fork any project for open-sourcing. Copies files, strips secrets and credentials (20+ patterns), replaces internal references with placeholders, generates .env.example, and cleans git history. First stage of the opensource-pipeline skill."
+  },
+  {
+   "name": "opensource-packager",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/opensource-packager.md",
+   "description": "Generate complete open-source packaging for a sanitized project. Produces CLAUDE.md, setup.sh, README.md, LICENSE, CONTRIBUTING.md, and GitHub issue templates. Makes any repo immediately usable with Claude Code. Third stage of the opensource-pipeline skill."
+  },
+  {
+   "name": "opensource-sanitizer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/opensource-sanitizer.md",
+   "description": "Verify an open-source fork is fully sanitized before release. Scans for leaked secrets, PII, internal references, and dangerous files using 20+ regex patterns. Generates a PASS/FAIL/PASS-WITH-WARNINGS report. Second stage of the opensource-pipeline skill. Use PROACTIVELY before any public release."
+  },
+  {
+   "name": "performance-optimizer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/performance-optimizer.md",
+   "description": "Performance analysis and optimization specialist. Use PROACTIVELY for identifying bottlenecks, optimizing slow code, reducing bundle sizes, and improving runtime performance. Profiling, memory leaks, render optimization, and algorithmic improvements."
+  },
+  {
+   "name": "php-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/php-reviewer.md",
+   "description": "Expert PHP code reviewer specializing in PSR-12 compliance, PHP type system, Eloquent ORM patterns, security, and performance. Use for all PHP code changes. MUST BE USED for PHP projects."
+  },
+  {
+   "name": "planner",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/planner.md",
+   "description": "Expert planning specialist for complex features and refactoring. Use PROACTIVELY when users request feature implementation, architectural changes, or complex refactoring. Automatically activated for planning tasks."
+  },
+  {
+   "name": "pr-test-analyzer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/pr-test-analyzer.md",
+   "description": "Review pull request test coverage quality and completeness, with emphasis on behavioral coverage and real bug prevention."
+  },
+  {
+   "name": "python-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/python-reviewer.md",
+   "description": "Expert Python code reviewer specializing in PEP 8 compliance, Pythonic idioms, type hints, security, and performance. Use for all Python code changes. MUST BE USED for Python projects."
+  },
+  {
+   "name": "pytorch-build-resolver",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/pytorch-build-resolver.md",
+   "description": "PyTorch runtime, CUDA, and training error resolution specialist. Fixes tensor shape mismatches, device errors, gradient issues, DataLoader problems, and mixed precision failures with minimal changes. Use when PyTorch training or inference crashes."
+  },
+  {
+   "name": "rag-pipeline-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/rag-pipeline-reviewer.md",
+   "description": "Reviews RAG (Retrieval-Augmented Generation) pipelines for retrieval quality, chunking strategy, embedding choices, and evaluation coverage. Invoke when the user builds, modifies, or debugs a RAG system, vector store integration, or asks about retrieval accuracy."
+  },
+  {
+   "name": "react-build-resolver",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/react-build-resolver.md",
+   "description": "Diagnose and fix React build failures across Vite, webpack, Next.js, CRA, Parcel, esbuild, and Bun. Handles JSX/TSX compile errors, hydration mismatches, server/client component boundary failures, missing types, and bundler-specific configuration issues with minimal, surgical changes. MUST BE USED when a React build fails."
+  },
+  {
+   "name": "react-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/react-reviewer.md",
+   "description": "Expert React/JSX code reviewer specializing in hook correctness, render performance, server/client component boundaries, accessibility, and React-specific security. Use for any change touching .tsx/.jsx files or React component logic. MUST BE USED for React projects."
+  },
+  {
+   "name": "refactor-cleaner",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/refactor-cleaner.md",
+   "description": "Dead code cleanup and consolidation specialist. Use PROACTIVELY for removing unused code, duplicates, and refactoring. Runs analysis tools (knip, depcheck, ts-prune) to identify dead code and safely removes it."
+  },
+  {
+   "name": "ruby-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/ruby-reviewer.md",
+   "description": "Expert Ruby and Rails code reviewer specializing in idiomatic Ruby, Active Record query safety, Rails security defaults, and RSpec/Minitest quality. Use for all Ruby code changes. MUST BE USED for Ruby and Rails projects."
+  },
+  {
+   "name": "rust-build-resolver",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/rust-build-resolver.md",
+   "description": "Rust build, compilation, and dependency error resolution specialist. Fixes cargo build errors, borrow checker issues, and Cargo.toml problems with minimal changes. Use when Rust builds fail."
+  },
+  {
+   "name": "rust-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/rust-reviewer.md",
+   "description": "Expert Rust code reviewer specializing in ownership, lifetimes, error handling, unsafe usage, and idiomatic patterns. Use for all Rust code changes. MUST BE USED for Rust projects."
+  },
+  {
+   "name": "security-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/security-reviewer.md",
+   "description": "Security vulnerability detection and remediation specialist. Use PROACTIVELY after writing code that handles user input, authentication, API endpoints, or sensitive data. Flags secrets, SSRF, injection, unsafe crypto, and OWASP Top 10 vulnerabilities."
+  },
+  {
+   "name": "seo-specialist",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/seo-specialist.md",
+   "description": "SEO specialist for technical SEO audits, on-page optimization, structured data, Core Web Vitals, and content/keyword mapping. Use for site audits, meta tag reviews, schema markup, sitemap and robots issues, and SEO remediation plans."
+  },
+  {
+   "name": "silent-failure-hunter",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/silent-failure-hunter.md",
+   "description": "Review code for silent failures, swallowed errors, bad fallbacks, and missing error propagation."
+  },
+  {
+   "name": "spec-miner",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/spec-miner.md",
+   "description": "Extracts behavioral specs from existing codebases for OpenSpec. Produces flat Requirement and Invariant blocks with structured metadata (entities, enforced, id, test anchors). Outputs openspec/specs/<capability>/spec.md. Fully self-bootstrapping \u2014 no dependency on codebase-onboarding. Use when onboarding a brownfield project to spec-driven development."
+  },
+  {
+   "name": "swift-build-resolver",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/swift-build-resolver.md",
+   "description": "Swift/Xcode build, compilation, and dependency error resolution specialist. Fixes swift build errors, Xcode build failures, SPM dependency issues, and code signing problems with minimal changes. Use when Swift builds fail."
+  },
+  {
+   "name": "swift-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/swift-reviewer.md",
+   "description": "Expert Swift code reviewer specializing in protocol-oriented design, value semantics, ARC memory management, Swift Concurrency, and idiomatic patterns. Use for all Swift code changes. MUST BE USED for Swift projects."
+  },
+  {
+   "name": "tdd-guide",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/tdd-guide.md",
+   "description": "Test-Driven Development specialist enforcing write-tests-first methodology. Use PROACTIVELY when writing new features, fixing bugs, or refactoring code. Ensures 80%+ test coverage."
+  },
+  {
+   "name": "type-design-analyzer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/type-design-analyzer.md",
+   "description": "Analyze type design for encapsulation, invariant expression, usefulness, and enforcement."
+  },
+  {
+   "name": "typescript-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/typescript-reviewer.md",
+   "description": "Expert TypeScript/JavaScript code reviewer specializing in type safety, async correctness, Node/web security, and idiomatic patterns. Use for all TypeScript and JavaScript code changes. MUST BE USED for TypeScript/JavaScript projects."
+  },
+  {
+   "name": "vue-reviewer",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "agents/vue-reviewer.md",
+   "description": "Expert Vue.js code reviewer specializing in Composition API correctness, reactivity pitfalls, component architecture, template security, and Vue-specific performance. Use for any change touching .vue, .ts/.js files with Vue imports, or Vue ecosystem code (Pinia, Vue Router, Nuxt). MUST BE USED for Vue projects."
+  },
+  {
+   "name": "design-review",
+   "plugin": "ui-ux-pro-max-design-stack",
+   "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+   "source_path": "stack/.claude/agents/design-review.md",
+   "description": "Expert design reviewer for web UI. Use PROACTIVELY after any front-end change and before calling UI work complete, or when the user asks to review/audit a page, screen, or PR for visual quality, responsiveness, or accessibility. Drives a real browser (Playwright MCP) across viewports, checks WCAG 2.1 AA, and returns ranked, evidence-based findings."
+  }
+ ],
+ "commands": [
+  {
+   "name": "aside",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/aside.md",
+   "description": "Answer a quick side question without interrupting or losing context from the current task. Resume work automatically after answering."
+  },
+  {
+   "name": "astra-review",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/astra-review.md",
+   "description": "Send Claude-written code to GPT-6-Astra (ChatGPT, via Codex CLI) for an independent cross-provider review, then fix what it finds."
+  },
+  {
+   "name": "auto-update",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/auto-update.md",
+   "description": "Pull the latest ECC repo changes and reinstall the current managed targets."
+  },
+  {
+   "name": "build-fix",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/build-fix.md",
+   "description": "Detect the project build system and incrementally fix build/type errors with minimal safe changes."
+  },
+  {
+   "name": "checkpoint",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/checkpoint.md",
+   "description": "Create, verify, or list workflow checkpoints after running verification checks."
+  },
+  {
+   "name": "code-review",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/code-review.md",
+   "description": "Code review \u2014 local uncommitted changes or GitHub PR (pass PR number/URL for PR mode). Use for a step-by-step PRP-style checklist review; for a multi-agent pass use /review-pr, and for the adversarially-verified Workflow pass use /orch-review."
+  },
+  {
+   "name": "cost-report",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/cost-report.md",
+   "description": "Generate a local Claude Code cost report from the ECC cost-tracker metrics log. Use for a terminal summary or CSV export of tracked spend; the cost-tracking skill covers the same metrics log for on-demand cost/budget questions asked in conversation."
+  },
+  {
+   "name": "cpp-build",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/cpp-build.md",
+   "description": "Fix C++ build errors, CMake issues, and linker problems incrementally. Invokes the cpp-build-resolver agent for minimal, surgical fixes."
+  },
+  {
+   "name": "cpp-review",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/cpp-review.md",
+   "description": "Comprehensive C++ code review for memory safety, modern C++ idioms, concurrency, and security. Invokes the cpp-reviewer agent."
+  },
+  {
+   "name": "cpp-test",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/cpp-test.md",
+   "description": "Enforce TDD workflow for C++. Write GoogleTest tests first, then implement. Verify coverage with gcov/lcov."
+  },
+  {
+   "name": "ecc-guide",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/ecc-guide.md",
+   "description": "Navigate ECC's current agents, skills, commands, hooks, install profiles, and docs from the live repository surface. This is the slash-command entrypoint for that navigation; the ecc-guide skill covers the same map for on-demand use in conversation."
+  },
+  {
+   "name": "epic-claim",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/epic-claim.md",
+   "description": "Claim an epic issue, stamp coordination state, and sync local ownership."
+  },
+  {
+   "name": "epic-decompose",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/epic-decompose.md",
+   "description": "Break an epic into task children without creating task branches."
+  },
+  {
+   "name": "epic-publish",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/epic-publish.md",
+   "description": "Publish a validated epic update back to the issue and local cache."
+  },
+  {
+   "name": "epic-review",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/epic-review.md",
+   "description": "Mark epic review requested, approved, or changes requested."
+  },
+  {
+   "name": "epic-sync",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/epic-sync.md",
+   "description": "Sync epic issue bodies, labels, and local coordination snapshots from GitHub."
+  },
+  {
+   "name": "epic-unblock",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/epic-unblock.md",
+   "description": "Sweep blocked epic issues and reopen anything whose dependencies are closed."
+  },
+  {
+   "name": "epic-validate",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/epic-validate.md",
+   "description": "Validate epic readiness, dependencies, and coordination policy."
+  },
+  {
+   "name": "evolve",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/evolve.md",
+   "description": "Analyze instincts and suggest or generate evolved structures"
+  },
+  {
+   "name": "fastapi-review",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/fastapi-review.md",
+   "description": "Review a FastAPI application for architecture, async correctness, dependency injection, Pydantic schemas, security, performance, and testability."
+  },
+  {
+   "name": "feature-dev",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/feature-dev.md",
+   "description": "Guided feature development with codebase understanding and architecture focus"
+  },
+  {
+   "name": "flutter-build",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/flutter-build.md",
+   "description": "Fix Dart analyzer errors and Flutter build failures incrementally. Invokes the dart-build-resolver agent for minimal, surgical fixes."
+  },
+  {
+   "name": "flutter-review",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/flutter-review.md",
+   "description": "Review Flutter/Dart code for idiomatic patterns, widget best practices, state management, performance, accessibility, and security. Invokes the flutter-reviewer agent."
+  },
+  {
+   "name": "flutter-test",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/flutter-test.md",
+   "description": "Run Flutter/Dart tests, report failures, and incrementally fix test issues. Covers unit, widget, golden, and integration tests."
+  },
+  {
+   "name": "gan-build",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/gan-build.md",
+   "description": "Run a generator/evaluator build loop for implementation tasks with bounded iterations and scoring."
+  },
+  {
+   "name": "gan-design",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/gan-design.md",
+   "description": "Run a generator/evaluator design loop for frontend or visual work with bounded iterations and scoring."
+  },
+  {
+   "name": "go-build",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/go-build.md",
+   "description": "Fix Go build errors, go vet warnings, and linter issues incrementally. Invokes the go-build-resolver agent for minimal, surgical fixes."
+  },
+  {
+   "name": "go-review",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/go-review.md",
+   "description": "Comprehensive Go code review for idiomatic patterns, concurrency safety, error handling, and security. Invokes the go-reviewer agent."
+  },
+  {
+   "name": "go-test",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/go-test.md",
+   "description": "Enforce TDD workflow for Go. Write table-driven tests first, then implement. Verify 80%+ coverage with go test -cover."
+  },
+  {
+   "name": "gradle-build",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/gradle-build.md",
+   "description": "Fix Gradle build errors for Android and KMP projects"
+  },
+  {
+   "name": "harness-audit",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/harness-audit.md",
+   "description": "Run a deterministic repository harness audit and return a prioritized scorecard. Use for a deterministic overall repo-readiness scorecard; for a security-specific audit use the security-scan command."
+  },
+  {
+   "name": "hookify-configure",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/hookify-configure.md",
+   "description": "Enable or disable hookify rules interactively"
+  },
+  {
+   "name": "hookify-help",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/hookify-help.md",
+   "description": "Get help with the hookify system"
+  },
+  {
+   "name": "hookify-list",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/hookify-list.md",
+   "description": "List all configured hookify rules"
+  },
+  {
+   "name": "hookify",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/hookify.md",
+   "description": "Create hooks to prevent unwanted behaviors from conversation analysis or explicit instructions. Use to generate a new hook rule file from conversation analysis or a described behavior; the hookify-rules skill covers hookify rule syntax and patterns for authoring or editing rules directly."
+  },
+  {
+   "name": "instinct-export",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/instinct-export.md",
+   "description": "Export instincts from project/global scope to a file"
+  },
+  {
+   "name": "instinct-import",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/instinct-import.md",
+   "description": "Import instincts from file or URL into project/global scope"
+  },
+  {
+   "name": "instinct-status",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/instinct-status.md",
+   "description": "Show learned instincts (project + global) with confidence"
+  },
+  {
+   "name": "jira",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/jira.md",
+   "description": "Retrieve a Jira ticket, analyze requirements, update status, or add comments. Uses the jira-integration skill and MCP or REST API."
+  },
+  {
+   "name": "kotlin-build",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/kotlin-build.md",
+   "description": "Fix Kotlin/Gradle build errors, compiler warnings, and dependency issues incrementally. Invokes the kotlin-build-resolver agent for minimal, surgical fixes."
+  },
+  {
+   "name": "kotlin-review",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/kotlin-review.md",
+   "description": "Comprehensive Kotlin code review for idiomatic patterns, null safety, coroutine safety, and security. Invokes the kotlin-reviewer agent."
+  },
+  {
+   "name": "kotlin-test",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/kotlin-test.md",
+   "description": "Enforce TDD workflow for Kotlin. Write Kotest tests first, then implement. Verify 80%+ coverage with Kover."
+  },
+  {
+   "name": "learn-eval",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/learn-eval.md",
+   "description": "Extract reusable patterns from the session, self-evaluate quality before saving, and determine the right save location (Global vs Project)."
+  },
+  {
+   "name": "learn",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/learn.md",
+   "description": "Extract reusable patterns from the current session and save them as candidate skills or guidance. Use to review a session on demand and persist an approved skill file; continuous-learning-v2 is a separate, configurable Stop/PreToolUse/PostToolUse hook-observation and instinct-evolution system (background observer disabled by default) and is not an automatic equivalent of this command."
+  },
+  {
+   "name": "loop-start",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/loop-start.md",
+   "description": "Prepare a managed autonomous loop pattern with safety defaults and explicit stop conditions, then print the commands to launch and monitor it. Use to set up sequential, continuous-pr, rfc-dag, or infinite loop patterns with safety gates before starting one; the continuous-agent-loop skill covers the same pattern selection and quality-gate guidance for in-conversation use (supersedes the deprecated"
+  },
+  {
+   "name": "loop-status",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/loop-status.md",
+   "description": "Inspect active loop state, progress, failure signals, and recommended intervention."
+  },
+  {
+   "name": "marketing-campaign",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/marketing-campaign.md",
+   "description": "Plan and execute a full marketing campaign. Accepts a product brief and returns positioning, landing page copy, email sequence, social posts, ad variants, video scripts, and a content calendar. Can also review existing copy for conversion quality. This is the slash-command entrypoint that delegates to the marketing-agent; prefer the marketing-campaign skill for the same end-to-end workflow in conv"
+  },
+  {
+   "name": "model-route",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/model-route.md",
+   "description": "Recommend the best model tier for the current task based on complexity, risk, and budget."
+  },
+  {
+   "name": "multi-backend",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/multi-backend.md",
+   "description": "Run a backend-focused multi-model workflow for APIs, algorithms, data, and business logic."
+  },
+  {
+   "name": "multi-execute",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/multi-execute.md",
+   "description": "Execute a multi-model implementation plan while preserving Claude as the only filesystem writer."
+  },
+  {
+   "name": "multi-frontend",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/multi-frontend.md",
+   "description": "Run a frontend-focused multi-model workflow for components, layouts, animation, and UI polish."
+  },
+  {
+   "name": "multi-plan",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/multi-plan.md",
+   "description": "Create a multi-model (Codex + Antigravity) implementation plan without modifying production code. Requires the external ccg-workflow runtime, not part of the base ECC install (see Prerequisite below). Use when the user explicitly wants dual-model plan drafts; for a single-model plan with no extra runtime use /plan."
+  },
+  {
+   "name": "multi-workflow",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/multi-workflow.md",
+   "description": "Run a full multi-model development workflow with research, planning, execution, optimization, and review."
+  },
+  {
+   "name": "orch-add-feature",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/orch-add-feature.md",
+   "description": "Orchestrate building a brand-new feature end to end \u2014 research, plan, TDD, review, gated commit. Wrapper that kicks off the orch-add-feature skill."
+  },
+  {
+   "name": "orch-build-mvp",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/orch-build-mvp.md",
+   "description": "Orchestrate bootstrapping a working MVP from a design/spec doc \u2014 ingest, slice, scaffold, TDD, review, gated commit (reuses the GAN harness). Wrapper for the orch-build-mvp skill."
+  },
+  {
+   "name": "orch-change-feature",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/orch-change-feature.md",
+   "description": "Orchestrate altering an existing, working feature to new desired behavior \u2014 update tests to the new spec, change impl, review, gated commit. Wrapper for the orch-change-feature skill."
+  },
+  {
+   "name": "orch-fix-defect",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/orch-fix-defect.md",
+   "description": "Orchestrate fixing a bug \u2014 reproduce it as a failing regression test, fix to green, review, gated commit. Wrapper for the orch-fix-defect skill."
+  },
+  {
+   "name": "orch-refine-code",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/orch-refine-code.md",
+   "description": "Orchestrate a behavior-preserving refactor \u2014 confirm tests green, restructure without changing behavior, keep green, review, gated commit. Wrapper for the orch-refine-code skill."
+  },
+  {
+   "name": "orch-review",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/orch-review.md",
+   "description": "Run the orch-review native Workflow over a diff (local changes or a GitHub PR) and report blocking vs advisory findings. Surface for the orch-review workflow. Use for a native-Workflow, adversarially-verified multi-dimension review with fan-out and dedup; for the step-by-step checklist pass use /code-review, and for the multi-agent pass use /review-pr."
+  },
+  {
+   "name": "plan-canvas",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/plan-canvas.md",
+   "description": "Open a plan or HTML artifact in the browser Plan Canvas for annotate-and-approve review. This is a thin slash-command entrypoint over the plan-canvas skill, which covers the full workflow and rules."
+  },
+  {
+   "name": "plan-prd",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/plan-prd.md",
+   "description": "Generate a lean, problem-first PRD and hand off to /plan for implementation planning."
+  },
+  {
+   "name": "plan",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/plan.md",
+   "description": "Restate requirements, assess risks, and create step-by-step implementation plan. WAIT for user CONFIRM before touching any code. Use for a single-model inline or PRD-driven implementation plan; for a dual-model (Codex/Antigravity) plan use /multi-plan, and for visual annotate-and-approve review of the resulting plan use /plan-canvas."
+  },
+  {
+   "name": "pm2",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/pm2.md",
+   "description": "Analyze a project and generate PM2 service commands for detected frontend, backend, or database services."
+  },
+  {
+   "name": "pr",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/pr.md",
+   "description": "Create a GitHub PR from current branch with unpushed commits \u2014 discovers templates, analyzes changes, pushes"
+  },
+  {
+   "name": "project-init",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/project-init.md",
+   "description": "Detect a project's stack and produce a dry-run ECC onboarding plan using the repository's install manifests and stack mappings. Use to onboard ECC into a target project via a reviewable dry-run plan; for general feature discovery and navigation use the ecc-guide skill or /ecc-guide command instead."
+  },
+  {
+   "name": "projects",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/projects.md",
+   "description": "List known projects and their instinct statistics"
+  },
+  {
+   "name": "promote",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/promote.md",
+   "description": "Promote project-scoped instincts to global scope"
+  },
+  {
+   "name": "prp-commit",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/prp-commit.md",
+   "description": "Quick commit with natural language file targeting \u2014 describe what to commit in plain English"
+  },
+  {
+   "name": "prp-implement",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/prp-implement.md",
+   "description": "Execute an implementation plan with rigorous validation loops"
+  },
+  {
+   "name": "prp-plan",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/prp-plan.md",
+   "description": "Create comprehensive feature implementation plan with codebase analysis and pattern extraction"
+  },
+  {
+   "name": "prp-pr",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/prp-pr.md",
+   "description": "Alias of /pr for the PRP workflow series. Use when creating a pull request mid-PRP workflow; otherwise use /pr."
+  },
+  {
+   "name": "prp-prd",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/prp-prd.md",
+   "description": "Interactive PRD generator - problem-first, hypothesis-driven product spec with back-and-forth questioning"
+  },
+  {
+   "name": "prune",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/prune.md",
+   "description": "Delete pending instincts older than 30 days that were never promoted. Thin CLI wrapper for continuous-learning-v2's instinct-cli.py prune command; use to clean up stale pending instincts that were never reviewed or promoted."
+  },
+  {
+   "name": "python-review",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/python-review.md",
+   "description": "Comprehensive Python code review for PEP 8 compliance, type hints, security, and Pythonic idioms. Invokes the python-reviewer agent."
+  },
+  {
+   "name": "quality-gate",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/quality-gate.md",
+   "description": "Run the ECC formatter quality gate for a single file and report remediation steps."
+  },
+  {
+   "name": "react-build",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/react-build.md",
+   "description": "Fix React build failures (Vite, webpack, Next.js, CRA, Parcel, esbuild, Bun) incrementally \u2014 JSX/TSX compile errors, hydration mismatches, server/client component boundary failures, missing types. Invokes the react-build-resolver agent for minimal, surgical fixes."
+  },
+  {
+   "name": "react-review",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/react-review.md",
+   "description": "Comprehensive React/JSX code review for hook correctness, render performance, server/client component boundaries, accessibility, and React-specific security. Invokes the react-reviewer agent (and typescript-reviewer alongside on TSX/JSX changes)."
+  },
+  {
+   "name": "react-test",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/react-test.md",
+   "description": "Enforce TDD workflow for React. Write React Testing Library tests first (behavior-focused, accessibility-first), then implement components. Detects Vitest or Jest and verifies coverage targets."
+  },
+  {
+   "name": "refactor-clean",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/refactor-clean.md",
+   "description": "Safely identify and remove dead code with verification after each change."
+  },
+  {
+   "name": "resume-session",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/resume-session.md",
+   "description": "Load the most recent session file from ~/.claude/session-data/ and resume work with full context from where the last session ended."
+  },
+  {
+   "name": "review-pr",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/review-pr.md",
+   "description": "Comprehensive PR review using specialized agents (code-reviewer, comment-analyzer, pr-test-analyzer, silent-failure-hunter, type-design-analyzer, code-simplifier). Use for a multi-agent PR review pass; for the adversarially-verified Workflow pass use /orch-review, and for the standalone step-by-step checklist review use /code-review."
+  },
+  {
+   "name": "rust-build",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/rust-build.md",
+   "description": "Fix Rust build errors, borrow checker issues, and dependency problems incrementally. Invokes the rust-build-resolver agent for minimal, surgical fixes."
+  },
+  {
+   "name": "rust-review",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/rust-review.md",
+   "description": "Comprehensive Rust code review for ownership, lifetimes, error handling, unsafe usage, and idiomatic patterns. Invokes the rust-reviewer agent."
+  },
+  {
+   "name": "rust-test",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/rust-test.md",
+   "description": "Enforce TDD workflow for Rust. Write tests first, then implement. Verify 80%+ coverage with cargo-llvm-cov."
+  },
+  {
+   "name": "santa-loop",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/santa-loop.md",
+   "description": "Adversarial dual-review convergence loop \u2014 two independent model reviewers must both approve before code ships. Use for the CLI-driven version of this loop; wraps the santa-method skill."
+  },
+  {
+   "name": "save-session",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/save-session.md",
+   "description": "Save current session state to a dated file in ~/.claude/session-data/ so work can be resumed in a future session with full context."
+  },
+  {
+   "name": "security-scan",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/security-scan.md",
+   "description": "Run AgentShield against agent, hook, MCP, permission, and secret surfaces. This is the slash-command entrypoint for that audit; prefer the security-scan skill for the same AgentShield audit in conversation."
+  },
+  {
+   "name": "sessions",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/sessions.md",
+   "description": "Manage Claude Code session history, aliases, and session metadata."
+  },
+  {
+   "name": "setup-pm",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/setup-pm.md",
+   "description": "Configure your preferred package manager (npm/pnpm/yarn/bun)"
+  },
+  {
+   "name": "skill-create",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/skill-create.md",
+   "description": "Analyze local git history to extract coding patterns and generate SKILL.md files. Local version of the Skill Creator GitHub App. Use to generate new skills from local git history on demand; check the skill-scout skill first to avoid duplicating an existing local, marketplace, or GitHub skill."
+  },
+  {
+   "name": "skill-health",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/skill-health.md",
+   "description": "Show skill portfolio health dashboard with charts and analytics. Use for the quantitative usage/success-rate dashboard; for a qualitative compliance or quality audit use the skill-stocktake skill."
+  },
+  {
+   "name": "skill-host-compat",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/skill-host-compat.md",
+   "description": "Lint ECC skills for Codex/Cursor-safe frontmatter and Claude-only substitutions before a skill PR."
+  },
+  {
+   "name": "test-coverage",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/test-coverage.md",
+   "description": "Analyze coverage, identify gaps, and generate missing tests toward the target threshold."
+  },
+  {
+   "name": "token-card",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/token-card.md",
+   "description": "Render a token-usage stat card from local agent session logs and commit it to the repo. Invokes the token-card skill."
+  },
+  {
+   "name": "update-codemaps",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/update-codemaps.md",
+   "description": "Scan project structure and generate token-lean architecture codemaps."
+  },
+  {
+   "name": "update-docs",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/update-docs.md",
+   "description": "Sync documentation from source-of-truth files such as scripts, schemas, routes, and exports."
+  },
+  {
+   "name": "vue-review",
+   "plugin": "ecc",
+   "source": "affaan-m/ECC",
+   "source_path": "commands/vue-review.md",
+   "description": "Comprehensive Vue.js code review for Composition API correctness, reactivity, composable patterns, template security, accessibility, and Vue-specific performance. Invokes the vue-reviewer agent (and typescript-reviewer alongside on .vue/.ts changes)."
+  },
+  {
+   "name": "anti-pattern-czar",
+   "plugin": "anti-pattern-czar",
+   "source": "thedotmack/claude-mem",
+   "source_path": ".claude/commands/anti-pattern-czar.md",
+   "description": ""
+  },
+  {
+   "name": "design-plan",
+   "plugin": "ui-ux-pro-max-design-stack",
+   "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+   "source_path": "stack/.claude/commands/design-plan.md",
+   "description": "Generate a concrete design system (tokens, style, type, UX) before building UI"
+  },
+  {
+   "name": "design-review",
+   "plugin": "ui-ux-pro-max-design-stack",
+   "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+   "source_path": "stack/.claude/commands/design-review.md",
+   "description": "Run the 7-phase design review (WCAG AA, responsive, interaction) on a page or URL"
+  }
+ ]
+}

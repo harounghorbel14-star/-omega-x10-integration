@@ -1,0 +1,929 @@
+{
+  "version": 1,
+  "description": "Curated routing for OMEGA-ENGINEERING X10. Each route names a primary specialist, ordered alternatives that stay available, the runtime each one needs, and the fallback when it is missing. Skills not named in any route are still routable through `omega.py route` keyword search over registry/skills.json (every loaded skill is indexed).",
+  "precedence": [
+    "1. An explicit user request for a specific skill or plugin always wins.",
+    "2. Project-local instructions (CLAUDE.md, AGENTS.md, repo conventions) override every routed skill.",
+    "3. Within a route, prefer the primary unless its dependency is missing or the task matches an alternative's narrower trigger (e.g. a language-specific ECC testing skill for that language).",
+    "4. Never run two workflows that own the same phase at once (e.g. superpowers:test-driven-development and ecc:tdd-workflow). Pick one and say which.",
+    "5. Security guidance is additive: vibesec and ECC security skills may both apply; the stricter requirement wins. Never weaken a security requirement to make a test pass.",
+    "6. Verification is mandatory before claiming completion: superpowers:verification-before-completion (or ecc:verification-loop) applies to every implementation route.",
+    "7. If a dependency is absent, report the diagnostic from `omega.py doctor` and use the listed fallback; do not claim the skill ran."
+  ],
+  "routes": [
+    {
+      "id": "requirements-discovery",
+      "triggers": [
+        "unclear requirements",
+        "ambiguous plan",
+        "stress-test my plan",
+        "grill me",
+        "what should we build",
+        "design before coding",
+        "interview me"
+      ],
+      "primary": "mattpocock-skills:grill-me",
+      "alternatives": [
+        {
+          "skill": "mattpocock-skills:grill-with-docs",
+          "when": "the repo has domain docs / glossary to check answers against"
+        },
+        {
+          "skill": "superpowers:brainstorming",
+          "when": "turning an idea into an approved design before any code (superpowers flow)"
+        },
+        {
+          "skill": "mattpocock-skills:grilling",
+          "when": "the lower-level one-question-at-a-time grilling loop itself"
+        },
+        {
+          "skill": "mattpocock-skills:to-questionnaire",
+          "when": "questions must go to someone else asynchronously"
+        },
+        {
+          "skill": "mattpocock-skills:wait-what",
+          "when": "the user is confused by something just said"
+        },
+        {
+          "skill": "mattpocock-skills-extras:loop-me",
+          "when": "grilling about workflow specs (beta)"
+        },
+        {
+          "skill": "ecc:council",
+          "when": "a go/no-go or tradeoff decision with several valid paths"
+        }
+      ],
+      "skip_when": "Requirements, constraints and success criteria are already explicit. Do not ask questions the codebase can answer.",
+      "requires": [],
+      "fallback": "Ask one targeted question at a time about the highest-risk unknown."
+    },
+    {
+      "id": "skill-discovery",
+      "triggers": [
+        "find a skill",
+        "is there a skill for",
+        "which skill",
+        "what can you do",
+        "install a skill",
+        "extend capabilities"
+      ],
+      "primary": "omega-core:omega-engineering-x10",
+      "alternatives": [
+        {
+          "skill": "find-skills:find-skills",
+          "when": "nothing in the local registry fits; search the open ecosystem with `npx skills find`"
+        },
+        {
+          "skill": "ecc:skill-scout",
+          "when": "searching ECC-style skill sources"
+        },
+        {
+          "skill": "ecc:skill-stocktake",
+          "when": "auditing installed skills"
+        },
+        {
+          "skill": "mattpocock-skills:ask-matt",
+          "when": "choosing among Matt Pocock skills"
+        },
+        {
+          "skill": "superpowers:using-superpowers",
+          "when": "superpowers session bootstrap"
+        }
+      ],
+      "requires": [
+        "python3 (omega.py)",
+        "npx (find-skills)"
+      ],
+      "fallback": "Read registry/skills.json directly. Before installing anything from find-skills, check the repo identity, the install count/stars and the SKILL.md content (see find-skills Step 4).",
+      "safety": "Never install a third-party skill without showing the user the source repo and asking."
+    },
+    {
+      "id": "browser-automation",
+      "triggers": [
+        "open a website",
+        "click",
+        "fill a form",
+        "screenshot",
+        "scrape",
+        "log in to a site",
+        "test this web app in a browser",
+        "electron app",
+        "slack unreads",
+        "dogfood",
+        "exploratory QA"
+      ],
+      "primary": "agent-browser:agent-browser",
+      "cli_skills": [
+        "agent-browser skills get core",
+        "agent-browser skills get core --full",
+        "agent-browser skills get dogfood",
+        "agent-browser skills get electron",
+        "agent-browser skills get slack",
+        "agent-browser skills get derive-client",
+        "agent-browser skills get vercel-sandbox",
+        "agent-browser skills get protected-vercel-deployments",
+        "agent-browser skills get agentcore",
+        "agent-browser skills get webmcp-gen"
+      ],
+      "alternatives": [
+        {
+          "skill": "ecc:browser-qa",
+          "when": "post-deploy visual/interaction QA checklist"
+        },
+        {
+          "skill": "ecc:e2e-testing",
+          "when": "writing a committed Playwright E2E suite"
+        },
+        {
+          "skill": "ecc:click-path-audit",
+          "when": "auditing click paths of a UI"
+        },
+        {
+          "skill": "replica-skill:replica-test",
+          "when": "testing a Replica clone"
+        }
+      ],
+      "requires": [
+        "agent-browser CLI (npm i -g agent-browser@0.39.2 && agent-browser install)"
+      ],
+      "fallback": "If `agent-browser` is not on PATH: tell the user, offer the install command, and if declined use Playwright via ecc:e2e-testing. Never report a browser action as done without its command output."
+    },
+    {
+      "id": "session-memory",
+      "triggers": [
+        "did we solve this before",
+        "what did we do last session",
+        "remember",
+        "search memory",
+        "project history",
+        "timeline"
+      ],
+      "primary": "claude-mem:mem-search",
+      "alternatives": [
+        {
+          "skill": "claude-mem:timeline-report",
+          "when": "narrative of the whole project history"
+        },
+        {
+          "skill": "claude-mem:weekly-digests",
+          "when": "week-by-week digests"
+        },
+        {
+          "skill": "claude-mem:knowledge-agent",
+          "when": "build a queryable 'brain' from observations"
+        },
+        {
+          "skill": "claude-mem:how-it-works",
+          "when": "explain what claude-mem captures and where data lives"
+        },
+        {
+          "skill": "claude-mem:handoff",
+          "when": "write HANDOFF.md for a fresh session"
+        },
+        {
+          "skill": "mattpocock-skills:handoff",
+          "when": "compact the conversation into a handoff doc (no claude-mem needed)"
+        },
+        {
+          "skill": "mattpocock-skills-extras:claude-handoff",
+          "when": "hand off to a background agent (beta)"
+        },
+        {
+          "skill": "ecc:continuous-learning-v2",
+          "when": "ECC instinct-based learning from sessions"
+        },
+        {
+          "skill": "ecc:strategic-compact",
+          "when": "deciding when to compact context"
+        },
+        {
+          "skill": "claude-mem-cowork:mem-search",
+          "when": "Cowork cloud sessions with claude-mem-cowork installed (sends data to cmem.ai)"
+        }
+      ],
+      "requires": [
+        "claude-mem plugin installed from its upstream marketplace",
+        "claude-mem worker running (Bun runtime, managed by the plugin)"
+      ],
+      "fallback": "Without claude-mem: use mattpocock-skills:handoff or claude-mem:handoff-style HANDOFF.md files in the repo. Do not invent memory results.",
+      "privacy": "claude-mem stores observations locally (~/.claude-mem). Cloud sync (claude-mem:cloud-sync, claude-mem-cowork) sends data to cmem.ai and is opt-in only."
+    },
+    {
+      "id": "planning",
+      "triggers": [
+        "plan this feature",
+        "multi-step",
+        "implementation plan",
+        "write a spec",
+        "break into tickets",
+        "roadmap"
+      ],
+      "primary": "superpowers:writing-plans",
+      "alternatives": [
+        {
+          "skill": "mattpocock-skills:to-spec",
+          "when": "turn the conversation into a spec document"
+        },
+        {
+          "skill": "mattpocock-skills:to-tickets",
+          "when": "split a spec into tracer-bullet tickets"
+        },
+        {
+          "skill": "mattpocock-skills:wayfinder",
+          "when": "find the path through a large unknown"
+        },
+        {
+          "skill": "claude-mem:make-plan",
+          "when": "phased plan with documentation discovery, to execute with claude-mem:do"
+        },
+        {
+          "skill": "ecc:blueprint",
+          "when": "ECC multi-session construction plan"
+        },
+        {
+          "skill": "ecc:plan-orchestrate",
+          "when": "orchestrated plan with ECC agents"
+        },
+        {
+          "skill": "ecc:plan-canvas",
+          "when": "visual plan canvas"
+        }
+      ],
+      "requires": [],
+      "fallback": "Write a numbered plan with verification per step."
+    },
+    {
+      "id": "implementation",
+      "triggers": [
+        "implement",
+        "build this feature",
+        "execute the plan",
+        "write the code"
+      ],
+      "primary": "superpowers:executing-plans",
+      "alternatives": [
+        {
+          "skill": "superpowers:subagent-driven-development",
+          "when": "independent tasks that subagents can do with review between them"
+        },
+        {
+          "skill": "mattpocock-skills:implement",
+          "when": "implement a ticket with Matt's flow"
+        },
+        {
+          "skill": "mattpocock-skills:implement-spec",
+          "when": "implement from a written spec"
+        },
+        {
+          "skill": "claude-mem:do",
+          "when": "execute a claude-mem:make-plan plan"
+        },
+        {
+          "skill": "ecc:orch-add-feature",
+          "when": "ECC orchestration pipeline for a feature"
+        },
+        {
+          "skill": "mattpocock-skills:prototype",
+          "when": "throwaway prototype to learn"
+        }
+      ],
+      "always_with": [
+        "tdd",
+        "superpowers:verification-before-completion"
+      ],
+      "requires": [],
+      "fallback": "Implement in small verified steps."
+    },
+    {
+      "id": "tdd",
+      "triggers": [
+        "tdd",
+        "write tests first",
+        "add tests",
+        "red green refactor",
+        "test coverage"
+      ],
+      "primary": "superpowers:test-driven-development",
+      "alternatives": [
+        {
+          "skill": "mattpocock-skills:tdd",
+          "when": "Matt's vertical-slice TDD (tracer bullets)"
+        },
+        {
+          "skill": "ecc:tdd-workflow",
+          "when": "ECC TDD with plan handoff and evidence report"
+        },
+        {
+          "skill": "ecc:python-testing",
+          "when": "Python"
+        },
+        {
+          "skill": "ecc:golang-testing",
+          "when": "Go"
+        },
+        {
+          "skill": "ecc:rust-testing",
+          "when": "Rust"
+        },
+        {
+          "skill": "ecc:kotlin-testing",
+          "when": "Kotlin"
+        },
+        {
+          "skill": "ecc:react-testing",
+          "when": "React"
+        },
+        {
+          "skill": "ecc:cpp-testing",
+          "when": "C++"
+        },
+        {
+          "skill": "ecc:csharp-testing",
+          "when": ".NET"
+        },
+        {
+          "skill": "ecc:e2e-testing",
+          "when": "end-to-end"
+        },
+        {
+          "skill": "ecc:ai-regression-testing",
+          "when": "LLM/agent regressions"
+        }
+      ],
+      "rule": "Never edit a test only to make it pass. A skipped test is not a passing test.",
+      "requires": [],
+      "fallback": "Write the failing test, watch it fail, make it pass, refactor."
+    },
+    {
+      "id": "debugging",
+      "triggers": [
+        "bug",
+        "error",
+        "failing test",
+        "crash",
+        "why does this",
+        "regression",
+        "flaky"
+      ],
+      "primary": "superpowers:systematic-debugging",
+      "alternatives": [
+        {
+          "skill": "mattpocock-skills:diagnosing-bugs",
+          "when": "Matt's diagnosis loop"
+        },
+        {
+          "skill": "ecc:agent-introspection-debugging",
+          "when": "debugging an agent/harness itself"
+        },
+        {
+          "skill": "superpowers:diagnosing-superpowers",
+          "when": "superpowers skills misbehave"
+        },
+        {
+          "skill": "mattpocock-skills:triage",
+          "when": "triage an incoming issue"
+        }
+      ],
+      "requires": [],
+      "fallback": "Reproduce, isolate, find root cause, then fix with a regression test."
+    },
+    {
+      "id": "code-review",
+      "triggers": [
+        "review this",
+        "code review",
+        "review my PR",
+        "feedback on diff",
+        "address review comments"
+      ],
+      "primary": "superpowers:requesting-code-review",
+      "alternatives": [
+        {
+          "skill": "superpowers:receiving-code-review",
+          "when": "acting on review feedback"
+        },
+        {
+          "skill": "mattpocock-skills:code-review",
+          "when": "Matt's review rubric"
+        },
+        {
+          "skill": "ecc:conventional-commit-review",
+          "when": "commit message review"
+        },
+        {
+          "skill": "ecc agents (code-reviewer, language reviewers)",
+          "when": "delegate to an ECC review subagent"
+        },
+        {
+          "skill": "claude-mem:babysit",
+          "when": "watch a PR until CI and reviews are clean"
+        },
+        {
+          "skill": "anti-pattern-czar:/anti-pattern-czar",
+          "when": "audit TypeScript error handling (empty/silent catch blocks) under ./src"
+        }
+      ],
+      "requires": [],
+      "fallback": "Review the diff for correctness, security, tests and readability."
+    },
+    {
+      "id": "security",
+      "triggers": [
+        "security",
+        "audit",
+        "vulnerability",
+        "auth",
+        "xss",
+        "sql injection",
+        "ssrf",
+        "secrets",
+        "jwt",
+        "file upload",
+        "pentest my app",
+        "password",
+        "password reset",
+        "login",
+        "authentication",
+        "authorization",
+        "oauth",
+        "session token",
+        "permissions",
+        "csrf",
+        "api key",
+        "encryption"
+      ],
+      "primary": "vibesec:vibesec",
+      "alternatives": [
+        {
+          "skill": "ecc:security-review",
+          "when": "ECC security review checklist"
+        },
+        {
+          "skill": "ecc:security-scan",
+          "when": "AgentShield scan of Claude Code config (npx ecc-agentshield)"
+        },
+        {
+          "skill": "ecc:agent-security-hardening",
+          "when": "hardening an agent deployment"
+        },
+        {
+          "skill": "ecc:mcp-dependency-review",
+          "when": "reviewing MCP servers/dependencies"
+        },
+        {
+          "skill": "ecc:django-security",
+          "when": "Django"
+        },
+        {
+          "skill": "ecc:laravel-security",
+          "when": "Laravel"
+        },
+        {
+          "skill": "ecc:springboot-security",
+          "when": "Spring Boot"
+        },
+        {
+          "skill": "ecc:quarkus-security",
+          "when": "Quarkus"
+        },
+        {
+          "skill": "ecc:perl-security",
+          "when": "Perl"
+        },
+        {
+          "skill": "ecc:hipaa-compliance",
+          "when": "PHI/HIPAA"
+        },
+        {
+          "skill": "ecc:defi-amm-security",
+          "when": "DeFi"
+        },
+        {
+          "skill": "ecc:security-bounty-hunter",
+          "when": "bounty-style hunting"
+        }
+      ],
+      "rule": "Report static findings as 'potential' until exploitability is verified. VibeSec is guidance and checklists, not a scanner.",
+      "requires": [],
+      "fallback": "Apply VibeSec checklists manually."
+    },
+    {
+      "id": "ui-ux-design",
+      "triggers": [
+        "design",
+        "ui",
+        "ux",
+        "landing page",
+        "color palette",
+        "typography",
+        "design system",
+        "component",
+        "accessibility",
+        "dashboard ui",
+        "responsive"
+      ],
+      "primary": "ui-ux-pro-max:ui-ux-pro-max",
+      "alternatives": [
+        {
+          "skill": "ui-ux-pro-max:design-system",
+          "when": "tokens and component specs"
+        },
+        {
+          "skill": "ui-ux-pro-max:ui-styling",
+          "when": "shadcn/ui + Tailwind implementation"
+        },
+        {
+          "skill": "ui-ux-pro-max:design",
+          "when": "brand identity, logos, CIP, presentations"
+        },
+        {
+          "skill": "ui-ux-pro-max:brand",
+          "when": "brand voice and visual identity"
+        },
+        {
+          "skill": "ui-ux-pro-max:banner-design",
+          "when": "banners and social assets"
+        },
+        {
+          "skill": "ui-ux-pro-max:slides",
+          "when": "HTML slide decks"
+        },
+        {
+          "skill": "ui-ux-pro-max-design-stack:/design-review",
+          "when": "7-phase visual review of a running page"
+        },
+        {
+          "skill": "ecc:frontend-design-direction",
+          "when": "commit to an aesthetic direction"
+        },
+        {
+          "skill": "ecc:accessibility",
+          "when": "accessibility audit"
+        },
+        {
+          "skill": "ecc:frontend-a11y",
+          "when": "a11y fixes in frontend code"
+        },
+        {
+          "skill": "ecc:make-interfaces-feel-better",
+          "when": "polish interactions"
+        },
+        {
+          "skill": "claude-mem:design-is",
+          "when": "audit against Dieter Rams' principles"
+        },
+        {
+          "skill": "replica-skill:replica-design",
+          "when": "rebuilding the design system of a cloned app"
+        }
+      ],
+      "requires": [
+        "python3 (ui-ux-pro-max search.py)"
+      ],
+      "fallback": "Apply the UI UX Pro Max checklists from its references without the search script."
+    },
+    {
+      "id": "repository-architecture",
+      "triggers": [
+        "how is this codebase structured",
+        "architecture",
+        "dependencies between files",
+        "knowledge graph",
+        "onboard me",
+        "god nodes",
+        "where is X used",
+        "improve architecture"
+      ],
+      "primary": "graphify:graphify",
+      "alternatives": [
+        {
+          "skill": "mattpocock-skills:improve-codebase-architecture",
+          "when": "find deepening opportunities"
+        },
+        {
+          "skill": "mattpocock-skills:codebase-design",
+          "when": "design module boundaries"
+        },
+        {
+          "skill": "mattpocock-skills:domain-modeling",
+          "when": "domain model / ubiquitous language"
+        },
+        {
+          "skill": "claude-mem:smart-explore",
+          "when": "token-cheap AST structural search"
+        },
+        {
+          "skill": "claude-mem:pathfinder",
+          "when": "feature flowcharts and duplicated concerns"
+        },
+        {
+          "skill": "claude-mem:learn-codebase",
+          "when": "read every source file in full"
+        },
+        {
+          "skill": "ecc:codebase-onboarding",
+          "when": "onboarding guide"
+        },
+        {
+          "skill": "ecc:code-tour",
+          "when": "guided tour"
+        },
+        {
+          "skill": "ecc:repo-scan",
+          "when": "repo scan"
+        },
+        {
+          "skill": "ecc:architecture-decision-records",
+          "when": "record ADRs"
+        },
+        {
+          "skill": "ecc:hexagonal-architecture",
+          "when": "ports and adapters"
+        }
+      ],
+      "requires": [
+        "graphify CLI (uv tool install graphifyy==0.9.94)"
+      ],
+      "fallback": "If graphify is missing, say so and use claude-mem:smart-explore (if installed) or grep/read based exploration. Do not claim a graph exists unless graphify-out/graph.json was produced."
+    },
+    {
+      "id": "app-replication",
+      "triggers": [
+        "clone this app",
+        "reverse engineer",
+        "build my own version of",
+        "copy this app",
+        "rebuild X"
+      ],
+      "primary": "replica-skill:replica-recon",
+      "pipeline": [
+        "replica-skill:replica-recon",
+        "replica-skill:replica-architect",
+        "replica-skill:replica-design",
+        "replica-skill:replica-backend",
+        "replica-skill:replica-build",
+        "replica-skill:replica-test",
+        "replica-skill:replica-diff",
+        "replica-skill:replica-entrepreneur",
+        "replica-skill:replica-brand",
+        "replica-skill:replica-launch",
+        "replica-skill:replica-deploy"
+      ],
+      "rule": "Clean-room only: rebuild behaviour, never copy code, logos, copy or content (enforced by the Replica skills).",
+      "note": "Replica replicates apps (product behaviour). It does not merge git repositories; for repository history operations use git directly.",
+      "requires": [
+        "python3 (helper scripts)"
+      ],
+      "fallback": "Run the pipeline steps manually in order."
+    },
+    {
+      "id": "git-workflow",
+      "triggers": [
+        "worktree",
+        "branch",
+        "finish branch",
+        "open a PR",
+        "merge",
+        "commit"
+      ],
+      "primary": "superpowers:using-git-worktrees",
+      "alternatives": [
+        {
+          "skill": "superpowers:finishing-a-development-branch",
+          "when": "wrap up a branch (merge/PR/cleanup options)"
+        },
+        {
+          "skill": "mattpocock-skills:pr",
+          "when": "write the PR"
+        },
+        {
+          "skill": "ecc:git-workflow",
+          "when": "ECC git conventions"
+        },
+        {
+          "skill": "ecc:github-ops",
+          "when": "GitHub operations via gh"
+        },
+        {
+          "skill": "mattpocock-skills-extras:git-guardrails-claude-code",
+          "when": "install hooks that block destructive git commands"
+        },
+        {
+          "skill": "claude-mem:standup",
+          "when": "compare several worktrees/branches/PRs"
+        }
+      ],
+      "rule": "No push, force-push or protected-branch merge without explicit user authorization.",
+      "requires": [
+        "git"
+      ],
+      "fallback": "Plain git."
+    },
+    {
+      "id": "agents-orchestration",
+      "triggers": [
+        "parallel",
+        "subagents",
+        "multiple agents",
+        "fan out",
+        "orchestrate"
+      ],
+      "primary": "superpowers:dispatching-parallel-agents",
+      "alternatives": [
+        {
+          "skill": "superpowers:subagent-driven-development",
+          "when": "sequential subagents with review"
+        },
+        {
+          "skill": "mattpocock-skills-extras:chief-of-staff",
+          "when": "long-running goal coordinated in one session (beta)"
+        },
+        {
+          "skill": "ecc:team-agent-orchestration",
+          "when": "ECC team orchestration"
+        },
+        {
+          "skill": "ecc:dmux-workflows",
+          "when": "tmux multi-agent"
+        },
+        {
+          "skill": "ecc:parallel-execution-optimizer",
+          "when": "speed up parallel work"
+        },
+        {
+          "skill": "ecc:council",
+          "when": "four-voice decision council"
+        }
+      ],
+      "requires": [],
+      "fallback": "Do the tasks sequentially."
+    },
+    {
+      "id": "skill-authoring",
+      "triggers": [
+        "write a skill",
+        "create a skill",
+        "improve this SKILL.md",
+        "write for agents"
+      ],
+      "primary": "superpowers:writing-skills",
+      "alternatives": [
+        {
+          "skill": "mattpocock-skills:writing-for-agents",
+          "when": "prose for agents"
+        },
+        {
+          "skill": "ecc:skill-comply",
+          "when": "check a skill against conventions"
+        },
+        {
+          "skill": "ecc:skill-host-compat",
+          "when": "cross-harness compatibility"
+        },
+        {
+          "skill": "claude-mem:mode-creator",
+          "when": "a custom claude-mem mode"
+        }
+      ],
+      "requires": [],
+      "fallback": "Follow the Agent Skills format: lowercase-hyphen name matching the directory, trigger-rich description."
+    },
+    {
+      "id": "performance",
+      "triggers": [
+        "slow",
+        "performance",
+        "latency",
+        "benchmark",
+        "optimize",
+        "web vitals"
+      ],
+      "primary": "ecc:benchmark-methodology",
+      "alternatives": [
+        {
+          "skill": "ecc:benchmark",
+          "when": "run a benchmark"
+        },
+        {
+          "skill": "ecc:benchmark-optimization-loop",
+          "when": "iterate on a benchmark"
+        },
+        {
+          "skill": "ecc:react-performance",
+          "when": "React"
+        },
+        {
+          "skill": "ecc:latency-critical-systems",
+          "when": "low-latency systems"
+        },
+        {
+          "skill": "ui-ux-pro-max:ui-ux-pro-max",
+          "when": "Core Web Vitals UX guidance"
+        }
+      ],
+      "requires": [],
+      "fallback": "Measure before and after; report numbers."
+    },
+    {
+      "id": "deployment-release",
+      "triggers": [
+        "deploy",
+        "release",
+        "ship",
+        "ci/cd",
+        "docker",
+        "kubernetes"
+      ],
+      "primary": "ecc:deployment-patterns",
+      "alternatives": [
+        {
+          "skill": "replica-skill:replica-deploy",
+          "when": "deploying a Replica clone to the user's domain"
+        },
+        {
+          "skill": "ecc:docker-patterns",
+          "when": "Docker"
+        },
+        {
+          "skill": "ecc:kubernetes-patterns",
+          "when": "Kubernetes"
+        },
+        {
+          "skill": "ecc:canary-watch",
+          "when": "watch a canary"
+        },
+        {
+          "skill": "claude-mem:childhood",
+          "when": "babysit a shipped release"
+        },
+        {
+          "skill": "claude-mem:version-bump",
+          "when": "version bump for Claude Code plugins"
+        }
+      ],
+      "requires": [],
+      "fallback": "Follow the project's documented release process."
+    },
+    {
+      "id": "stack-specific",
+      "triggers": [
+        "django",
+        "laravel",
+        "spring boot",
+        "quarkus",
+        "rails",
+        "nestjs",
+        "fastapi",
+        "golang",
+        "rust",
+        "kotlin",
+        "swift",
+        "flutter",
+        "react native",
+        "vue",
+        "nuxt",
+        "angular",
+        "postgres",
+        "redis",
+        "prisma"
+      ],
+      "primary": "(search) omega.py route '<stack> <task>'",
+      "note": "ECC ships per-stack patterns/testing/security/verification skills (e.g. ecc:django-patterns, ecc:django-tdd, ecc:django-security, ecc:django-verification). Route by stack name through the registry search.",
+      "requires": [],
+      "fallback": "General patterns for the language."
+    },
+    {
+      "id": "domain-specialists",
+      "triggers": [
+        "healthcare",
+        "finance",
+        "logistics",
+        "homelab",
+        "network",
+        "video",
+        "marketing",
+        "investor",
+        "scientific",
+        "trading"
+      ],
+      "primary": "(search) omega.py route '<domain> <task>'",
+      "note": "ECC contains many domain skills (healthcare-*, homelab-*, network-*, logistics, investor-*, video-*, scientific-*). They are all indexed in registry/skills.json.",
+      "requires": [],
+      "fallback": "Say no specialist matched and proceed with general engineering."
+    }
+  ],
+  "engineering_workflow": [
+    "1. Understand the task and the repository (repository-architecture route if the codebase is unfamiliar).",
+    "2. Inspect the existing implementation and constraints.",
+    "3. Clarify material unknowns only (requirements-discovery route; skip when clear).",
+    "4. Plan complex work (planning route).",
+    "5. Select specialists (this file + omega.py route).",
+    "6. Implement maintainable changes (implementation route).",
+    "7. Add or update meaningful tests (tdd route).",
+    "8. Run validation; distinguish regressions from baseline failures.",
+    "9. Investigate failures (debugging route).",
+    "10. Review security, accessibility, performance, maintainability, design (security, ui-ux-design, performance, code-review routes).",
+    "11. Inspect the final diff.",
+    "12. Report changes and verified results only (superpowers:verification-before-completion)."
+  ]
+}

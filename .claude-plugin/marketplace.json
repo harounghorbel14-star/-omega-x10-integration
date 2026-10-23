@@ -1,0 +1,117 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "omega-engineering-x10",
+  "owner": {
+    "name": "OMEGA-ENGINEERING X10 integrators"
+  },
+  "metadata": {
+    "description": "OMEGA-ENGINEERING X10: ten engineering skill sources integrated as separately installable plugins with one master router (omega-core).",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "omega-core",
+      "source": "./plugins/omega-core",
+      "description": "OMEGA-ENGINEERING X10 master router: maps any engineering task to the right specialist skill across all ten integrated sources, with a searchable registry and doctor checks.",
+      "version": "1.0.0",
+      "category": "engineering",
+      "strict": true
+    },
+    {
+      "name": "agent-browser",
+      "source": "./plugins/agent-browser",
+      "description": "Vercel agent-browser: browser automation CLI skill (navigate, snapshot, click, fill, screenshot, sessions, Electron, Slack, dogfood QA). Requires the agent-browser CLI.",
+      "version": "0.39.2",
+      "category": "development",
+      "strict": true
+    },
+    {
+      "name": "mattpocock-skills",
+      "source": "./plugins/mattpocock-skills",
+      "description": "Matt Pocock's agent skills for real engineering: grilling, spec/ticket flows, TDD, code review, domain modelling and more. Plug-and-play, not vibe coding.",
+      "version": "1.3.1",
+      "category": "engineering",
+      "strict": true
+    },
+    {
+      "name": "mattpocock-skills-extras",
+      "source": "./plugins/mattpocock-skills-extras",
+      "description": "Matt Pocock's non-promoted skills: misc/ (rarely used) and in-progress/ (beta, feedback wanted). Upstream ships these outside its plugin.",
+      "version": "1.3.1",
+      "category": "engineering",
+      "strict": true
+    },
+    {
+      "name": "replica-skill",
+      "source": "./plugins/replica-skill",
+      "description": "Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT.",
+      "version": "1.0.0",
+      "category": "product",
+      "strict": true
+    },
+    {
+      "name": "ecc",
+      "source": "./plugins/ecc",
+      "description": "Harness-native ECC plugin for engineering teams - 71 agents, 311 skills, 97 legacy command shims, reusable hooks, rules, MCP conventions, and operator workflows for Claude Code plus adjacent agent harnesses",
+      "version": "2.2.3",
+      "category": "engineering",
+      "strict": true
+    },
+    {
+      "name": "find-skills",
+      "source": "./plugins/find-skills",
+      "description": "Vercel find-skills: discover and install skills from the open agent skills ecosystem via the `npx skills` CLI.",
+      "version": "1.7.4",
+      "category": "productivity",
+      "strict": true
+    },
+    {
+      "name": "anti-pattern-czar",
+      "source": "./plugins/anti-pattern-czar",
+      "description": "Anti-Pattern Czar (from claude-mem's own dev tooling): /anti-pattern-czar runs a TypeScript error-handling anti-pattern detector over ./src and walks you through fixing each finding. Needs Bun.",
+      "version": "15.0.1",
+      "category": "engineering",
+      "strict": true
+    },
+    {
+      "name": "vibesec",
+      "source": "./plugins/vibesec",
+      "description": "VibeSec: secure coding guide for web applications from a bug hunter's perspective (access control, XSS, CSRF, SSRF, uploads, SQLi, XXE, path traversal, JWT, API, headers).",
+      "version": "0.0.0+0590993",
+      "category": "security",
+      "strict": true
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "source": "./plugins/ui-ux-pro-max",
+      "description": "UI/UX design intelligence. Searchable local database with 79 styles, 192 palettes, 74 font pairings, 25 charts, and 22 stacks (React, Next.js, Vue, Nuxt.js, Nuxt UI, Svelte, Astro, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, Jetpack Compose, Angular, Laravel, JavaFX, WPF, WinUI, Avalonia, Uno Platform, UWP, Three.js). Use when designing, building, or reviewing UI: pages, components, color schemes, typography, layout, accessibility, animation, or data visualization.",
+      "version": "2.15.0",
+      "category": "design",
+      "strict": true
+    },
+    {
+      "name": "ui-ux-pro-max-design-stack",
+      "source": "./plugins/ui-ux-pro-max-design-stack",
+      "description": "UI UX Pro Max 'Claude Website Design Stack': design-review subagent plus /design-plan and /design-review commands. Optional MCP servers in optional/mcp.json.",
+      "version": "2.15.0",
+      "category": "design",
+      "strict": true
+    },
+    {
+      "name": "superpowers",
+      "source": "./plugins/superpowers",
+      "description": "Core skills library for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
+      "version": "7.0.1",
+      "category": "engineering",
+      "strict": true
+    },
+    {
+      "name": "graphify",
+      "source": "./plugins/graphify",
+      "description": "Graphify: turn code, docs, papers, images or video into a queryable knowledge graph (/graphify, query, path, explain, MCP, exports). Requires `uv tool install graphifyy`.",
+      "version": "0.9.94",
+      "category": "development",
+      "strict": true
+    }
+  ]
+}

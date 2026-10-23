@@ -1,0 +1,19 @@
+{
+  "name": "vibesec",
+  "version": "0.0.0+0590993",
+  "description": "VibeSec: secure coding guide for web applications from a bug hunter's perspective (access control, XSS, CSRF, SSRF, uploads, SQLi, XXE, path traversal, JWT, API, headers).",
+  "author": {
+    "name": "BehiSecc",
+    "url": "https://github.com/BehiSecc/VibeSec-Skill"
+  },
+  "homepage": "https://github.com/BehiSecc/VibeSec-Skill",
+  "repository": "https://github.com/BehiSecc/VibeSec-Skill",
+  "license": "Apache-2.0",
+  "keywords": [
+    "omega-engineering-x10",
+    "vibesec"
+  ],
+  "skills": [
+    "./skills/vibesec"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "anti-pattern-czar",
+  "version": "15.0.1",
+  "description": "Anti-Pattern Czar (from claude-mem's own dev tooling): /anti-pattern-czar runs a TypeScript error-handling anti-pattern detector over ./src and walks you through fixing each finding. Needs Bun.",
+  "author": {
+    "name": "Alex Newman",
+    "url": "https://github.com/thedotmack/claude-mem"
+  },
+  "homepage": "https://github.com/thedotmack/claude-mem",
+  "repository": "https://github.com/thedotmack/claude-mem",
+  "license": "Apache-2.0",
+  "keywords": [
+    "omega-engineering-x10",
+    "claude-mem"
+  ]
+}

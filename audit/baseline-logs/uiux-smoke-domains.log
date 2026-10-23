@@ -1,0 +1,15 @@
+Smoke-testing 12 domains with focused probes:
+  PASS  style          1
+  PASS  color          1
+  PASS  chart          1
+  PASS  landing        1
+  PASS  product        1
+  PASS  ux             1
+  PASS  typography     1
+  PASS  icons          1
+  PASS  gsap           1
+  PASS  react          1
+  PASS  web            1
+  PASS  google-fonts   1
+
+OK: 12/12 domains returned ≥1 result

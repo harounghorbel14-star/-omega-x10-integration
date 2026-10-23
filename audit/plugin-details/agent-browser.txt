@@ -1,0 +1,20 @@
+agent-browser 0.39.2
+  Description: Vercel agent-browser: browser automation CLI skill (navigate, snapshot, click, fill, screenshot, sessions, Electron, Slack, dogfood QA). Requires the agent-browser CLI.
+  Source: agent-browser@omega-engineering-x10
+
+Component inventory
+  Skills (1)  agent-browser
+  Agents (0)
+  Hooks (0)
+  MCP servers (0)
+  LSP servers (0)
+
+Projected token cost
+  Always-on:   ~336 tok   added to every session
+
+Per-component (rounded)
+  component      always-on  on-invoke
+  agent-browser       ~340       ~850
+
+  On-invoke cost is paid each time a skill or agent fires.
+  Token counts are estimates and may differ from actual usage.

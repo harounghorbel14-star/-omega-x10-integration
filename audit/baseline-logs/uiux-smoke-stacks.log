@@ -1,0 +1,25 @@
+Smoke-testing 22 stacks with focused probes:
+  PASS  react              1
+  PASS  nextjs             1
+  PASS  vue                1
+  PASS  svelte             1
+  PASS  astro              1
+  PASS  swiftui            1
+  PASS  react-native       1
+  PASS  flutter            1
+  PASS  nuxtjs             1
+  PASS  nuxt-ui            1
+  PASS  html-tailwind      1
+  PASS  shadcn             1
+  PASS  jetpack-compose    1
+  PASS  threejs            1
+  PASS  angular            1
+  PASS  laravel            1
+  PASS  javafx             1
+  PASS  wpf                1
+  PASS  winui              1
+  PASS  avalonia           1
+  PASS  uno                1
+  PASS  uwp                1
+
+OK: 22/22 stacks returned ≥1 result

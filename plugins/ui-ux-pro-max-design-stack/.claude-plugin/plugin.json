@@ -1,0 +1,15 @@
+{
+  "name": "ui-ux-pro-max-design-stack",
+  "version": "2.15.0",
+  "description": "UI UX Pro Max 'Claude Website Design Stack': design-review subagent plus /design-plan and /design-review commands. Optional MCP servers in optional/mcp.json.",
+  "author": {
+    "name": "nextlevelbuilder"
+  },
+  "homepage": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+  "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+  "license": "MIT",
+  "keywords": [
+    "omega-engineering-x10",
+    "ui-ux-pro-max"
+  ]
+}

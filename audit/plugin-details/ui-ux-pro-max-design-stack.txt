@@ -1,0 +1,22 @@
+ui-ux-pro-max-design-stack 2.15.0
+  Description: UI UX Pro Max 'Claude Website Design Stack': design-review subagent plus /design-plan and /design-review commands. Optional MCP servers in optional/mcp.json.
+  Source: ui-ux-pro-max-design-stack@omega-engineering-x10
+
+Component inventory
+  Skills (2)  design-plan, design-review
+  Agents (1)  design-review
+  Hooks (0)
+  MCP servers (0)
+  LSP servers (0)
+
+Projected token cost
+  Always-on:   ~236 tok   added to every session
+
+Per-component (rounded)
+  component      always-on  on-invoke
+  design-review       ~140      ~1.5k
+  design-plan          ~50       ~420
+  design-review        ~50       ~200
+
+  On-invoke cost is paid each time a skill or agent fires.
+  Token counts are estimates and may differ from actual usage.

@@ -1,0 +1,11 @@
+Test: documented pattern finds nested test files (issue #2008)
+  [PASS] documented pattern runs tests and detects pollution
+Test: documented pattern also finds top-level test files
+  [PASS] src/**/*.test.ts matches src/top.test.ts and src/feature/nested.test.ts
+Test: ./-prefixed pattern matches the same files
+  [PASS] leading ./ on the pattern is accepted
+Test: non-matching pattern reports an honest zero
+  [PASS] empty result counts as 0, not 1
+  [PASS] empty result exits via the clean path
+
+All tests passed

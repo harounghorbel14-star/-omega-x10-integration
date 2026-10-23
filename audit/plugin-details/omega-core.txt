@@ -1,0 +1,20 @@
+omega-core 1.0.0
+  Description: OMEGA-ENGINEERING X10 master router: maps any engineering task to the right specialist skill across all ten integrated sources, with a searchable registry and doctor checks.
+  Source: omega-core@omega-engineering-x10
+
+Component inventory
+  Skills (1)  omega-engineering-x10
+  Agents (0)
+  Hooks (0)
+  MCP servers (0)
+  LSP servers (0)
+
+Projected token cost
+  Always-on:   ~239 tok   added to every session
+
+Per-component (rounded)
+  component              always-on  on-invoke
+  omega-engineering-x10       ~240      ~2.1k
+
+  On-invoke cost is paid each time a skill or agent fires.
+  Token counts are estimates and may differ from actual usage.
