@@ -20,30 +20,36 @@ BASELINE_NOTES = {
                                  "(scripts/bump-version.sh) is release tooling, not a skill."),
     "mattpocock-validate": ("environment/tool-version", "`--strict` turns two warnings into errors: root CLAUDE.md not loaded, and "
                             "missing plugin icon (a newer validator rule). No errors without --strict; the OMEGA copy validates."),
-    "ecc-npm-test": ("2/8879 fail: 1 environmental (confirmed), 1 undiagnosed", "8877/8879 tests passed across 428 files. (1) hooks/hooks.test.js "
-                     "'observe.sh falls back to legacy output fields': re-run with this harness's CLAUDE_*/AI_AGENT env vars "
-                     "unset, the file passes 258/258, so it is environmental (observe.sh skips non-CLI entrypoints by design). "
+    "ecc-npm-test": ("2/8879 fail: both environmental (confirmed)", "8877/8879 tests passed across 428 files. "
+                     "(1) hooks/hooks.test.js 'observe.sh falls back to legacy output fields': with this harness's CLAUDE_*/AI_AGENT "
+                     "env vars unset the file passes 258/258 (observe.sh skips non-CLI entrypoints by design). "
                      "(2) scripts/install-sh.test.js 'leader exit cannot hide an owned descendant retaining captured pipes' "
-                     "('owned fixture process survived cleanup') still fails with the env cleared. It exercises ECC's "
-                     "install.sh process cleanup, which the plugin install path does not use; likely sandbox process-group "
-                     "behaviour, not confirmed."),
-    "claude-mem-bun-test": ("71/10120 fail: 61 environmental (confirmed), 10 undiagnosed", "9753 pass, 71 fail, 296 skip across 977 files. 61 failures "
-                            "(smart-file-read outlines, tree-sitter CLI provisioning) came from installing dependencies with "
-                            "--ignore-scripts, which skips tree-sitter-cli's install.js binary download. After running only that "
-                            "script (tree-sitter 0.26.13) and re-running the 17 failing files with the harness env vars unset: "
-                            "350 pass, 10 fail. The 10 remaining (ensure-launcher x3, observation semantic row filters x2, Chroma "
-                            "connection-failure handling, npm tarball contents, launcher --version, Codex PreToolUse transport, "
-                            "processesStillUsingArm with real pgrep/lsof) were not individually diagnosed; they involve compiling "
-                            "the launcher, Chroma, npm pack and host process tools. Note: the worker started and served "
-                            "/api/health from the integrated copy (functional test)."),
+                     "('owned fixture process survived cleanup'): the descendant IS killed (State Z, zombie, 500 ms after SIGKILL) "
+                     "but this sandbox's PID 1 (`process_api`) never reaps orphans, and the test's kill(pid, 0) succeeds on a "
+                     "zombie. Under a reaping subreaper (tools/subreaper.py, equivalent to tini / docker --init) the file passes "
+                     "19/19. ECC's cleanup safeguards were not changed. Requirement elsewhere: an init that reaps zombies."),
+    "claude-mem-bun-test": ("71/10120 fail: 67 environmental + 4 upstream build skew (all confirmed)", "9753 pass, 71 fail, 296 skip "
+                            "across 977 files. 61: tree-sitter CLI binary missing because install scripts were skipped "
+                            "(--ignore-scripts); fixed by upstream's trustedDependencies install. Remaining 10, each reproduced: "
+                            "4 launcher tests (ensure-launcher x3, launcher --version) expect LAUNCHER_PROTOCOL 2 from src/ but the "
+                            "committed plugin/scripts artifacts were last rebuilt 2026-10-20, before the bump in 8eb3dabc "
+                            "(2026-10-22); after upstream `npm run build`: 96/96 launcher tests pass. Upstream main == pinned commit, "
+                            "and published npm 15.0.1 ships an ensure-launcher.cjs byte-identical to the integrated copy, so shipped "
+                            "artifacts are self-consistent. 1 plugin-distribution test needs the git-ignored dist/ build output "
+                            "(passes after build). 2 observation semantic-row-filter tests take 7.1 s and 7.9 s on this 4-core machine, "
+                            "over bun's 5 s default (pass with --timeout 60000). 1 Chroma connection-failure test and 1 Codex "
+                            "PreToolUse transport test fail only under full-suite load (pass alone at the default timeout). "
+                            "1 processesStillUsingArm test: the container locale is POSIX, so pgrep cannot match the emoji in its "
+                            "regex (passes with LC_ALL=C.UTF-8)."),
     "graphify-pytest": ("25/8471 fail: all environmental (confirmed)", "8246 passed, 25 failed, 200 skipped. All three groups confirmed: "
                         "test_security.py (7) needs DNS for example.com, blocked by this environment's network policy; "
                         "test_skillgen.py (11) reads the v8 baseline from git history, absent from the shallow clone; after "
                         "`git fetch --unshallow` it passes 71/71; test_ext_tagged_id_clash.py (7) needs the optional `sql` "
                         "extra (tree-sitter-sql); with `uv run --extra sql` it passes 14/14."),
-    "vercel-skills-vitest": ("4/978 fail: 3 environmental (confirmed), 1 likely terminal formatting", "4/978 failed. 3 detect-agent tests fail because this harness sets AI_AGENT/CLAUDE_CODE_* "
-                             "env vars; re-run with those unset: they pass. 1 Notion test compares terminal-formatted output and "
-                             "still fails. Tests cover the `skills` CLI source, which is an external runtime here."),
+    "vercel-skills-vitest": ("4/978 fail: all environmental (confirmed)", "3 detect-agent tests read AI_AGENT/CLAUDE_CODE_* env "
+                             "vars set by this harness. 1 Notion test: @clack/prompts isUnicodeSupported() returns false when "
+                             "TERM=linux (this container's TERM), so it draws '|' instead of the box character the test strips. "
+                             "With the env vars unset and TERM=xterm-256color: 978/978 pass."),
 }
 
 
@@ -65,6 +71,22 @@ def baseline_md():
         if r["exit"] != 0:
             note = BASELINE_NOTES.get(r["name"], ("", "Not yet analysed."))[1]
             out += [f"## {r['name']} (exit {r['exit']})", "", note, "", "```", *[t[:200] for t in r["tail"][-10:]], "```", ""]
+    cp = A / "corrected" / "baseline-results.jsonl"
+    crow = [json.loads(line) for line in cp.read_text().splitlines() if line.strip()] if cp.exists() else []
+    if crow:
+        out += ["## Corrected-environment run", "",
+                "`CORRECTED_ENV=1 tools/run-baselines.sh <fresh copy> audit/corrected/baseline-results.jsonl` applies only the "
+                "requirements confirmed above: agent env vars unset, TERM=xterm-256color, LC_ALL=C.UTF-8, a reaping subreaper, "
+                "claude-mem trusted install scripts + upstream `npm run build` + `--timeout 30000`, Graphify full git history + "
+                "`--extra sql`. Network policy, yq and --strict validator rules are unchanged.", "",
+                "| Suite | Exit (default run) | Exit (corrected) | Tail |", "|---|---|---|---|"]
+        dflt = {r["name"]: r["exit"] for r in rows}
+        for r in crow:
+            import re as _re
+            clean = [_re.sub(r"\x1b\[[0-9;]*m", "", t).strip() for t in r["tail"][-3:]]
+            tail = " / ".join(t[:90] for t in clean if t)
+            out.append(f"| {r['name']} | {dflt.get(r['name'], '-')} | {r['exit']} | {tail.replace('|', '/')} |")
+        out += ["", f"**Corrected run: {sum(1 for r in crow if r['exit'] == 0)}/{len(crow)} suites exit 0.**", ""]
     out += ["## Not run, with reason", "",
             "- superpowers `tests/claude-code`, `tests/explicit-skill-requests`, `tests/opencode`, `tests/kimi`, "
             "`tests/antigravity`, `tests/devin`, `tests/hermes`, `tests/pi`: drive live model sessions or other harnesses "
@@ -119,28 +141,28 @@ def validation_md(baseline_rows):
         out.append(f"| {f.stem} | {inv} | ~{tok} |")
     out += ["", "## 5. Unit tests", "", "Command: `python3 -m unittest discover -s tests -v`", "", "```", *ut.strip().splitlines()[-25:], "```", "",
             "## 6. Baseline comparison", "",
-            f"{sum(1 for r in baseline_rows if r['exit'] == 0)}/{len(baseline_rows)} upstream suites exit 0. Every non-zero result "
-            "was investigated (see `audit/baseline-results.md`): most failures were reproduced as environmental (agent env vars, "
-            "blocked DNS, shallow clone, optional extras, skipped install scripts, a different yq). Still undiagnosed: 10 "
-            "claude-mem tests, 1 ECC install.sh process-cleanup test and 1 vercel skills Notion formatting test. "
-            "None of them involve files changed by the integration. "
-            "Integration does not modify any upstream file except the VibeSec frontmatter name, and the integrity check "
-            "proves the other copied files are byte-identical to the pinned sources, so upstream test outcomes carry over to "
-            "the integrated copies unchanged.", "",
+            f"Default run: {sum(1 for r in baseline_rows if r['exit'] == 0)}/{len(baseline_rows)} upstream suites exit 0. Every "
+            "failing test was reproduced individually and its cause confirmed (see `audit/baseline-results.md`, including the "
+            "corrected-environment run). No failure involves a file changed by the integration: apart from two recorded "
+            "transforms (VibeSec frontmatter name, anti-pattern-czar command path), every copied file is byte-identical to "
+            "the pinned source, so upstream outcomes carry over to the integrated copies.", "",
             "## 7. Disposition reconciliation", "", rec.split("\n", 2)[2] if rec.count("\n") > 2 else rec, "",
-            "## 8. Known limitations and unverified behaviour", "",
-            "- claude-mem full capture/injection loop and memory search were not exercised end to end (requires installing its "
-            "hooks into a session); only the worker start/health/stop from the integrated copy was verified.",
-            "- Graphify semantic extraction for docs/papers/images/video (subagent-driven) was not run; the code-only graph path was.",
-            "- find-skills search could not reach skills.sh from this environment (network policy).",
-            "- ECC: 311 skills/97 commands/71 agents load (counted by Claude Code); individual ECC skills were not each executed. "
-            "ECC hooks were installed but not observed firing in a live session.",
-            "- Superpowers' SessionStart bootstrap was installed; its hook test passed upstream, but injection in a live session was "
-            "not separately inspected.",
-            "- Replica, UI UX Pro Max design-stack review flow and the remaining specialist skills were validated structurally and "
-            "by their upstream tests, not by full task runs.",
-            "- Routing is keyword/curated; it is a recommendation aid. Final skill choice remains the model's, as shown in the two live routing tests.",
-            ""]
+            "## 8. Open items", "", "Rendered from `audit/open-items.json`; the same list is in `audit/unresolved-items.md`.", ""]
+    oi = json.loads((A / "open-items.json").read_text())
+    fx = oi.get("fixed_in_release_gate", [])
+    if fx:
+        out += [f"**Fixed in the release gate ({len(fx)})**", "", "| Id | Issue | Fix | Regression test |", "|---|---|---|---|"]
+        out += [f"| {f['id']} | {f['item']} | {f['fix']} | {f['regression_test']} |" for f in fx]
+        out.append("")
+    for key, title in (("implementation_blockers", "Implementation blockers"), ("environment_restricted", "Environment-restricted"),
+                       ("upstream_limitations", "Upstream limitations"), ("not_verified", "Not verified")):
+        items = oi.get(key, [])
+        out.append(f"**{title} ({len(items)})**" + (": none." if not items else ""))
+        for it in items:
+            out.append(f"- {it['id']}: {it['item']}")
+        out.append("")
+    out += ["Routing is keyword/curated and is a recommendation aid; final skill choice stays with the model, as shown in "
+            "the live routing tests.", ""]
     (A / "validation-report.md").write_text("\n".join(out) + "\n")
 
 
@@ -148,9 +170,19 @@ def completeness_md(baseline_rows):
     from collections import Counter
     comps = json.loads((ROOT / "registry/components.json").read_text())
     man = json.loads((A / "source-manifest.json").read_text())
+    cp = A / "corrected" / "baseline-results.jsonl"
+    corr = {}
+    if cp.exists():
+        for line in cp.read_text().splitlines():
+            if line.strip():
+                r = json.loads(line)
+                corr[r["name"]] = r["exit"]
     suite_repo = {r["cwd"]: [] for r in baseline_rows}
     for r in baseline_rows:
-        suite_repo[r["cwd"]].append(f"{r['name']}={'pass' if r['exit'] == 0 else 'exit ' + str(r['exit'])}")
+        d = "pass" if r["exit"] == 0 else f"exit {r['exit']}"
+        c = corr.get(r["name"])
+        c = "" if c is None else (" / corrected pass" if c == 0 else f" / corrected exit {c}")
+        suite_repo[r["cwd"]].append(f"{r['name']}={d}{c}")
     out = ["# Final completeness audit", "",
            "Computed from `registry/components.json` (every component of every source) and the recorded test runs.", "",
            "| Repository | Inspected | Commit | Skills found | Other components | Preserved | Merged | Adapted | Excluded | External runtime | Blocked/unresolved | Upstream tests |",

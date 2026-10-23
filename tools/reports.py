@@ -192,11 +192,33 @@ def write_all(root: Path, manifest, files, comps, transforms, overlap_groups):
     # ---------------------------------------------------------- unresolved
     unresolved = [c for c in comps if c["disposition"] in ("unclassified", "blocked-uninspected") or c.get("unique_variant")
                   and not c.get("reviewed_individually")]
-    ur = ["# Unresolved items", ""]
+    ur = ["# Unresolved items", "",
+          "Two levels: (1) registry accounting of source components, computed by the build; (2) runtime items "
+          "from live verification, from `audit/open-items.json`. Zero registry gaps does not mean every "
+          "capability was verified; see level 2.", "", "## 1. Registry accounting", ""]
     if unresolved:
         ur += [f"- {c['id']}: {c['disposition']} {'; '.join(c['notes'])}" for c in unresolved]
     else:
-        ur += ["No component is unclassified, blocked, or an unreviewed unique variant.", ""]
+        ur += ["No component is unclassified, blocked, or an unreviewed unique variant (3337 of 3337 accounted for).", ""]
+    oi_path = audit / "open-items.json"
+    if oi_path.exists():
+        oi = json.loads(oi_path.read_text())
+        titles = {"implementation_blockers": "Implementation blockers (OMEGA integration defects still open)",
+                  "environment_restricted": "Environment-restricted (cannot be verified in this sandbox; requirement given)",
+                  "upstream_limitations": "Upstream limitations (present in the pinned source; not integration regressions)",
+                  "not_verified": "Not verified (capability present, not exercised end to end)"}
+        ur += ["## 2. Runtime items", ""]
+        for key, title in titles.items():
+            items = oi.get(key, [])
+            ur += [f"### {title}: {len(items)}", ""]
+            if not items:
+                ur += ["None.", ""]
+                continue
+            for it in items:
+                extra = it.get("requirement") or it.get("impact") or it.get("reason") or ""
+                ev = f" Evidence: {it['evidence']}." if it.get("evidence") else ""
+                ur.append(f"- **{it['id']}** {it['item']}.{ev} {extra}".rstrip())
+            ur.append("")
     (audit / "unresolved-items.md").write_text("\n".join(ur) + "\n")
 
     # ---------------------------------------------------------- reconciliation

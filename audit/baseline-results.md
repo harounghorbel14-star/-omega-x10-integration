@@ -19,11 +19,11 @@ Each source's own tests, run by `tools/run-baselines.sh` on a disposable copy of
 | mattpocock-validate | mattpocock__skills | `claude plugin validate . --strict` | 1 | 2 | environment/tool-version |
 | mattpocock-version-check | mattpocock__skills | `node scripts/sync-plugin-version.mjs --check` | 0 | 0 | pass |
 | agent-browser-launcher | vercel-labs__agent-browser | `node --test test/launcher.test.mjs` | 0 | 1 | pass |
-| vercel-skills-vitest | vercel-labs__skills | `pnpm install --frozen-lockfile --ignore-scripts >/dev/null 2>&1; pnpm exec vitest run` | 1 | 96 | 4/978 fail: 3 environmental (confirmed), 1 likely terminal formatting |
+| vercel-skills-vitest | vercel-labs__skills | `pnpm install --frozen-lockfile --ignore-scripts >/dev/null 2>&1; pnpm exec vitest run` | 1 | 96 | 4/978 fail: all environmental (confirmed) |
 | vercel-skills-typecheck | vercel-labs__skills | `pnpm exec tsc --noEmit` | 0 | 6 | pass |
-| ecc-npm-test | affaan-m__ECC | `npm ci --ignore-scripts --no-audit --no-fund >/dev/null 2>&1; npm test` | 1 | 1217 | 2/8879 fail: 1 environmental (confirmed), 1 undiagnosed |
+| ecc-npm-test | affaan-m__ECC | `npm ci --ignore-scripts --no-audit --no-fund >/dev/null 2>&1; npm test` | 1 | 1217 | 2/8879 fail: both environmental (confirmed) |
 | graphify-pytest | Graphify-Labs__graphify | `uv sync -q >/dev/null 2>&1; uv run --with pytest pytest -q tests` | 1 | 775 | 25/8471 fail: all environmental (confirmed) |
-| claude-mem-bun-test | thedotmack__claude-mem | `bun install --ignore-scripts >/dev/null 2>&1; bun test tests` | 1 | 801 | 71/10120 fail: 61 environmental (confirmed), 10 undiagnosed |
+| claude-mem-bun-test | thedotmack__claude-mem | `bun install --ignore-scripts >/dev/null 2>&1; bun test tests` | 1 | 801 | 71/10120 fail: 67 environmental + 4 upstream build skew (all confirmed) |
 
 **14/20 suites exit 0.**
 
@@ -56,7 +56,7 @@ The directory also runs a safety scan and a policy review that this command does
 
 ## vercel-skills-vitest (exit 1)
 
-4/978 failed. 3 detect-agent tests fail because this harness sets AI_AGENT/CLAUDE_CODE_* env vars; re-run with those unset: they pass. 1 Notion test compares terminal-formatted output and still fails. Tests cover the `skills` CLI source, which is an external runtime here.
+3 detect-agent tests read AI_AGENT/CLAUDE_CODE_* env vars set by this harness. 1 Notion test: @clack/prompts isUnicodeSupported() returns false when TERM=linux (this container's TERM), so it draws '|' instead of the box character the test strips. With the env vars unset and TERM=xterm-256color: 978/978 pass.
 
 ```
      45| });
@@ -73,7 +73,7 @@ The directory also runs a safety scan and a policy review that this command does
 
 ## ecc-npm-test (exit 1)
 
-8877/8879 tests passed across 428 files. (1) hooks/hooks.test.js 'observe.sh falls back to legacy output fields': re-run with this harness's CLAUDE_*/AI_AGENT env vars unset, the file passes 258/258, so it is environmental (observe.sh skips non-CLI entrypoints by design). (2) scripts/install-sh.test.js 'leader exit cannot hide an owned descendant retaining captured pipes' ('owned fixture process survived cleanup') still fails with the env cleared. It exercises ECC's install.sh process cleanup, which the plugin install path does not use; likely sandbox process-group behaviour, not confirmed.
+8877/8879 tests passed across 428 files. (1) hooks/hooks.test.js 'observe.sh falls back to legacy output fields': with this harness's CLAUDE_*/AI_AGENT env vars unset the file passes 258/258 (observe.sh skips non-CLI entrypoints by design). (2) scripts/install-sh.test.js 'leader exit cannot hide an owned descendant retaining captured pipes' ('owned fixture process survived cleanup'): the descendant IS killed (State Z, zombie, 500 ms after SIGKILL) but this sandbox's PID 1 (`process_api`) never reaps orphans, and the test's kill(pid, 0) succeeds on a zombie. Under a reaping subreaper (tools/subreaper.py, equivalent to tini / docker --init) the file passes 19/19. ECC's cleanup safeguards were not changed. Requirement elsewhere: an init that reaps zombies.
 
 ```
 ║  Total Tests: 8879                                       ║
@@ -107,7 +107,7 @@ FAILED tests/test_skillgen.py::test_agents_audit_baseline_is_amps_v8_body - S...
 
 ## claude-mem-bun-test (exit 1)
 
-9753 pass, 71 fail, 296 skip across 977 files. 61 failures (smart-file-read outlines, tree-sitter CLI provisioning) came from installing dependencies with --ignore-scripts, which skips tree-sitter-cli's install.js binary download. After running only that script (tree-sitter 0.26.13) and re-running the 17 failing files with the harness env vars unset: 350 pass, 10 fail. The 10 remaining (ensure-launcher x3, observation semantic row filters x2, Chroma connection-failure handling, npm tarball contents, launcher --version, Codex PreToolUse transport, processesStillUsingArm with real pgrep/lsof) were not individually diagnosed; they involve compiling the launcher, Chroma, npm pack and host process tools. Note: the worker started and served /api/health from the integrated copy (functional test).
+9753 pass, 71 fail, 296 skip across 977 files. 61: tree-sitter CLI binary missing because install scripts were skipped (--ignore-scripts); fixed by upstream's trustedDependencies install. Remaining 10, each reproduced: 4 launcher tests (ensure-launcher x3, launcher --version) expect LAUNCHER_PROTOCOL 2 from src/ but the committed plugin/scripts artifacts were last rebuilt 2026-10-20, before the bump in 8eb3dabc (2026-10-22); after upstream `npm run build`: 96/96 launcher tests pass. Upstream main == pinned commit, and published npm 15.0.1 ships an ensure-launcher.cjs byte-identical to the integrated copy, so shipped artifacts are self-consistent. 1 plugin-distribution test needs the git-ignored dist/ build output (passes after build). 2 observation semantic-row-filter tests take 7.1 s and 7.9 s on this 4-core machine, over bun's 5 s default (pass with --timeout 60000). 1 Chroma connection-failure test and 1 Codex PreToolUse transport test fail only under full-suite load (pass alone at the default timeout). 1 processesStillUsingArm test: the container locale is POSIX, so pgrep cannot match the emoji in its regex (passes with LC_ALL=C.UTF-8).
 
 ```
 [SETTINGS] Created settings file with defaults: /tmp/claude-mem-merge-route-dCnAFK/settings.json
@@ -121,6 +121,35 @@ tests/worker/http/routes/work-state-routes.test.ts:
  43936 expect() calls
 Ran 10120 tests across 977 files. [800.71s]
 ```
+
+## Corrected-environment run
+
+`CORRECTED_ENV=1 tools/run-baselines.sh <fresh copy> audit/corrected/baseline-results.jsonl` applies only the requirements confirmed above: agent env vars unset, TERM=xterm-256color, LC_ALL=C.UTF-8, a reaping subreaper, claude-mem trusted install scripts + upstream `npm run build` + `--timeout 30000`, Graphify full git history + `--extra sql`. Network policy, yq and --strict validator rules are unchanged.
+
+| Suite | Exit (default run) | Exit (corrected) | Tail |
+|---|---|---|---|
+| replica-pytest | 0 | 0 | .........................................................                [100%] / 57 passed in 1.49s |
+| uiux-validate-csv | 0 | 0 | CSV validation passed: 35 runtime CSV files checked. |
+| uiux-smoke-domains | 0 | 0 | PASS  google-fonts   1 / OK: 12/12 domains returned ≥1 result |
+| uiux-smoke-stacks | 0 | 0 | PASS  uwp                1 / OK: 22/22 stacks returned ≥1 result |
+| uiux-pytest | 0 | 0 | .                                                                        [100%] / 1 passed in 0.02s |
+| superpowers-skill-size | 0 | 0 | PASS: every SKILL.md is under 20000 bytes |
+| superpowers-hooks | 0 | 0 | [PASS] session-start with cat on PATH emits nested additionalContext / [PASS] session-start pipes its JSON through cat when cat is on PATH / STATUS: PASSED |
+| superpowers-skill-struct | 0 | 0 | [PASS] skill files say 'your human partner', not 'the user' / Passed: 46  Failed: 0 |
+| superpowers-find-polluter | 0 | 0 | [PASS] empty result exits via the clean path / All tests passed |
+| superpowers-version-bump | 3 | 3 | jq: error: strenv/1 is not defined at <top-level>, line 1: / .[strenv(FIELD)] / select(tag == "!!str") / jq: 1 compile error |
+| superpowers-codex-manifest | 0 | 0 | Codex marketplace manifest looks good |
+| superpowers-shell-lint | 0 | 0 | [PASS] --all includes tracked .sh file / [PASS] --all ignores untracked shell files / All shell lint script tests passed |
+| mattpocock-validate | 1 | 1 | The directory also runs a safety scan and a policy review that this command does not. / ✘ Validation failed (--strict treats warnings as errors) |
+| mattpocock-version-check | 0 | 0 | plugin.json version is 1.3.1 (already in sync) |
+| agent-browser-launcher | 0 | 0 | # skipped 0 / # todo 0 / # duration_ms 380.863745 |
+| vercel-skills-vitest | 1 | 0 | Start at  17:12:57 / Duration  95.32s (transform 6.46s, setup 0ms, import 15.34s, tests 198.19s, environment 20 |
+| vercel-skills-typecheck | 0 | 0 |  |
+| ecc-npm-test | 1 | 0 | ╚══════════════════════════════════════════════════════════╝ / Passed: 8879, Failed: 0 |
+| graphify-pytest | 1 | 1 | FAILED tests/test_security.py::test_safe_fetch_text_decodes_utf8 - ValueError... / FAILED tests/test_security.py::test_safe_fetch_text_replaces_bad_bytes - Valu... / 7 failed, 8371 passed, 154 skipped, 2087 warnings in 666.26s (0:11:06) |
+| claude-mem-bun-test | 1 | 0 | 0 fail / 44932 expect() calls / Ran 10120 tests across 977 files. [836.23s] |
+
+**Corrected run: 17/20 suites exit 0.**
 
 ## Not run, with reason
 

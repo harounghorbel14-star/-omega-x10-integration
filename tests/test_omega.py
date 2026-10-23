@@ -73,6 +73,97 @@ class RouteTests(unittest.TestCase):
         self.assertEqual(json.loads(out.stdout)["task"], "debug a crash")
 
 
+class DoctorRegressionTests(unittest.TestCase):
+    """Regressions for gaps found by live runtime checks (Phase 3)."""
+
+    def test_unreachable_host_is_reported_not_swallowed(self):
+        # `npx skills find` turns network errors into "No skills found"; the doctor must not.
+        ok, detail = omega._reachable("http://127.0.0.1:9/api/search?q=x")
+        self.assertFalse(ok)
+        self.assertIn("unreachable", detail)
+
+    def test_doctor_has_skills_sh_check_with_fix(self):
+        names = {c["check"]: c for c in omega.doctor()}
+        self.assertIn("skills.sh reachable", names)
+        c = names["skills.sh reachable"]
+        if not c["ok"]:
+            self.assertIn("No skills found", c["fix"])
+
+    def test_ecc_missing_runtime_deps_detected(self):
+        import os
+        import tempfile
+        with tempfile.TemporaryDirectory() as cfg:
+            plugin = Path(cfg) / "plugins" / "cache" / "omega-engineering-x10" / "ecc" / "2.2.3"
+            (plugin / ".claude-plugin").mkdir(parents=True)
+            (plugin / ".claude-plugin" / "plugin.json").write_text('{"name": "ecc"}')
+            old = os.environ.get("CLAUDE_CONFIG_DIR")
+            os.environ["CLAUDE_CONFIG_DIR"] = cfg
+            try:
+                checks = {c["check"]: c for c in omega.doctor()}
+                key = f"ecc runtime deps ({plugin})"
+                self.assertIn(key, checks)
+                self.assertFalse(checks[key]["ok"])
+                self.assertIn("install-plugin-deps.sh", checks[key]["fix"])
+                (plugin / "node_modules" / "js-yaml").mkdir(parents=True)
+                self.assertTrue({c["check"]: c for c in omega.doctor()}[key]["ok"])
+            finally:
+                if old is None:
+                    os.environ.pop("CLAUDE_CONFIG_DIR")
+                else:
+                    os.environ["CLAUDE_CONFIG_DIR"] = old
+
+
+class BuildDeterminismTest(unittest.TestCase):
+    """Regression: skill directories used to be ordered from a Python set, so outputs changed with
+    PYTHONHASHSEED. A rebuild under another seed must reproduce the registry byte for byte."""
+
+    def test_rebuild_with_different_hash_seed_is_identical(self):
+        import hashlib
+        import os
+        # transforms.json/merge-map.json: regression for --no-copy builds dropping the transform records
+        files = ["registry/components.json", "registry/skills.json", "audit/merge-map.json", "audit/file-map.json",
+                 "audit/transforms.json"]
+        before = {f: hashlib.sha256((ROOT / f).read_bytes()).hexdigest() for f in files}
+        env = dict(os.environ, PYTHONHASHSEED="424242")
+        r = subprocess.run([sys.executable, str(ROOT / "tools/build.py"), "--no-copy"], capture_output=True, text=True,
+                           env=env, cwd=ROOT)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        after = {f: hashlib.sha256((ROOT / f).read_bytes()).hexdigest() for f in files}
+        self.assertEqual(before, after)
+        self.assertEqual(len(json.loads((ROOT / "audit/transforms.json").read_text())), 2)
+
+
+class SubreaperTests(unittest.TestCase):
+    """tools/subreaper.py: reaps orphaned zombies, and returns when the command exits even if a daemon
+    it started is still running (regression: it used to wait for every descendant until the timeout)."""
+
+    SCRIPT = str(ROOT / "tools" / "subreaper.py")
+
+    def test_returns_command_status_without_waiting_for_daemons(self):
+        import time
+        start = time.monotonic()
+        # the daemon must not hold our pipes open, or run() would wait for EOF rather than for the subreaper
+        r = subprocess.run([sys.executable, self.SCRIPT, "bash", "-c", "sleep 30 >/dev/null 2>&1 </dev/null & exit 3"],
+                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=20)
+        self.assertEqual(r.returncode, 3)
+        self.assertLess(time.monotonic() - start, 10)
+
+    def test_killed_orphan_is_reaped(self):
+        # Positive check only: whether an orphan would stay a zombie WITHOUT the subreaper depends on the
+        # host's process tree (it did under node in this sandbox, see audit/baseline-results.md).
+        probe = (
+            "import os, signal, subprocess, sys, time\n"
+            "pid = int(subprocess.run(['bash', '-c', 'sleep 30 >/dev/null 2>&1 & echo $!'], capture_output=True, text=True).stdout)\n"
+            "os.kill(pid, signal.SIGKILL)\n"
+            "for _ in range(50):\n"
+            "    try: os.kill(pid, 0)\n"
+            "    except ProcessLookupError: sys.exit(0)\n"
+            "    time.sleep(0.05)\n"
+            "sys.exit(1)\n")
+        r = subprocess.run([sys.executable, self.SCRIPT, sys.executable, "-c", probe], timeout=30)
+        self.assertEqual(r.returncode, 0, "orphan stayed a zombie: subreaper did not reap it")
+
+
 class RegistryTests(unittest.TestCase):
     def test_core_registry_matches_root_registry(self):
         for n in ("skills.json", "capabilities.json", "routing-rules.json"):

@@ -139,6 +139,9 @@ def classify_and_copy(src_root, files, do_copy):
         if key in TRANSFORMS:
             f["disposition"] = "adapted-with-traceability"
             f["transform"] = TRANSFORMS[key]["why"]
+            # recorded in every mode: a --no-copy rebuild must not drop the transform audit trail
+            transforms_applied.append({"source": f"{f['repo']}/{f['path']}", "dest": f["dest"],
+                                       "why": TRANSFORMS[key]["why"]})
         if do_copy:
             src = src_root / f["repo"] / f["path"]
             dst = ROOT / f["dest"]
@@ -154,8 +157,6 @@ def classify_and_copy(src_root, files, do_copy):
                         raise SystemExit(f"transform anchor missing in {key}: {old!r}")
                     text = text.replace(old, new, 1)
                 dst.write_text(text)
-                transforms_applied.append({"source": f"{f['repo']}/{f['path']}", "dest": f["dest"],
-                                           "why": TRANSFORMS[key]["why"]})
             else:
                 shutil.copy2(src, dst)
     for repo, path, plugin, dest in EXTRA_COPIES:
@@ -275,7 +276,7 @@ def derive_components(src_root, files, commits):
         paths = {f["path"]: f for f in flist}
         # ---- skills: any directory holding SKILL.md (incl. graphify skill.md)
         skill_dirs = sorted({p.rsplit("/", 1)[0] if "/" in p else "" for p in paths if p.endswith("SKILL.md")
-                             and p.split("/")[-1] == "SKILL.md"}, key=lambda d: -d.count("/"))
+                             and p.split("/")[-1] == "SKILL.md"}, key=lambda d: (-d.count("/"), d))
         if repo == "Graphify-Labs__graphify":
             skill_files = ["graphify/skill.md"] + sorted(p for p in paths if re.match(r"graphify/skill-[a-z]+\.md$", p))
         else:

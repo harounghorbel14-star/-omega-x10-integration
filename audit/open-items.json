@@ -1,0 +1,160 @@
+{
+ "description": "Runtime-level open items found by live verification. Hand-maintained; each entry cites its evidence. Rendered into audit/unresolved-items.md by tools/build.py.",
+ "implementation_blockers": [],
+ "environment_restricted": [
+  {
+   "id": "E1",
+   "item": "find-skills search (`npx skills find`)",
+   "evidence": "https://skills.sh CONNECT 403 from this environment's proxy (curl + omega.py doctor)",
+   "requirement": "Network policy allowing https://skills.sh; re-run `npx skills@1.7.4 find react` and `omega.py doctor`"
+  },
+  {
+   "id": "E2",
+   "item": "Graphify upstream tests/test_security.py (7 tests)",
+   "evidence": "ValueError: DNS resolution failed for 'example.com'",
+   "requirement": "DNS + HTTP egress to example.com"
+  },
+  {
+   "id": "E3",
+   "item": "Superpowers upstream tests/version-bump/test-bump-version.sh",
+   "evidence": "/usr/bin/yq is the jq-wrapper yq 0.0.0; script uses mikefarah yq v4 syntax (strenv)",
+   "requirement": "mikefarah yq v4 on PATH"
+  },
+  {
+   "id": "E4",
+   "item": "mattpocock `claude plugin validate . --strict`",
+   "evidence": "--strict promotes two warnings (root CLAUDE.md not loaded; missing icon) to errors; non-strict validation passes",
+   "requirement": "Upstream adds an icon / validator version that does not flag these; not an integration issue"
+  }
+ ],
+ "upstream_limitations": [
+  {
+   "id": "U1",
+   "item": "claude-mem committed build artifacts lag src/ (LAUNCHER_PROTOCOL 2 in src, 1 in plugin/scripts)",
+   "evidence": "4 launcher tests fail at pinned commit dcb28a7 (= upstream main); pass 96/96 after upstream `npm run build`; published npm 15.0.1 ships ensure-launcher.cjs byte-identical to the integrated copy (protocol 1, self-consistent)",
+   "impact": "Repo tests only; shipped artifacts are internally consistent. Live install placed a protocol-1 launcher and hooks worked."
+  },
+  {
+   "id": "U2",
+   "item": "claude-mem test tests/memory/native-memory-bridge.test.ts writes to the real $HOME/.claude-mem",
+   "evidence": "Run with an isolated HOME creates $HOME/.claude-mem/settings.json and a log line",
+   "impact": "Test isolation only. Baseline runner isolates HOME."
+  },
+  {
+   "id": "U3",
+   "item": "`npx skills find` reports network failures as 'No skills found'",
+   "evidence": "vercel-labs/skills src/find.ts: catch { return [] }",
+   "impact": "Misleading output; omega.py doctor now checks skills.sh reachability"
+  },
+  {
+   "id": "U4",
+   "item": "ECC hooks need npm dependencies that plugin installs do not provide",
+   "evidence": "SessionStart: Cannot find module 'js-yaml' (scripts/lib/project-detect.js); upstream TROUBLESHOOTING.md MODULE_NOT_FOUND",
+   "impact": "Mitigated: scripts/install-plugin-deps.sh + doctor check; verified hooks exit 0 afterwards"
+  },
+  {
+   "id": "U5",
+   "item": "claude-mem plain `/plugin install` leaves the plugin's npm deps (tree-sitter grammars, zod) uninstalled",
+   "evidence": "SessionStart: 'plugin dependencies are missing (zod, tree-sitter-cli, ...)'",
+   "impact": "Capture/search still worked; tree-sitter features need `npx claude-mem install`"
+  },
+  {
+   "id": "U6",
+   "item": "claude-mem first session after install: hooks cannot find the `claude-mem` launcher",
+   "evidence": "Executable not found in $PATH: \"claude-mem\" in session 1; works from session 2 with ~/.local/bin on PATH",
+   "impact": "Documented upstream-style restart requirement (docs/INSTALL.md)"
+  }
+ ],
+ "not_verified": [
+  {
+   "id": "N1",
+   "item": "Clean install from a git-hosted copy of the OMEGA marketplace",
+   "reason": "No remote exists and pushing was not authorized; only the local-directory marketplace was installed (where plugins run in place)"
+  },
+  {
+   "id": "N2",
+   "item": "ECC: 309 of 311 skills and 95 of 97 commands not individually exercised",
+   "reason": "Exercised live: ecc:tdd-workflow, ecc:security-review, /ecc:python-review, /ecc:build-fix, and the pre-bash hook path. All 311 skills, 97 commands and 71 agents are counted as loaded by `claude plugin details`"
+  },
+  {
+   "id": "N3",
+   "item": "claude-mem: smart-explore/tree-sitter features, cloud-sync, claude-mem-cowork, Chroma vector search, OpenRouter/Gemini providers",
+   "reason": "Needs `npx claude-mem install` or external services (cmem.ai) / API keys; capture, persistence, search, export/import, shutdown were verified"
+  },
+  {
+   "id": "N4",
+   "item": "Graphify: video/audio transcription, Neo4j/FalkorDB push, MCP server, watch mode, GitHub clone mode",
+   "reason": "Optional extras/services; code, Markdown, PDF and PNG extraction and querying were verified"
+  },
+  {
+   "id": "N5",
+   "item": "agent-browser specialised CLI skills (electron, slack, vercel-sandbox, agentcore, derive-client, webmcp-gen, protected-vercel-deployments)",
+   "reason": "Need Electron apps, Slack/Vercel/AWS accounts; core open/snapshot/fill/click/screenshot was verified"
+  },
+  {
+   "id": "N6",
+   "item": "Full Replica pipeline, UI UX Pro Max /design-review agent run, Superpowers SessionStart injection content",
+   "reason": "Only structural checks, upstream tests and (for UI UX) the search scripts were run"
+  },
+  {
+   "id": "N7",
+   "item": "macOS and Windows",
+   "reason": "Linux container only"
+  },
+  {
+   "id": "N8",
+   "item": "ECC rule packs loaded as context in a session",
+   "reason": "Installer verified (copy, no-overwrite); loading into a session not observed"
+  }
+ ],
+ "fixed_in_release_gate": [
+  {
+   "id": "F1",
+   "item": "Nondeterministic build output (registry/audit ordering depended on PYTHONHASHSEED)",
+   "fix": "tools/build.py sorts skill directories by (depth, path)",
+   "regression_test": "tests/test_omega.py::BuildDeterminismTest"
+  },
+  {
+   "id": "F2",
+   "item": "ECC SessionStart hook crash (Cannot find module 'js-yaml') with no OMEGA guidance",
+   "fix": "scripts/install-plugin-deps.sh (npm ci in a temp dir; ECC tracked files untouched) + doctor check + docs/INSTALL.md",
+   "regression_test": "tests/test_omega.py::DoctorRegressionTests::test_ecc_missing_runtime_deps_detected"
+  },
+  {
+   "id": "F3",
+   "item": "find-skills network failures indistinguishable from empty results",
+   "fix": "omega.py doctor checks skills.sh reachability and explains the 'No skills found' symptom",
+   "regression_test": "DoctorRegressionTests::test_unreachable_host_is_reported_not_swallowed, ::test_doctor_has_skills_sh_check_with_fix"
+  },
+  {
+   "id": "F4",
+   "item": "tools/subreaper.py waited for every descendant, so a daemon left by a test suite hung the runner until timeout (claude-mem exit 124 after 0 failures)",
+   "fix": "return as soon as the command exits, after reaping pending zombies",
+   "regression_test": "tests/test_omega.py::SubreaperTests"
+  },
+  {
+   "id": "F5",
+   "item": "Baseline runner let claude-mem's tests write to the real $HOME/.claude-mem",
+   "fix": "tools/run-baselines.sh runs claude-mem tests with a throwaway HOME that links only ~/.cache, ~/.local and ~/.bun (a fully empty HOME made the Chroma connection-failure test time out: 0/1 vs 1/1 with the real HOME); stray /root/.claude-mem (default settings + fixture log lines) removed",
+   "regression_test": "manual: chroma-vector-sync 15/15 and native-memory-bridge writes contained in the throwaway HOME; /root/.claude-mem absent after the corrected re-run"
+  },
+  {
+   "id": "F6",
+   "item": "docs/INSTALL.md: claude-mem export/import used wrong runner (bun) and paths that looked repo-relative",
+   "fix": "commands replaced by the ones actually run (npx tsx ./scripts/... from a source copy with deps)",
+   "regression_test": "tools/validate.py docs check (60 references)"
+  },
+  {
+   "id": "F7",
+   "item": "unresolved-items.md reported 'none' while capabilities were unverified",
+   "fix": "report now has registry and runtime levels rendered from audit/open-items.json",
+   "regression_test": "-"
+  },
+  {
+   "id": "F8",
+   "item": "`tools/build.py --no-copy` rewrote audit/transforms.json (and merge-map transforms) as empty, which would break the integrity check",
+   "fix": "transform records collected for every matching rule, independent of copy mode",
+   "regression_test": "tests/test_omega.py::BuildDeterminismTest (now also compares transforms.json and requires 2 records)"
+  }
+ ]
+}

@@ -80,44 +80,44 @@ Reason: Localized translation (es) of ECC skills/agents/commands/docs. The Engli
 
 <details><summary>96 items</summary>
 
-- skill `docs/es/skills/database-migrations/SKILL.md` -> `ecc:database-migrations`
-- skill `docs/es/skills/nextjs-turbopack/SKILL.md` -> `ecc:nextjs-turbopack`
-- skill `docs/es/skills/laravel-patterns/SKILL.md` -> `ecc:laravel-patterns`
-- skill `docs/es/skills/e2e-testing/SKILL.md` -> `ecc:e2e-testing`
-- skill `docs/es/skills/springboot-security/SKILL.md` -> `ecc:springboot-security`
-- skill `docs/es/skills/coding-standards/SKILL.md` -> `ecc:coding-standards`
-- skill `docs/es/skills/jpa-patterns/SKILL.md` -> `ecc:jpa-patterns`
-- skill `docs/es/skills/quarkus-verification/SKILL.md` -> `ecc:quarkus-verification`
-- skill `docs/es/skills/backend-patterns/SKILL.md` -> `ecc:backend-patterns`
-- skill `docs/es/skills/golang-testing/SKILL.md` -> `ecc:golang-testing`
-- skill `docs/es/skills/python-testing/SKILL.md` -> `ecc:python-testing`
-- skill `docs/es/skills/laravel-verification/SKILL.md` -> `ecc:laravel-verification`
-- skill `docs/es/skills/continuous-learning-v2/SKILL.md` -> `ecc:continuous-learning-v2`
-- skill `docs/es/skills/security-review/SKILL.md` -> `ecc:security-review`
-- skill `docs/es/skills/quarkus-security/SKILL.md` -> `ecc:quarkus-security`
-- skill `docs/es/skills/eval-harness/SKILL.md` -> `ecc:eval-harness`
-- skill `docs/es/skills/laravel-tdd/SKILL.md` -> `ecc:laravel-tdd`
-- skill `docs/es/skills/golang-patterns/SKILL.md` -> `ecc:golang-patterns`
-- skill `docs/es/skills/continuous-learning/SKILL.md` -> `ecc:continuous-learning`
-- skill `docs/es/skills/django-patterns/SKILL.md` -> `ecc:django-patterns`
-- skill `docs/es/skills/kotlin-testing/SKILL.md` -> `ecc:kotlin-testing`
-- skill `docs/es/skills/rust-testing/SKILL.md` -> `ecc:rust-testing`
-- skill `docs/es/skills/postgres-patterns/SKILL.md` -> `ecc:postgres-patterns`
-- skill `docs/es/skills/docker-patterns/SKILL.md` -> `ecc:docker-patterns`
 - skill `docs/es/skills/api-design/SKILL.md` -> `ecc:api-design`
-- skill `docs/es/skills/kotlin-patterns/SKILL.md` -> `ecc:kotlin-patterns`
-- skill `docs/es/skills/quarkus-tdd/SKILL.md` -> `ecc:quarkus-tdd`
-- skill `docs/es/skills/verification-loop/SKILL.md` -> `ecc:verification-loop`
-- skill `docs/es/skills/springboot-tdd/SKILL.md` -> `ecc:springboot-tdd`
-- skill `docs/es/skills/rust-patterns/SKILL.md` -> `ecc:rust-patterns`
-- skill `docs/es/skills/tdd-workflow/SKILL.md` -> `ecc:tdd-workflow`
+- skill `docs/es/skills/backend-patterns/SKILL.md` -> `ecc:backend-patterns`
+- skill `docs/es/skills/coding-standards/SKILL.md` -> `ecc:coding-standards`
+- skill `docs/es/skills/continuous-learning/SKILL.md` -> `ecc:continuous-learning`
+- skill `docs/es/skills/continuous-learning-v2/SKILL.md` -> `ecc:continuous-learning-v2`
+- skill `docs/es/skills/database-migrations/SKILL.md` -> `ecc:database-migrations`
 - skill `docs/es/skills/deployment-patterns/SKILL.md` -> `ecc:deployment-patterns`
-- skill `docs/es/skills/springboot-verification/SKILL.md` -> `ecc:springboot-verification`
-- skill `docs/es/skills/springboot-patterns/SKILL.md` -> `ecc:springboot-patterns`
-- skill `docs/es/skills/python-patterns/SKILL.md` -> `ecc:python-patterns`
+- skill `docs/es/skills/django-patterns/SKILL.md` -> `ecc:django-patterns`
+- skill `docs/es/skills/docker-patterns/SKILL.md` -> `ecc:docker-patterns`
+- skill `docs/es/skills/e2e-testing/SKILL.md` -> `ecc:e2e-testing`
+- skill `docs/es/skills/eval-harness/SKILL.md` -> `ecc:eval-harness`
 - skill `docs/es/skills/frontend-patterns/SKILL.md` -> `ecc:frontend-patterns`
+- skill `docs/es/skills/golang-patterns/SKILL.md` -> `ecc:golang-patterns`
+- skill `docs/es/skills/golang-testing/SKILL.md` -> `ecc:golang-testing`
+- skill `docs/es/skills/jpa-patterns/SKILL.md` -> `ecc:jpa-patterns`
+- skill `docs/es/skills/kotlin-patterns/SKILL.md` -> `ecc:kotlin-patterns`
+- skill `docs/es/skills/kotlin-testing/SKILL.md` -> `ecc:kotlin-testing`
+- skill `docs/es/skills/laravel-patterns/SKILL.md` -> `ecc:laravel-patterns`
 - skill `docs/es/skills/laravel-security/SKILL.md` -> `ecc:laravel-security`
+- skill `docs/es/skills/laravel-tdd/SKILL.md` -> `ecc:laravel-tdd`
+- skill `docs/es/skills/laravel-verification/SKILL.md` -> `ecc:laravel-verification`
+- skill `docs/es/skills/nextjs-turbopack/SKILL.md` -> `ecc:nextjs-turbopack`
+- skill `docs/es/skills/postgres-patterns/SKILL.md` -> `ecc:postgres-patterns`
+- skill `docs/es/skills/python-patterns/SKILL.md` -> `ecc:python-patterns`
+- skill `docs/es/skills/python-testing/SKILL.md` -> `ecc:python-testing`
 - skill `docs/es/skills/quarkus-patterns/SKILL.md` -> `ecc:quarkus-patterns`
+- skill `docs/es/skills/quarkus-security/SKILL.md` -> `ecc:quarkus-security`
+- skill `docs/es/skills/quarkus-tdd/SKILL.md` -> `ecc:quarkus-tdd`
+- skill `docs/es/skills/quarkus-verification/SKILL.md` -> `ecc:quarkus-verification`
+- skill `docs/es/skills/rust-patterns/SKILL.md` -> `ecc:rust-patterns`
+- skill `docs/es/skills/rust-testing/SKILL.md` -> `ecc:rust-testing`
+- skill `docs/es/skills/security-review/SKILL.md` -> `ecc:security-review`
+- skill `docs/es/skills/springboot-patterns/SKILL.md` -> `ecc:springboot-patterns`
+- skill `docs/es/skills/springboot-security/SKILL.md` -> `ecc:springboot-security`
+- skill `docs/es/skills/springboot-tdd/SKILL.md` -> `ecc:springboot-tdd`
+- skill `docs/es/skills/springboot-verification/SKILL.md` -> `ecc:springboot-verification`
+- skill `docs/es/skills/tdd-workflow/SKILL.md` -> `ecc:tdd-workflow`
+- skill `docs/es/skills/verification-loop/SKILL.md` -> `ecc:verification-loop`
 - agent `docs/es/agents/architect.md` -> `ecc agent architect`
 - agent `docs/es/agents/build-error-resolver.md` -> `ecc agent build-error-resolver`
 - agent `docs/es/agents/chief-of-staff.md` -> `ecc agent chief-of-staff`
@@ -185,233 +185,233 @@ Reason: Localized translation (ja-JP) of ECC skills/agents/commands/docs. The En
 
 <details><summary>375 items</summary>
 
-- skill `docs/ja-JP/skills/django-tdd/SKILL.md` -> `ecc:django-tdd`
-- skill `docs/ja-JP/skills/jpa-patterns/SKILL.md` -> `ecc:jpa-patterns`
-- skill `docs/ja-JP/skills/cpp-coding-standards/SKILL.md` -> `ecc:cpp-coding-standards`
-- skill `docs/ja-JP/skills/safety-guard/SKILL.md` -> `ecc:safety-guard`
-- skill `docs/ja-JP/skills/fastapi-patterns/SKILL.md` -> `ecc:fastapi-patterns`
-- skill `docs/ja-JP/skills/openclaw-persona-forge/SKILL.md` -> `ecc:openclaw-persona-forge`
-- skill `docs/ja-JP/skills/skill-comply/SKILL.md` -> `ecc:skill-comply`
-- skill `docs/ja-JP/skills/laravel-security/SKILL.md` -> `ecc:laravel-security`
+- skill `docs/ja-JP/skills/accessibility/SKILL.md` -> `ecc:accessibility`
+- skill `docs/ja-JP/skills/agent-architecture-audit/SKILL.md` -> `ecc:agent-architecture-audit`
+- skill `docs/ja-JP/skills/agent-eval/SKILL.md` -> `ecc:agent-eval`
+- skill `docs/ja-JP/skills/agent-harness-construction/SKILL.md` -> `ecc:agent-harness-construction`
+- skill `docs/ja-JP/skills/agent-introspection-debugging/SKILL.md` -> `ecc:agent-introspection-debugging`
+- skill `docs/ja-JP/skills/agent-payment-x402/SKILL.md` -> `ecc:agent-payment-x402`
+- skill `docs/ja-JP/skills/agent-sort/SKILL.md` -> `ecc:agent-sort`
+- skill `docs/ja-JP/skills/agentic-engineering/SKILL.md` -> `ecc:agentic-engineering`
+- skill `docs/ja-JP/skills/agentic-os/SKILL.md` -> `ecc:agentic-os`
+- skill `docs/ja-JP/skills/ai-first-engineering/SKILL.md` -> `ecc:ai-first-engineering`
+- skill `docs/ja-JP/skills/ai-regression-testing/SKILL.md` -> `ecc:ai-regression-testing`
+- skill `docs/ja-JP/skills/android-clean-architecture/SKILL.md` -> `ecc:android-clean-architecture`
+- skill `docs/ja-JP/skills/angular-developer/SKILL.md` -> `ecc:angular-developer`
+- skill `docs/ja-JP/skills/api-connector-builder/SKILL.md` -> `ecc:api-connector-builder`
+- skill `docs/ja-JP/skills/api-design/SKILL.md` -> `ecc:api-design`
+- skill `docs/ja-JP/skills/architecture-decision-records/SKILL.md` -> `ecc:architecture-decision-records`
+- skill `docs/ja-JP/skills/article-writing/SKILL.md` -> `ecc:article-writing`
+- skill `docs/ja-JP/skills/automation-audit-ops/SKILL.md` -> `ecc:automation-audit-ops`
+- skill `docs/ja-JP/skills/autonomous-agent-harness/SKILL.md` -> `ecc:autonomous-agent-harness`
+- skill `docs/ja-JP/skills/autonomous-loops/SKILL.md` -> `ecc:autonomous-loops`
+- skill `docs/ja-JP/skills/backend-patterns/SKILL.md` -> `ecc:backend-patterns`
+- skill `docs/ja-JP/skills/benchmark/SKILL.md` -> `ecc:benchmark`
+- skill `docs/ja-JP/skills/blueprint/SKILL.md` -> `ecc:blueprint`
+- skill `docs/ja-JP/skills/brand-voice/SKILL.md` -> `ecc:brand-voice`
+- skill `docs/ja-JP/skills/browser-qa/SKILL.md` -> `ecc:browser-qa`
+- skill `docs/ja-JP/skills/bun-runtime/SKILL.md` -> `ecc:bun-runtime`
+- skill `docs/ja-JP/skills/canary-watch/SKILL.md` -> `ecc:canary-watch`
+- skill `docs/ja-JP/skills/carrier-relationship-management/SKILL.md` -> `ecc:carrier-relationship-management`
+- skill `docs/ja-JP/skills/cisco-ios-patterns/SKILL.md` -> `ecc:cisco-ios-patterns`
+- skill `docs/ja-JP/skills/ck/SKILL.md` -> `ecc:ck`
+- skill `docs/ja-JP/skills/claude-devfleet/SKILL.md` -> `ecc:claude-devfleet`
+- skill `docs/ja-JP/skills/click-path-audit/SKILL.md` -> `ecc:click-path-audit`
+- skill `docs/ja-JP/skills/clickhouse-io/SKILL.md` -> `ecc:clickhouse-io`
+- skill `docs/ja-JP/skills/code-tour/SKILL.md` -> `ecc:code-tour`
+- skill `docs/ja-JP/skills/codebase-onboarding/SKILL.md` -> `ecc:codebase-onboarding`
+- skill `docs/ja-JP/skills/coding-standards/SKILL.md` -> `ecc:coding-standards`
+- skill `docs/ja-JP/skills/compose-multiplatform-patterns/SKILL.md` -> `ecc:compose-multiplatform-patterns`
+- skill `docs/ja-JP/skills/configure-ecc/SKILL.md` -> `ecc:configure-ecc`
+- skill `docs/ja-JP/skills/connections-optimizer/SKILL.md` -> `ecc:connections-optimizer`
+- skill `docs/ja-JP/skills/content-engine/SKILL.md` -> `ecc:content-engine`
+- skill `docs/ja-JP/skills/content-hash-cache-pattern/SKILL.md` -> `ecc:content-hash-cache-pattern`
+- skill `docs/ja-JP/skills/context-budget/SKILL.md` -> `ecc:context-budget`
+- skill `docs/ja-JP/skills/continuous-agent-loop/SKILL.md` -> `ecc:continuous-agent-loop`
+- skill `docs/ja-JP/skills/continuous-learning/SKILL.md` -> `ecc:continuous-learning`
+- skill `docs/ja-JP/skills/continuous-learning-v2/SKILL.md` -> `ecc:continuous-learning-v2`
+- skill `docs/ja-JP/skills/cost-aware-llm-pipeline/SKILL.md` -> `ecc:cost-aware-llm-pipeline`
 - skill `docs/ja-JP/skills/cost-tracking/SKILL.md` -> `ecc:cost-tracking`
+- skill `docs/ja-JP/skills/council/SKILL.md` -> `ecc:council`
+- skill `docs/ja-JP/skills/cpp-coding-standards/SKILL.md` -> `ecc:cpp-coding-standards`
+- skill `docs/ja-JP/skills/cpp-testing/SKILL.md` -> `ecc:cpp-testing`
+- skill `docs/ja-JP/skills/crosspost/SKILL.md` -> `ecc:crosspost`
+- skill `docs/ja-JP/skills/csharp-testing/SKILL.md` -> `ecc:csharp-testing`
+- skill `docs/ja-JP/skills/customer-billing-ops/SKILL.md` -> `ecc:customer-billing-ops`
+- skill `docs/ja-JP/skills/customs-trade-compliance/SKILL.md` -> `ecc:customs-trade-compliance`
+- skill `docs/ja-JP/skills/dart-flutter-patterns/SKILL.md` -> `ecc:dart-flutter-patterns`
+- skill `docs/ja-JP/skills/dashboard-builder/SKILL.md` -> `ecc:dashboard-builder`
+- skill `docs/ja-JP/skills/data-scraper-agent/SKILL.md` -> `ecc:data-scraper-agent`
+- skill `docs/ja-JP/skills/database-migrations/SKILL.md` -> `ecc:database-migrations`
+- skill `docs/ja-JP/skills/deep-research/SKILL.md` -> `ecc:deep-research`
+- skill `docs/ja-JP/skills/defi-amm-security/SKILL.md` -> `ecc:defi-amm-security`
+- skill `docs/ja-JP/skills/deployment-patterns/SKILL.md` -> `ecc:deployment-patterns`
+- skill `docs/ja-JP/skills/design-system/SKILL.md` -> `ecc:design-system`
+- skill `docs/ja-JP/skills/django-celery/SKILL.md` -> `ecc:django-celery`
+- skill `docs/ja-JP/skills/django-patterns/SKILL.md` -> `ecc:django-patterns`
+- skill `docs/ja-JP/skills/django-security/SKILL.md` -> `ecc:django-security`
+- skill `docs/ja-JP/skills/django-tdd/SKILL.md` -> `ecc:django-tdd`
+- skill `docs/ja-JP/skills/django-verification/SKILL.md` -> `ecc:django-verification`
+- skill `docs/ja-JP/skills/dmux-workflows/SKILL.md` -> `ecc:dmux-workflows`
+- skill `docs/ja-JP/skills/docker-patterns/SKILL.md` -> `ecc:docker-patterns`
+- skill `docs/ja-JP/skills/documentation-lookup/SKILL.md` -> `ecc:documentation-lookup`
+- skill `docs/ja-JP/skills/dotnet-patterns/SKILL.md` -> `ecc:dotnet-patterns`
+- skill `docs/ja-JP/skills/e2e-testing/SKILL.md` -> `ecc:e2e-testing`
+- skill `docs/ja-JP/skills/ecc-guide/SKILL.md` -> `ecc:ecc-guide`
+- skill `docs/ja-JP/skills/ecc-tools-cost-audit/SKILL.md` -> `ecc:ecc-tools-cost-audit`
+- skill `docs/ja-JP/skills/email-ops/SKILL.md` -> `ecc:email-ops`
+- skill `docs/ja-JP/skills/energy-procurement/SKILL.md` -> `ecc:energy-procurement`
+- skill `docs/ja-JP/skills/enterprise-agent-ops/SKILL.md` -> `ecc:enterprise-agent-ops`
+- skill `docs/ja-JP/skills/error-handling/SKILL.md` -> `ecc:error-handling`
+- skill `docs/ja-JP/skills/eval-harness/SKILL.md` -> `ecc:eval-harness`
+- skill `docs/ja-JP/skills/evm-token-decimals/SKILL.md` -> `ecc:evm-token-decimals`
+- skill `docs/ja-JP/skills/exa-search/SKILL.md` -> `ecc:exa-search`
+- skill `docs/ja-JP/skills/fal-ai-media/SKILL.md` -> `ecc:fal-ai-media`
+- skill `docs/ja-JP/skills/fastapi-patterns/SKILL.md` -> `ecc:fastapi-patterns`
+- skill `docs/ja-JP/skills/finance-billing-ops/SKILL.md` -> `ecc:finance-billing-ops`
+- skill `docs/ja-JP/skills/flox-environments/SKILL.md` -> `ecc:flox-environments`
+- skill `docs/ja-JP/skills/flutter-dart-code-review/SKILL.md` -> `ecc:flutter-dart-code-review`
+- skill `docs/ja-JP/skills/foundation-models-on-device/SKILL.md` -> `ecc:foundation-models-on-device`
+- skill `docs/ja-JP/skills/frontend-design-direction/SKILL.md` -> `ecc:frontend-design-direction`
+- skill `docs/ja-JP/skills/frontend-patterns/SKILL.md` -> `ecc:frontend-patterns`
+- skill `docs/ja-JP/skills/frontend-slides/SKILL.md` -> `ecc:frontend-slides`
+- skill `docs/ja-JP/skills/fsharp-testing/SKILL.md` -> `ecc:fsharp-testing`
+- skill `docs/ja-JP/skills/gan-style-harness/SKILL.md` -> `ecc:gan-style-harness`
+- skill `docs/ja-JP/skills/gateguard/SKILL.md` -> `ecc:gateguard`
+- skill `docs/ja-JP/skills/git-workflow/SKILL.md` -> `ecc:git-workflow`
+- skill `docs/ja-JP/skills/github-ops/SKILL.md` -> `ecc:github-ops`
+- skill `docs/ja-JP/skills/golang-patterns/SKILL.md` -> `ecc:golang-patterns`
+- skill `docs/ja-JP/skills/golang-testing/SKILL.md` -> `ecc:golang-testing`
+- skill `docs/ja-JP/skills/google-workspace-ops/SKILL.md` -> `ecc:google-workspace-ops`
+- skill `docs/ja-JP/skills/healthcare-cdss-patterns/SKILL.md` -> `ecc:healthcare-cdss-patterns`
+- skill `docs/ja-JP/skills/healthcare-emr-patterns/SKILL.md` -> `ecc:healthcare-emr-patterns`
+- skill `docs/ja-JP/skills/healthcare-eval-harness/SKILL.md` -> `ecc:healthcare-eval-harness`
+- skill `docs/ja-JP/skills/healthcare-phi-compliance/SKILL.md` -> `ecc:healthcare-phi-compliance`
+- skill `docs/ja-JP/skills/hermes-imports/SKILL.md` -> `ecc:hermes-imports`
+- skill `docs/ja-JP/skills/hexagonal-architecture/SKILL.md` -> `ecc:hexagonal-architecture`
+- skill `docs/ja-JP/skills/hipaa-compliance/SKILL.md` -> `ecc:hipaa-compliance`
+- skill `docs/ja-JP/skills/homelab-network-readiness/SKILL.md` -> `ecc:homelab-network-readiness`
+- skill `docs/ja-JP/skills/homelab-network-setup/SKILL.md` -> `ecc:homelab-network-setup`
+- skill `docs/ja-JP/skills/homelab-pihole-dns/SKILL.md` -> `ecc:homelab-pihole-dns`
+- skill `docs/ja-JP/skills/homelab-vlan-segmentation/SKILL.md` -> `ecc:homelab-vlan-segmentation`
+- skill `docs/ja-JP/skills/homelab-wireguard-vpn/SKILL.md` -> `ecc:homelab-wireguard-vpn`
+- skill `docs/ja-JP/skills/hookify-rules/SKILL.md` -> `ecc:hookify-rules`
+- skill `docs/ja-JP/skills/inventory-demand-planning/SKILL.md` -> `ecc:inventory-demand-planning`
+- skill `docs/ja-JP/skills/investor-materials/SKILL.md` -> `ecc:investor-materials`
+- skill `docs/ja-JP/skills/investor-outreach/SKILL.md` -> `ecc:investor-outreach`
+- skill `docs/ja-JP/skills/ios-icon-gen/SKILL.md` -> `ecc:ios-icon-gen`
+- skill `docs/ja-JP/skills/iterative-retrieval/SKILL.md` -> `ecc:iterative-retrieval`
+- skill `docs/ja-JP/skills/java-coding-standards/SKILL.md` -> `ecc:java-coding-standards`
+- skill `docs/ja-JP/skills/jira-integration/SKILL.md` -> `ecc:jira-integration`
+- skill `docs/ja-JP/skills/jpa-patterns/SKILL.md` -> `ecc:jpa-patterns`
+- skill `docs/ja-JP/skills/knowledge-ops/SKILL.md` -> `ecc:knowledge-ops`
+- skill `docs/ja-JP/skills/kotlin-coroutines-flows/SKILL.md` -> `ecc:kotlin-coroutines-flows`
+- skill `docs/ja-JP/skills/kotlin-exposed-patterns/SKILL.md` -> `ecc:kotlin-exposed-patterns`
+- skill `docs/ja-JP/skills/kotlin-ktor-patterns/SKILL.md` -> `ecc:kotlin-ktor-patterns`
+- skill `docs/ja-JP/skills/kotlin-patterns/SKILL.md` -> `ecc:kotlin-patterns`
+- skill `docs/ja-JP/skills/kotlin-testing/SKILL.md` -> `ecc:kotlin-testing`
+- skill `docs/ja-JP/skills/laravel-patterns/SKILL.md` -> `ecc:laravel-patterns`
+- skill `docs/ja-JP/skills/laravel-plugin-discovery/SKILL.md` -> `ecc:laravel-plugin-discovery`
+- skill `docs/ja-JP/skills/laravel-security/SKILL.md` -> `ecc:laravel-security`
+- skill `docs/ja-JP/skills/laravel-tdd/SKILL.md` -> `ecc:laravel-tdd`
+- skill `docs/ja-JP/skills/laravel-verification/SKILL.md` -> `ecc:laravel-verification`
+- skill `docs/ja-JP/skills/lead-intelligence/SKILL.md` -> `ecc:lead-intelligence`
+- skill `docs/ja-JP/skills/liquid-glass-design/SKILL.md` -> `ecc:liquid-glass-design`
+- skill `docs/ja-JP/skills/llm-trading-agent-security/SKILL.md` -> `ecc:llm-trading-agent-security`
+- skill `docs/ja-JP/skills/logistics-exception-management/SKILL.md` -> `ecc:logistics-exception-management`
+- skill `docs/ja-JP/skills/make-interfaces-feel-better/SKILL.md` -> `ecc:make-interfaces-feel-better`
+- skill `docs/ja-JP/skills/manim-video/SKILL.md` -> `ecc:manim-video`
+- skill `docs/ja-JP/skills/market-research/SKILL.md` -> `ecc:market-research`
+- skill `docs/ja-JP/skills/mcp-server-patterns/SKILL.md` -> `ecc:mcp-server-patterns`
+- skill `docs/ja-JP/skills/messages-ops/SKILL.md` -> `ecc:messages-ops`
+- skill `docs/ja-JP/skills/mle-workflow/SKILL.md` -> `ecc:mle-workflow`
+- skill `docs/ja-JP/skills/motion-advanced/SKILL.md` -> `ecc:motion-advanced`
+- skill `docs/ja-JP/skills/motion-foundations/SKILL.md` -> `ecc:motion-foundations`
+- skill `docs/ja-JP/skills/motion-patterns/SKILL.md` -> `ecc:motion-patterns`
+- skill `docs/ja-JP/skills/mysql-patterns/SKILL.md` -> `ecc:mysql-patterns`
+- skill `docs/ja-JP/skills/nanoclaw-repl/SKILL.md` -> `ecc:nanoclaw-repl`
+- skill `docs/ja-JP/skills/nestjs-patterns/SKILL.md` -> `ecc:nestjs-patterns`
+- skill `docs/ja-JP/skills/netmiko-ssh-automation/SKILL.md` -> `ecc:netmiko-ssh-automation`
+- skill `docs/ja-JP/skills/network-bgp-diagnostics/SKILL.md` -> `ecc:network-bgp-diagnostics`
+- skill `docs/ja-JP/skills/network-config-validation/SKILL.md` -> `ecc:network-config-validation`
+- skill `docs/ja-JP/skills/network-interface-health/SKILL.md` -> `ecc:network-interface-health`
+- skill `docs/ja-JP/skills/nextjs-turbopack/SKILL.md` -> `ecc:nextjs-turbopack`
+- skill `docs/ja-JP/skills/nodejs-keccak256/SKILL.md` -> `ecc:nodejs-keccak256`
+- skill `docs/ja-JP/skills/nutrient-document-processing/SKILL.md` -> `ecc:nutrient-document-processing`
+- skill `docs/ja-JP/skills/nuxt4-patterns/SKILL.md` -> `ecc:nuxt4-patterns`
+- skill `docs/ja-JP/skills/openclaw-persona-forge/SKILL.md` -> `ecc:openclaw-persona-forge`
+- skill `docs/ja-JP/skills/opensource-pipeline/SKILL.md` -> `ecc:opensource-pipeline`
+- skill `docs/ja-JP/skills/perl-patterns/SKILL.md` -> `ecc:perl-patterns`
+- skill `docs/ja-JP/skills/perl-security/SKILL.md` -> `ecc:perl-security`
 - skill `docs/ja-JP/skills/perl-testing/SKILL.md` -> `ecc:perl-testing`
 - skill `docs/ja-JP/skills/plan-orchestrate/SKILL.md` -> `ecc:plan-orchestrate`
-- skill `docs/ja-JP/skills/research-ops/SKILL.md` -> `ecc:research-ops`
-- skill `docs/ja-JP/skills/skill-stocktake/SKILL.md` -> `ecc:skill-stocktake`
-- skill `docs/ja-JP/skills/architecture-decision-records/SKILL.md` -> `ecc:architecture-decision-records`
-- skill `docs/ja-JP/skills/nextjs-turbopack/SKILL.md` -> `ecc:nextjs-turbopack`
-- skill `docs/ja-JP/skills/django-patterns/SKILL.md` -> `ecc:django-patterns`
-- skill `docs/ja-JP/skills/data-scraper-agent/SKILL.md` -> `ecc:data-scraper-agent`
-- skill `docs/ja-JP/skills/email-ops/SKILL.md` -> `ecc:email-ops`
-- skill `docs/ja-JP/skills/nanoclaw-repl/SKILL.md` -> `ecc:nanoclaw-repl`
-- skill `docs/ja-JP/skills/configure-ecc/SKILL.md` -> `ecc:configure-ecc`
-- skill `docs/ja-JP/skills/council/SKILL.md` -> `ecc:council`
-- skill `docs/ja-JP/skills/homelab-pihole-dns/SKILL.md` -> `ecc:homelab-pihole-dns`
-- skill `docs/ja-JP/skills/inventory-demand-planning/SKILL.md` -> `ecc:inventory-demand-planning`
-- skill `docs/ja-JP/skills/kotlin-patterns/SKILL.md` -> `ecc:kotlin-patterns`
-- skill `docs/ja-JP/skills/scientific-thinking-scholar-evaluation/SKILL.md` -> `ecc:scientific-thinking-scholar-evaluation`
-- skill `docs/ja-JP/skills/swift-concurrency-6-2/SKILL.md` -> `ecc:swift-concurrency-6-2`
-- skill `docs/ja-JP/skills/finance-billing-ops/SKILL.md` -> `ecc:finance-billing-ops`
-- skill `docs/ja-JP/skills/skill-scout/SKILL.md` -> `ecc:skill-scout`
-- skill `docs/ja-JP/skills/dotnet-patterns/SKILL.md` -> `ecc:dotnet-patterns`
-- skill `docs/ja-JP/skills/canary-watch/SKILL.md` -> `ecc:canary-watch`
-- skill `docs/ja-JP/skills/security-bounty-hunter/SKILL.md` -> `ecc:security-bounty-hunter`
-- skill `docs/ja-JP/skills/automation-audit-ops/SKILL.md` -> `ecc:automation-audit-ops`
-- skill `docs/ja-JP/skills/bun-runtime/SKILL.md` -> `ecc:bun-runtime`
-- skill `docs/ja-JP/skills/ecc-guide/SKILL.md` -> `ecc:ecc-guide`
-- skill `docs/ja-JP/skills/ui-to-vue/SKILL.md` -> `ecc:ui-to-vue`
-- skill `docs/ja-JP/skills/healthcare-emr-patterns/SKILL.md` -> `ecc:healthcare-emr-patterns`
-- skill `docs/ja-JP/skills/tdd-workflow/SKILL.md` -> `ecc:tdd-workflow`
-- skill `docs/ja-JP/skills/x-api/SKILL.md` -> `ecc:x-api`
-- skill `docs/ja-JP/skills/mysql-patterns/SKILL.md` -> `ecc:mysql-patterns`
-- skill `docs/ja-JP/skills/connections-optimizer/SKILL.md` -> `ecc:connections-optimizer`
-- skill `docs/ja-JP/skills/energy-procurement/SKILL.md` -> `ecc:energy-procurement`
-- skill `docs/ja-JP/skills/project-flow-ops/SKILL.md` -> `ecc:project-flow-ops`
-- skill `docs/ja-JP/skills/homelab-network-readiness/SKILL.md` -> `ecc:homelab-network-readiness`
-- skill `docs/ja-JP/skills/cost-aware-llm-pipeline/SKILL.md` -> `ecc:cost-aware-llm-pipeline`
-- skill `docs/ja-JP/skills/angular-developer/SKILL.md` -> `ecc:angular-developer`
-- skill `docs/ja-JP/skills/token-budget-advisor/SKILL.md` -> `ecc:token-budget-advisor`
-- skill `docs/ja-JP/skills/django-security/SKILL.md` -> `ecc:django-security`
-- skill `docs/ja-JP/skills/opensource-pipeline/SKILL.md` -> `ecc:opensource-pipeline`
-- skill `docs/ja-JP/skills/verification-loop/SKILL.md` -> `ecc:verification-loop`
-- skill `docs/ja-JP/skills/seo/SKILL.md` -> `ecc:seo`
-- skill `docs/ja-JP/skills/returns-reverse-logistics/SKILL.md` -> `ecc:returns-reverse-logistics`
-- skill `docs/ja-JP/skills/evm-token-decimals/SKILL.md` -> `ecc:evm-token-decimals`
-- skill `docs/ja-JP/skills/enterprise-agent-ops/SKILL.md` -> `ecc:enterprise-agent-ops`
-- skill `docs/ja-JP/skills/rules-distill/SKILL.md` -> `ecc:rules-distill`
-- skill `docs/ja-JP/skills/regex-vs-llm-structured-text/SKILL.md` -> `ecc:regex-vs-llm-structured-text`
-- skill `docs/ja-JP/skills/jira-integration/SKILL.md` -> `ecc:jira-integration`
-- skill `docs/ja-JP/skills/knowledge-ops/SKILL.md` -> `ecc:knowledge-ops`
-- skill `docs/ja-JP/skills/brand-voice/SKILL.md` -> `ecc:brand-voice`
-- skill `docs/ja-JP/skills/springboot-tdd/SKILL.md` -> `ecc:springboot-tdd`
-- skill `docs/ja-JP/skills/design-system/SKILL.md` -> `ecc:design-system`
-- skill `docs/ja-JP/skills/scientific-db-pubmed-database/SKILL.md` -> `ecc:scientific-db-pubmed-database`
-- skill `docs/ja-JP/skills/continuous-agent-loop/SKILL.md` -> `ecc:continuous-agent-loop`
-- skill `docs/ja-JP/skills/perl-patterns/SKILL.md` -> `ecc:perl-patterns`
-- skill `docs/ja-JP/skills/postgres-patterns/SKILL.md` -> `ecc:postgres-patterns`
-- skill `docs/ja-JP/skills/android-clean-architecture/SKILL.md` -> `ecc:android-clean-architecture`
-- skill `docs/ja-JP/skills/lead-intelligence/SKILL.md` -> `ecc:lead-intelligence`
-- skill `docs/ja-JP/skills/click-path-audit/SKILL.md` -> `ecc:click-path-audit`
-- skill `docs/ja-JP/skills/hexagonal-architecture/SKILL.md` -> `ecc:hexagonal-architecture`
-- skill `docs/ja-JP/skills/kotlin-exposed-patterns/SKILL.md` -> `ecc:kotlin-exposed-patterns`
-- skill `docs/ja-JP/skills/videodb/SKILL.md` -> `ecc:videodb`
-- skill `docs/ja-JP/skills/git-workflow/SKILL.md` -> `ecc:git-workflow`
-- skill `docs/ja-JP/skills/gan-style-harness/SKILL.md` -> `ecc:gan-style-harness`
-- skill `docs/ja-JP/skills/documentation-lookup/SKILL.md` -> `ecc:documentation-lookup`
-- skill `docs/ja-JP/skills/make-interfaces-feel-better/SKILL.md` -> `ecc:make-interfaces-feel-better`
-- skill `docs/ja-JP/skills/search-first/SKILL.md` -> `ecc:search-first`
-- skill `docs/ja-JP/skills/motion-patterns/SKILL.md` -> `ecc:motion-patterns`
-- skill `docs/ja-JP/skills/fsharp-testing/SKILL.md` -> `ecc:fsharp-testing`
-- skill `docs/ja-JP/skills/golang-patterns/SKILL.md` -> `ecc:golang-patterns`
-- skill `docs/ja-JP/skills/hookify-rules/SKILL.md` -> `ecc:hookify-rules`
-- skill `docs/ja-JP/skills/investor-materials/SKILL.md` -> `ecc:investor-materials`
-- skill `docs/ja-JP/skills/ecc-tools-cost-audit/SKILL.md` -> `ecc:ecc-tools-cost-audit`
-- skill `docs/ja-JP/skills/kotlin-testing/SKILL.md` -> `ecc:kotlin-testing`
-- skill `docs/ja-JP/skills/cisco-ios-patterns/SKILL.md` -> `ecc:cisco-ios-patterns`
-- skill `docs/ja-JP/skills/team-builder/SKILL.md` -> `ecc:team-builder`
-- skill `docs/ja-JP/skills/deep-research/SKILL.md` -> `ecc:deep-research`
-- skill `docs/ja-JP/skills/kotlin-ktor-patterns/SKILL.md` -> `ecc:kotlin-ktor-patterns`
-- skill `docs/ja-JP/skills/fal-ai-media/SKILL.md` -> `ecc:fal-ai-media`
-- skill `docs/ja-JP/skills/codebase-onboarding/SKILL.md` -> `ecc:codebase-onboarding`
-- skill `docs/ja-JP/skills/messages-ops/SKILL.md` -> `ecc:messages-ops`
-- skill `docs/ja-JP/skills/network-interface-health/SKILL.md` -> `ecc:network-interface-health`
-- skill `docs/ja-JP/skills/strategic-compact/SKILL.md` -> `ecc:strategic-compact`
-- skill `docs/ja-JP/skills/quarkus-verification/SKILL.md` -> `ecc:quarkus-verification`
-- skill `docs/ja-JP/skills/content-engine/SKILL.md` -> `ecc:content-engine`
-- skill `docs/ja-JP/skills/github-ops/SKILL.md` -> `ecc:github-ops`
-- skill `docs/ja-JP/skills/laravel-patterns/SKILL.md` -> `ecc:laravel-patterns`
-- skill `docs/ja-JP/skills/agentic-engineering/SKILL.md` -> `ecc:agentic-engineering`
-- skill `docs/ja-JP/skills/code-tour/SKILL.md` -> `ecc:code-tour`
-- skill `docs/ja-JP/skills/logistics-exception-management/SKILL.md` -> `ecc:logistics-exception-management`
-- skill `docs/ja-JP/skills/autonomous-agent-harness/SKILL.md` -> `ecc:autonomous-agent-harness`
-- skill `docs/ja-JP/skills/foundation-models-on-device/SKILL.md` -> `ecc:foundation-models-on-device`
-- skill `docs/ja-JP/skills/autonomous-loops/SKILL.md` -> `ecc:autonomous-loops`
-- skill `docs/ja-JP/skills/workspace-surface-audit/SKILL.md` -> `ecc:workspace-surface-audit`
-- skill `docs/ja-JP/skills/article-writing/SKILL.md` -> `ecc:article-writing`
-- skill `docs/ja-JP/skills/csharp-testing/SKILL.md` -> `ecc:csharp-testing`
-- skill `docs/ja-JP/skills/agent-payment-x402/SKILL.md` -> `ecc:agent-payment-x402`
-- skill `docs/ja-JP/skills/prompt-optimizer/SKILL.md` -> `ecc:prompt-optimizer`
-- skill `docs/ja-JP/skills/ralphinho-rfc-pipeline/SKILL.md` -> `ecc:ralphinho-rfc-pipeline`
-- skill `docs/ja-JP/skills/scientific-thinking-literature-review/SKILL.md` -> `ecc:scientific-thinking-literature-review`
-- skill `docs/ja-JP/skills/customer-billing-ops/SKILL.md` -> `ecc:customer-billing-ops`
-- skill `docs/ja-JP/skills/gateguard/SKILL.md` -> `ecc:gateguard`
-- skill `docs/ja-JP/skills/continuous-learning/SKILL.md` -> `ecc:continuous-learning`
-- skill `docs/ja-JP/skills/nestjs-patterns/SKILL.md` -> `ecc:nestjs-patterns`
-- skill `docs/ja-JP/skills/rust-testing/SKILL.md` -> `ecc:rust-testing`
-- skill `docs/ja-JP/skills/dashboard-builder/SKILL.md` -> `ecc:dashboard-builder`
-- skill `docs/ja-JP/skills/tinystruct-patterns/SKILL.md` -> `ecc:tinystruct-patterns`
-- skill `docs/ja-JP/skills/accessibility/SKILL.md` -> `ecc:accessibility`
-- skill `docs/ja-JP/skills/manim-video/SKILL.md` -> `ecc:manim-video`
-- skill `docs/ja-JP/skills/windows-desktop-e2e/SKILL.md` -> `ecc:windows-desktop-e2e`
-- skill `docs/ja-JP/skills/ai-first-engineering/SKILL.md` -> `ecc:ai-first-engineering`
-- skill `docs/ja-JP/skills/context-budget/SKILL.md` -> `ecc:context-budget`
-- skill `docs/ja-JP/skills/python-testing/SKILL.md` -> `ecc:python-testing`
-- skill `docs/ja-JP/skills/kotlin-coroutines-flows/SKILL.md` -> `ecc:kotlin-coroutines-flows`
-- skill `docs/ja-JP/skills/python-patterns/SKILL.md` -> `ecc:python-patterns`
-- skill `docs/ja-JP/skills/nodejs-keccak256/SKILL.md` -> `ecc:nodejs-keccak256`
-- skill `docs/ja-JP/skills/continuous-learning-v2/SKILL.md` -> `ecc:continuous-learning-v2`
-- skill `docs/ja-JP/skills/remotion-video-creation/SKILL.md` -> `ecc:remotion-video-creation`
-- skill `docs/ja-JP/skills/springboot-verification/SKILL.md` -> `ecc:springboot-verification`
-- skill `docs/ja-JP/skills/django-celery/SKILL.md` -> `ecc:django-celery`
-- skill `docs/ja-JP/skills/pytorch-patterns/SKILL.md` -> `ecc:pytorch-patterns`
-- skill `docs/ja-JP/skills/flox-environments/SKILL.md` -> `ecc:flox-environments`
-- skill `docs/ja-JP/skills/healthcare-eval-harness/SKILL.md` -> `ecc:healthcare-eval-harness`
-- skill `docs/ja-JP/skills/rust-patterns/SKILL.md` -> `ecc:rust-patterns`
-- skill `docs/ja-JP/skills/terminal-ops/SKILL.md` -> `ecc:terminal-ops`
-- skill `docs/ja-JP/skills/laravel-verification/SKILL.md` -> `ecc:laravel-verification`
-- skill `docs/ja-JP/skills/coding-standards/SKILL.md` -> `ecc:coding-standards`
-- skill `docs/ja-JP/skills/browser-qa/SKILL.md` -> `ecc:browser-qa`
-- skill `docs/ja-JP/skills/quarkus-patterns/SKILL.md` -> `ecc:quarkus-patterns`
-- skill `docs/ja-JP/skills/agentic-os/SKILL.md` -> `ecc:agentic-os`
-- skill `docs/ja-JP/skills/social-graph-ranker/SKILL.md` -> `ecc:social-graph-ranker`
-- skill `docs/ja-JP/skills/api-design/SKILL.md` -> `ecc:api-design`
-- skill `docs/ja-JP/skills/swift-protocol-di-testing/SKILL.md` -> `ecc:swift-protocol-di-testing`
-- skill `docs/ja-JP/skills/production-scheduling/SKILL.md` -> `ecc:production-scheduling`
-- skill `docs/ja-JP/skills/investor-outreach/SKILL.md` -> `ecc:investor-outreach`
-- skill `docs/ja-JP/skills/scientific-pkg-gget/SKILL.md` -> `ecc:scientific-pkg-gget`
-- skill `docs/ja-JP/skills/java-coding-standards/SKILL.md` -> `ecc:java-coding-standards`
-- skill `docs/ja-JP/skills/springboot-security/SKILL.md` -> `ecc:springboot-security`
-- skill `docs/ja-JP/skills/iterative-retrieval/SKILL.md` -> `ecc:iterative-retrieval`
-- skill `docs/ja-JP/skills/laravel-plugin-discovery/SKILL.md` -> `ecc:laravel-plugin-discovery`
-- skill `docs/ja-JP/skills/carrier-relationship-management/SKILL.md` -> `ecc:carrier-relationship-management`
-- skill `docs/ja-JP/skills/ai-regression-testing/SKILL.md` -> `ecc:ai-regression-testing`
-- skill `docs/ja-JP/skills/customs-trade-compliance/SKILL.md` -> `ecc:customs-trade-compliance`
-- skill `docs/ja-JP/skills/nutrient-document-processing/SKILL.md` -> `ecc:nutrient-document-processing`
-- skill `docs/ja-JP/skills/swift-actor-persistence/SKILL.md` -> `ecc:swift-actor-persistence`
-- skill `docs/ja-JP/skills/redis-patterns/SKILL.md` -> `ecc:redis-patterns`
-- skill `docs/ja-JP/skills/flutter-dart-code-review/SKILL.md` -> `ecc:flutter-dart-code-review`
-- skill `docs/ja-JP/skills/content-hash-cache-pattern/SKILL.md` -> `ecc:content-hash-cache-pattern`
-- skill `docs/ja-JP/skills/repo-scan/SKILL.md` -> `ecc:repo-scan`
-- skill `docs/ja-JP/skills/liquid-glass-design/SKILL.md` -> `ecc:liquid-glass-design`
-- skill `docs/ja-JP/skills/nuxt4-patterns/SKILL.md` -> `ecc:nuxt4-patterns`
-- skill `docs/ja-JP/skills/product-capability/SKILL.md` -> `ecc:product-capability`
-- skill `docs/ja-JP/skills/homelab-wireguard-vpn/SKILL.md` -> `ecc:homelab-wireguard-vpn`
-- skill `docs/ja-JP/skills/database-migrations/SKILL.md` -> `ecc:database-migrations`
-- skill `docs/ja-JP/skills/network-bgp-diagnostics/SKILL.md` -> `ecc:network-bgp-diagnostics`
-- skill `docs/ja-JP/skills/compose-multiplatform-patterns/SKILL.md` -> `ecc:compose-multiplatform-patterns`
-- skill `docs/ja-JP/skills/api-connector-builder/SKILL.md` -> `ecc:api-connector-builder`
-- skill `docs/ja-JP/skills/django-verification/SKILL.md` -> `ecc:django-verification`
-- skill `docs/ja-JP/skills/security-review/SKILL.md` -> `ecc:security-review`
-- skill `docs/ja-JP/skills/vite-patterns/SKILL.md` -> `ecc:vite-patterns`
-- skill `docs/ja-JP/skills/homelab-vlan-segmentation/SKILL.md` -> `ecc:homelab-vlan-segmentation`
-- skill `docs/ja-JP/skills/docker-patterns/SKILL.md` -> `ecc:docker-patterns`
 - skill `docs/ja-JP/skills/plankton-code-quality/SKILL.md` -> `ecc:plankton-code-quality`
-- skill `docs/ja-JP/skills/hermes-imports/SKILL.md` -> `ecc:hermes-imports`
-- skill `docs/ja-JP/skills/error-handling/SKILL.md` -> `ecc:error-handling`
-- skill `docs/ja-JP/skills/ui-demo/SKILL.md` -> `ecc:ui-demo`
-- skill `docs/ja-JP/skills/homelab-network-setup/SKILL.md` -> `ecc:homelab-network-setup`
-- skill `docs/ja-JP/skills/agent-sort/SKILL.md` -> `ecc:agent-sort`
-- skill `docs/ja-JP/skills/cpp-testing/SKILL.md` -> `ecc:cpp-testing`
-- skill `docs/ja-JP/skills/video-editing/SKILL.md` -> `ecc:video-editing`
-- skill `docs/ja-JP/skills/scientific-db-uspto-database/SKILL.md` -> `ecc:scientific-db-uspto-database`
-- skill `docs/ja-JP/skills/claude-devfleet/SKILL.md` -> `ecc:claude-devfleet`
+- skill `docs/ja-JP/skills/postgres-patterns/SKILL.md` -> `ecc:postgres-patterns`
+- skill `docs/ja-JP/skills/product-capability/SKILL.md` -> `ecc:product-capability`
 - skill `docs/ja-JP/skills/product-lens/SKILL.md` -> `ecc:product-lens`
-- skill `docs/ja-JP/skills/crosspost/SKILL.md` -> `ecc:crosspost`
-- skill `docs/ja-JP/skills/healthcare-cdss-patterns/SKILL.md` -> `ecc:healthcare-cdss-patterns`
-- skill `docs/ja-JP/skills/motion-foundations/SKILL.md` -> `ecc:motion-foundations`
-- skill `docs/ja-JP/skills/network-config-validation/SKILL.md` -> `ecc:network-config-validation`
-- skill `docs/ja-JP/skills/mle-workflow/SKILL.md` -> `ecc:mle-workflow`
-- skill `docs/ja-JP/skills/clickhouse-io/SKILL.md` -> `ecc:clickhouse-io`
-- skill `docs/ja-JP/skills/benchmark/SKILL.md` -> `ecc:benchmark`
-- skill `docs/ja-JP/skills/agent-introspection-debugging/SKILL.md` -> `ecc:agent-introspection-debugging`
-- skill `docs/ja-JP/skills/security-scan/SKILL.md` -> `ecc:security-scan`
-- skill `docs/ja-JP/skills/ck/SKILL.md` -> `ecc:ck`
-- skill `docs/ja-JP/skills/deployment-patterns/SKILL.md` -> `ecc:deployment-patterns`
-- skill `docs/ja-JP/skills/llm-trading-agent-security/SKILL.md` -> `ecc:llm-trading-agent-security`
-- skill `docs/ja-JP/skills/google-workspace-ops/SKILL.md` -> `ecc:google-workspace-ops`
-- skill `docs/ja-JP/skills/quarkus-security/SKILL.md` -> `ecc:quarkus-security`
-- skill `docs/ja-JP/skills/visa-doc-translate/SKILL.md` -> `ecc:visa-doc-translate`
-- skill `docs/ja-JP/skills/quality-nonconformance/SKILL.md` -> `ecc:quality-nonconformance`
-- skill `docs/ja-JP/skills/defi-amm-security/SKILL.md` -> `ecc:defi-amm-security`
-- skill `docs/ja-JP/skills/dmux-workflows/SKILL.md` -> `ecc:dmux-workflows`
-- skill `docs/ja-JP/skills/springboot-patterns/SKILL.md` -> `ecc:springboot-patterns`
-- skill `docs/ja-JP/skills/blueprint/SKILL.md` -> `ecc:blueprint`
-- skill `docs/ja-JP/skills/golang-testing/SKILL.md` -> `ecc:golang-testing`
-- skill `docs/ja-JP/skills/swiftui-patterns/SKILL.md` -> `ecc:swiftui-patterns`
-- skill `docs/ja-JP/skills/frontend-slides/SKILL.md` -> `ecc:frontend-slides`
-- skill `docs/ja-JP/skills/hipaa-compliance/SKILL.md` -> `ecc:hipaa-compliance`
-- skill `docs/ja-JP/skills/market-research/SKILL.md` -> `ecc:market-research`
-- skill `docs/ja-JP/skills/perl-security/SKILL.md` -> `ecc:perl-security`
-- skill `docs/ja-JP/skills/exa-search/SKILL.md` -> `ecc:exa-search`
-- skill `docs/ja-JP/skills/dart-flutter-patterns/SKILL.md` -> `ecc:dart-flutter-patterns`
-- skill `docs/ja-JP/skills/santa-method/SKILL.md` -> `ecc:santa-method`
-- skill `docs/ja-JP/skills/ios-icon-gen/SKILL.md` -> `ecc:ios-icon-gen`
-- skill `docs/ja-JP/skills/unified-notifications-ops/SKILL.md` -> `ecc:unified-notifications-ops`
-- skill `docs/ja-JP/skills/frontend-design-direction/SKILL.md` -> `ecc:frontend-design-direction`
-- skill `docs/ja-JP/skills/e2e-testing/SKILL.md` -> `ecc:e2e-testing`
-- skill `docs/ja-JP/skills/eval-harness/SKILL.md` -> `ecc:eval-harness`
-- skill `docs/ja-JP/skills/laravel-tdd/SKILL.md` -> `ecc:laravel-tdd`
-- skill `docs/ja-JP/skills/frontend-patterns/SKILL.md` -> `ecc:frontend-patterns`
-- skill `docs/ja-JP/skills/netmiko-ssh-automation/SKILL.md` -> `ecc:netmiko-ssh-automation`
-- skill `docs/ja-JP/skills/agent-harness-construction/SKILL.md` -> `ecc:agent-harness-construction`
 - skill `docs/ja-JP/skills/production-audit/SKILL.md` -> `ecc:production-audit`
-- skill `docs/ja-JP/skills/healthcare-phi-compliance/SKILL.md` -> `ecc:healthcare-phi-compliance`
-- skill `docs/ja-JP/skills/backend-patterns/SKILL.md` -> `ecc:backend-patterns`
+- skill `docs/ja-JP/skills/production-scheduling/SKILL.md` -> `ecc:production-scheduling`
+- skill `docs/ja-JP/skills/project-flow-ops/SKILL.md` -> `ecc:project-flow-ops`
+- skill `docs/ja-JP/skills/prompt-optimizer/SKILL.md` -> `ecc:prompt-optimizer`
+- skill `docs/ja-JP/skills/python-patterns/SKILL.md` -> `ecc:python-patterns`
+- skill `docs/ja-JP/skills/python-testing/SKILL.md` -> `ecc:python-testing`
+- skill `docs/ja-JP/skills/pytorch-patterns/SKILL.md` -> `ecc:pytorch-patterns`
+- skill `docs/ja-JP/skills/quality-nonconformance/SKILL.md` -> `ecc:quality-nonconformance`
+- skill `docs/ja-JP/skills/quarkus-patterns/SKILL.md` -> `ecc:quarkus-patterns`
+- skill `docs/ja-JP/skills/quarkus-security/SKILL.md` -> `ecc:quarkus-security`
 - skill `docs/ja-JP/skills/quarkus-tdd/SKILL.md` -> `ecc:quarkus-tdd`
-- skill `docs/ja-JP/skills/motion-advanced/SKILL.md` -> `ecc:motion-advanced`
-- skill `docs/ja-JP/skills/agent-eval/SKILL.md` -> `ecc:agent-eval`
-- skill `docs/ja-JP/skills/agent-architecture-audit/SKILL.md` -> `ecc:agent-architecture-audit`
-- skill `docs/ja-JP/skills/mcp-server-patterns/SKILL.md` -> `ecc:mcp-server-patterns`
+- skill `docs/ja-JP/skills/quarkus-verification/SKILL.md` -> `ecc:quarkus-verification`
+- skill `docs/ja-JP/skills/ralphinho-rfc-pipeline/SKILL.md` -> `ecc:ralphinho-rfc-pipeline`
+- skill `docs/ja-JP/skills/redis-patterns/SKILL.md` -> `ecc:redis-patterns`
+- skill `docs/ja-JP/skills/regex-vs-llm-structured-text/SKILL.md` -> `ecc:regex-vs-llm-structured-text`
+- skill `docs/ja-JP/skills/remotion-video-creation/SKILL.md` -> `ecc:remotion-video-creation`
+- skill `docs/ja-JP/skills/repo-scan/SKILL.md` -> `ecc:repo-scan`
+- skill `docs/ja-JP/skills/research-ops/SKILL.md` -> `ecc:research-ops`
+- skill `docs/ja-JP/skills/returns-reverse-logistics/SKILL.md` -> `ecc:returns-reverse-logistics`
+- skill `docs/ja-JP/skills/rules-distill/SKILL.md` -> `ecc:rules-distill`
+- skill `docs/ja-JP/skills/rust-patterns/SKILL.md` -> `ecc:rust-patterns`
+- skill `docs/ja-JP/skills/rust-testing/SKILL.md` -> `ecc:rust-testing`
+- skill `docs/ja-JP/skills/safety-guard/SKILL.md` -> `ecc:safety-guard`
+- skill `docs/ja-JP/skills/santa-method/SKILL.md` -> `ecc:santa-method`
+- skill `docs/ja-JP/skills/scientific-db-pubmed-database/SKILL.md` -> `ecc:scientific-db-pubmed-database`
+- skill `docs/ja-JP/skills/scientific-db-uspto-database/SKILL.md` -> `ecc:scientific-db-uspto-database`
+- skill `docs/ja-JP/skills/scientific-pkg-gget/SKILL.md` -> `ecc:scientific-pkg-gget`
+- skill `docs/ja-JP/skills/scientific-thinking-literature-review/SKILL.md` -> `ecc:scientific-thinking-literature-review`
+- skill `docs/ja-JP/skills/scientific-thinking-scholar-evaluation/SKILL.md` -> `ecc:scientific-thinking-scholar-evaluation`
+- skill `docs/ja-JP/skills/search-first/SKILL.md` -> `ecc:search-first`
+- skill `docs/ja-JP/skills/security-bounty-hunter/SKILL.md` -> `ecc:security-bounty-hunter`
+- skill `docs/ja-JP/skills/security-review/SKILL.md` -> `ecc:security-review`
+- skill `docs/ja-JP/skills/security-scan/SKILL.md` -> `ecc:security-scan`
+- skill `docs/ja-JP/skills/seo/SKILL.md` -> `ecc:seo`
+- skill `docs/ja-JP/skills/skill-comply/SKILL.md` -> `ecc:skill-comply`
+- skill `docs/ja-JP/skills/skill-scout/SKILL.md` -> `ecc:skill-scout`
+- skill `docs/ja-JP/skills/skill-stocktake/SKILL.md` -> `ecc:skill-stocktake`
+- skill `docs/ja-JP/skills/social-graph-ranker/SKILL.md` -> `ecc:social-graph-ranker`
+- skill `docs/ja-JP/skills/springboot-patterns/SKILL.md` -> `ecc:springboot-patterns`
+- skill `docs/ja-JP/skills/springboot-security/SKILL.md` -> `ecc:springboot-security`
+- skill `docs/ja-JP/skills/springboot-tdd/SKILL.md` -> `ecc:springboot-tdd`
+- skill `docs/ja-JP/skills/springboot-verification/SKILL.md` -> `ecc:springboot-verification`
+- skill `docs/ja-JP/skills/strategic-compact/SKILL.md` -> `ecc:strategic-compact`
+- skill `docs/ja-JP/skills/swift-actor-persistence/SKILL.md` -> `ecc:swift-actor-persistence`
+- skill `docs/ja-JP/skills/swift-concurrency-6-2/SKILL.md` -> `ecc:swift-concurrency-6-2`
+- skill `docs/ja-JP/skills/swift-protocol-di-testing/SKILL.md` -> `ecc:swift-protocol-di-testing`
+- skill `docs/ja-JP/skills/swiftui-patterns/SKILL.md` -> `ecc:swiftui-patterns`
+- skill `docs/ja-JP/skills/tdd-workflow/SKILL.md` -> `ecc:tdd-workflow`
+- skill `docs/ja-JP/skills/team-builder/SKILL.md` -> `ecc:team-builder`
+- skill `docs/ja-JP/skills/terminal-ops/SKILL.md` -> `ecc:terminal-ops`
+- skill `docs/ja-JP/skills/tinystruct-patterns/SKILL.md` -> `ecc:tinystruct-patterns`
+- skill `docs/ja-JP/skills/token-budget-advisor/SKILL.md` -> `ecc:token-budget-advisor`
+- skill `docs/ja-JP/skills/ui-demo/SKILL.md` -> `ecc:ui-demo`
+- skill `docs/ja-JP/skills/ui-to-vue/SKILL.md` -> `ecc:ui-to-vue`
+- skill `docs/ja-JP/skills/unified-notifications-ops/SKILL.md` -> `ecc:unified-notifications-ops`
+- skill `docs/ja-JP/skills/verification-loop/SKILL.md` -> `ecc:verification-loop`
+- skill `docs/ja-JP/skills/video-editing/SKILL.md` -> `ecc:video-editing`
+- skill `docs/ja-JP/skills/videodb/SKILL.md` -> `ecc:videodb`
+- skill `docs/ja-JP/skills/visa-doc-translate/SKILL.md` -> `ecc:visa-doc-translate`
+- skill `docs/ja-JP/skills/vite-patterns/SKILL.md` -> `ecc:vite-patterns`
+- skill `docs/ja-JP/skills/windows-desktop-e2e/SKILL.md` -> `ecc:windows-desktop-e2e`
+- skill `docs/ja-JP/skills/workspace-surface-audit/SKILL.md` -> `ecc:workspace-surface-audit`
+- skill `docs/ja-JP/skills/x-api/SKILL.md` -> `ecc:x-api`
 - agent `docs/ja-JP/agents/a11y-architect.md` -> `ecc agent a11y-architect`
 - agent `docs/ja-JP/agents/architect.md` -> `ecc agent architect`
 - agent `docs/ja-JP/agents/build-error-resolver.md` -> `ecc agent build-error-resolver`
@@ -567,21 +567,21 @@ Reason: Localized translation (ja-JP) of ECC skills/agents/commands/docs. The En
 
 Reason: Localized translation (ko-KR) of ECC skills/agents/commands/docs. The English originals are integrated; unique items found only in a translation are listed individually in audit/exclusions.md. Retained unmodified in the pinned source snapshot (sources/<repo>@<commit>).
 
-- skill `docs/ko-KR/skills/eval-harness/SKILL.md` -> `ecc:eval-harness`
 - skill `docs/ko-KR/skills/backend-patterns/SKILL.md` -> `ecc:backend-patterns`
-- skill `docs/ko-KR/skills/security-review/SKILL.md` -> `ecc:security-review`
-- skill `docs/ko-KR/skills/coding-standards/SKILL.md` -> `ecc:coding-standards`
-- skill `docs/ko-KR/skills/tdd-workflow/SKILL.md` -> `ecc:tdd-workflow`
-- skill `docs/ko-KR/skills/continuous-learning/SKILL.md` -> `ecc:continuous-learning`
-- skill `docs/ko-KR/skills/golang-testing/SKILL.md` -> `ecc:golang-testing`
-- skill `docs/ko-KR/skills/strategic-compact/SKILL.md` -> `ecc:strategic-compact`
-- skill `docs/ko-KR/skills/continuous-learning-v2/SKILL.md` -> `ecc:continuous-learning-v2`
 - skill `docs/ko-KR/skills/clickhouse-io/SKILL.md` -> `ecc:clickhouse-io`
-- skill `docs/ko-KR/skills/postgres-patterns/SKILL.md` -> `ecc:postgres-patterns`
-- skill `docs/ko-KR/skills/iterative-retrieval/SKILL.md` -> `ecc:iterative-retrieval`
-- skill `docs/ko-KR/skills/verification-loop/SKILL.md` -> `ecc:verification-loop`
+- skill `docs/ko-KR/skills/coding-standards/SKILL.md` -> `ecc:coding-standards`
+- skill `docs/ko-KR/skills/continuous-learning/SKILL.md` -> `ecc:continuous-learning`
+- skill `docs/ko-KR/skills/continuous-learning-v2/SKILL.md` -> `ecc:continuous-learning-v2`
+- skill `docs/ko-KR/skills/eval-harness/SKILL.md` -> `ecc:eval-harness`
 - skill `docs/ko-KR/skills/frontend-patterns/SKILL.md` -> `ecc:frontend-patterns`
 - skill `docs/ko-KR/skills/golang-patterns/SKILL.md` -> `ecc:golang-patterns`
+- skill `docs/ko-KR/skills/golang-testing/SKILL.md` -> `ecc:golang-testing`
+- skill `docs/ko-KR/skills/iterative-retrieval/SKILL.md` -> `ecc:iterative-retrieval`
+- skill `docs/ko-KR/skills/postgres-patterns/SKILL.md` -> `ecc:postgres-patterns`
+- skill `docs/ko-KR/skills/security-review/SKILL.md` -> `ecc:security-review`
+- skill `docs/ko-KR/skills/strategic-compact/SKILL.md` -> `ecc:strategic-compact`
+- skill `docs/ko-KR/skills/tdd-workflow/SKILL.md` -> `ecc:tdd-workflow`
+- skill `docs/ko-KR/skills/verification-loop/SKILL.md` -> `ecc:verification-loop`
 - agent `docs/ko-KR/agents/architect.md` -> `ecc agent architect`
 - agent `docs/ko-KR/agents/build-error-resolver.md` -> `ecc agent build-error-resolver`
 - agent `docs/ko-KR/agents/code-reviewer.md` -> `ecc agent code-reviewer`
@@ -666,44 +666,44 @@ Reason: Localized translation (tr) of ECC skills/agents/commands/docs. The Engli
 
 <details><summary>96 items</summary>
 
-- skill `docs/tr/skills/quarkus-tdd/SKILL.md` -> `ecc:quarkus-tdd`
+- skill `docs/tr/skills/api-design/SKILL.md` -> `ecc:api-design`
+- skill `docs/tr/skills/backend-patterns/SKILL.md` -> `ecc:backend-patterns`
+- skill `docs/tr/skills/coding-standards/SKILL.md` -> `ecc:coding-standards`
 - skill `docs/tr/skills/continuous-learning/SKILL.md` -> `ecc:continuous-learning`
-- skill `docs/tr/skills/frontend-patterns/SKILL.md` -> `ecc:frontend-patterns`
-- skill `docs/tr/skills/quarkus-security/SKILL.md` -> `ecc:quarkus-security`
+- skill `docs/tr/skills/continuous-learning-v2/SKILL.md` -> `ecc:continuous-learning-v2`
+- skill `docs/tr/skills/database-migrations/SKILL.md` -> `ecc:database-migrations`
+- skill `docs/tr/skills/deployment-patterns/SKILL.md` -> `ecc:deployment-patterns`
 - skill `docs/tr/skills/django-patterns/SKILL.md` -> `ecc:django-patterns`
+- skill `docs/tr/skills/docker-patterns/SKILL.md` -> `ecc:docker-patterns`
+- skill `docs/tr/skills/e2e-testing/SKILL.md` -> `ecc:e2e-testing`
+- skill `docs/tr/skills/eval-harness/SKILL.md` -> `ecc:eval-harness`
+- skill `docs/tr/skills/frontend-patterns/SKILL.md` -> `ecc:frontend-patterns`
+- skill `docs/tr/skills/golang-patterns/SKILL.md` -> `ecc:golang-patterns`
+- skill `docs/tr/skills/golang-testing/SKILL.md` -> `ecc:golang-testing`
 - skill `docs/tr/skills/jpa-patterns/SKILL.md` -> `ecc:jpa-patterns`
 - skill `docs/tr/skills/kotlin-patterns/SKILL.md` -> `ecc:kotlin-patterns`
-- skill `docs/tr/skills/python-patterns/SKILL.md` -> `ecc:python-patterns`
-- skill `docs/tr/skills/database-migrations/SKILL.md` -> `ecc:database-migrations`
-- skill `docs/tr/skills/quarkus-verification/SKILL.md` -> `ecc:quarkus-verification`
-- skill `docs/tr/skills/golang-patterns/SKILL.md` -> `ecc:golang-patterns`
-- skill `docs/tr/skills/postgres-patterns/SKILL.md` -> `ecc:postgres-patterns`
-- skill `docs/tr/skills/springboot-verification/SKILL.md` -> `ecc:springboot-verification`
-- skill `docs/tr/skills/backend-patterns/SKILL.md` -> `ecc:backend-patterns`
 - skill `docs/tr/skills/kotlin-testing/SKILL.md` -> `ecc:kotlin-testing`
-- skill `docs/tr/skills/deployment-patterns/SKILL.md` -> `ecc:deployment-patterns`
-- skill `docs/tr/skills/laravel-verification/SKILL.md` -> `ecc:laravel-verification`
-- skill `docs/tr/skills/python-testing/SKILL.md` -> `ecc:python-testing`
-- skill `docs/tr/skills/verification-loop/SKILL.md` -> `ecc:verification-loop`
-- skill `docs/tr/skills/continuous-learning-v2/SKILL.md` -> `ecc:continuous-learning-v2`
-- skill `docs/tr/skills/quarkus-patterns/SKILL.md` -> `ecc:quarkus-patterns`
-- skill `docs/tr/skills/springboot-tdd/SKILL.md` -> `ecc:springboot-tdd`
-- skill `docs/tr/skills/golang-testing/SKILL.md` -> `ecc:golang-testing`
-- skill `docs/tr/skills/springboot-security/SKILL.md` -> `ecc:springboot-security`
-- skill `docs/tr/skills/laravel-security/SKILL.md` -> `ecc:laravel-security`
-- skill `docs/tr/skills/springboot-patterns/SKILL.md` -> `ecc:springboot-patterns`
-- skill `docs/tr/skills/coding-standards/SKILL.md` -> `ecc:coding-standards`
-- skill `docs/tr/skills/rust-patterns/SKILL.md` -> `ecc:rust-patterns`
-- skill `docs/tr/skills/security-review/SKILL.md` -> `ecc:security-review`
-- skill `docs/tr/skills/eval-harness/SKILL.md` -> `ecc:eval-harness`
-- skill `docs/tr/skills/e2e-testing/SKILL.md` -> `ecc:e2e-testing`
-- skill `docs/tr/skills/laravel-tdd/SKILL.md` -> `ecc:laravel-tdd`
 - skill `docs/tr/skills/laravel-patterns/SKILL.md` -> `ecc:laravel-patterns`
-- skill `docs/tr/skills/api-design/SKILL.md` -> `ecc:api-design`
-- skill `docs/tr/skills/rust-testing/SKILL.md` -> `ecc:rust-testing`
-- skill `docs/tr/skills/tdd-workflow/SKILL.md` -> `ecc:tdd-workflow`
+- skill `docs/tr/skills/laravel-security/SKILL.md` -> `ecc:laravel-security`
+- skill `docs/tr/skills/laravel-tdd/SKILL.md` -> `ecc:laravel-tdd`
+- skill `docs/tr/skills/laravel-verification/SKILL.md` -> `ecc:laravel-verification`
 - skill `docs/tr/skills/nextjs-turbopack/SKILL.md` -> `ecc:nextjs-turbopack`
-- skill `docs/tr/skills/docker-patterns/SKILL.md` -> `ecc:docker-patterns`
+- skill `docs/tr/skills/postgres-patterns/SKILL.md` -> `ecc:postgres-patterns`
+- skill `docs/tr/skills/python-patterns/SKILL.md` -> `ecc:python-patterns`
+- skill `docs/tr/skills/python-testing/SKILL.md` -> `ecc:python-testing`
+- skill `docs/tr/skills/quarkus-patterns/SKILL.md` -> `ecc:quarkus-patterns`
+- skill `docs/tr/skills/quarkus-security/SKILL.md` -> `ecc:quarkus-security`
+- skill `docs/tr/skills/quarkus-tdd/SKILL.md` -> `ecc:quarkus-tdd`
+- skill `docs/tr/skills/quarkus-verification/SKILL.md` -> `ecc:quarkus-verification`
+- skill `docs/tr/skills/rust-patterns/SKILL.md` -> `ecc:rust-patterns`
+- skill `docs/tr/skills/rust-testing/SKILL.md` -> `ecc:rust-testing`
+- skill `docs/tr/skills/security-review/SKILL.md` -> `ecc:security-review`
+- skill `docs/tr/skills/springboot-patterns/SKILL.md` -> `ecc:springboot-patterns`
+- skill `docs/tr/skills/springboot-security/SKILL.md` -> `ecc:springboot-security`
+- skill `docs/tr/skills/springboot-tdd/SKILL.md` -> `ecc:springboot-tdd`
+- skill `docs/tr/skills/springboot-verification/SKILL.md` -> `ecc:springboot-verification`
+- skill `docs/tr/skills/tdd-workflow/SKILL.md` -> `ecc:tdd-workflow`
+- skill `docs/tr/skills/verification-loop/SKILL.md` -> `ecc:verification-loop`
 - agent `docs/tr/agents/architect.md` -> `ecc agent architect`
 - agent `docs/tr/agents/build-error-resolver.md` -> `ecc agent build-error-resolver`
 - agent `docs/tr/agents/chief-of-staff.md` -> `ecc agent chief-of-staff`
@@ -783,189 +783,189 @@ Reason: Localized translation (zh-CN) of ECC skills/agents/commands/docs. The En
 
 <details><summary>309 items</summary>
 
-- skill `docs/zh-CN/skills/frontend-patterns/SKILL.md` -> `ecc:frontend-patterns`
-- skill `docs/zh-CN/skills/safety-guard/SKILL.md` -> `ecc:safety-guard`
-- skill `docs/zh-CN/skills/frontend-slides/SKILL.md` -> `ecc:frontend-slides`
-- skill `docs/zh-CN/skills/agentic-engineering/SKILL.md` -> `ecc:agentic-engineering`
-- skill `docs/zh-CN/skills/java-coding-standards/SKILL.md` -> `ecc:java-coding-standards`
-- skill `docs/zh-CN/skills/customs-trade-compliance/SKILL.md` -> `ecc:customs-trade-compliance`
-- skill `docs/zh-CN/skills/nutrient-document-processing/SKILL.md` -> `ecc:nutrient-document-processing`
-- skill `docs/zh-CN/skills/blueprint/SKILL.md` -> `ecc:blueprint`
-- skill `docs/zh-CN/skills/rust-testing/SKILL.md` -> `ecc:rust-testing`
-- skill `docs/zh-CN/skills/visa-doc-translate/SKILL.md` -> `ecc:visa-doc-translate`
-- skill `docs/zh-CN/skills/lead-intelligence/SKILL.md` -> `ecc:lead-intelligence`
-- skill `docs/zh-CN/skills/ai-regression-testing/SKILL.md` -> `ecc:ai-regression-testing`
-- skill `docs/zh-CN/skills/ecc-tools-cost-audit/SKILL.md` -> `ecc:ecc-tools-cost-audit`
-- skill `docs/zh-CN/skills/deep-research/SKILL.md` -> `ecc:deep-research`
-- skill `docs/zh-CN/skills/kotlin-ktor-patterns/SKILL.md` -> `ecc:kotlin-ktor-patterns`
-- skill `docs/zh-CN/skills/healthcare-phi-compliance/SKILL.md` -> `ecc:healthcare-phi-compliance`
-- skill `docs/zh-CN/skills/documentation-lookup/SKILL.md` -> `ecc:documentation-lookup`
-- skill `docs/zh-CN/skills/manim-video/SKILL.md` -> `ecc:manim-video`
-- skill `docs/zh-CN/skills/browser-qa/SKILL.md` -> `ecc:browser-qa`
-- skill `docs/zh-CN/skills/design-system/SKILL.md` -> `ecc:design-system`
-- skill `docs/zh-CN/skills/llm-trading-agent-security/SKILL.md` -> `ecc:llm-trading-agent-security`
-- skill `docs/zh-CN/skills/research-ops/SKILL.md` -> `ecc:research-ops`
-- skill `docs/zh-CN/skills/repo-scan/SKILL.md` -> `ecc:repo-scan`
-- skill `docs/zh-CN/skills/context-budget/SKILL.md` -> `ecc:context-budget`
-- skill `docs/zh-CN/skills/crosspost/SKILL.md` -> `ecc:crosspost`
-- skill `docs/zh-CN/skills/nestjs-patterns/SKILL.md` -> `ecc:nestjs-patterns`
-- skill `docs/zh-CN/skills/verification-loop/SKILL.md` -> `ecc:verification-loop`
-- skill `docs/zh-CN/skills/project-flow-ops/SKILL.md` -> `ecc:project-flow-ops`
-- skill `docs/zh-CN/skills/cpp-testing/SKILL.md` -> `ecc:cpp-testing`
-- skill `docs/zh-CN/skills/springboot-tdd/SKILL.md` -> `ecc:springboot-tdd`
-- skill `docs/zh-CN/skills/kotlin-patterns/SKILL.md` -> `ecc:kotlin-patterns`
-- skill `docs/zh-CN/skills/mcp-server-patterns/SKILL.md` -> `ecc:mcp-server-patterns`
-- skill `docs/zh-CN/skills/kotlin-testing/SKILL.md` -> `ecc:kotlin-testing`
-- skill `docs/zh-CN/skills/dmux-workflows/SKILL.md` -> `ecc:dmux-workflows`
-- skill `docs/zh-CN/skills/github-ops/SKILL.md` -> `ecc:github-ops`
-- skill `docs/zh-CN/skills/automation-audit-ops/SKILL.md` -> `ecc:automation-audit-ops`
-- skill `docs/zh-CN/skills/postgres-patterns/SKILL.md` -> `ecc:postgres-patterns`
-- skill `docs/zh-CN/skills/laravel-patterns/SKILL.md` -> `ecc:laravel-patterns`
-- skill `docs/zh-CN/skills/django-patterns/SKILL.md` -> `ecc:django-patterns`
-- skill `docs/zh-CN/skills/e2e-testing/SKILL.md` -> `ecc:e2e-testing`
-- skill `docs/zh-CN/skills/foundation-models-on-device/SKILL.md` -> `ecc:foundation-models-on-device`
-- skill `docs/zh-CN/skills/strategic-compact/SKILL.md` -> `ecc:strategic-compact`
-- skill `docs/zh-CN/skills/perl-patterns/SKILL.md` -> `ecc:perl-patterns`
-- skill `docs/zh-CN/skills/social-graph-ranker/SKILL.md` -> `ecc:social-graph-ranker`
-- skill `docs/zh-CN/skills/data-scraper-agent/SKILL.md` -> `ecc:data-scraper-agent`
-- skill `docs/zh-CN/skills/brand-voice/SKILL.md` -> `ecc:brand-voice`
-- skill `docs/zh-CN/skills/ecc-guide/SKILL.md` -> `ecc:ecc-guide`
-- skill `docs/zh-CN/skills/laravel-verification/SKILL.md` -> `ecc:laravel-verification`
-- skill `docs/zh-CN/skills/skill-comply/SKILL.md` -> `ecc:skill-comply`
-- skill `docs/zh-CN/skills/continuous-learning/SKILL.md` -> `ecc:continuous-learning`
-- skill `docs/zh-CN/skills/plankton-code-quality/SKILL.md` -> `ecc:plankton-code-quality`
-- skill `docs/zh-CN/skills/finance-billing-ops/SKILL.md` -> `ecc:finance-billing-ops`
-- skill `docs/zh-CN/skills/kotlin-exposed-patterns/SKILL.md` -> `ecc:kotlin-exposed-patterns`
-- skill `docs/zh-CN/skills/investor-materials/SKILL.md` -> `ecc:investor-materials`
-- skill `docs/zh-CN/skills/nextjs-turbopack/SKILL.md` -> `ecc:nextjs-turbopack`
-- skill `docs/zh-CN/skills/council/SKILL.md` -> `ecc:council`
-- skill `docs/zh-CN/skills/enterprise-agent-ops/SKILL.md` -> `ecc:enterprise-agent-ops`
-- skill `docs/zh-CN/skills/security-review/SKILL.md` -> `ecc:security-review`
-- skill `docs/zh-CN/skills/article-writing/SKILL.md` -> `ecc:article-writing`
-- skill `docs/zh-CN/skills/agent-harness-construction/SKILL.md` -> `ecc:agent-harness-construction`
-- skill `docs/zh-CN/skills/product-capability/SKILL.md` -> `ecc:product-capability`
-- skill `docs/zh-CN/skills/laravel-security/SKILL.md` -> `ecc:laravel-security`
-- skill `docs/zh-CN/skills/gateguard/SKILL.md` -> `ecc:gateguard`
-- skill `docs/zh-CN/skills/backend-patterns/SKILL.md` -> `ecc:backend-patterns`
-- skill `docs/zh-CN/skills/laravel-tdd/SKILL.md` -> `ecc:laravel-tdd`
-- skill `docs/zh-CN/skills/golang-patterns/SKILL.md` -> `ecc:golang-patterns`
-- skill `docs/zh-CN/skills/autonomous-agent-harness/SKILL.md` -> `ecc:autonomous-agent-harness`
-- skill `docs/zh-CN/skills/jpa-patterns/SKILL.md` -> `ecc:jpa-patterns`
-- skill `docs/zh-CN/skills/jira-integration/SKILL.md` -> `ecc:jira-integration`
-- skill `docs/zh-CN/skills/rust-patterns/SKILL.md` -> `ecc:rust-patterns`
-- skill `docs/zh-CN/skills/cost-aware-llm-pipeline/SKILL.md` -> `ecc:cost-aware-llm-pipeline`
-- skill `docs/zh-CN/skills/inventory-demand-planning/SKILL.md` -> `ecc:inventory-demand-planning`
-- skill `docs/zh-CN/skills/swift-actor-persistence/SKILL.md` -> `ecc:swift-actor-persistence`
-- skill `docs/zh-CN/skills/django-verification/SKILL.md` -> `ecc:django-verification`
-- skill `docs/zh-CN/skills/bun-runtime/SKILL.md` -> `ecc:bun-runtime`
-- skill `docs/zh-CN/skills/agent-introspection-debugging/SKILL.md` -> `ecc:agent-introspection-debugging`
-- skill `docs/zh-CN/skills/architecture-decision-records/SKILL.md` -> `ecc:architecture-decision-records`
-- skill `docs/zh-CN/skills/x-api/SKILL.md` -> `ecc:x-api`
-- skill `docs/zh-CN/skills/hermes-imports/SKILL.md` -> `ecc:hermes-imports`
-- skill `docs/zh-CN/skills/git-workflow/SKILL.md` -> `ecc:git-workflow`
-- skill `docs/zh-CN/skills/django-tdd/SKILL.md` -> `ecc:django-tdd`
-- skill `docs/zh-CN/skills/compose-multiplatform-patterns/SKILL.md` -> `ecc:compose-multiplatform-patterns`
-- skill `docs/zh-CN/skills/pytorch-patterns/SKILL.md` -> `ecc:pytorch-patterns`
-- skill `docs/zh-CN/skills/kotlin-coroutines-flows/SKILL.md` -> `ecc:kotlin-coroutines-flows`
-- skill `docs/zh-CN/skills/hexagonal-architecture/SKILL.md` -> `ecc:hexagonal-architecture`
-- skill `docs/zh-CN/skills/iterative-retrieval/SKILL.md` -> `ecc:iterative-retrieval`
-- skill `docs/zh-CN/skills/parallel-execution-optimizer/SKILL.md` -> `ecc:parallel-execution-optimizer`
-- skill `docs/zh-CN/skills/healthcare-emr-patterns/SKILL.md` -> `ecc:healthcare-emr-patterns`
-- skill `docs/zh-CN/skills/search-first/SKILL.md` -> `ecc:search-first`
-- skill `docs/zh-CN/skills/swift-concurrency-6-2/SKILL.md` -> `ecc:swift-concurrency-6-2`
-- skill `docs/zh-CN/skills/google-workspace-ops/SKILL.md` -> `ecc:google-workspace-ops`
-- skill `docs/zh-CN/skills/codebase-onboarding/SKILL.md` -> `ecc:codebase-onboarding`
-- skill `docs/zh-CN/skills/agent-eval/SKILL.md` -> `ecc:agent-eval`
-- skill `docs/zh-CN/skills/unified-notifications-ops/SKILL.md` -> `ecc:unified-notifications-ops`
-- skill `docs/zh-CN/skills/workspace-surface-audit/SKILL.md` -> `ecc:workspace-surface-audit`
-- skill `docs/zh-CN/skills/csharp-testing/SKILL.md` -> `ecc:csharp-testing`
-- skill `docs/zh-CN/skills/healthcare-cdss-patterns/SKILL.md` -> `ecc:healthcare-cdss-patterns`
-- skill `docs/zh-CN/skills/hipaa-compliance/SKILL.md` -> `ecc:hipaa-compliance`
-- skill `docs/zh-CN/skills/clickhouse-io/SKILL.md` -> `ecc:clickhouse-io`
-- skill `docs/zh-CN/skills/nodejs-keccak256/SKILL.md` -> `ecc:nodejs-keccak256`
-- skill `docs/zh-CN/skills/videodb/SKILL.md` -> `ecc:videodb`
-- skill `docs/zh-CN/skills/agent-payment-x402/SKILL.md` -> `ecc:agent-payment-x402`
-- skill `docs/zh-CN/skills/springboot-verification/SKILL.md` -> `ecc:springboot-verification`
-- skill `docs/zh-CN/skills/energy-procurement/SKILL.md` -> `ecc:energy-procurement`
-- skill `docs/zh-CN/skills/connections-optimizer/SKILL.md` -> `ecc:connections-optimizer`
-- skill `docs/zh-CN/skills/team-builder/SKILL.md` -> `ecc:team-builder`
-- skill `docs/zh-CN/skills/content-hash-cache-pattern/SKILL.md` -> `ecc:content-hash-cache-pattern`
-- skill `docs/zh-CN/skills/email-ops/SKILL.md` -> `ecc:email-ops`
-- skill `docs/zh-CN/skills/regex-vs-llm-structured-text/SKILL.md` -> `ecc:regex-vs-llm-structured-text`
-- skill `docs/zh-CN/skills/security-scan/SKILL.md` -> `ecc:security-scan`
-- skill `docs/zh-CN/skills/gan-style-harness/SKILL.md` -> `ecc:gan-style-harness`
-- skill `docs/zh-CN/skills/remotion-video-creation/SKILL.md` -> `ecc:remotion-video-creation`
-- skill `docs/zh-CN/skills/seo/SKILL.md` -> `ecc:seo`
-- skill `docs/zh-CN/skills/customer-billing-ops/SKILL.md` -> `ecc:customer-billing-ops`
-- skill `docs/zh-CN/skills/content-engine/SKILL.md` -> `ecc:content-engine`
-- skill `docs/zh-CN/skills/ai-first-engineering/SKILL.md` -> `ecc:ai-first-engineering`
-- skill `docs/zh-CN/skills/evm-token-decimals/SKILL.md` -> `ecc:evm-token-decimals`
 - skill `docs/zh-CN/skills/accessibility/SKILL.md` -> `ecc:accessibility`
-- skill `docs/zh-CN/skills/claude-devfleet/SKILL.md` -> `ecc:claude-devfleet`
-- skill `docs/zh-CN/skills/nuxt4-patterns/SKILL.md` -> `ecc:nuxt4-patterns`
-- skill `docs/zh-CN/skills/fal-ai-media/SKILL.md` -> `ecc:fal-ai-media`
-- skill `docs/zh-CN/skills/coding-standards/SKILL.md` -> `ecc:coding-standards`
-- skill `docs/zh-CN/skills/django-security/SKILL.md` -> `ecc:django-security`
-- skill `docs/zh-CN/skills/ck/SKILL.md` -> `ecc:ck`
-- skill `docs/zh-CN/skills/python-testing/SKILL.md` -> `ecc:python-testing`
-- skill `docs/zh-CN/skills/flutter-dart-code-review/SKILL.md` -> `ecc:flutter-dart-code-review`
-- skill `docs/zh-CN/skills/defi-amm-security/SKILL.md` -> `ecc:defi-amm-security`
-- skill `docs/zh-CN/skills/eval-harness/SKILL.md` -> `ecc:eval-harness`
-- skill `docs/zh-CN/skills/production-scheduling/SKILL.md` -> `ecc:production-scheduling`
-- skill `docs/zh-CN/skills/dashboard-builder/SKILL.md` -> `ecc:dashboard-builder`
-- skill `docs/zh-CN/skills/android-clean-architecture/SKILL.md` -> `ecc:android-clean-architecture`
-- skill `docs/zh-CN/skills/autonomous-loops/SKILL.md` -> `ecc:autonomous-loops`
-- skill `docs/zh-CN/skills/database-migrations/SKILL.md` -> `ecc:database-migrations`
-- skill `docs/zh-CN/skills/deployment-patterns/SKILL.md` -> `ecc:deployment-patterns`
-- skill `docs/zh-CN/skills/laravel-plugin-discovery/SKILL.md` -> `ecc:laravel-plugin-discovery`
-- skill `docs/zh-CN/skills/swiftui-patterns/SKILL.md` -> `ecc:swiftui-patterns`
-- skill `docs/zh-CN/skills/nanoclaw-repl/SKILL.md` -> `ecc:nanoclaw-repl`
-- skill `docs/zh-CN/skills/prompt-optimizer/SKILL.md` -> `ecc:prompt-optimizer`
-- skill `docs/zh-CN/skills/video-editing/SKILL.md` -> `ecc:video-editing`
-- skill `docs/zh-CN/skills/perl-testing/SKILL.md` -> `ecc:perl-testing`
-- skill `docs/zh-CN/skills/returns-reverse-logistics/SKILL.md` -> `ecc:returns-reverse-logistics`
-- skill `docs/zh-CN/skills/canary-watch/SKILL.md` -> `ecc:canary-watch`
-- skill `docs/zh-CN/skills/tdd-workflow/SKILL.md` -> `ecc:tdd-workflow`
-- skill `docs/zh-CN/skills/knowledge-ops/SKILL.md` -> `ecc:knowledge-ops`
-- skill `docs/zh-CN/skills/api-connector-builder/SKILL.md` -> `ecc:api-connector-builder`
-- skill `docs/zh-CN/skills/ui-demo/SKILL.md` -> `ecc:ui-demo`
-- skill `docs/zh-CN/skills/springboot-security/SKILL.md` -> `ecc:springboot-security`
-- skill `docs/zh-CN/skills/market-research/SKILL.md` -> `ecc:market-research`
-- skill `docs/zh-CN/skills/continuous-agent-loop/SKILL.md` -> `ecc:continuous-agent-loop`
-- skill `docs/zh-CN/skills/healthcare-eval-harness/SKILL.md` -> `ecc:healthcare-eval-harness`
-- skill `docs/zh-CN/skills/carrier-relationship-management/SKILL.md` -> `ecc:carrier-relationship-management`
-- skill `docs/zh-CN/skills/configure-ecc/SKILL.md` -> `ecc:configure-ecc`
-- skill `docs/zh-CN/skills/opensource-pipeline/SKILL.md` -> `ecc:opensource-pipeline`
-- skill `docs/zh-CN/skills/springboot-patterns/SKILL.md` -> `ecc:springboot-patterns`
-- skill `docs/zh-CN/skills/messages-ops/SKILL.md` -> `ecc:messages-ops`
-- skill `docs/zh-CN/skills/security-bounty-hunter/SKILL.md` -> `ecc:security-bounty-hunter`
-- skill `docs/zh-CN/skills/dart-flutter-patterns/SKILL.md` -> `ecc:dart-flutter-patterns`
-- skill `docs/zh-CN/skills/golang-testing/SKILL.md` -> `ecc:golang-testing`
-- skill `docs/zh-CN/skills/dotnet-patterns/SKILL.md` -> `ecc:dotnet-patterns`
-- skill `docs/zh-CN/skills/swift-protocol-di-testing/SKILL.md` -> `ecc:swift-protocol-di-testing`
-- skill `docs/zh-CN/skills/investor-outreach/SKILL.md` -> `ecc:investor-outreach`
-- skill `docs/zh-CN/skills/hookify-rules/SKILL.md` -> `ecc:hookify-rules`
-- skill `docs/zh-CN/skills/liquid-glass-design/SKILL.md` -> `ecc:liquid-glass-design`
-- skill `docs/zh-CN/skills/logistics-exception-management/SKILL.md` -> `ecc:logistics-exception-management`
-- skill `docs/zh-CN/skills/quality-nonconformance/SKILL.md` -> `ecc:quality-nonconformance`
-- skill `docs/zh-CN/skills/rules-distill/SKILL.md` -> `ecc:rules-distill`
-- skill `docs/zh-CN/skills/terminal-ops/SKILL.md` -> `ecc:terminal-ops`
-- skill `docs/zh-CN/skills/cpp-coding-standards/SKILL.md` -> `ecc:cpp-coding-standards`
-- skill `docs/zh-CN/skills/santa-method/SKILL.md` -> `ecc:santa-method`
-- skill `docs/zh-CN/skills/docker-patterns/SKILL.md` -> `ecc:docker-patterns`
-- skill `docs/zh-CN/skills/token-budget-advisor/SKILL.md` -> `ecc:token-budget-advisor`
-- skill `docs/zh-CN/skills/exa-search/SKILL.md` -> `ecc:exa-search`
-- skill `docs/zh-CN/skills/benchmark/SKILL.md` -> `ecc:benchmark`
-- skill `docs/zh-CN/skills/code-tour/SKILL.md` -> `ecc:code-tour`
-- skill `docs/zh-CN/skills/continuous-learning-v2/SKILL.md` -> `ecc:continuous-learning-v2`
-- skill `docs/zh-CN/skills/perl-security/SKILL.md` -> `ecc:perl-security`
-- skill `docs/zh-CN/skills/product-lens/SKILL.md` -> `ecc:product-lens`
-- skill `docs/zh-CN/skills/ralphinho-rfc-pipeline/SKILL.md` -> `ecc:ralphinho-rfc-pipeline`
-- skill `docs/zh-CN/skills/skill-stocktake/SKILL.md` -> `ecc:skill-stocktake`
+- skill `docs/zh-CN/skills/agent-eval/SKILL.md` -> `ecc:agent-eval`
+- skill `docs/zh-CN/skills/agent-harness-construction/SKILL.md` -> `ecc:agent-harness-construction`
+- skill `docs/zh-CN/skills/agent-introspection-debugging/SKILL.md` -> `ecc:agent-introspection-debugging`
+- skill `docs/zh-CN/skills/agent-payment-x402/SKILL.md` -> `ecc:agent-payment-x402`
 - skill `docs/zh-CN/skills/agent-sort/SKILL.md` -> `ecc:agent-sort`
-- skill `docs/zh-CN/skills/python-patterns/SKILL.md` -> `ecc:python-patterns`
-- skill `docs/zh-CN/skills/click-path-audit/SKILL.md` -> `ecc:click-path-audit`
+- skill `docs/zh-CN/skills/agentic-engineering/SKILL.md` -> `ecc:agentic-engineering`
+- skill `docs/zh-CN/skills/ai-first-engineering/SKILL.md` -> `ecc:ai-first-engineering`
+- skill `docs/zh-CN/skills/ai-regression-testing/SKILL.md` -> `ecc:ai-regression-testing`
+- skill `docs/zh-CN/skills/android-clean-architecture/SKILL.md` -> `ecc:android-clean-architecture`
+- skill `docs/zh-CN/skills/api-connector-builder/SKILL.md` -> `ecc:api-connector-builder`
 - skill `docs/zh-CN/skills/api-design/SKILL.md` -> `ecc:api-design`
+- skill `docs/zh-CN/skills/architecture-decision-records/SKILL.md` -> `ecc:architecture-decision-records`
+- skill `docs/zh-CN/skills/article-writing/SKILL.md` -> `ecc:article-writing`
+- skill `docs/zh-CN/skills/automation-audit-ops/SKILL.md` -> `ecc:automation-audit-ops`
+- skill `docs/zh-CN/skills/autonomous-agent-harness/SKILL.md` -> `ecc:autonomous-agent-harness`
+- skill `docs/zh-CN/skills/autonomous-loops/SKILL.md` -> `ecc:autonomous-loops`
+- skill `docs/zh-CN/skills/backend-patterns/SKILL.md` -> `ecc:backend-patterns`
+- skill `docs/zh-CN/skills/benchmark/SKILL.md` -> `ecc:benchmark`
+- skill `docs/zh-CN/skills/blueprint/SKILL.md` -> `ecc:blueprint`
+- skill `docs/zh-CN/skills/brand-voice/SKILL.md` -> `ecc:brand-voice`
+- skill `docs/zh-CN/skills/browser-qa/SKILL.md` -> `ecc:browser-qa`
+- skill `docs/zh-CN/skills/bun-runtime/SKILL.md` -> `ecc:bun-runtime`
+- skill `docs/zh-CN/skills/canary-watch/SKILL.md` -> `ecc:canary-watch`
+- skill `docs/zh-CN/skills/carrier-relationship-management/SKILL.md` -> `ecc:carrier-relationship-management`
+- skill `docs/zh-CN/skills/ck/SKILL.md` -> `ecc:ck`
+- skill `docs/zh-CN/skills/claude-devfleet/SKILL.md` -> `ecc:claude-devfleet`
+- skill `docs/zh-CN/skills/click-path-audit/SKILL.md` -> `ecc:click-path-audit`
+- skill `docs/zh-CN/skills/clickhouse-io/SKILL.md` -> `ecc:clickhouse-io`
+- skill `docs/zh-CN/skills/code-tour/SKILL.md` -> `ecc:code-tour`
+- skill `docs/zh-CN/skills/codebase-onboarding/SKILL.md` -> `ecc:codebase-onboarding`
+- skill `docs/zh-CN/skills/coding-standards/SKILL.md` -> `ecc:coding-standards`
+- skill `docs/zh-CN/skills/compose-multiplatform-patterns/SKILL.md` -> `ecc:compose-multiplatform-patterns`
+- skill `docs/zh-CN/skills/configure-ecc/SKILL.md` -> `ecc:configure-ecc`
+- skill `docs/zh-CN/skills/connections-optimizer/SKILL.md` -> `ecc:connections-optimizer`
+- skill `docs/zh-CN/skills/content-engine/SKILL.md` -> `ecc:content-engine`
+- skill `docs/zh-CN/skills/content-hash-cache-pattern/SKILL.md` -> `ecc:content-hash-cache-pattern`
+- skill `docs/zh-CN/skills/context-budget/SKILL.md` -> `ecc:context-budget`
+- skill `docs/zh-CN/skills/continuous-agent-loop/SKILL.md` -> `ecc:continuous-agent-loop`
+- skill `docs/zh-CN/skills/continuous-learning/SKILL.md` -> `ecc:continuous-learning`
+- skill `docs/zh-CN/skills/continuous-learning-v2/SKILL.md` -> `ecc:continuous-learning-v2`
+- skill `docs/zh-CN/skills/cost-aware-llm-pipeline/SKILL.md` -> `ecc:cost-aware-llm-pipeline`
+- skill `docs/zh-CN/skills/council/SKILL.md` -> `ecc:council`
+- skill `docs/zh-CN/skills/cpp-coding-standards/SKILL.md` -> `ecc:cpp-coding-standards`
+- skill `docs/zh-CN/skills/cpp-testing/SKILL.md` -> `ecc:cpp-testing`
+- skill `docs/zh-CN/skills/crosspost/SKILL.md` -> `ecc:crosspost`
+- skill `docs/zh-CN/skills/csharp-testing/SKILL.md` -> `ecc:csharp-testing`
+- skill `docs/zh-CN/skills/customer-billing-ops/SKILL.md` -> `ecc:customer-billing-ops`
+- skill `docs/zh-CN/skills/customs-trade-compliance/SKILL.md` -> `ecc:customs-trade-compliance`
+- skill `docs/zh-CN/skills/dart-flutter-patterns/SKILL.md` -> `ecc:dart-flutter-patterns`
+- skill `docs/zh-CN/skills/dashboard-builder/SKILL.md` -> `ecc:dashboard-builder`
+- skill `docs/zh-CN/skills/data-scraper-agent/SKILL.md` -> `ecc:data-scraper-agent`
+- skill `docs/zh-CN/skills/database-migrations/SKILL.md` -> `ecc:database-migrations`
+- skill `docs/zh-CN/skills/deep-research/SKILL.md` -> `ecc:deep-research`
+- skill `docs/zh-CN/skills/defi-amm-security/SKILL.md` -> `ecc:defi-amm-security`
+- skill `docs/zh-CN/skills/deployment-patterns/SKILL.md` -> `ecc:deployment-patterns`
+- skill `docs/zh-CN/skills/design-system/SKILL.md` -> `ecc:design-system`
+- skill `docs/zh-CN/skills/django-patterns/SKILL.md` -> `ecc:django-patterns`
+- skill `docs/zh-CN/skills/django-security/SKILL.md` -> `ecc:django-security`
+- skill `docs/zh-CN/skills/django-tdd/SKILL.md` -> `ecc:django-tdd`
+- skill `docs/zh-CN/skills/django-verification/SKILL.md` -> `ecc:django-verification`
+- skill `docs/zh-CN/skills/dmux-workflows/SKILL.md` -> `ecc:dmux-workflows`
+- skill `docs/zh-CN/skills/docker-patterns/SKILL.md` -> `ecc:docker-patterns`
+- skill `docs/zh-CN/skills/documentation-lookup/SKILL.md` -> `ecc:documentation-lookup`
+- skill `docs/zh-CN/skills/dotnet-patterns/SKILL.md` -> `ecc:dotnet-patterns`
+- skill `docs/zh-CN/skills/e2e-testing/SKILL.md` -> `ecc:e2e-testing`
+- skill `docs/zh-CN/skills/ecc-guide/SKILL.md` -> `ecc:ecc-guide`
+- skill `docs/zh-CN/skills/ecc-tools-cost-audit/SKILL.md` -> `ecc:ecc-tools-cost-audit`
+- skill `docs/zh-CN/skills/email-ops/SKILL.md` -> `ecc:email-ops`
+- skill `docs/zh-CN/skills/energy-procurement/SKILL.md` -> `ecc:energy-procurement`
+- skill `docs/zh-CN/skills/enterprise-agent-ops/SKILL.md` -> `ecc:enterprise-agent-ops`
+- skill `docs/zh-CN/skills/eval-harness/SKILL.md` -> `ecc:eval-harness`
+- skill `docs/zh-CN/skills/evm-token-decimals/SKILL.md` -> `ecc:evm-token-decimals`
+- skill `docs/zh-CN/skills/exa-search/SKILL.md` -> `ecc:exa-search`
+- skill `docs/zh-CN/skills/fal-ai-media/SKILL.md` -> `ecc:fal-ai-media`
+- skill `docs/zh-CN/skills/finance-billing-ops/SKILL.md` -> `ecc:finance-billing-ops`
+- skill `docs/zh-CN/skills/flutter-dart-code-review/SKILL.md` -> `ecc:flutter-dart-code-review`
+- skill `docs/zh-CN/skills/foundation-models-on-device/SKILL.md` -> `ecc:foundation-models-on-device`
+- skill `docs/zh-CN/skills/frontend-patterns/SKILL.md` -> `ecc:frontend-patterns`
+- skill `docs/zh-CN/skills/frontend-slides/SKILL.md` -> `ecc:frontend-slides`
+- skill `docs/zh-CN/skills/gan-style-harness/SKILL.md` -> `ecc:gan-style-harness`
+- skill `docs/zh-CN/skills/gateguard/SKILL.md` -> `ecc:gateguard`
+- skill `docs/zh-CN/skills/git-workflow/SKILL.md` -> `ecc:git-workflow`
+- skill `docs/zh-CN/skills/github-ops/SKILL.md` -> `ecc:github-ops`
+- skill `docs/zh-CN/skills/golang-patterns/SKILL.md` -> `ecc:golang-patterns`
+- skill `docs/zh-CN/skills/golang-testing/SKILL.md` -> `ecc:golang-testing`
+- skill `docs/zh-CN/skills/google-workspace-ops/SKILL.md` -> `ecc:google-workspace-ops`
+- skill `docs/zh-CN/skills/healthcare-cdss-patterns/SKILL.md` -> `ecc:healthcare-cdss-patterns`
+- skill `docs/zh-CN/skills/healthcare-emr-patterns/SKILL.md` -> `ecc:healthcare-emr-patterns`
+- skill `docs/zh-CN/skills/healthcare-eval-harness/SKILL.md` -> `ecc:healthcare-eval-harness`
+- skill `docs/zh-CN/skills/healthcare-phi-compliance/SKILL.md` -> `ecc:healthcare-phi-compliance`
+- skill `docs/zh-CN/skills/hermes-imports/SKILL.md` -> `ecc:hermes-imports`
+- skill `docs/zh-CN/skills/hexagonal-architecture/SKILL.md` -> `ecc:hexagonal-architecture`
+- skill `docs/zh-CN/skills/hipaa-compliance/SKILL.md` -> `ecc:hipaa-compliance`
+- skill `docs/zh-CN/skills/hookify-rules/SKILL.md` -> `ecc:hookify-rules`
+- skill `docs/zh-CN/skills/inventory-demand-planning/SKILL.md` -> `ecc:inventory-demand-planning`
+- skill `docs/zh-CN/skills/investor-materials/SKILL.md` -> `ecc:investor-materials`
+- skill `docs/zh-CN/skills/investor-outreach/SKILL.md` -> `ecc:investor-outreach`
+- skill `docs/zh-CN/skills/iterative-retrieval/SKILL.md` -> `ecc:iterative-retrieval`
+- skill `docs/zh-CN/skills/java-coding-standards/SKILL.md` -> `ecc:java-coding-standards`
+- skill `docs/zh-CN/skills/jira-integration/SKILL.md` -> `ecc:jira-integration`
+- skill `docs/zh-CN/skills/jpa-patterns/SKILL.md` -> `ecc:jpa-patterns`
+- skill `docs/zh-CN/skills/knowledge-ops/SKILL.md` -> `ecc:knowledge-ops`
+- skill `docs/zh-CN/skills/kotlin-coroutines-flows/SKILL.md` -> `ecc:kotlin-coroutines-flows`
+- skill `docs/zh-CN/skills/kotlin-exposed-patterns/SKILL.md` -> `ecc:kotlin-exposed-patterns`
+- skill `docs/zh-CN/skills/kotlin-ktor-patterns/SKILL.md` -> `ecc:kotlin-ktor-patterns`
+- skill `docs/zh-CN/skills/kotlin-patterns/SKILL.md` -> `ecc:kotlin-patterns`
+- skill `docs/zh-CN/skills/kotlin-testing/SKILL.md` -> `ecc:kotlin-testing`
+- skill `docs/zh-CN/skills/laravel-patterns/SKILL.md` -> `ecc:laravel-patterns`
+- skill `docs/zh-CN/skills/laravel-plugin-discovery/SKILL.md` -> `ecc:laravel-plugin-discovery`
+- skill `docs/zh-CN/skills/laravel-security/SKILL.md` -> `ecc:laravel-security`
+- skill `docs/zh-CN/skills/laravel-tdd/SKILL.md` -> `ecc:laravel-tdd`
+- skill `docs/zh-CN/skills/laravel-verification/SKILL.md` -> `ecc:laravel-verification`
+- skill `docs/zh-CN/skills/lead-intelligence/SKILL.md` -> `ecc:lead-intelligence`
+- skill `docs/zh-CN/skills/liquid-glass-design/SKILL.md` -> `ecc:liquid-glass-design`
+- skill `docs/zh-CN/skills/llm-trading-agent-security/SKILL.md` -> `ecc:llm-trading-agent-security`
+- skill `docs/zh-CN/skills/logistics-exception-management/SKILL.md` -> `ecc:logistics-exception-management`
+- skill `docs/zh-CN/skills/manim-video/SKILL.md` -> `ecc:manim-video`
+- skill `docs/zh-CN/skills/market-research/SKILL.md` -> `ecc:market-research`
+- skill `docs/zh-CN/skills/mcp-server-patterns/SKILL.md` -> `ecc:mcp-server-patterns`
+- skill `docs/zh-CN/skills/messages-ops/SKILL.md` -> `ecc:messages-ops`
+- skill `docs/zh-CN/skills/nanoclaw-repl/SKILL.md` -> `ecc:nanoclaw-repl`
+- skill `docs/zh-CN/skills/nestjs-patterns/SKILL.md` -> `ecc:nestjs-patterns`
+- skill `docs/zh-CN/skills/nextjs-turbopack/SKILL.md` -> `ecc:nextjs-turbopack`
+- skill `docs/zh-CN/skills/nodejs-keccak256/SKILL.md` -> `ecc:nodejs-keccak256`
+- skill `docs/zh-CN/skills/nutrient-document-processing/SKILL.md` -> `ecc:nutrient-document-processing`
+- skill `docs/zh-CN/skills/nuxt4-patterns/SKILL.md` -> `ecc:nuxt4-patterns`
+- skill `docs/zh-CN/skills/opensource-pipeline/SKILL.md` -> `ecc:opensource-pipeline`
+- skill `docs/zh-CN/skills/parallel-execution-optimizer/SKILL.md` -> `ecc:parallel-execution-optimizer`
+- skill `docs/zh-CN/skills/perl-patterns/SKILL.md` -> `ecc:perl-patterns`
+- skill `docs/zh-CN/skills/perl-security/SKILL.md` -> `ecc:perl-security`
+- skill `docs/zh-CN/skills/perl-testing/SKILL.md` -> `ecc:perl-testing`
+- skill `docs/zh-CN/skills/plankton-code-quality/SKILL.md` -> `ecc:plankton-code-quality`
+- skill `docs/zh-CN/skills/postgres-patterns/SKILL.md` -> `ecc:postgres-patterns`
+- skill `docs/zh-CN/skills/product-capability/SKILL.md` -> `ecc:product-capability`
+- skill `docs/zh-CN/skills/product-lens/SKILL.md` -> `ecc:product-lens`
+- skill `docs/zh-CN/skills/production-scheduling/SKILL.md` -> `ecc:production-scheduling`
+- skill `docs/zh-CN/skills/project-flow-ops/SKILL.md` -> `ecc:project-flow-ops`
+- skill `docs/zh-CN/skills/prompt-optimizer/SKILL.md` -> `ecc:prompt-optimizer`
+- skill `docs/zh-CN/skills/python-patterns/SKILL.md` -> `ecc:python-patterns`
+- skill `docs/zh-CN/skills/python-testing/SKILL.md` -> `ecc:python-testing`
+- skill `docs/zh-CN/skills/pytorch-patterns/SKILL.md` -> `ecc:pytorch-patterns`
+- skill `docs/zh-CN/skills/quality-nonconformance/SKILL.md` -> `ecc:quality-nonconformance`
+- skill `docs/zh-CN/skills/ralphinho-rfc-pipeline/SKILL.md` -> `ecc:ralphinho-rfc-pipeline`
+- skill `docs/zh-CN/skills/regex-vs-llm-structured-text/SKILL.md` -> `ecc:regex-vs-llm-structured-text`
+- skill `docs/zh-CN/skills/remotion-video-creation/SKILL.md` -> `ecc:remotion-video-creation`
+- skill `docs/zh-CN/skills/repo-scan/SKILL.md` -> `ecc:repo-scan`
+- skill `docs/zh-CN/skills/research-ops/SKILL.md` -> `ecc:research-ops`
+- skill `docs/zh-CN/skills/returns-reverse-logistics/SKILL.md` -> `ecc:returns-reverse-logistics`
+- skill `docs/zh-CN/skills/rules-distill/SKILL.md` -> `ecc:rules-distill`
+- skill `docs/zh-CN/skills/rust-patterns/SKILL.md` -> `ecc:rust-patterns`
+- skill `docs/zh-CN/skills/rust-testing/SKILL.md` -> `ecc:rust-testing`
+- skill `docs/zh-CN/skills/safety-guard/SKILL.md` -> `ecc:safety-guard`
+- skill `docs/zh-CN/skills/santa-method/SKILL.md` -> `ecc:santa-method`
+- skill `docs/zh-CN/skills/search-first/SKILL.md` -> `ecc:search-first`
+- skill `docs/zh-CN/skills/security-bounty-hunter/SKILL.md` -> `ecc:security-bounty-hunter`
+- skill `docs/zh-CN/skills/security-review/SKILL.md` -> `ecc:security-review`
+- skill `docs/zh-CN/skills/security-scan/SKILL.md` -> `ecc:security-scan`
+- skill `docs/zh-CN/skills/seo/SKILL.md` -> `ecc:seo`
+- skill `docs/zh-CN/skills/skill-comply/SKILL.md` -> `ecc:skill-comply`
+- skill `docs/zh-CN/skills/skill-stocktake/SKILL.md` -> `ecc:skill-stocktake`
+- skill `docs/zh-CN/skills/social-graph-ranker/SKILL.md` -> `ecc:social-graph-ranker`
+- skill `docs/zh-CN/skills/springboot-patterns/SKILL.md` -> `ecc:springboot-patterns`
+- skill `docs/zh-CN/skills/springboot-security/SKILL.md` -> `ecc:springboot-security`
+- skill `docs/zh-CN/skills/springboot-tdd/SKILL.md` -> `ecc:springboot-tdd`
+- skill `docs/zh-CN/skills/springboot-verification/SKILL.md` -> `ecc:springboot-verification`
+- skill `docs/zh-CN/skills/strategic-compact/SKILL.md` -> `ecc:strategic-compact`
+- skill `docs/zh-CN/skills/swift-actor-persistence/SKILL.md` -> `ecc:swift-actor-persistence`
+- skill `docs/zh-CN/skills/swift-concurrency-6-2/SKILL.md` -> `ecc:swift-concurrency-6-2`
+- skill `docs/zh-CN/skills/swift-protocol-di-testing/SKILL.md` -> `ecc:swift-protocol-di-testing`
+- skill `docs/zh-CN/skills/swiftui-patterns/SKILL.md` -> `ecc:swiftui-patterns`
+- skill `docs/zh-CN/skills/tdd-workflow/SKILL.md` -> `ecc:tdd-workflow`
+- skill `docs/zh-CN/skills/team-builder/SKILL.md` -> `ecc:team-builder`
+- skill `docs/zh-CN/skills/terminal-ops/SKILL.md` -> `ecc:terminal-ops`
+- skill `docs/zh-CN/skills/token-budget-advisor/SKILL.md` -> `ecc:token-budget-advisor`
+- skill `docs/zh-CN/skills/ui-demo/SKILL.md` -> `ecc:ui-demo`
+- skill `docs/zh-CN/skills/unified-notifications-ops/SKILL.md` -> `ecc:unified-notifications-ops`
+- skill `docs/zh-CN/skills/verification-loop/SKILL.md` -> `ecc:verification-loop`
+- skill `docs/zh-CN/skills/video-editing/SKILL.md` -> `ecc:video-editing`
+- skill `docs/zh-CN/skills/videodb/SKILL.md` -> `ecc:videodb`
+- skill `docs/zh-CN/skills/visa-doc-translate/SKILL.md` -> `ecc:visa-doc-translate`
+- skill `docs/zh-CN/skills/workspace-surface-audit/SKILL.md` -> `ecc:workspace-surface-audit`
+- skill `docs/zh-CN/skills/x-api/SKILL.md` -> `ecc:x-api`
 - agent `docs/zh-CN/agents/architect.md` -> `ecc agent architect`
 - agent `docs/zh-CN/agents/build-error-resolver.md` -> `ecc agent build-error-resolver`
 - agent `docs/zh-CN/agents/chief-of-staff.md` -> `ecc agent chief-of-staff`
@@ -1100,20 +1100,20 @@ Reason: Localized translation (zh-CN) of ECC skills/agents/commands/docs. The En
 Reason: Localized translation (zh-TW) of ECC skills/agents/commands/docs. The English originals are integrated; unique items found only in a translation are listed individually in audit/exclusions.md. Retained unmodified in the pinned source snapshot (sources/<repo>@<commit>).
 
 - skill `docs/zh-TW/skills/backend-patterns/SKILL.md` -> `ecc:backend-patterns`
-- skill `docs/zh-TW/skills/verification-loop/SKILL.md` -> `ecc:verification-loop`
-- skill `docs/zh-TW/skills/iterative-retrieval/SKILL.md` -> `ecc:iterative-retrieval`
+- skill `docs/zh-TW/skills/clickhouse-io/SKILL.md` -> `ecc:clickhouse-io`
 - skill `docs/zh-TW/skills/coding-standards/SKILL.md` -> `ecc:coding-standards`
+- skill `docs/zh-TW/skills/continuous-learning/SKILL.md` -> `ecc:continuous-learning`
+- skill `docs/zh-TW/skills/continuous-learning-v2/SKILL.md` -> `ecc:continuous-learning-v2`
+- skill `docs/zh-TW/skills/eval-harness/SKILL.md` -> `ecc:eval-harness`
+- skill `docs/zh-TW/skills/frontend-patterns/SKILL.md` -> `ecc:frontend-patterns`
+- skill `docs/zh-TW/skills/golang-patterns/SKILL.md` -> `ecc:golang-patterns`
+- skill `docs/zh-TW/skills/golang-testing/SKILL.md` -> `ecc:golang-testing`
+- skill `docs/zh-TW/skills/iterative-retrieval/SKILL.md` -> `ecc:iterative-retrieval`
 - skill `docs/zh-TW/skills/postgres-patterns/SKILL.md` -> `ecc:postgres-patterns`
 - skill `docs/zh-TW/skills/security-review/SKILL.md` -> `ecc:security-review`
 - skill `docs/zh-TW/skills/strategic-compact/SKILL.md` -> `ecc:strategic-compact`
-- skill `docs/zh-TW/skills/golang-patterns/SKILL.md` -> `ecc:golang-patterns`
-- skill `docs/zh-TW/skills/eval-harness/SKILL.md` -> `ecc:eval-harness`
 - skill `docs/zh-TW/skills/tdd-workflow/SKILL.md` -> `ecc:tdd-workflow`
-- skill `docs/zh-TW/skills/continuous-learning-v2/SKILL.md` -> `ecc:continuous-learning-v2`
-- skill `docs/zh-TW/skills/clickhouse-io/SKILL.md` -> `ecc:clickhouse-io`
-- skill `docs/zh-TW/skills/frontend-patterns/SKILL.md` -> `ecc:frontend-patterns`
-- skill `docs/zh-TW/skills/golang-testing/SKILL.md` -> `ecc:golang-testing`
-- skill `docs/zh-TW/skills/continuous-learning/SKILL.md` -> `ecc:continuous-learning`
+- skill `docs/zh-TW/skills/verification-loop/SKILL.md` -> `ecc:verification-loop`
 - agent `docs/zh-TW/agents/architect.md` -> `ecc agent architect`
 - agent `docs/zh-TW/agents/build-error-resolver.md` -> `ecc agent build-error-resolver`
 - agent `docs/zh-TW/agents/code-reviewer.md` -> `ecc agent code-reviewer`
@@ -1195,16 +1195,16 @@ Reason: Documentation site (docs.claude-mem.ai). Retained unmodified in the pinn
 
 Reason: Integration for a non-Claude-Code harness (Codex, Cursor, Kiro, OpenCode, Gemini, Pi, etc.). The Claude Code equivalent is integrated; this variant is not loadable by Claude Code. Retained unmodified in the pinned source snapshot (sources/<repo>@<commit>).
 
-- skill `claude-mem-grok-bot/skills/host-observer/SKILL.md`
 - skill `claude-mem-cursor/skills/agent-cost-report/SKILL.md` -> `claude-mem:agent-cost-report`
-- skill `claude-mem-grok-bot/skills/agent-cost-report/SKILL.md` -> `claude-mem:agent-cost-report`
-- skill `claude-mem-grok-bot/skills/mem-search/SKILL.md` -> `claude-mem:mem-search`
 - skill `claude-mem-cursor/skills/install/SKILL.md`
-- skill `openclaw/skills/make-plan/SKILL.md` -> `claude-mem:make-plan`
 - skill `claude-mem-cursor/skills/mem-search/SKILL.md` -> `claude-mem:mem-search`
-- skill `openclaw/skills/do/SKILL.md` -> `claude-mem:do`
+- skill `claude-mem-grok-bot/skills/agent-cost-report/SKILL.md` -> `claude-mem:agent-cost-report`
+- skill `claude-mem-grok-bot/skills/host-observer/SKILL.md`
 - skill `claude-mem-grok-bot/skills/install/SKILL.md`
+- skill `claude-mem-grok-bot/skills/mem-search/SKILL.md` -> `claude-mem:mem-search`
 - skill `openclaw/skills/agent-cost-report/SKILL.md` -> `claude-mem:agent-cost-report`
+- skill `openclaw/skills/do/SKILL.md` -> `claude-mem:do`
+- skill `openclaw/skills/make-plan/SKILL.md` -> `claude-mem:make-plan`
 - skill `openclaw/SKILL.md`
 
 ### thedotmack/claude-mem: 1 resource-bundle
@@ -1243,8 +1243,8 @@ Reason: CLI test suite, executed in the baseline. Retained unmodified in the pin
 
 Reason: Vercel-internal automation workflows (triage, pr-labeling) that act on the vercel-labs/skills GitHub repository itself. They are bound to that repository's labels and bots. Retained unmodified in the pinned source snapshot (sources/<repo>@<commit>).
 
-- skill `.vc/automations/workflows/triage/skills/triage/SKILL.md`
 - skill `.vc/automations/workflows/pr-labeling/skills/pr-labeling/SKILL.md`
+- skill `.vc/automations/workflows/triage/skills/triage/SKILL.md`
 
 ## retained-as-external-runtime (52 components)
 
@@ -1256,12 +1256,12 @@ Reason: Python package `graphifyy` (extractors, clustering, exporters, MCP serve
 
 Reason: Source of `ui-ux-pro-max-cli` (npm), which installs the same skill bundle for 19 other harnesses. Its assets duplicate .claude/skills (integrated). Delivered by `npx ui-ux-pro-max-cli init --ai claude`. Retained unmodified in the pinned source snapshot (sources/<repo>@<commit>).
 
-- skill `cli/assets/skills/ui-styling/SKILL.md` -> `ui-ux-pro-max:ui-styling`
 - skill `cli/assets/skills/banner-design/SKILL.md` -> `ui-ux-pro-max:banner-design`
 - skill `cli/assets/skills/brand/SKILL.md` -> `ui-ux-pro-max:brand`
 - skill `cli/assets/skills/design/SKILL.md` -> `ui-ux-pro-max:design`
-- skill `cli/assets/skills/slides/SKILL.md` -> `ui-ux-pro-max:slides`
 - skill `cli/assets/skills/design-system/SKILL.md` -> `ui-ux-pro-max:design-system`
+- skill `cli/assets/skills/slides/SKILL.md` -> `ui-ux-pro-max:slides`
+- skill `cli/assets/skills/ui-styling/SKILL.md` -> `ui-ux-pro-max:ui-styling`
 
 ### thedotmack/claude-mem: 1 resource-bundle
 
@@ -1422,8 +1422,8 @@ Reason: ECC harness/translation copy; canonical loaded skill is ecc:architecture
 
 Reason: ECC harness/translation copy; canonical loaded skill is ecc:article-writing (differs).
 
-- skill `.cursor/skills/article-writing/SKILL.md` -> `ecc:article-writing`
 - skill `.agents/skills/article-writing/SKILL.md` -> `ecc:article-writing`
+- skill `.cursor/skills/article-writing/SKILL.md` -> `ecc:article-writing`
 
 ### affaan-m/ECC: 1 skill
 
@@ -1565,8 +1565,8 @@ Reason: ECC harness/translation copy; canonical loaded skill is ecc:compose-mult
 
 Reason: ECC harness/translation copy; canonical loaded skill is ecc:content-engine (differs).
 
-- skill `.cursor/skills/content-engine/SKILL.md` -> `ecc:content-engine`
 - skill `.agents/skills/content-engine/SKILL.md` -> `ecc:content-engine`
+- skill `.cursor/skills/content-engine/SKILL.md` -> `ecc:content-engine`
 
 ### affaan-m/ECC: 1 skill
 
@@ -1773,8 +1773,8 @@ Reason: ECC harness/translation copy; canonical loaded skill is ecc:docs-governa
 
 Reason: ECC harness/translation copy; canonical loaded skill is ecc:documentation-lookup (differs).
 
-- skill `.cursor/skills/documentation-lookup/SKILL.md` -> `ecc:documentation-lookup`
 - skill `.agents/skills/documentation-lookup/SKILL.md` -> `ecc:documentation-lookup`
+- skill `.cursor/skills/documentation-lookup/SKILL.md` -> `ecc:documentation-lookup`
 
 ### affaan-m/ECC: 1 skill
 
@@ -1786,8 +1786,8 @@ Reason: ECC harness/translation copy; canonical loaded skill is ecc:dotnet-patte
 
 Reason: ECC harness/translation copy; canonical loaded skill is ecc:e2e-testing (differs).
 
-- skill `.kiro/skills/e2e-testing/SKILL.md` -> `ecc:e2e-testing`
 - skill `.agents/skills/e2e-testing/SKILL.md` -> `ecc:e2e-testing`
+- skill `.kiro/skills/e2e-testing/SKILL.md` -> `ecc:e2e-testing`
 
 ### affaan-m/ECC: 1 skill
 
@@ -1934,8 +1934,8 @@ Reason: ECC harness/translation copy; canonical loaded skill is ecc:investor-mat
 
 Reason: ECC harness/translation copy; canonical loaded skill is ecc:investor-outreach (differs).
 
-- skill `.cursor/skills/investor-outreach/SKILL.md` -> `ecc:investor-outreach`
 - skill `.agents/skills/investor-outreach/SKILL.md` -> `ecc:investor-outreach`
+- skill `.cursor/skills/investor-outreach/SKILL.md` -> `ecc:investor-outreach`
 
 ### affaan-m/ECC: 1 skill
 
@@ -2068,8 +2068,8 @@ Reason: ECC harness/translation copy; canonical loaded skill is ecc:market-resea
 
 Reason: ECC harness/translation copy; canonical loaded skill is ecc:mcp-dependency-review (differs).
 
-- skill `.cursor/skills/mcp-dependency-review/SKILL.md` -> `ecc:mcp-dependency-review`
 - skill `.agents/skills/mcp-dependency-review/SKILL.md` -> `ecc:mcp-dependency-review`
+- skill `.cursor/skills/mcp-dependency-review/SKILL.md` -> `ecc:mcp-dependency-review`
 
 ### affaan-m/ECC: 2 skill
 
@@ -2094,8 +2094,8 @@ Reason: ECC harness/translation copy; canonical loaded skill is ecc:ml-adoption-
 
 Reason: ECC harness/translation copy; canonical loaded skill is ecc:mle-workflow (differs).
 
-- skill `.kiro/skills/mle-workflow/SKILL.md` -> `ecc:mle-workflow`
 - skill `.agents/skills/mle-workflow/SKILL.md` -> `ecc:mle-workflow`
+- skill `.kiro/skills/mle-workflow/SKILL.md` -> `ecc:mle-workflow`
 
 ### affaan-m/ECC: 1 skill
 
@@ -2156,8 +2156,8 @@ Reason: ECC harness/translation copy; canonical loaded skill is ecc:nestjs-patte
 
 Reason: ECC harness/translation copy; canonical loaded skill is ecc:nextjs-turbopack (differs).
 
-- skill `.cursor/skills/nextjs-turbopack/SKILL.md` -> `ecc:nextjs-turbopack`
 - skill `.agents/skills/nextjs-turbopack/SKILL.md` -> `ecc:nextjs-turbopack`
+- skill `.cursor/skills/nextjs-turbopack/SKILL.md` -> `ecc:nextjs-turbopack`
 - skill `.kiro/skills/nextjs-turbopack/SKILL.md` -> `ecc:nextjs-turbopack`
 
 ### affaan-m/ECC: 1 skill
@@ -2392,8 +2392,8 @@ Reason: ECC harness/translation copy; canonical loaded skill is ecc:search-first
 
 Reason: ECC harness/translation copy; canonical loaded skill is ecc:security-review (differs).
 
-- skill `.kiro/skills/security-review/SKILL.md` -> `ecc:security-review`
 - skill `.agents/skills/security-review/SKILL.md` -> `ecc:security-review`
+- skill `.kiro/skills/security-review/SKILL.md` -> `ecc:security-review`
 
 ### affaan-m/ECC: 1 skill
 
@@ -2447,8 +2447,8 @@ Reason: ECC harness/translation copy; canonical loaded skill is ecc:springboot-v
 
 Reason: ECC harness/translation copy; canonical loaded skill is ecc:strategic-compact (differs).
 
-- skill `.kiro/skills/strategic-compact/SKILL.md` -> `ecc:strategic-compact`
 - skill `.agents/skills/strategic-compact/SKILL.md` -> `ecc:strategic-compact`
+- skill `.kiro/skills/strategic-compact/SKILL.md` -> `ecc:strategic-compact`
 
 ### affaan-m/ECC: 1 skill
 
@@ -2490,8 +2490,8 @@ Reason: ECC harness/translation copy; canonical loaded skill is ecc:swiftui-patt
 
 Reason: ECC harness/translation copy; canonical loaded skill is ecc:tdd-workflow (differs).
 
-- skill `.kiro/skills/tdd-workflow/SKILL.md` -> `ecc:tdd-workflow`
 - skill `.agents/skills/tdd-workflow/SKILL.md` -> `ecc:tdd-workflow`
+- skill `.kiro/skills/tdd-workflow/SKILL.md` -> `ecc:tdd-workflow`
 
 ### affaan-m/ECC: 1 skill
 

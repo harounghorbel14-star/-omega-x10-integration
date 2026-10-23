@@ -205,6 +205,24 @@ def main():
         nolic.append("omega-core")
     check("licenses", not nolic, f"plugins without LICENSE: {len(nolic)}", nolic)
 
+    # docs: repo paths and plugin install commands referenced in README.md / docs/INSTALL.md must exist
+    names = {e["name"] for e in market["plugins"]}
+    bad_docs, checked = [], 0
+    for doc in ("README.md", "docs/INSTALL.md"):
+        text = (ROOT / doc).read_text()
+        for m in re.finditer(r"(?<![\w./~-])((?:plugins|scripts|tools|audit|registry|docs|tests)/[A-Za-z0-9_.\-/]+)", text):
+            ref = m.group(1).rstrip(".,:;)")
+            if any(ch in ref for ch in "<>*"):
+                continue
+            checked += 1
+            if not (ROOT / ref).exists():
+                bad_docs.append(f"{doc}: missing path {ref}")
+        for m in re.finditer(r"install\s+([a-z0-9-]+)@omega-engineering-x10", text):
+            checked += 1
+            if m.group(1) not in names:
+                bad_docs.append(f"{doc}: plugin {m.group(1)} not in marketplace")
+    check("docs", not bad_docs, f"{checked} path/plugin references checked in README.md and docs/INSTALL.md", bad_docs)
+
     # reconcile
     by = defaultdict(Counter)
     tot = Counter()

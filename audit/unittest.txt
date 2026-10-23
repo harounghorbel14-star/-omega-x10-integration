@@ -1,3 +1,7 @@
+test_rebuild_with_different_hash_seed_is_identical (test_omega.BuildDeterminismTest.test_rebuild_with_different_hash_seed_is_identical) ... ok
+test_doctor_has_skills_sh_check_with_fix (test_omega.DoctorRegressionTests.test_doctor_has_skills_sh_check_with_fix) ... ok
+test_ecc_missing_runtime_deps_detected (test_omega.DoctorRegressionTests.test_ecc_missing_runtime_deps_detected) ... ok
+test_unreachable_host_is_reported_not_swallowed (test_omega.DoctorRegressionTests.test_unreachable_host_is_reported_not_swallowed) ... ok
 test_core_registry_matches_root_registry (test_omega.RegistryTests.test_core_registry_matches_root_registry) ... ok
 test_every_component_has_valid_disposition (test_omega.RegistryTests.test_every_component_has_valid_disposition) ... ok
 test_every_source_skill_is_accounted_for (test_omega.RegistryTests.test_every_source_skill_is_accounted_for) ... ok
@@ -9,8 +13,10 @@ test_cli_exit_codes (test_omega.RouteTests.test_cli_exit_codes) ... ok
 test_curated_routes (test_omega.RouteTests.test_curated_routes) ... ok
 test_doctor_reports_every_check_with_fix (test_omega.RouteTests.test_doctor_reports_every_check_with_fix) ... ok
 test_keyword_search_reaches_long_tail (test_omega.RouteTests.test_keyword_search_reaches_long_tail) ... ok
+test_killed_orphan_is_reaped (test_omega.SubreaperTests.test_killed_orphan_is_reaped) ... ok
+test_returns_command_status_without_waiting_for_daemons (test_omega.SubreaperTests.test_returns_command_status_without_waiting_for_daemons) ... ok
 
 ----------------------------------------------------------------------
-Ran 11 tests in 1.362s
+Ran 17 tests in 9.085s
 
 OK

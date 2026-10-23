@@ -60,22 +60,10 @@
   "evidence": "60 nodes, 142 edges, 5 communities; graph.json/graph.html/GRAPH_REPORT.md; explain returned callers/callees. path reported an ambiguous 'main' (3 matches) as designed"
  },
  {
-  "test": "graphify semantic extraction (docs/papers/images via subagents)",
-  "command": "/graphify in a session",
-  "result": "NOT RUN",
-  "evidence": "Requires an interactive session dispatching extraction subagents; untested"
- },
- {
   "test": "claude-mem worker from integrated copy",
   "command": "bun plugins/claude-mem/scripts/worker-service.cjs start/status/stop (isolated HOME and CLAUDE_MEM_DATA_DIR, port 37791)",
   "result": "PASS",
   "evidence": "/api/health {status: ok, version: 15.0.1, initialized: true, mcpReady: true}; omega doctor detected it; worker stopped"
- },
- {
-  "test": "claude-mem capture + search through hooks",
-  "command": "full session with upstream plugin install",
-  "result": "NOT RUN",
-  "evidence": "Requires installing claude-mem hooks into a session; search endpoint returned an empty body on an empty database, so search behaviour is unverified"
  },
  {
   "test": "find-skills search",
@@ -106,5 +94,107 @@
   "command": "claude -p '/anti-pattern-czar:anti-pattern-czar' in a scratch TS project; then bun run on upstream and plugin copies",
   "result": "PASS",
   "evidence": "${CLAUDE_PLUGIN_ROOT} resolved to the plugin path in the live session; detector flagged src/b.ts:4 NO_LOGGING_IN_CATCH and exited 1; upstream and plugin copies print identical results"
+ },
+ {
+  "test": "claude-mem install from pinned source marketplace (isolated HOME + CLAUDE_CONFIG_DIR)",
+  "command": "claude plugin marketplace add ../sources/thedotmack__claude-mem; claude plugin install claude-mem@thedotmack",
+  "result": "PASS",
+  "evidence": "installed 15.0.1 into plugins/cache/thedotmack/claude-mem/15.0.1"
+ },
+ {
+  "test": "claude-mem first session bootstrap",
+  "command": "claude -p 'Reply ready' (stream-json hook events)",
+  "result": "PASS (documented limitation)",
+  "evidence": "ensure-launcher placed ~/.local/bin/claude-mem (protocol 1) and edited .bashrc; hooks in the same session: 'Executable not found in $PATH: claude-mem' (upstream first-run behaviour)"
+ },
+ {
+  "test": "claude-mem capture of a known non-sensitive fact",
+  "command": "session 2: Write pipeline-notes.md 'codename BLUE-HERON-42, deploys on Tuesdays' with ~/.local/bin on PATH",
+  "result": "PASS",
+  "evidence": "claude-mem.db: sdk_sessions 1, user_prompts 1, tool_uses 2, observations 1 (type decision, facts include BLUE-HERON-42 and Tuesdays)"
+ },
+ {
+  "test": "claude-mem retrieval via worker API",
+  "command": "GET /api/search?query=BLUE-HERON-42 | 'pipeline codename' | 'deploys on Tuesdays'",
+  "result": "PASS",
+  "evidence": "each returned observation #1"
+ },
+ {
+  "test": "claude-mem retrieval via mem-search skill in a new session without file access",
+  "command": "session 3 in a different directory, Read/Bash/Grep/Glob disallowed",
+  "result": "PASS",
+  "evidence": "Skill claude-mem:mem-search -> mcp search -> get_observations([1]); answered BLUE-HERON-42 / Tuesdays"
+ },
+ {
+  "test": "claude-mem unavailable worker",
+  "command": "worker-service stop; then `claude-mem hook claude-code session-init`",
+  "result": "PASS",
+  "evidence": "hook exit 0 with {} and lazily restarted the worker (new PID); stopping again left no worker processes, port closed"
+ },
+ {
+  "test": "claude-mem empty database",
+  "command": "worker on a new CLAUDE_MEM_DATA_DIR; /api/search; /api/observations",
+  "result": "PASS",
+  "evidence": "'No results found matching \"BLUE-HERON-42\"'; observations endpoint HTTP 200"
+ },
+ {
+  "test": "claude-mem export/import retention round-trip",
+  "command": "npx tsx scripts/export-memories.ts BLUE-HERON-42 out.json; import-memories.ts out.json twice into an empty data dir",
+  "result": "PASS",
+  "evidence": "export: 1 obs, 2 sessions, 3 prompts; import 1: 1 obs imported; import 2: 0 imported, all skipped; search on imported DB finds observation"
+ },
+ {
+  "test": "Graphify document + PDF + image extraction",
+  "command": "claude -p '/graphify:graphify . --no-viz' on architecture-notes.md, paper.pdf (Chromium-printed), diagram.png; graphify[pdf]==0.9.94",
+  "result": "PASS",
+  "evidence": "graph.json 17 nodes / 18 edges: 6 from .md, 7 from paper.pdf (incl. 'Ripple Batching' and the 38 percent finding, present only in the PDF), 4 from diagram.png; `graphify explain 'Ripple Batching'` cites paper.pdf page 1"
+ },
+ {
+  "test": "Graphify missing optional grammar diagnostic",
+  "command": "graphify update . on a dir with schema.sql, without the sql extra",
+  "result": "PASS",
+  "evidence": "warning: 1 .sql file(s) contributed nothing ... tree_sitter_sql not installed. Install it with: pip install \"graphifyy[sql]\""
+ },
+ {
+  "test": "ECC hooks execute (hooks_enabled=true)",
+  "command": "claude -p 'git commit --no-verify ...' in a scratch repo",
+  "result": "PASS",
+  "evidence": "PreToolUse:Bash exit 2 'BLOCKED: --no-verify flag is not allowed with git commit'; commit count unchanged"
+ },
+ {
+  "test": "ECC hooks disabled (hooks_enabled=false)",
+  "command": "same command, separate config",
+  "result": "PASS",
+  "evidence": "hooks short-circuit (exit 0), commit succeeded"
+ },
+ {
+  "test": "ECC SessionStart hook dependencies",
+  "command": "hooks-on session before/after scripts/install-plugin-deps.sh",
+  "result": "FAIL then FIXED",
+  "evidence": "before: Cannot find module 'js-yaml'; after: 0 'Cannot find module', all SessionStart hooks exit 0; ECC tracked files unchanged"
+ },
+ {
+  "test": "ECC TDD workflow",
+  "command": "claude -p 'Use the ecc:tdd-workflow skill ...' on pricing.py bug",
+  "result": "PASS",
+  "evidence": "Skill ecc:tdd-workflow loaded; test written, 3/4 failed before fix; independent re-run: 4 tests OK; hook events SessionStart 9, PreToolUse 54, PostToolUse 22, all exit 0"
+ },
+ {
+  "test": "ECC code review + security review",
+  "command": "claude -p '/ecc:python-review app.py ... then ecc:security-review'",
+  "result": "PASS",
+  "evidence": "flagged SQL injection at app.py:5 (critical, parameterized-query fix) and ZeroDivisionError; files unmodified"
+ },
+ {
+  "test": "ECC debugging (build-fix)",
+  "command": "claude -p '/ecc:build-fix' on ImportError (Counte)",
+  "result": "PASS",
+  "evidence": "fixed inventory.py only; test file untouched; `python3 -m unittest -v` OK"
+ },
+ {
+  "test": "find-skills search (retry)",
+  "command": "curl https://skills.sh/api/search; npx -y skills@1.7.4 find react; omega.py doctor",
+  "result": "BLOCKED (environment)",
+  "evidence": "CONNECT tunnel 403 from the proxy; CLI prints 'No skills found'; doctor reports [MISS] skills.sh reachable with fix"
  }
 ]

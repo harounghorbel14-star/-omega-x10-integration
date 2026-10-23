@@ -92,7 +92,46 @@ def doctor():
     gout = Path.cwd() / "graphify-out" / "graph.json"
     add("graphify-out/graph.json in cwd", gout.exists(), str(gout) if gout.exists() else "no graph built here",
         None if gout.exists() else "Run /graphify in this repo to build one", "graphify query/path/explain")
+
+    # skills.sh reachability. `npx skills find` swallows network errors and prints "No skills found"
+    # (upstream src/find.ts: catch { return [] }), so check the host directly.
+    ok, detail = _reachable(os.environ.get("SKILLS_API_URL", "https://skills.sh") + "/api/search?q=react")
+    add("skills.sh reachable", ok, detail,
+        None if ok else "Allow https://skills.sh in your network policy; until then `npx skills find` reports "
+                        "'No skills found' for every query", "find-skills:find-skills")
+
+    # ECC hooks need npm runtime deps (js-yaml, ajv, ...) that plugin installs do not provide
+    # (upstream TROUBLESHOOTING.md "MODULE_NOT_FOUND"). Check every installed ECC copy we can find.
+    for ecc in _installed_ecc_dirs():
+        have = (ecc / "node_modules" / "js-yaml").is_dir()
+        add(f"ecc runtime deps ({ecc})", have, "node_modules present" if have else "node_modules missing: ECC "
+            "SessionStart hook fails with Cannot find module 'js-yaml'",
+            None if have else f"{HERE.parent.parent.parent / 'scripts' / 'install-plugin-deps.sh'} {ecc}", "ecc hooks")
     return checks
+
+
+def _reachable(url):
+    import urllib.error
+    import urllib.request
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, method="GET"), timeout=8) as r:
+            return True, f"{url} -> HTTP {r.status}"
+    except urllib.error.HTTPError as exc:  # the host answered, so it is reachable
+        return True, f"{url} -> HTTP {exc.code}"
+    except Exception as exc:  # noqa: BLE001 - diagnostic only
+        return False, f"{url} unreachable ({exc.__class__.__name__}: {str(exc)[:80]})"
+
+
+def _installed_ecc_dirs():
+    """ECC plugin directories: the plugin cache of the active config, and this checkout's plugins/ecc."""
+    found = []
+    config = Path(os.environ.get("CLAUDE_CONFIG_DIR", Path.home() / ".claude")).expanduser()
+    for manifest in sorted((config / "plugins" / "cache").glob("*/ecc/*/.claude-plugin/plugin.json")):
+        found.append(manifest.parent.parent)
+    local = HERE.parent.parent / "ecc"
+    if (local / ".claude-plugin" / "plugin.json").exists():
+        found.append(local)
+    return found
 
 
 # ------------------------------------------------------------------ route

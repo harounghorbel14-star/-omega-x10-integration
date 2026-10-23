@@ -19,6 +19,7 @@ Command: `python3 tools/validate.py --syntax`
 | syntax | PASS | checked {'.sh': 95, '.mjs': 28, '.cjs': 55, '.py': 300, '.js': 567}; 1 fail, 0 are integration regressions |
 | routes | PASS | 0 problem(s) |
 | licenses | PASS | plugins without LICENSE: 0 |
+| docs | PASS | 60 path/plugin references checked in README.md and docs/INSTALL.md |
 | reconcile | PASS | 3337 components across 10 repositories |
 
 Notes on passing checks with examples:
@@ -51,14 +52,29 @@ Throwaway `CLAUDE_CONFIG_DIR`, scratch npm/uv prefixes and a scratch `HOME` for 
 | agent-browser real browser session | PASS | snapshot refs e1-e3; fill+click produced 'Sent to dev@example.com'; 14,550-byte PNG saved; browser closed |
 | agent-browser CLI-served skills | PASS | CLI lists exactly the 9 skill-data skills recorded in the registry |
 | graphify code graph | PASS | 60 nodes, 142 edges, 5 communities; graph.json/graph.html/GRAPH_REPORT.md; explain returned callers/callees. path reported an ambiguous 'main' (3 matches) as designed |
-| graphify semantic extraction (docs/papers/images via subagents) | NOT RUN | Requires an interactive session dispatching extraction subagents; untested |
 | claude-mem worker from integrated copy | PASS | /api/health {status: ok, version: 15.0.1, initialized: true, mcpReady: true}; omega doctor detected it; worker stopped |
-| claude-mem capture + search through hooks | NOT RUN | Requires installing claude-mem hooks into a session; search endpoint returned an empty body on an empty database, so search behaviour is unverified |
 | find-skills search | BLOCKED (environment) | skills.sh denied by this environment's network proxy (CONNECT 403). The CLI prints 'No skills found' instead of a network error |
 | UI UX Pro Max search from plugin copy | PASS | 3 palette results; full design-system recommendation printed |
 | ECC rules installer | PASS | installed both; second run skipped existing pack without --force |
 | Reproducible build | PASS | 10 repos checked out at pinned commits; 3,828 copied files byte-identical |
 | anti-pattern-czar command (relocated from claude-mem .claude/commands) | PASS | ${CLAUDE_PLUGIN_ROOT} resolved to the plugin path in the live session; detector flagged src/b.ts:4 NO_LOGGING_IN_CATCH and exited 1; upstream and plugin copies print identical results |
+| claude-mem install from pinned source marketplace (isolated HOME + CLAUDE_CONFIG_DIR) | PASS | installed 15.0.1 into plugins/cache/thedotmack/claude-mem/15.0.1 |
+| claude-mem first session bootstrap | PASS (documented limitation) | ensure-launcher placed ~/.local/bin/claude-mem (protocol 1) and edited .bashrc; hooks in the same session: 'Executable not found in $PATH: claude-mem' (upstream first-run behaviour) |
+| claude-mem capture of a known non-sensitive fact | PASS | claude-mem.db: sdk_sessions 1, user_prompts 1, tool_uses 2, observations 1 (type decision, facts include BLUE-HERON-42 and Tuesdays) |
+| claude-mem retrieval via worker API | PASS | each returned observation #1 |
+| claude-mem retrieval via mem-search skill in a new session without file access | PASS | Skill claude-mem:mem-search -> mcp search -> get_observations([1]); answered BLUE-HERON-42 / Tuesdays |
+| claude-mem unavailable worker | PASS | hook exit 0 with {} and lazily restarted the worker (new PID); stopping again left no worker processes, port closed |
+| claude-mem empty database | PASS | 'No results found matching "BLUE-HERON-42"'; observations endpoint HTTP 200 |
+| claude-mem export/import retention round-trip | PASS | export: 1 obs, 2 sessions, 3 prompts; import 1: 1 obs imported; import 2: 0 imported, all skipped; search on imported DB finds observation |
+| Graphify document + PDF + image extraction | PASS | graph.json 17 nodes / 18 edges: 6 from .md, 7 from paper.pdf (incl. 'Ripple Batching' and the 38 percent finding, present only in the PDF), 4 from diagram.png; `graphify explain 'Ripple Batching'` cites paper.pdf page 1 |
+| Graphify missing optional grammar diagnostic | PASS | warning: 1 .sql file(s) contributed nothing ... tree_sitter_sql not installed. Install it with: pip install "graphifyy[sql]" |
+| ECC hooks execute (hooks_enabled=true) | PASS | PreToolUse:Bash exit 2 'BLOCKED: --no-verify flag is not allowed with git commit'; commit count unchanged |
+| ECC hooks disabled (hooks_enabled=false) | PASS | hooks short-circuit (exit 0), commit succeeded |
+| ECC SessionStart hook dependencies | FAIL then FIXED | before: Cannot find module 'js-yaml'; after: 0 'Cannot find module', all SessionStart hooks exit 0; ECC tracked files unchanged |
+| ECC TDD workflow | PASS | Skill ecc:tdd-workflow loaded; test written, 3/4 failed before fix; independent re-run: 4 tests OK; hook events SessionStart 9, PreToolUse 54, PostToolUse 22, all exit 0 |
+| ECC code review + security review | PASS | flagged SQL injection at app.py:5 (critical, parameterized-query fix) and ZeroDivisionError; files unmodified |
+| ECC debugging (build-fix) | PASS | fixed inventory.py only; test file untouched; `python3 -m unittest -v` OK |
+| find-skills search (retry) | BLOCKED (environment) | CONNECT tunnel 403 from the proxy; CLI prints 'No skills found'; doctor reports [MISS] skills.sh reachable with fix |
 
 ## 4. Loaded components (from `claude plugin details`)
 
@@ -83,6 +99,10 @@ Throwaway `CLAUDE_CONFIG_DIR`, scratch npm/uv prefixes and a scratch `HOME` for 
 Command: `python3 -m unittest discover -s tests -v`
 
 ```
+test_rebuild_with_different_hash_seed_is_identical (test_omega.BuildDeterminismTest.test_rebuild_with_different_hash_seed_is_identical) ... ok
+test_doctor_has_skills_sh_check_with_fix (test_omega.DoctorRegressionTests.test_doctor_has_skills_sh_check_with_fix) ... ok
+test_ecc_missing_runtime_deps_detected (test_omega.DoctorRegressionTests.test_ecc_missing_runtime_deps_detected) ... ok
+test_unreachable_host_is_reported_not_swallowed (test_omega.DoctorRegressionTests.test_unreachable_host_is_reported_not_swallowed) ... ok
 test_core_registry_matches_root_registry (test_omega.RegistryTests.test_core_registry_matches_root_registry) ... ok
 test_every_component_has_valid_disposition (test_omega.RegistryTests.test_every_component_has_valid_disposition) ... ok
 test_every_source_skill_is_accounted_for (test_omega.RegistryTests.test_every_source_skill_is_accounted_for) ... ok
@@ -94,16 +114,18 @@ test_cli_exit_codes (test_omega.RouteTests.test_cli_exit_codes) ... ok
 test_curated_routes (test_omega.RouteTests.test_curated_routes) ... ok
 test_doctor_reports_every_check_with_fix (test_omega.RouteTests.test_doctor_reports_every_check_with_fix) ... ok
 test_keyword_search_reaches_long_tail (test_omega.RouteTests.test_keyword_search_reaches_long_tail) ... ok
+test_killed_orphan_is_reaped (test_omega.SubreaperTests.test_killed_orphan_is_reaped) ... ok
+test_returns_command_status_without_waiting_for_daemons (test_omega.SubreaperTests.test_returns_command_status_without_waiting_for_daemons) ... ok
 
 ----------------------------------------------------------------------
-Ran 11 tests in 1.362s
+Ran 17 tests in 9.085s
 
 OK
 ```
 
 ## 6. Baseline comparison
 
-14/20 upstream suites exit 0. Every non-zero result was investigated (see `audit/baseline-results.md`): most failures were reproduced as environmental (agent env vars, blocked DNS, shallow clone, optional extras, skipped install scripts, a different yq). Still undiagnosed: 10 claude-mem tests, 1 ECC install.sh process-cleanup test and 1 vercel skills Notion formatting test. None of them involve files changed by the integration. Integration does not modify any upstream file except the VibeSec frontmatter name, and the integrity check proves the other copied files are byte-identical to the pinned sources, so upstream test outcomes carry over to the integrated copies unchanged.
+Default run: 14/20 upstream suites exit 0. Every failing test was reproduced individually and its cause confirmed (see `audit/baseline-results.md`, including the corrected-environment run). No failure involves a file changed by the integration: apart from two recorded transforms (VibeSec frontmatter name, anti-pattern-czar command path), every copied file is byte-identical to the pinned source, so upstream outcomes carry over to the integrated copies.
 
 ## 7. Disposition reconciliation
 
@@ -143,13 +165,48 @@ Tracked files: 10090. merged-with-traceability: 3, excluded-with-justification: 
 
 
 
-## 8. Known limitations and unverified behaviour
+## 8. Open items
 
-- claude-mem full capture/injection loop and memory search were not exercised end to end (requires installing its hooks into a session); only the worker start/health/stop from the integrated copy was verified.
-- Graphify semantic extraction for docs/papers/images/video (subagent-driven) was not run; the code-only graph path was.
-- find-skills search could not reach skills.sh from this environment (network policy).
-- ECC: 311 skills/97 commands/71 agents load (counted by Claude Code); individual ECC skills were not each executed. ECC hooks were installed but not observed firing in a live session.
-- Superpowers' SessionStart bootstrap was installed; its hook test passed upstream, but injection in a live session was not separately inspected.
-- Replica, UI UX Pro Max design-stack review flow and the remaining specialist skills were validated structurally and by their upstream tests, not by full task runs.
-- Routing is keyword/curated; it is a recommendation aid. Final skill choice remains the model's, as shown in the two live routing tests.
+Rendered from `audit/open-items.json`; the same list is in `audit/unresolved-items.md`.
+
+**Fixed in the release gate (8)**
+
+| Id | Issue | Fix | Regression test |
+|---|---|---|---|
+| F1 | Nondeterministic build output (registry/audit ordering depended on PYTHONHASHSEED) | tools/build.py sorts skill directories by (depth, path) | tests/test_omega.py::BuildDeterminismTest |
+| F2 | ECC SessionStart hook crash (Cannot find module 'js-yaml') with no OMEGA guidance | scripts/install-plugin-deps.sh (npm ci in a temp dir; ECC tracked files untouched) + doctor check + docs/INSTALL.md | tests/test_omega.py::DoctorRegressionTests::test_ecc_missing_runtime_deps_detected |
+| F3 | find-skills network failures indistinguishable from empty results | omega.py doctor checks skills.sh reachability and explains the 'No skills found' symptom | DoctorRegressionTests::test_unreachable_host_is_reported_not_swallowed, ::test_doctor_has_skills_sh_check_with_fix |
+| F4 | tools/subreaper.py waited for every descendant, so a daemon left by a test suite hung the runner until timeout (claude-mem exit 124 after 0 failures) | return as soon as the command exits, after reaping pending zombies | tests/test_omega.py::SubreaperTests |
+| F5 | Baseline runner let claude-mem's tests write to the real $HOME/.claude-mem | tools/run-baselines.sh runs claude-mem tests with a throwaway HOME that links only ~/.cache, ~/.local and ~/.bun (a fully empty HOME made the Chroma connection-failure test time out: 0/1 vs 1/1 with the real HOME); stray /root/.claude-mem (default settings + fixture log lines) removed | manual: chroma-vector-sync 15/15 and native-memory-bridge writes contained in the throwaway HOME; /root/.claude-mem absent after the corrected re-run |
+| F6 | docs/INSTALL.md: claude-mem export/import used wrong runner (bun) and paths that looked repo-relative | commands replaced by the ones actually run (npx tsx ./scripts/... from a source copy with deps) | tools/validate.py docs check (60 references) |
+| F7 | unresolved-items.md reported 'none' while capabilities were unverified | report now has registry and runtime levels rendered from audit/open-items.json | - |
+| F8 | `tools/build.py --no-copy` rewrote audit/transforms.json (and merge-map transforms) as empty, which would break the integrity check | transform records collected for every matching rule, independent of copy mode | tests/test_omega.py::BuildDeterminismTest (now also compares transforms.json and requires 2 records) |
+
+**Implementation blockers (0)**: none.
+
+**Environment-restricted (4)**
+- E1: find-skills search (`npx skills find`)
+- E2: Graphify upstream tests/test_security.py (7 tests)
+- E3: Superpowers upstream tests/version-bump/test-bump-version.sh
+- E4: mattpocock `claude plugin validate . --strict`
+
+**Upstream limitations (6)**
+- U1: claude-mem committed build artifacts lag src/ (LAUNCHER_PROTOCOL 2 in src, 1 in plugin/scripts)
+- U2: claude-mem test tests/memory/native-memory-bridge.test.ts writes to the real $HOME/.claude-mem
+- U3: `npx skills find` reports network failures as 'No skills found'
+- U4: ECC hooks need npm dependencies that plugin installs do not provide
+- U5: claude-mem plain `/plugin install` leaves the plugin's npm deps (tree-sitter grammars, zod) uninstalled
+- U6: claude-mem first session after install: hooks cannot find the `claude-mem` launcher
+
+**Not verified (8)**
+- N1: Clean install from a git-hosted copy of the OMEGA marketplace
+- N2: ECC: 309 of 311 skills and 95 of 97 commands not individually exercised
+- N3: claude-mem: smart-explore/tree-sitter features, cloud-sync, claude-mem-cowork, Chroma vector search, OpenRouter/Gemini providers
+- N4: Graphify: video/audio transcription, Neo4j/FalkorDB push, MCP server, watch mode, GitHub clone mode
+- N5: agent-browser specialised CLI skills (electron, slack, vercel-sandbox, agentcore, derive-client, webmcp-gen, protected-vercel-deployments)
+- N6: Full Replica pipeline, UI UX Pro Max /design-review agent run, Superpowers SessionStart injection content
+- N7: macOS and Windows
+- N8: ECC rule packs loaded as context in a session
+
+Routing is keyword/curated and is a recommendation aid; final skill choice stays with the model, as shown in the live routing tests.
 

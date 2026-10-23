@@ -10,12 +10,29 @@ OUT="${2:?missing output file}"
 LOGDIR="$(dirname "$OUT")/baseline-logs"; mkdir -p "$LOGDIR"
 PYTEST_ENV="$BASE/.pytest-venv"
 
+# CORRECTED_ENV=1 applies the environment requirements confirmed for this sandbox's failures
+# (audit/baseline-results.md): agent env vars unset, TERM=xterm-256color, a UTF-8 locale, and a
+# reaping subreaper (tools/subreaper.py) because PID 1 here does not reap orphaned zombies.
+# Suite-specific setup (full git history, optional extras, upstream build) is applied below.
+# claude-mem's tests always get a throwaway HOME: tests/memory/native-memory-bridge.test.ts writes to
+# $HOME/.claude-mem (upstream test-isolation defect, audit/open-items.json U2). Tool caches (~/.cache,
+# ~/.local, ~/.bun) are linked in, because a fully empty HOME makes the Chroma tests time out.
+ISOHOME='H=$(mktemp -d); for d in .cache .local .bun; do [ -e "$HOME/$d" ] && ln -s "$HOME/$d" "$H/$d"; done; HOME=$H'
+
+if [ "${CORRECTED_ENV:-0}" = 1 ]; then
+  for v in $(env | grep -oE '^(CLAUDE[A-Z_]*|AI_AGENT|CLAUDECODE)=' | tr -d =); do unset "$v"; done
+  export TERM=xterm-256color LC_ALL=C.UTF-8 LANG=C.UTF-8
+  WRAP="python3 $(cd "$(dirname "$0")" && pwd)/subreaper.py"
+else
+  WRAP=""
+fi
+
 run() { # name, dir, timeout-seconds, command...
   local name="$1" dir="$2" to="$3"; shift 3
   if [ -n "${ONLY:-}" ] && [[ " $ONLY " != *" $name "* ]]; then return 0; fi
   local log="$LOGDIR/$name.log" start end rc
   start=$(date +%s)
-  (cd "$BASE/$dir" && timeout "$to" bash -c "$*") >"$log" 2>&1; rc=$?
+  (cd "$BASE/$dir" && timeout "$to" $WRAP bash -c "$*") >"$log" 2>&1; rc=$?
   end=$(date +%s)
   python3 - "$name" "$dir" "$*" "$rc" "$((end-start))" "$log" >>"$OUT" <<'PY'
 import json, sys
@@ -49,6 +66,13 @@ run agent-browser-launcher    vercel-labs__agent-browser 300 "node --test test/l
 run vercel-skills-vitest      vercel-labs__skills 1200 "pnpm install --frozen-lockfile --ignore-scripts >/dev/null 2>&1; pnpm exec vitest run"
 run vercel-skills-typecheck   vercel-labs__skills 600 "pnpm exec tsc --noEmit"
 run ecc-npm-test              affaan-m__ECC 1800 "npm ci --ignore-scripts --no-audit --no-fund >/dev/null 2>&1; npm test"
-run claude-mem-bun-test       thedotmack__claude-mem 1800 "bun install --ignore-scripts >/dev/null 2>&1; bun test tests"
-run graphify-pytest           Graphify-Labs__graphify 2400 "uv sync -q >/dev/null 2>&1; uv run --with pytest pytest -q tests"
+if [ "${CORRECTED_ENV:-0}" = 1 ]; then
+  # claude-mem: trusted install scripts (tree-sitter CLI download, per package.json trustedDependencies),
+  # then upstream's own build, because the committed plugin/scripts artifacts predate src/ (protocol 1 vs 2).
+  run claude-mem-bun-test     thedotmack__claude-mem 2400 "bun install >/dev/null 2>&1; npm run build >/dev/null 2>&1; $ISOHOME bun test --timeout 30000 tests"
+  run graphify-pytest         Graphify-Labs__graphify 2400 "git fetch -q --unshallow origin 2>/dev/null; uv sync -q --extra sql >/dev/null 2>&1; uv run --extra sql --with pytest pytest -q tests"
+else
+  run claude-mem-bun-test     thedotmack__claude-mem 1800 "bun install --ignore-scripts >/dev/null 2>&1; $ISOHOME bun test tests"
+  run graphify-pytest         Graphify-Labs__graphify 2400 "uv sync -q >/dev/null 2>&1; uv run --with pytest pytest -q tests"
+fi
 echo "done -> $OUT"

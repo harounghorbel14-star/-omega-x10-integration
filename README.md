@@ -59,8 +59,8 @@ plugins/<plugin>/                 integrated plugins (upstream files + provenanc
 plugins/omega-core/               master router skill, omega.py, registry copy
 registry/                         components.json, skills.json, capabilities.json, routing-rules.json
 audit/                            manifests, inventory, matrix, merge map, exclusions, reports
-tools/                            build.py, rules.py, validate.py, run-baselines.sh
-scripts/                          fetch-sources.sh, install-ecc-rules.sh
+tools/                            build.py, rules.py, validate.py, run-baselines.sh, subreaper.py, render_reports.py
+scripts/                          fetch-sources.sh, install-ecc-rules.sh, install-plugin-deps.sh
 tests/                            unittest suite
 docs/INSTALL.md                   install, update, remove, troubleshooting
 ```

@@ -7,6 +7,24 @@ and a throwaway `HOME` (claude-mem). Nothing was installed globally and no user 
 
 This is a review of behaviour and configuration, not a full code audit of ~3,800 copied files.
 
+## Verified findings (reproduced, with evidence)
+
+| # | Finding | Evidence | Status |
+|---|---|---|---|
+| V1 | ECC hooks execute and enforce policy: `pre-bash-dispatcher` blocks `git commit --no-verify` | Live isolated session, hooks on: PreToolUse:Bash exit 2 "BLOCKED: --no-verify flag is not allowed"; commit count unchanged (1) | Working as designed |
+| V2 | `hooks_enabled=false` is honoured | Same command with hooks off: hooks ran but short-circuited (exit 0), commit succeeded (count 2) | Working as designed |
+| V3 | ECC SessionStart hook crashes without npm deps (`Cannot find module 'js-yaml'`) | Live session, hooks on; fixed by `scripts/install-plugin-deps.sh`, after which all SessionStart hooks exit 0 | Mitigated (OMEGA helper + doctor check) |
+| V4 | Running `npm install`/`npm ci` inside ECC rewrites its tracked `yarn.lock` | `git status` after each; `--no-save` does not prevent it | Mitigated (helper installs from a temp dir; tree verified clean) |
+| V5 | claude-mem SessionStart hook installs a 109 MB launcher binary into `~/.local/bin` and appends PATH to `~/.bashrc` | Observed in an isolated HOME (`.bashrc` modified, `~/.local/bin/claude-mem` protocol 1) | Upstream behaviour, documented in docs/INSTALL.md |
+| V6 | claude-mem captures tool inputs/outputs into a local SQLite DB and sends them to the configured observer model for compression | Test fact captured as observation #1 (type "decision") with provider `claude` | Upstream behaviour; never use it with secrets in tool calls |
+| V7 | Upstream claude-mem test `tests/memory/native-memory-bridge.test.ts` writes to the real `$HOME/.claude-mem` instead of a temp dir | Run with an isolated HOME creates `$HOME/.claude-mem/settings.json` and a log line | Upstream test-isolation defect; baseline runner now isolates HOME |
+| V8 | `npx skills find` reports "No skills found" on network failure | `src/find.ts` `catch { return [] }`; reproduced with skills.sh blocked (CONNECT 403) | Upstream behaviour; `omega.py doctor` now checks skills.sh reachability |
+| V9 | No real credentials in `plugins/` | Regex scan (see Secrets); only 3 labelled test fixtures matched | Verified |
+| V10 | User configuration and pinned sources unmodified | Real `~/.claude` has no OMEGA/claude-mem entries; rc files clean; `git status` clean in all 10 sources | Verified (the only stray write was V7, removed) |
+
+Everything below this line is a **potential risk**: behaviour read from source or upstream docs and
+reasoned about, not exploited or reproduced unless the row says so.
+
 ## What executes automatically once a plugin is installed
 
 | Plugin | Mechanism | Behaviour | Control |
@@ -29,7 +47,7 @@ This is a review of behaviour and configuration, not a full code audit of ~3,800
 | agent-browser | Sites you open; Chrome download on `agent-browser install` | On use |
 | ECC skills | Many integrate external APIs (x-api, exa-search, fal-ai, jira, etc.) using the user's own keys | On use |
 
-## Network installers and auto-installs (all require user approval in practice)
+## Network installers and auto-installs (potential risk; approval depends on the session permission mode)
 
 - `plugins/graphify/skills/graphify/SKILL.md` runs `uv tool install --upgrade graphifyy` or
   `pip install graphifyy` when graphify is missing (upstream behaviour). The OMEGA router tells the

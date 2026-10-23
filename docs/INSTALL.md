@@ -50,6 +50,21 @@ its lifecycle hooks:
 claude plugin install ecc@omega-engineering-x10 --config hooks_enabled=false
 ```
 
+**ECC hooks need npm runtime dependencies** (`js-yaml`, `ajv`, `@iarna/toml`, `sql.js`) that a plugin
+install does not provide. Without them its SessionStart hook fails with
+`Cannot find module 'js-yaml'` (upstream TROUBLESHOOTING.md, "MODULE_NOT_FOUND"). Install them into
+the installed plugin directory with the OMEGA helper, which runs `npm ci` from ECC's pinned
+`package-lock.json` in a temporary directory so ECC's tracked files (npm would rewrite its
+`yarn.lock`) stay unchanged:
+
+```bash
+scripts/install-plugin-deps.sh ~/.claude/plugins/cache/omega-engineering-x10/ecc/2.2.3
+# when the marketplace was added from a local directory, plugins run in place:
+scripts/install-plugin-deps.sh plugins/ecc
+```
+
+`omega.py doctor` reports every installed ECC copy that is missing these dependencies.
+
 ### claude-mem (persistent memory)
 
 claude-mem is **not** listed in the OMEGA marketplace. Claude Code reserves plugin names that start
@@ -71,11 +86,23 @@ or `npx claude-mem@15.0.1 install`. Privacy notes:
 - `claude-mem:cloud-sync` and the `claude-mem-cowork` plugin send data to cmem.ai. Opt-in only.
 - Its SessionStart hook may add the `claude-mem` launcher to your shell PATH (it edits a shell rc
   file and says so).
+- First session after install: the launcher is placed in `~/.local/bin/claude-mem`, but hooks in that
+  same session report `Executable not found in $PATH: "claude-mem"`. Start a new shell (or add
+  `~/.local/bin` to PATH) and restart Claude Code; capture works from the next session (verified).
+- To install exactly the pinned commit instead of upstream `main`, add the source snapshot as the
+  marketplace: `claude plugin marketplace add ../sources/thedotmack__claude-mem` then
+  `claude plugin install claude-mem@thedotmack` (this is how the capture/search loop was verified).
+- A plain `/plugin install` leaves the plugin's own npm dependencies (tree-sitter grammars, zod...)
+  uninstalled; the SessionStart hook says "plugin dependencies are missing". Memory capture and search
+  still worked in testing; tree-sitter based features (`smart-explore`) need `npx claude-mem install`.
 - The worker listens on `127.0.0.1:<37700 + uid % 100>` unless `CLAUDE_MEM_WORKER_PORT` is set.
-- Retention: upstream ships export/import scripts (`docs/public/usage/export-import.mdx`). They import
-  claude-mem's `src/`, so run them from the pinned checkout:
-  `cd ../sources/thedotmack__claude-mem && bun scripts/export-memories.ts "<query>" backup.json` and
-  `bun scripts/import-memories.ts backup.json`. Review exports before sharing; they are plain text.
+- Retention: upstream ships export/import scripts, documented in
+  `../sources/thedotmack__claude-mem/docs/public/usage/export-import.mdx`. They import claude-mem's
+  `src/` and talk to the running worker, so run them from a copy of the pinned source with its
+  dependencies installed (`bun install`), while the worker is running:
+  `npx tsx ./scripts/export-memories.ts "<query>" backup.json` and
+  `npx tsx ./scripts/import-memories.ts backup.json` (verified: export, import, and re-import
+  skipping every duplicate). Review exports before sharing; they are plain text.
 
 ### ECC rules (optional)
 
@@ -94,7 +121,7 @@ It never overwrites an existing pack unless you pass `--force`.
 | Needed by | Install | Verify |
 |---|---|---|
 | agent-browser | `npm i -g agent-browser@0.39.2 && agent-browser install` (downloads Chrome). To reuse an existing Chromium: `export AGENT_BROWSER_EXECUTABLE_PATH=/path/to/chrome` | `agent-browser --version`; `agent-browser skills list` |
-| graphify | `uv tool install graphifyy==0.9.94` (or `pipx install graphifyy==0.9.94`). Extras: `graphifyy[mcp]`, `[neo4j]`, `[falkordb]`, `[pdf]`, `[watch]` | `graphify --help` |
+| graphify | `uv tool install graphifyy==0.9.94` (or `pipx install graphifyy==0.9.94`). Extras: `graphifyy[pdf]` (PDF papers), `[sql]` (SQL files), `[mcp]`, `[neo4j]`, `[falkordb]`, `[watch]`. Docs, PDFs and images are extracted by `/graphify` subagents inside Claude Code; code-only builds need no LLM (`graphify update .`) | `graphify --help` |
 | graphify always-on (optional) | `graphify install --platform claude` adds a CLAUDE.md section and a PreToolUse hook (upstream behaviour). Remove with `graphify uninstall`. The snippet is also in `plugins/graphify/always_on/claude-md.md` | |
 | find-skills | Node.js with `npx` (runs `npx skills@1.7.4`); needs network access to skills.sh | `npx skills find react` |
 | ui-ux-pro-max | Python 3 (scripts use the standard library) | `python3 <skill>/scripts/search.py "saas" --design-system` |
@@ -172,5 +199,8 @@ uv tool uninstall graphifyy; npm rm -g agent-browser   # runtimes, if installed
 | `npx skills find` prints "No skills found" for every query | The CLI reports network failures this way. Check that `https://skills.sh` is reachable (it was blocked by this validation environment's proxy) |
 | claude-mem worker not reachable | It starts on the first session after install. Check `~/.claude-mem/settings.json` for `CLAUDE_MEM_WORKER_PORT`; run `omega.py doctor` |
 | graphify says no graph | Run `/graphify` (full, uses subagents for docs) or `graphify update .` (code only, no LLM) |
+| ECC SessionStart hook: `Cannot find module 'js-yaml'` | Run `scripts/install-plugin-deps.sh <installed ecc dir>` (see section 2) |
+| claude-mem hooks: `Executable not found in $PATH: "claude-mem"` | First run only: add `~/.local/bin` to PATH (the hook already edited your shell rc) and restart Claude Code |
+| graphify warns `.sql file(s) contributed nothing ... tree_sitter_sql not installed` | Optional grammar: `uv tool install --force 'graphifyy[sql]==0.9.94'` |
 | Session feels slow / context full | ECC adds ~47.6k tokens always-on. Uninstall it or disable plugins you are not using (`claude plugin disable`) |
 | `claude plugin validate` warns "CLAUDE.md at the plugin root is not loaded" (ecc, mattpocock-skills) | Upstream layout; harmless |
