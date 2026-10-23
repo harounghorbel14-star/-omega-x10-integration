@@ -13,7 +13,7 @@ Each source's own tests, run by `tools/run-baselines.sh` on a disposable copy of
 | superpowers-hooks | obra__superpowers | `bash tests/hooks/test-session-start.sh` | 0 | 1 | pass |
 | superpowers-skill-struct | obra__superpowers | `bash tests/diagnosing-superpowers/test-skill-structure.sh` | 0 | 0 | pass |
 | superpowers-find-polluter | obra__superpowers | `bash tests/systematic-debugging/test-find-polluter.sh` | 0 | 1 | pass |
-| superpowers-version-bump | obra__superpowers | `bash tests/version-bump/test-bump-version.sh` | 3 | 0 | environment (confirmed: wrong yq variant installed) |
+| superpowers-version-bump | obra__superpowers | `bash tests/version-bump/test-bump-version.sh` | 3 | 0 | environment (confirmed: passes with mikefarah yq v4) |
 | superpowers-codex-manifest | obra__superpowers | `bash tests/codex/test-marketplace-manifest.sh` | 0 | 0 | pass |
 | superpowers-shell-lint | obra__superpowers | `bash tests/shell-lint/test-lint-shell.sh` | 0 | 0 | pass |
 | mattpocock-validate | mattpocock__skills | `claude plugin validate . --strict` | 1 | 2 | environment/tool-version |
@@ -29,7 +29,7 @@ Each source's own tests, run by `tools/run-baselines.sh` on a disposable copy of
 
 ## superpowers-version-bump (exit 3)
 
-Needs mikefarah yq v4 (`strenv`); this machine's yq/jq lacks it. Script under test (scripts/bump-version.sh) is release tooling, not a skill.
+Needs mikefarah yq v4 (`strenv`); this machine's /usr/bin/yq is the jq wrapper. With yq v4.44.3 (release binary, SHA-256 verified) first on PATH the test passes ('Version-bump tests passed'). Script under test (scripts/bump-version.sh) is release tooling, not a skill.
 
 ```
 jq: error: strenv/1 is not defined at <top-level>, line 1:

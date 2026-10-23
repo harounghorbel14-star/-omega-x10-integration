@@ -51,6 +51,14 @@
   "examples": []
  },
  {
+  "check": "syntax",
+  "status": "PASS",
+  "detail": "checked {'.sh': 95, '.mjs': 28, '.cjs': 55, '.py': 300, '.js': 567}; 1 fail, 0 are integration regressions",
+  "examples": [
+   "upstream-same plugins/claude-mem/skills/version-bump/scripts/generate_changelog.js"
+  ]
+ },
+ {
   "check": "routes",
   "status": "PASS",
   "detail": "0 problem(s)",

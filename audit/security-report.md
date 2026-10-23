@@ -20,6 +20,10 @@ This is a review of behaviour and configuration, not a full code audit of ~3,800
 | V7 | Upstream claude-mem test `tests/memory/native-memory-bridge.test.ts` writes to the real `$HOME/.claude-mem` instead of a temp dir | Run with an isolated HOME creates `$HOME/.claude-mem/settings.json` and a log line | Upstream test-isolation defect; baseline runner now isolates HOME |
 | V8 | `npx skills find` reports "No skills found" on network failure | `src/find.ts` `catch { return [] }`; reproduced with skills.sh blocked (CONNECT 403) | Upstream behaviour; `omega.py doctor` now checks skills.sh reachability |
 | V9 | No real credentials in `plugins/` | Regex scan (see Secrets); only 3 labelled test fixtures matched | Verified |
+| V11 | claude-mem telemetry is on by default (anonymous, opt-out) | `npx claude-mem help`: "telemetry ... on by default, opt-out"; disabled with `telemetry disable` before every OMEGA test | Upstream default; documented in docs/INSTALL.md |
+| V12 | The design stack's optional MCP config pins nothing (`@playwright/mcp@latest`, `chrome-devtools-mcp@latest`, `shadcn@latest`) | `plugins/ui-ux-pro-max-design-stack/optional/mcp.json` | Not auto-enabled (moved to optional/); pin versions before enabling |
+| V13 | A local-folder marketplace runs plugins in place (`CLAUDE_PLUGIN_ROOT` = the folder), while a git marketplace runs the cached copy | ECC require stack pointed at the checkout; claude-mem MCP from a local folder lacked the cache's deps | Edits to a local checkout take effect immediately; install from git for a fixed, cached copy |
+| V14 | Upstream claude-mem worker daemons survive their test suite | PID re-parented to init after `bun test` exit, holding the runner open | Test-harness concern only; runner's subreaper no longer waits on them |
 | V10 | User configuration and pinned sources unmodified | Real `~/.claude` has no OMEGA/claude-mem entries; rc files clean; `git status` clean in all 10 sources | Verified (the only stray write was V7, removed) |
 
 Everything below this line is a **potential risk**: behaviour read from source or upstream docs and

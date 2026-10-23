@@ -196,5 +196,101 @@
   "command": "curl https://skills.sh/api/search; npx -y skills@1.7.4 find react; omega.py doctor",
   "result": "BLOCKED (environment)",
   "evidence": "CONNECT tunnel 403 from the proxy; CLI prints 'No skills found'; doctor reports [MISS] skills.sh reachable with fix"
+ },
+ {
+  "test": "Clean install from a git-hosted marketplace (fresh HOME + CLAUDE_CONFIG_DIR, local smart-HTTP git server)",
+  "command": "claude plugin marketplace add http://127.0.0.1:8912/omega-engineering-x10.git; install omega-core, superpowers, vibesec, ecc, graphify, agent-browser, ui-ux-pro-max(+design-stack), replica-skill",
+  "result": "PASS",
+  "evidence": "all installed into ~/.claude/plugins/cache/omega-engineering-x10/<plugin>/<version> at commit 3aaadbe/08598a3"
+ },
+ {
+  "test": "Doctor fix path from an installed omega-core",
+  "command": "omega.py doctor (cache copy) -> run its suggested fix",
+  "result": "FAIL then FIXED",
+  "evidence": "1.0.0 pointed to a non-existent cache/.../scripts/install-plugin-deps.sh; after F9 + version bump 1.1.0 the suggested command installed ECC deps and the check turned OK"
+ },
+ {
+  "test": "Plugin update flow",
+  "command": "claude plugin marketplace update; claude plugin update omega-core",
+  "result": "PASS after F10",
+  "evidence": "unchanged version: 'already at the latest version (1.0.0)'; after bump: 'updated from 1.0.0 to 1.1.0'"
+ },
+ {
+  "test": "ECC hooks from the cache (git install)",
+  "command": "claude -p 'git commit --no-verify'",
+  "result": "PASS",
+  "evidence": "0 'Cannot find module'; PreToolUse exit 2 blocked the commit (count stayed 1); 3 Stop hooks reported outcome 'cancelled' at -p shutdown; all 8 ECC Stop hooks exit 0 when run directly"
+ },
+ {
+  "test": "Superpowers SessionStart injection",
+  "command": "stream-json hook_response in the clean-install session",
+  "result": "PASS",
+  "evidence": "additionalContext starts '<EXTREMELY_IMPORTANT> You have superpowers. **Below is the full content of your superpowers:using-superpowers skill'"
+ },
+ {
+  "test": "ECC rule packs load as context",
+  "command": "probe question before/after scripts/install-ecc-rules.sh common, file tools disabled",
+  "result": "PASS",
+  "evidence": "before: NONE; after: 80% coverage (testing.md) and CRITICAL Immutability (coding-style.md)"
+ },
+ {
+  "test": "Superpowers version-bump upstream test with mikefarah yq v4",
+  "command": "PATH=<yq v4.44.3, SHA-256 verified>:$PATH bash tests/version-bump/test-bump-version.sh",
+  "result": "PASS",
+  "evidence": "'Version-bump tests passed', exit 0"
+ },
+ {
+  "test": "Graphify MCP server",
+  "command": "graphify-mcp graphify-out/graph.json over stdio: initialize, tools/list, tools/call get_node",
+  "result": "PASS",
+  "evidence": "serverInfo graphify 0.9.94; 10 tools; get_node('Ripple Batching') -> Source paper.pdf page 1"
+ },
+ {
+  "test": "Graphify watch mode",
+  "command": "graphify watch . ; edit m.py",
+  "result": "PASS",
+  "evidence": "'1 file(s) changed' -> 'Rebuilt: 3 nodes'; new function beta() in graph.json"
+ },
+ {
+  "test": "Graphify exporters + clone",
+  "command": "graphify export html|callflow-html|obsidian|wiki|svg|graphml|neo4j|falkordb; graphify clone https://github.com/BehiSecc/VibeSec-Skill",
+  "result": "PASS (svg needs matplotlib)",
+  "evidence": "all outputs written; graphml 17 nodes; cypher.txt 35 statements; svg failed with a clear ImportError until matplotlib was added, then written; clone fetched LICENSE/README/SKILL.md"
+ },
+ {
+  "test": "Graphify transcription",
+  "command": "graphify.transcribe.transcribe('standup.wav')",
+  "result": "BLOCKED (environment)",
+  "evidence": "without [video]: clear 'pip install graphifyy[video]' ImportError; with it: model download ProxyError 403 (huggingface.co)"
+ },
+ {
+  "test": "agent-browser dogfood QA workflow",
+  "command": "claude -p '... agent-browser skills get dogfood ... QA http://127.0.0.1:8766'",
+  "result": "PASS (after AGENT_BROWSER_SOCKET_DIR)",
+  "evidence": "first run: 'Socket path would be 10x bytes (max 103)' with the long scratch HOME, skill stopped honestly; with a short socket dir it found both planted bugs, incl. 'ReferenceError: trackSignup is not defined' via `agent-browser errors`, with screenshots"
+ },
+ {
+  "test": "claude-mem repair + smart-explore",
+  "command": "npx claude-mem@15.0.1 telemetry disable; repair; session using claude-mem:smart-explore with Read/Bash/Grep/Glob disallowed",
+  "result": "PASS (git install) / FAIL (local-folder install)",
+  "evidence": "local-folder marketplace: MCP ran in place without deps -> 'tree-sitter CLI is not installed' (reproduced directly with CLAUDE_PLUGIN_ROOT=source dir); git install + repair: RateTable L1-3, lookup L2, quote L5, free_shipping L8"
+ },
+ {
+  "test": "More ECC components",
+  "command": "claude -p using ecc:docker-patterns, ecc:api-design and the ecc:security-reviewer agent",
+  "result": "PASS",
+  "evidence": "command injection (shell=True) critical, secret in ENV, unpinned base image, root user, API design issues; files unmodified"
+ },
+ {
+  "test": "UI UX Pro Max /design-review",
+  "command": "claude -p '/ui-ux-pro-max-design-stack:design-review http://127.0.0.1:8766/' --mcp-config <playwright MCP pointed at /opt/pw-browsers/chromium>",
+  "result": "PASS",
+  "evidence": "design-review subagent, 24 Playwright MCP calls, screenshots at 375/768/1440/1920 px; found both planted bugs plus missing live region and viewport meta"
+ },
+ {
+  "test": "Replica recon + architect",
+  "command": "claude -p running replica-skill:replica-recon then replica-skill:replica-architect on the local app",
+  "result": "PASS",
+  "evidence": "recon.md, features.csv, 4 state screenshots; architecture.md and schema.sql derived from the recon"
  }
 ]

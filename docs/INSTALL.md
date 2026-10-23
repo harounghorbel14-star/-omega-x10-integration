@@ -99,7 +99,13 @@ or `npx claude-mem@15.0.1 install`. Privacy notes:
   `claude plugin install claude-mem@thedotmack` (this is how the capture/search loop was verified).
 - A plain `/plugin install` leaves the plugin's own npm dependencies (tree-sitter grammars, zod...)
   uninstalled; the SessionStart hook says "plugin dependencies are missing". Memory capture and search
-  still worked in testing; tree-sitter based features (`smart-explore`) need `npx claude-mem install`.
+  still work. Run `npx claude-mem@15.0.1 repair` once (non-interactive; it runs `bun install` in the
+  plugin cache) and `smart-explore` works (verified: function/method outline of a Python file).
+- Telemetry is **on by default** (anonymous, opt-out; `npx claude-mem help`). Disable it with
+  `npx claude-mem@15.0.1 telemetry disable` (writes `~/.claude-mem/telemetry.json`).
+- Install claude-mem from a git URL (GitHub or a git server), not from a local folder: a local-folder
+  marketplace runs the plugin in place, so its MCP tools (smart-explore) use the folder without the
+  dependencies `repair` installed in the cache (verified failure and fix).
 - The worker listens on `127.0.0.1:<37700 + uid % 100>` unless `CLAUDE_MEM_WORKER_PORT` is set.
 - Retention: upstream ships export/import scripts, documented in
   `../sources/thedotmack__claude-mem/docs/public/usage/export-import.mdx`. They import claude-mem's
@@ -126,7 +132,7 @@ It never overwrites an existing pack unless you pass `--force`.
 | Needed by | Install | Verify |
 |---|---|---|
 | agent-browser | `npm i -g agent-browser@0.39.2 && agent-browser install` (downloads Chrome). To reuse an existing Chromium: `export AGENT_BROWSER_EXECUTABLE_PATH=/path/to/chrome` | `agent-browser --version`; `agent-browser skills list` |
-| graphify | `uv tool install graphifyy==0.9.94` (or `pipx install graphifyy==0.9.94`). Extras: `graphifyy[pdf]` (PDF papers), `[sql]` (SQL files), `[mcp]`, `[neo4j]`, `[falkordb]`, `[watch]`. Docs, PDFs and images are extracted by `/graphify` subagents inside Claude Code; code-only builds need no LLM (`graphify update .`) | `graphify --help` |
+| graphify | `uv tool install graphifyy==0.9.94` (or `pipx install graphifyy==0.9.94`). Extras: `graphifyy[pdf]` (PDF papers), `[sql]` (SQL files), `[mcp]` (`graphify-mcp` server), `[watch]` (`graphify watch`), `[video]` (audio/video transcription; downloads a Whisper model from huggingface.co on first use), `[neo4j]`, `[falkordb]`; `graphify export svg` also needs `matplotlib`. Docs, PDFs and images are extracted by `/graphify` subagents inside Claude Code; code-only builds need no LLM (`graphify update .`) | `graphify --help` |
 | graphify always-on (optional) | `graphify install --platform claude` adds a CLAUDE.md section and a PreToolUse hook (upstream behaviour). Remove with `graphify uninstall`. The snippet is also in `plugins/graphify/always_on/claude-md.md` | |
 | find-skills | Node.js with `npx` (runs `npx skills@1.7.4`); needs network access to skills.sh | `npx skills find react` |
 | ui-ux-pro-max | Python 3 (scripts use the standard library) | `python3 <skill>/scripts/search.py "saas" --design-system` |
@@ -183,7 +189,9 @@ claude plugin update <plugin>@omega-engineering-x10
 ```
 
 `tools/build.py` fails if an upstream file matches no rule in `tools/rules.py`, so new upstream
-content cannot be dropped silently.
+content cannot be dropped silently. When you change a plugin, bump its `version`:
+`claude plugin update` keeps an installed copy whose version is unchanged (verified with omega-core
+1.0.0 -> 1.1.0).
 
 ## Remove
 
@@ -207,5 +215,8 @@ uv tool uninstall graphifyy; npm rm -g agent-browser   # runtimes, if installed
 | ECC SessionStart hook: `Cannot find module 'js-yaml'` | Run `scripts/install-plugin-deps.sh <installed ecc dir>` (see section 2) |
 | claude-mem hooks: `Executable not found in $PATH: "claude-mem"` | First run only: add `~/.local/bin` to PATH (the hook already edited your shell rc) and restart Claude Code |
 | graphify warns `.sql file(s) contributed nothing ... tree_sitter_sql not installed` | Optional grammar: `uv tool install --force 'graphifyy[sql]==0.9.94'` |
+| agent-browser: `Socket path would be N bytes (max 103)` | Your HOME/working path is too long for a Unix socket. `export AGENT_BROWSER_SOCKET_DIR=/tmp/ab` (any short directory) |
+| claude-mem `smart_outline`: "the tree-sitter CLI is not installed" | Run `npx claude-mem@15.0.1 repair`; if claude-mem was installed from a local folder, reinstall it from a git URL |
+| `claude plugin update` says "already at the latest version" after a change | Plugins update by version number; maintainers must bump `version` in the changed plugin's `plugin.json` |
 | Session feels slow / context full | ECC adds ~47.6k tokens always-on. Uninstall it or disable plugins you are not using (`claude plugin disable`) |
 | `claude plugin validate` warns "CLAUDE.md at the plugin root is not loaded" (ecc, mattpocock-skills) | Upstream layout; harmless |

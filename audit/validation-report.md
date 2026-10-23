@@ -75,6 +75,22 @@ Throwaway `CLAUDE_CONFIG_DIR`, scratch npm/uv prefixes and a scratch `HOME` for 
 | ECC code review + security review | PASS | flagged SQL injection at app.py:5 (critical, parameterized-query fix) and ZeroDivisionError; files unmodified |
 | ECC debugging (build-fix) | PASS | fixed inventory.py only; test file untouched; `python3 -m unittest -v` OK |
 | find-skills search (retry) | BLOCKED (environment) | CONNECT tunnel 403 from the proxy; CLI prints 'No skills found'; doctor reports [MISS] skills.sh reachable with fix |
+| Clean install from a git-hosted marketplace (fresh HOME + CLAUDE_CONFIG_DIR, local smart-HTTP git server) | PASS | all installed into ~/.claude/plugins/cache/omega-engineering-x10/<plugin>/<version> at commit 3aaadbe/08598a3 |
+| Doctor fix path from an installed omega-core | FAIL then FIXED | 1.0.0 pointed to a non-existent cache/.../scripts/install-plugin-deps.sh; after F9 + version bump 1.1.0 the suggested command installed ECC deps and the check turned OK |
+| Plugin update flow | PASS after F10 | unchanged version: 'already at the latest version (1.0.0)'; after bump: 'updated from 1.0.0 to 1.1.0' |
+| ECC hooks from the cache (git install) | PASS | 0 'Cannot find module'; PreToolUse exit 2 blocked the commit (count stayed 1); 3 Stop hooks reported outcome 'cancelled' at -p shutdown; all 8 ECC Stop hooks exit 0 when run directly |
+| Superpowers SessionStart injection | PASS | additionalContext starts '<EXTREMELY_IMPORTANT> You have superpowers. **Below is the full content of your superpowers:using-superpowers skill' |
+| ECC rule packs load as context | PASS | before: NONE; after: 80% coverage (testing.md) and CRITICAL Immutability (coding-style.md) |
+| Superpowers version-bump upstream test with mikefarah yq v4 | PASS | 'Version-bump tests passed', exit 0 |
+| Graphify MCP server | PASS | serverInfo graphify 0.9.94; 10 tools; get_node('Ripple Batching') -> Source paper.pdf page 1 |
+| Graphify watch mode | PASS | '1 file(s) changed' -> 'Rebuilt: 3 nodes'; new function beta() in graph.json |
+| Graphify exporters + clone | PASS (svg needs matplotlib) | all outputs written; graphml 17 nodes; cypher.txt 35 statements; svg failed with a clear ImportError until matplotlib was added, then written; clone fetched LICENSE/README/SKILL.md |
+| Graphify transcription | BLOCKED (environment) | without [video]: clear 'pip install graphifyy[video]' ImportError; with it: model download ProxyError 403 (huggingface.co) |
+| agent-browser dogfood QA workflow | PASS (after AGENT_BROWSER_SOCKET_DIR) | first run: 'Socket path would be 10x bytes (max 103)' with the long scratch HOME, skill stopped honestly; with a short socket dir it found both planted bugs, incl. 'ReferenceError: trackSignup is not defined' via `agent-browser errors`, with screenshots |
+| claude-mem repair + smart-explore | PASS (git install) / FAIL (local-folder install) | local-folder marketplace: MCP ran in place without deps -> 'tree-sitter CLI is not installed' (reproduced directly with CLAUDE_PLUGIN_ROOT=source dir); git install + repair: RateTable L1-3, lookup L2, quote L5, free_shipping L8 |
+| More ECC components | PASS | command injection (shell=True) critical, secret in ENV, unpinned base image, root user, API design issues; files unmodified |
+| UI UX Pro Max /design-review | PASS | design-review subagent, 24 Playwright MCP calls, screenshots at 375/768/1440/1920 px; found both planted bugs plus missing live region and viewport meta |
+| Replica recon + architect | PASS | recon.md, features.csv, 4 state screenshots; architecture.md and schema.sql derived from the recon |
 
 ## 4. Loaded components (from `claude plugin details`)
 
@@ -118,7 +134,7 @@ test_killed_orphan_is_reaped (test_omega.SubreaperTests.test_killed_orphan_is_re
 test_returns_command_status_without_waiting_for_daemons (test_omega.SubreaperTests.test_returns_command_status_without_waiting_for_daemons) ... ok
 
 ----------------------------------------------------------------------
-Ran 17 tests in 9.085s
+Ran 17 tests in 8.517s
 
 OK
 ```
@@ -169,7 +185,7 @@ Tracked files: 10090. merged-with-traceability: 3, excluded-with-justification: 
 
 Rendered from `audit/open-items.json`; the same list is in `audit/unresolved-items.md`.
 
-**Fixed in the release gate (8)**
+**Fixed in the release gate (11)**
 
 | Id | Issue | Fix | Regression test |
 |---|---|---|---|
@@ -181,32 +197,38 @@ Rendered from `audit/open-items.json`; the same list is in `audit/unresolved-ite
 | F6 | docs/INSTALL.md: claude-mem export/import used wrong runner (bun) and paths that looked repo-relative | commands replaced by the ones actually run (npx tsx ./scripts/... from a source copy with deps) | tools/validate.py docs check (60 references) |
 | F7 | unresolved-items.md reported 'none' while capabilities were unverified | report now has registry and runtime levels rendered from audit/open-items.json | - |
 | F8 | `tools/build.py --no-copy` rewrote audit/transforms.json (and merge-map transforms) as empty, which would break the integrity check | transform records collected for every matching rule, independent of copy mode | tests/test_omega.py::BuildDeterminismTest (now also compares transforms.json and requires 2 records) |
+| F9 | Doctor told cached installs to run scripts/install-plugin-deps.sh from a path that only exists in a checkout (found by the clean git install) | helper now ships in plugins/omega-core/scripts; scripts/ keeps a wrapper | DoctorRegressionTests::test_ecc_missing_runtime_deps_detected asserts the suggested helper exists |
+| F10 | omega-core changed without a version bump, so `claude plugin update` kept the stale 1.0.0 copy | omega-core 1.1.0; INSTALL documents bumping versions | manual: update reported 1.0.0 -> 1.1.0 and the doctor fix then ran from the cache |
+| F11 | Docs missing verified operational steps | INSTALL.md: AGENT_BROWSER_SOCKET_DIR for long paths, claude-mem repair/telemetry/install-from-git, graphify extras (video, svg) | tools/validate.py docs check |
 
 **Implementation blockers (0)**: none.
 
-**Environment-restricted (4)**
+**Environment-restricted (8)**
 - E1: find-skills search (`npx skills find`)
 - E2: Graphify upstream tests/test_security.py (7 tests)
-- E3: Superpowers upstream tests/version-bump/test-bump-version.sh
-- E4: mattpocock `claude plugin validate . --strict`
+- E5: Graphify audio/video transcription
+- E6: claude-mem cloud sync and the claude-mem-cowork plugin
+- E7: claude-mem OpenRouter/Gemini observer providers
+- E8: Graphify Neo4j/FalkorDB push
+- E9: agent-browser electron, slack, vercel-sandbox, agentcore, protected-vercel-deployments skills
+- E10: macOS and Windows
 
-**Upstream limitations (6)**
+**Upstream limitations (7)**
 - U1: claude-mem committed build artifacts lag src/ (LAUNCHER_PROTOCOL 2 in src, 1 in plugin/scripts)
 - U2: claude-mem test tests/memory/native-memory-bridge.test.ts writes to the real $HOME/.claude-mem
 - U3: `npx skills find` reports network failures as 'No skills found'
 - U4: ECC hooks need npm dependencies that plugin installs do not provide
 - U5: claude-mem plain `/plugin install` leaves the plugin's npm deps (tree-sitter grammars, zod) uninstalled
 - U6: claude-mem first session after install: hooks cannot find the `claude-mem` launcher
+- U7: mattpocock `claude plugin validate . --strict`
 
-**Not verified (8)**
-- N1: Clean install from a git-hosted copy of the OMEGA marketplace
-- N2: ECC: 309 of 311 skills and 95 of 97 commands not individually exercised
-- N3: claude-mem: smart-explore/tree-sitter features, cloud-sync, claude-mem-cowork, Chroma vector search, OpenRouter/Gemini providers
-- N4: Graphify: video/audio transcription, Neo4j/FalkorDB push, MCP server, watch mode, GitHub clone mode
-- N5: agent-browser specialised CLI skills (electron, slack, vercel-sandbox, agentcore, derive-client, webmcp-gen, protected-vercel-deployments)
-- N6: Full Replica pipeline, UI UX Pro Max /design-review agent run, Superpowers SessionStart injection content
-- N7: macOS and Windows
-- N8: ECC rule packs loaded as context in a session
+**Not verified (6)**
+- N1: Install from a real GitHub-hosted copy of the OMEGA marketplace on another machine
+- N2: ECC: 307 of 311 skills, 95 of 97 commands and 70 of 71 agents not individually exercised
+- N3: claude-mem Chroma vector search specifically
+- N4: agent-browser derive-client and webmcp-gen
+- N5: Replica steps 3-11 (design, backend, build, test, diff, entrepreneur, brand, launch, deploy)
+- N6: Individual UI UX Pro Max skills beyond search scripts and /design-review
 
 Routing is keyword/curated and is a recommendation aid; final skill choice stays with the model, as shown in the live routing tests.
 

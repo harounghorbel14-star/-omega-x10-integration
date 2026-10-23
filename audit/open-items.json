@@ -15,16 +15,40 @@
    "requirement": "DNS + HTTP egress to example.com"
   },
   {
-   "id": "E3",
-   "item": "Superpowers upstream tests/version-bump/test-bump-version.sh",
-   "evidence": "/usr/bin/yq is the jq-wrapper yq 0.0.0; script uses mikefarah yq v4 syntax (strenv)",
-   "requirement": "mikefarah yq v4 on PATH"
+   "id": "E5",
+   "item": "Graphify audio/video transcription",
+   "evidence": "With graphifyy[video] installed, transcribe('standup.wav') starts ('transcribing ... model=base') and fails downloading the Whisper model: ProxyError 403 (huggingface.co blocked)",
+   "requirement": "Network access to huggingface.co"
   },
   {
-   "id": "E4",
-   "item": "mattpocock `claude plugin validate . --strict`",
-   "evidence": "--strict promotes two warnings (root CLAUDE.md not loaded; missing icon) to errors; non-strict validation passes",
-   "requirement": "Upstream adds an icon / validator version that does not flag these; not an integration issue"
+   "id": "E6",
+   "item": "claude-mem cloud sync and the claude-mem-cowork plugin",
+   "evidence": "https://cmem.ai unreachable (proxy 403); also needs a cmem.ai account",
+   "requirement": "cmem.ai access and an account; opt-in by design"
+  },
+  {
+   "id": "E7",
+   "item": "claude-mem OpenRouter/Gemini observer providers",
+   "evidence": "openrouter.ai unreachable; no provider API keys in this environment",
+   "requirement": "Provider API key and network access"
+  },
+  {
+   "id": "E8",
+   "item": "Graphify Neo4j/FalkorDB push",
+   "evidence": "No database server; docker CLI present but no daemon (/var/run/docker.sock missing). Cypher export (35 statements) verified",
+   "requirement": "A reachable Neo4j or FalkorDB instance"
+  },
+  {
+   "id": "E9",
+   "item": "agent-browser electron, slack, vercel-sandbox, agentcore, protected-vercel-deployments skills",
+   "evidence": "Need Electron apps, Slack workspace, Vercel or AWS accounts",
+   "requirement": "Those apps/accounts"
+  },
+  {
+   "id": "E10",
+   "item": "macOS and Windows",
+   "evidence": "Linux container only",
+   "requirement": "Run docs/INSTALL.md steps on those OSes"
   }
  ],
  "upstream_limitations": [
@@ -63,48 +87,44 @@
    "item": "claude-mem first session after install: hooks cannot find the `claude-mem` launcher",
    "evidence": "Executable not found in $PATH: \"claude-mem\" in session 1; works from session 2 with ~/.local/bin on PATH",
    "impact": "Documented upstream-style restart requirement (docs/INSTALL.md)"
+  },
+  {
+   "id": "U7",
+   "item": "mattpocock `claude plugin validate . --strict`",
+   "evidence": "--strict promotes two warnings (root CLAUDE.md not loaded; missing icon) to errors; non-strict validation passes",
+   "impact": "Upstream metadata vs. current validator rules; not an integration issue"
   }
  ],
  "not_verified": [
   {
    "id": "N1",
-   "item": "Clean install from a git-hosted copy of the OMEGA marketplace",
-   "reason": "No remote exists and pushing was not authorized; only the local-directory marketplace was installed (where plugins run in place)"
+   "item": "Install from a real GitHub-hosted copy of the OMEGA marketplace on another machine",
+   "reason": "Git-hosted install was verified end to end through a local smart-HTTP git server in a fresh HOME and config (plugins in cache, update 1.0.0 -> 1.1.0, doctor fix, live hooks). Pushing to GitHub was not authorized, so the github.com path and a second machine remain unverified"
   },
   {
    "id": "N2",
-   "item": "ECC: 309 of 311 skills and 95 of 97 commands not individually exercised",
-   "reason": "Exercised live: ecc:tdd-workflow, ecc:security-review, /ecc:python-review, /ecc:build-fix, and the pre-bash hook path. All 311 skills, 97 commands and 71 agents are counted as loaded by `claude plugin details`"
+   "item": "ECC: 307 of 311 skills, 95 of 97 commands and 70 of 71 agents not individually exercised",
+   "reason": "Exercised live: ecc:tdd-workflow, ecc:security-review, ecc:docker-patterns, ecc:api-design, /ecc:python-review, /ecc:build-fix, agent ecc:security-reviewer, the pre-bash hook path and all 8 Stop hooks. All components are counted as loaded by `claude plugin details`"
   },
   {
    "id": "N3",
-   "item": "claude-mem: smart-explore/tree-sitter features, cloud-sync, claude-mem-cowork, Chroma vector search, OpenRouter/Gemini providers",
-   "reason": "Needs `npx claude-mem install` or external services (cmem.ai) / API keys; capture, persistence, search, export/import, shutdown were verified"
+   "item": "claude-mem Chroma vector search specifically",
+   "reason": "Search returned correct results, but whether the hybrid path used Chroma embeddings or FTS5 alone was not isolated"
   },
   {
    "id": "N4",
-   "item": "Graphify: video/audio transcription, Neo4j/FalkorDB push, MCP server, watch mode, GitHub clone mode",
-   "reason": "Optional extras/services; code, Markdown, PDF and PNG extraction and querying were verified"
+   "item": "agent-browser derive-client and webmcp-gen",
+   "reason": "Not run; core browser actions and the dogfood QA workflow were verified"
   },
   {
    "id": "N5",
-   "item": "agent-browser specialised CLI skills (electron, slack, vercel-sandbox, agentcore, derive-client, webmcp-gen, protected-vercel-deployments)",
-   "reason": "Need Electron apps, Slack/Vercel/AWS accounts; core open/snapshot/fill/click/screenshot was verified"
+   "item": "Replica steps 3-11 (design, backend, build, test, diff, entrepreneur, brand, launch, deploy)",
+   "reason": "recon and architect were run live; the remaining steps build and deploy a full app and were not run (upstream helper scripts pass their tests)"
   },
   {
    "id": "N6",
-   "item": "Full Replica pipeline, UI UX Pro Max /design-review agent run, Superpowers SessionStart injection content",
-   "reason": "Only structural checks, upstream tests and (for UI UX) the search scripts were run"
-  },
-  {
-   "id": "N7",
-   "item": "macOS and Windows",
-   "reason": "Linux container only"
-  },
-  {
-   "id": "N8",
-   "item": "ECC rule packs loaded as context in a session",
-   "reason": "Installer verified (copy, no-overwrite); loading into a session not observed"
+   "item": "Individual UI UX Pro Max skills beyond search scripts and /design-review",
+   "reason": "design-system, ui-styling, brand, banner-design, slides, design not run individually"
   }
  ],
  "fixed_in_release_gate": [
@@ -155,6 +175,24 @@
    "item": "`tools/build.py --no-copy` rewrote audit/transforms.json (and merge-map transforms) as empty, which would break the integrity check",
    "fix": "transform records collected for every matching rule, independent of copy mode",
    "regression_test": "tests/test_omega.py::BuildDeterminismTest (now also compares transforms.json and requires 2 records)"
+  },
+  {
+   "id": "F9",
+   "item": "Doctor told cached installs to run scripts/install-plugin-deps.sh from a path that only exists in a checkout (found by the clean git install)",
+   "fix": "helper now ships in plugins/omega-core/scripts; scripts/ keeps a wrapper",
+   "regression_test": "DoctorRegressionTests::test_ecc_missing_runtime_deps_detected asserts the suggested helper exists"
+  },
+  {
+   "id": "F10",
+   "item": "omega-core changed without a version bump, so `claude plugin update` kept the stale 1.0.0 copy",
+   "fix": "omega-core 1.1.0; INSTALL documents bumping versions",
+   "regression_test": "manual: update reported 1.0.0 -> 1.1.0 and the doctor fix then ran from the cache"
+  },
+  {
+   "id": "F11",
+   "item": "Docs missing verified operational steps",
+   "fix": "INSTALL.md: AGENT_BROWSER_SOCKET_DIR for long paths, claude-mem repair/telemetry/install-from-git, graphify extras (video, svg)",
+   "regression_test": "tools/validate.py docs check"
   }
  ]
 }

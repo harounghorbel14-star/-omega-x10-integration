@@ -16,7 +16,7 @@ A = ROOT / "audit"
 
 # Analysis of each non-zero baseline result (investigated by hand; see notes).
 BASELINE_NOTES = {
-    "superpowers-version-bump": ("environment (confirmed: wrong yq variant installed)", "Needs mikefarah yq v4 (`strenv`); this machine's yq/jq lacks it. Script under test "
+    "superpowers-version-bump": ("environment (confirmed: passes with mikefarah yq v4)", "Needs mikefarah yq v4 (`strenv`); this machine's /usr/bin/yq is the jq wrapper. With yq v4.44.3 (release binary, SHA-256 verified) first on PATH the test passes ('Version-bump tests passed'). Script under test "
                                  "(scripts/bump-version.sh) is release tooling, not a skill."),
     "mattpocock-validate": ("environment/tool-version", "`--strict` turns two warnings into errors: root CLAUDE.md not loaded, and "
                             "missing plugin icon (a newer validator rule). No errors without --strict; the OMEGA copy validates."),
