@@ -8,25 +8,25 @@
  {
   "check": "classified",
   "status": "PASS",
-  "detail": "10094 files, 0 unclassified; 3337 components, 0 with invalid disposition",
+  "detail": "10096 files, 0 unclassified; 3337 components, 0 with invalid disposition",
   "examples": []
  },
  {
   "check": "destinations",
   "status": "PASS",
-  "detail": "3829 copied files, 0 missing at destination",
+  "detail": "3833 copied files, 0 missing at destination",
   "examples": []
  },
  {
   "check": "integrity",
   "status": "PASS",
-  "detail": "3828 byte-compared, 0 differ; 1 recorded transform(s) excluded",
+  "detail": "3831 byte-compared, 0 differ; 2 recorded transform(s) excluded",
   "examples": []
  },
  {
   "check": "manifests",
   "status": "PASS",
-  "detail": "12 marketplace plugins; 14 plugin dirs",
+  "detail": "13 marketplace plugins; 15 plugin dirs",
   "examples": []
  },
  {
@@ -49,6 +49,14 @@
   "status": "PASS",
   "detail": "0 unparsable .json files, 0 identical to an unparsable upstream file (e.g. JSONC/templates)",
   "examples": []
+ },
+ {
+  "check": "syntax",
+  "status": "PASS",
+  "detail": "checked {'.sh': 95, '.mjs': 28, '.cjs': 55, '.py': 300, '.js': 567}; 1 fail, 0 are integration regressions",
+  "examples": [
+   "upstream-same plugins/claude-mem/skills/version-bump/scripts/generate_changelog.js"
+  ]
  },
  {
   "check": "routes",

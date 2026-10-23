@@ -1,0 +1,16 @@
+agent-browser: √ Validation passed
+anti-pattern-czar: √ Validation passed
+claude-mem-cowork: × Validation failed
+claude-mem: × Validation failed
+ecc: √ Validation passed with warnings
+find-skills: √ Validation passed
+graphify: √ Validation passed
+mattpocock-skills-extras: √ Validation passed
+mattpocock-skills: √ Validation passed with warnings
+omega-core: √ Validation passed
+replica-skill: √ Validation passed
+superpowers: √ Validation passed
+ui-ux-pro-max-design-stack: √ Validation passed
+ui-ux-pro-max: √ Validation passed with warnings
+vibesec: √ Validation passed
+MARKETPLACE: √ Validation passed

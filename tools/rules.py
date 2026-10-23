@@ -274,8 +274,12 @@ TRANSFORMS = {
     ("thedotmack__claude-mem", ".claude/commands/anti-pattern-czar.md"): {
         "why": "Upstream runs the detector from the claude-mem repo root (`bun run scripts/anti-pattern-test/...`). Relocated "
                "into its own plugin, the script path now uses ${CLAUDE_PLUGIN_ROOT}; it still scans ./src of the current "
-               "project as upstream does. No other change.",
-        "replace": [("bun run scripts/anti-pattern-test/detect-error-handling-antipatterns.ts",
+               "project as upstream does. A frontmatter description was added (upstream has none, so the command had no "
+               "description in Claude Code's command list). No other change.",
+        "replace": [("# Anti-Pattern Czar\n", "---\ndescription: Find and fix TypeScript error-handling anti-patterns "
+                     "(empty or silent catch blocks, swallowed promise errors) under ./src, one finding at a time. "
+                     "Requires Bun.\n---\n\n# Anti-Pattern Czar\n"),
+                    ("bun run scripts/anti-pattern-test/detect-error-handling-antipatterns.ts",
                      'bun run "${CLAUDE_PLUGIN_ROOT}/scripts/anti-pattern-test/detect-error-handling-antipatterns.ts"')],
     },
     ("BehiSecc__VibeSec-Skill", "SKILL.md"): {

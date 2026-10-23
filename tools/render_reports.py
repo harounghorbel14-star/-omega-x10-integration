@@ -16,18 +16,32 @@ A = ROOT / "audit"
 
 # Analysis of each non-zero baseline result (investigated by hand; see notes).
 BASELINE_NOTES = {
-    "superpowers-version-bump": ("environment", "Needs mikefarah yq v4 (`strenv`); this machine's yq/jq lacks it. Script under test "
+    "superpowers-version-bump": ("environment (confirmed: wrong yq variant installed)", "Needs mikefarah yq v4 (`strenv`); this machine's yq/jq lacks it. Script under test "
                                  "(scripts/bump-version.sh) is release tooling, not a skill."),
     "mattpocock-validate": ("environment/tool-version", "`--strict` turns two warnings into errors: root CLAUDE.md not loaded, and "
                             "missing plugin icon (a newer validator rule). No errors without --strict; the OMEGA copy validates."),
-    "ecc-npm-test": ("environment (1 of 2 confirmed)", "8877/8879 tests passed across 428 files. (1) hooks/hooks.test.js "
+    "ecc-npm-test": ("2/8879 fail: 1 environmental (confirmed), 1 undiagnosed", "8877/8879 tests passed across 428 files. (1) hooks/hooks.test.js "
                      "'observe.sh falls back to legacy output fields': re-run with this harness's CLAUDE_*/AI_AGENT env vars "
                      "unset, the file passes 258/258, so it is environmental (observe.sh skips non-CLI entrypoints by design). "
                      "(2) scripts/install-sh.test.js 'leader exit cannot hide an owned descendant retaining captured pipes' "
                      "('owned fixture process survived cleanup') still fails with the env cleared. It exercises ECC's "
                      "install.sh process cleanup, which the plugin install path does not use; likely sandbox process-group "
                      "behaviour, not confirmed."),
-    "vercel-skills-vitest": ("environment", "4/978 failed. 3 detect-agent tests fail because this harness sets AI_AGENT/CLAUDE_CODE_* "
+    "claude-mem-bun-test": ("71/10120 fail: 61 environmental (confirmed), 10 undiagnosed", "9753 pass, 71 fail, 296 skip across 977 files. 61 failures "
+                            "(smart-file-read outlines, tree-sitter CLI provisioning) came from installing dependencies with "
+                            "--ignore-scripts, which skips tree-sitter-cli's install.js binary download. After running only that "
+                            "script (tree-sitter 0.26.13) and re-running the 17 failing files with the harness env vars unset: "
+                            "350 pass, 10 fail. The 10 remaining (ensure-launcher x3, observation semantic row filters x2, Chroma "
+                            "connection-failure handling, npm tarball contents, launcher --version, Codex PreToolUse transport, "
+                            "processesStillUsingArm with real pgrep/lsof) were not individually diagnosed; they involve compiling "
+                            "the launcher, Chroma, npm pack and host process tools. Note: the worker started and served "
+                            "/api/health from the integrated copy (functional test)."),
+    "graphify-pytest": ("25/8471 fail: all environmental (confirmed)", "8246 passed, 25 failed, 200 skipped. All three groups confirmed: "
+                        "test_security.py (7) needs DNS for example.com, blocked by this environment's network policy; "
+                        "test_skillgen.py (11) reads the v8 baseline from git history, absent from the shallow clone; after "
+                        "`git fetch --unshallow` it passes 71/71; test_ext_tagged_id_clash.py (7) needs the optional `sql` "
+                        "extra (tree-sitter-sql); with `uv run --extra sql` it passes 14/14."),
+    "vercel-skills-vitest": ("4/978 fail: 3 environmental (confirmed), 1 likely terminal formatting", "4/978 failed. 3 detect-agent tests fail because this harness sets AI_AGENT/CLAUDE_CODE_* "
                              "env vars; re-run with those unset: they pass. 1 Notion test compares terminal-formatted output and "
                              "still fails. Tests cover the `skills` CLI source, which is an external runtime here."),
 }
@@ -87,8 +101,9 @@ def validation_md(baseline_rows):
             "`audit/upstream-unresolved-references.txt`.", "",
             "## 2. Claude Code plugin validation", "",
             "Command: `claude plugin validate plugins/<p>` (Claude Code 2.1.309) and `claude plugin validate .`", "",
-            "- 12 listed plugins: pass (ecc, mattpocock-skills, ui-ux-pro-max pass with upstream warnings: root CLAUDE.md "
-            "not loaded / unknown field `id`; all plugins lack an icon, a directory-listing warning).",
+            "- 13 listed plugins: pass (ecc, mattpocock-skills, ui-ux-pro-max pass with upstream warnings: root CLAUDE.md "
+            "not loaded / unknown field `id`; all plugins lack an icon, a directory-listing warning). Recorded output: "
+            "`audit/claude-plugin-validate.txt`.",
             "- Marketplace: pass after removing claude-mem and claude-mem-cowork, which fail because names starting with "
             "`claude-` are reserved. The upstream claude-mem repository fails the same check (baseline, not a regression).",
             "", "## 3. Isolated install and functional tests", "",
@@ -104,8 +119,11 @@ def validation_md(baseline_rows):
         out.append(f"| {f.stem} | {inv} | ~{tok} |")
     out += ["", "## 5. Unit tests", "", "Command: `python3 -m unittest discover -s tests -v`", "", "```", *ut.strip().splitlines()[-25:], "```", "",
             "## 6. Baseline comparison", "",
-            f"{sum(1 for r in baseline_rows if r['exit'] == 0)}/{len(baseline_rows)} upstream suites exit 0; every non-zero "
-            "result was investigated and is environmental or a tool-version difference (see `audit/baseline-results.md`). "
+            f"{sum(1 for r in baseline_rows if r['exit'] == 0)}/{len(baseline_rows)} upstream suites exit 0. Every non-zero result "
+            "was investigated (see `audit/baseline-results.md`): most failures were reproduced as environmental (agent env vars, "
+            "blocked DNS, shallow clone, optional extras, skipped install scripts, a different yq). Still undiagnosed: 10 "
+            "claude-mem tests, 1 ECC install.sh process-cleanup test and 1 vercel skills Notion formatting test. "
+            "None of them involve files changed by the integration. "
             "Integration does not modify any upstream file except the VibeSec frontmatter name, and the integrity check "
             "proves the other copied files are byte-identical to the pinned sources, so upstream test outcomes carry over to "
             "the integrated copies unchanged.", "",

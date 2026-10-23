@@ -7,16 +7,16 @@ Computed from `registry/components.json` (every component of every source) and t
 | vercel-labs/agent-browser | inspected | `50c34e78c98d` | 10 | 34 | 11 | 1 | 0 | 20 | 12 | 0 | agent-browser-launcher=pass |
 | mattpocock/skills | inspected | `5beb35b040e3` | 38 | 20 | 55 | 0 | 0 | 3 | 0 | 0 | mattpocock-validate=exit 1; mattpocock-version-check=pass |
 | Jakeschincariol/replica-skill | inspected | `77c9436fb3d1` | 11 | 4 | 15 | 0 | 0 | 0 | 0 | 0 | replica-pytest=pass |
-| affaan-m/ECC | inspected | `90606c8315ee` | 1062 | 1704 | 1266 | 234 | 0 | 1266 | 0 | 0 | none upstream |
+| affaan-m/ECC | inspected | `90606c8315ee` | 1062 | 1704 | 1159 | 338 | 0 | 1269 | 0 | 0 | ecc-npm-test=exit 1 |
 | vercel-labs/skills | inspected | `a80e4c9d12d6` | 3 | 19 | 3 | 0 | 0 | 15 | 4 | 0 | vercel-skills-vitest=exit 1; vercel-skills-typecheck=pass |
-| thedotmack/claude-mem | inspected | `dcb28a768c6b` | 41 | 220 | 92 | 2 | 0 | 148 | 19 | 0 | none upstream |
+| thedotmack/claude-mem | inspected | `dcb28a768c6b` | 41 | 220 | 93 | 2 | 1 | 144 | 21 | 0 | claude-mem-bun-test=exit 1 |
 | BehiSecc/VibeSec-Skill | inspected | `0590993b35ad` | 1 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | none upstream |
 | nextlevelbuilder/ui-ux-pro-max-skill | inspected | `d14efff8ed1f` | 13 | 46 | 32 | 0 | 0 | 16 | 11 | 0 | uiux-validate-csv=pass; uiux-smoke-domains=pass; uiux-smoke-stacks=pass; uiux-pytest=pass |
 | obra/superpowers | inspected | `2ce8aa15d05b` | 15 | 51 | 66 | 0 | 0 | 0 | 0 | 0 | superpowers-skill-size=pass; superpowers-hooks=pass; superpowers-skill-struct=pass; superpowers-find-polluter=pass; superpowers-version-bump=exit 3; superpowers-codex-manifest=pass; superpowers-shell-lint=pass |
-| Graphify-Labs/graphify | inspected | `c588b72d9369` | 16 | 28 | 3 | 0 | 0 | 37 | 4 | 0 | none upstream |
-| **Total** | 10/10 | | 1210 | 2127 | 1544 | 237 | 1 | 1505 | 50 | 0 | |
+| Graphify-Labs/graphify | inspected | `c588b72d9369` | 16 | 28 | 3 | 0 | 0 | 37 | 4 | 0 | graphify-pytest=exit 1 |
+| **Total** | 10/10 | | 1210 | 2127 | 1438 | 341 | 2 | 1504 | 52 | 0 | |
 
-Skills loadable in Claude Code: **416** (+9 agent-browser skills served by its CLI, +1 omega-core router). The remaining skill files are harness mirrors, translations or per-platform variants, each mapped to its canonical loaded skill or excluded with a reason (`audit/exclusions.md`).
+Skills loadable in Claude Code: **584** (+9 agent-browser skills served by its CLI, +1 omega-core router). 386 come from the 11 source plugins in the OMEGA marketplace; 30 are claude-mem / claude-mem-cowork skills, loadable once claude-mem is installed from its upstream marketplace (identical files are kept in plugins/). The remaining skill files are harness mirrors, translations or per-platform variants, each mapped to its canonical loaded skill or excluded with a reason (`audit/exclusions.md`).
 
 ## Specific checks
 

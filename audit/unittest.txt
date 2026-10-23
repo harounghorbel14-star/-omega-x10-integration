@@ -11,6 +11,6 @@ test_doctor_reports_every_check_with_fix (test_omega.RouteTests.test_doctor_repo
 test_keyword_search_reaches_long_tail (test_omega.RouteTests.test_keyword_search_reaches_long_tail) ... ok
 
 ----------------------------------------------------------------------
-Ran 11 tests in 1.227s
+Ran 11 tests in 1.362s
 
 OK

@@ -9,10 +9,10 @@ Command: `python3 tools/validate.py --syntax`
 | Check | Status | Detail |
 |---|---|---|
 | sources | PASS | 10/10 repositories inspected with commit recorded |
-| classified | PASS | 10094 files, 0 unclassified; 3337 components, 0 with invalid disposition |
-| destinations | PASS | 3829 copied files, 0 missing at destination |
-| integrity | PASS | 3828 byte-compared, 0 differ; 1 recorded transform(s) excluded |
-| manifests | PASS | 12 marketplace plugins; 14 plugin dirs |
+| classified | PASS | 10096 files, 0 unclassified; 3337 components, 0 with invalid disposition |
+| destinations | PASS | 3833 copied files, 0 missing at destination |
+| integrity | PASS | 3831 byte-compared, 0 differ; 2 recorded transform(s) excluded |
+| manifests | PASS | 13 marketplace plugins; 15 plugin dirs |
 | skills | PASS | 416 loaded skills have frontmatter; 2 keep a non-identifier upstream name (unchanged, indexed by directory) |
 | references | PASS | 0 references broken by integration; 27 already unresolved in the source (reported in audit/validation-report.md) |
 | json | PASS | 0 unparsable .json files, 0 identical to an unparsable upstream file (e.g. JSONC/templates) |
@@ -32,7 +32,7 @@ References already unresolved upstream (placeholders such as `0001-use-nextjs.md
 
 Command: `claude plugin validate plugins/<p>` (Claude Code 2.1.309) and `claude plugin validate .`
 
-- 12 listed plugins: pass (ecc, mattpocock-skills, ui-ux-pro-max pass with upstream warnings: root CLAUDE.md not loaded / unknown field `id`; all plugins lack an icon, a directory-listing warning).
+- 13 listed plugins: pass (ecc, mattpocock-skills, ui-ux-pro-max pass with upstream warnings: root CLAUDE.md not loaded / unknown field `id`; all plugins lack an icon, a directory-listing warning). Recorded output: `audit/claude-plugin-validate.txt`.
 - Marketplace: pass after removing claude-mem and claude-mem-cowork, which fail because names starting with `claude-` are reserved. The upstream claude-mem repository fails the same check (baseline, not a regression).
 
 ## 3. Isolated install and functional tests
@@ -58,12 +58,14 @@ Throwaway `CLAUDE_CONFIG_DIR`, scratch npm/uv prefixes and a scratch `HOME` for 
 | UI UX Pro Max search from plugin copy | PASS | 3 palette results; full design-system recommendation printed |
 | ECC rules installer | PASS | installed both; second run skipped existing pack without --force |
 | Reproducible build | PASS | 10 repos checked out at pinned commits; 3,828 copied files byte-identical |
+| anti-pattern-czar command (relocated from claude-mem .claude/commands) | PASS | ${CLAUDE_PLUGIN_ROOT} resolved to the plugin path in the live session; detector flagged src/b.ts:4 NO_LOGGING_IN_CATCH and exited 1; upstream and plugin copies print identical results |
 
 ## 4. Loaded components (from `claude plugin details`)
 
 | Plugin | Inventory | Always-on tokens |
 |---|---|---|
 | agent-browser | Skills (1) Agents (0) Hooks (0) MCP servers (0) | ~336 |
+| anti-pattern-czar | Skills (1) Agents (0) Hooks (0) MCP servers (0) | ~38 |
 | ecc | Skills (408) Agents (71) Hooks (8) MCP servers (1) | ~47,561 |
 | find-skills | Skills (1) Agents (0) Hooks (0) MCP servers (0) | ~100 |
 | graphify | Skills (1) Agents (0) Hooks (0) MCP servers (0) | ~118 |
@@ -94,14 +96,14 @@ test_doctor_reports_every_check_with_fix (test_omega.RouteTests.test_doctor_repo
 test_keyword_search_reaches_long_tail (test_omega.RouteTests.test_keyword_search_reaches_long_tail) ... ok
 
 ----------------------------------------------------------------------
-Ran 11 tests in 1.227s
+Ran 11 tests in 1.362s
 
 OK
 ```
 
 ## 6. Baseline comparison
 
-14/17 upstream suites exit 0; every non-zero result was investigated and is environmental or a tool-version difference (see `audit/baseline-results.md`). Integration does not modify any upstream file except the VibeSec frontmatter name, and the integrity check proves the other copied files are byte-identical to the pinned sources, so upstream test outcomes carry over to the integrated copies unchanged.
+14/20 upstream suites exit 0. Every non-zero result was investigated (see `audit/baseline-results.md`): most failures were reproduced as environmental (agent env vars, blocked DNS, shallow clone, optional extras, skipped install scripts, a different yq). Still undiagnosed: 10 claude-mem tests, 1 ECC install.sh process-cleanup test and 1 vercel skills Notion formatting test. None of them involve files changed by the integration. Integration does not modify any upstream file except the VibeSec frontmatter name, and the integrity check proves the other copied files are byte-identical to the pinned sources, so upstream test outcomes carry over to the integrated copies unchanged.
 
 ## 7. Disposition reconciliation
 
@@ -112,9 +114,9 @@ Counts are computed, not typed. Each row sums to the component total for that re
 | vercel-labs/agent-browser | 44 | 11 | 1 | 0 | 20 | 12 | 0 | 0 | yes |
 | mattpocock/skills | 58 | 55 | 0 | 0 | 3 | 0 | 0 | 0 | yes |
 | Jakeschincariol/replica-skill | 15 | 15 | 0 | 0 | 0 | 0 | 0 | 0 | yes |
-| affaan-m/ECC | 2766 | 1266 | 234 | 0 | 1266 | 0 | 0 | 0 | yes |
+| affaan-m/ECC | 2766 | 1159 | 338 | 0 | 1269 | 0 | 0 | 0 | yes |
 | vercel-labs/skills | 22 | 3 | 0 | 0 | 15 | 4 | 0 | 0 | yes |
-| thedotmack/claude-mem | 261 | 92 | 2 | 0 | 148 | 19 | 0 | 0 | yes |
+| thedotmack/claude-mem | 261 | 93 | 2 | 1 | 144 | 21 | 0 | 0 | yes |
 | BehiSecc/VibeSec-Skill | 2 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | yes |
 | nextlevelbuilder/ui-ux-pro-max-skill | 59 | 32 | 0 | 0 | 16 | 11 | 0 | 0 | yes |
 | obra/superpowers | 66 | 66 | 0 | 0 | 0 | 0 | 0 | 0 | yes |
@@ -137,7 +139,7 @@ Counts are computed, not typed. Each row sums to the component total for that re
 
 ## Files
 
-Tracked files: 10090. merged-with-traceability: 3, excluded-with-justification: 5011, preserved: 3824, retained-as-external-runtime: 1251, adapted-with-traceability: 1
+Tracked files: 10090. merged-with-traceability: 3, excluded-with-justification: 5007, preserved: 3825, retained-as-external-runtime: 1253, adapted-with-traceability: 2
 
 
 

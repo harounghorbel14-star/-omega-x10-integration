@@ -6,12 +6,13 @@
 set -uo pipefail
 BASE="$(cd "${1:?usage: run-baselines.sh <sources-copy> <out.jsonl>}" && pwd)"
 OUT="${2:?missing output file}"
-: > "$OUT"
+[ "${APPEND:-0}" = 1 ] || : > "$OUT"   # APPEND=1 keeps earlier results; ONLY="a b" runs a subset
 LOGDIR="$(dirname "$OUT")/baseline-logs"; mkdir -p "$LOGDIR"
 PYTEST_ENV="$BASE/.pytest-venv"
 
 run() { # name, dir, timeout-seconds, command...
   local name="$1" dir="$2" to="$3"; shift 3
+  if [ -n "${ONLY:-}" ] && [[ " $ONLY " != *" $name "* ]]; then return 0; fi
   local log="$LOGDIR/$name.log" start end rc
   start=$(date +%s)
   (cd "$BASE/$dir" && timeout "$to" bash -c "$*") >"$log" 2>&1; rc=$?
