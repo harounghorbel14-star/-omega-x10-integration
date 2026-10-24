@@ -64,7 +64,15 @@ tools/                            build.py, rules.py, validate.py, run-baselines
 scripts/                          fetch-sources.sh, install-ecc-rules.sh, install-plugin-deps.sh
 tests/                            unittest suite
 docs/INSTALL.md                   install, update, remove, troubleshooting
+releases/omega-x10-complete/      standalone skill releases for the claude.ai Skills uploader
 ```
+
+## Standalone skill release
+
+`releases/omega-x10-complete/v4.0.0/omega-x10-v4.0.0.zip` is the unified `omega-x10-complete`
+skill: one folder, ready for claude.ai Settings → Capabilities → Skills → Upload skill. It comes
+with its engineering report, its test evidence, and `VERIFICATION.md`, which records an independent
+re-run of the report's claims. Routing exact match is 82.1% on the final blind set, not 100%.
 
 ## Audit trail
 
